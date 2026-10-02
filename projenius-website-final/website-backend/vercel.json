@@ -1,0 +1,14 @@
+{
+  "buildCommand": "node -e \"const fs=require('fs'); fs.mkdirSync('dist',{recursive:true}); fs.writeFileSync('dist/index.html','ProJenius API'); console.log('No backend build required')\"",
+  "functions": {
+    "api/[...path].js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/[...path].js"
+    }
+  ]
+}

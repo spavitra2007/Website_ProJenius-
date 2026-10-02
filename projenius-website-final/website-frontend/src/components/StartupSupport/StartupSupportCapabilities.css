@@ -1,0 +1,692 @@
+/* =========================================================
+   CAPABILITY MAP
+========================================================= */
+
+.ssp-caps-map {
+  position: relative;
+  width: min(1080px, 100%);
+  aspect-ratio: 100 / 60;
+  margin: 48px auto 0;
+  isolation: isolate;
+}
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.ssp-caps-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.ssp-caps-ring {
+  fill: none;
+  stroke: rgba(140, 180, 255, 0.15);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ssp-caps-ring--dashed {
+  stroke-dasharray: 2 8;
+  animation: sspCapsDash 30s linear infinite;
+}
+
+@keyframes sspCapsDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+/* =========================================================
+   CONNECTION LINES
+========================================================= */
+
+.ssp-caps-line {
+  stroke: rgba(140, 180, 255, 0.22);
+  stroke-width: 1;
+  stroke-dasharray: 3 7;
+  vector-effect: non-scaling-stroke;
+  animation: sspCapsLineDash 2.8s linear infinite;
+  transition:
+    stroke 0.3s ease,
+    stroke-width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+@keyframes sspCapsLineDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.ssp-caps-line--rel {
+  stroke: rgba(140, 180, 255, 0.48);
+}
+
+.ssp-caps-line--on {
+  stroke: #3fd8f0;
+  stroke-width: 1.8;
+  animation-duration: 0.9s;
+}
+
+.ssp-caps-map--has-active
+  .ssp-caps-line:not(.ssp-caps-line--on):not(.ssp-caps-line--rel) {
+  opacity: 0.4;
+}
+
+/* =========================================================
+   CENTER CORE
+========================================================= */
+
+.ssp-caps-core {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: clamp(145px, 17%, 175px);
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #172b59 0%,
+      #0b1735 52%,
+      #061021 100%
+    );
+
+  border: 1px solid rgba(127, 176, 255, 0.48);
+
+  box-shadow:
+    0 0 0 9px rgba(63, 216, 240, 0.045),
+    0 0 35px rgba(63, 140, 255, 0.28);
+
+  z-index: 5;
+}
+
+/* =========================================================
+   LOGO IMAGE
+   Smaller than the circle so it does NOT touch the edges.
+========================================================= */
+
+.ssp-caps-core-logo {
+  width: 72%;
+  height: 72%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 16px rgba(63, 216, 240, 0.18);
+
+  flex-shrink: 0;
+}
+
+.ssp-caps-core-logo img {
+  display: block;
+
+  width: 82%;
+  height: 82%;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================================
+   SUBTLE CORE GLOW
+========================================================= */
+
+.ssp-caps-core::before {
+  content: "";
+
+  position: absolute;
+  inset: -8px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(63, 216, 240, 0.22);
+
+  animation: sspCapsPulse 3.8s ease-out infinite;
+
+  pointer-events: none;
+}
+
+.ssp-caps-core::after {
+  content: "";
+
+  position: absolute;
+  inset: -16px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(63, 140, 255, 0.12);
+
+  animation: sspCapsPulse 3.8s ease-out infinite;
+  animation-delay: 1.9s;
+
+  pointer-events: none;
+}
+
+@keyframes sspCapsPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.16);
+  }
+}
+
+/* =========================================================
+   CAPABILITY NODES
+========================================================= */
+
+.ssp-caps-node {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 14px;
+
+  white-space: nowrap;
+
+  font:
+    600 clamp(13px, 1.25vw, 15.5px) / 1
+    var(--ssp-font-display);
+
+  letter-spacing: -0.01em;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--ssp-ink);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease;
+
+  z-index: 6;
+}
+
+/* =========================================================
+   NODE DOT
+========================================================= */
+
+.ssp-caps-node-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background: #29466f;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   ACTIVE / HOVER NODE
+========================================================= */
+
+.ssp-caps-node:hover,
+.ssp-caps-node:focus-visible,
+.ssp-caps-node--active {
+  border-color: rgba(63, 216, 240, 0.42);
+
+  background: rgba(8, 25, 52, 0.94);
+
+  transform: translate(-50%, -50%) scale(1.04);
+
+  box-shadow:
+    0 0 0 3px rgba(63, 216, 240, 0.08),
+    0 8px 24px -10px rgba(63, 216, 240, 0.55);
+
+  outline: none;
+}
+
+.ssp-caps-node--active .ssp-caps-node-dot,
+.ssp-caps-node:hover .ssp-caps-node-dot {
+  background: #3fd8f0;
+
+  box-shadow:
+    0 0 9px rgba(63, 216, 240, 0.85);
+}
+
+.ssp-caps-node--rel {
+  border-color: rgba(140, 180, 255, 0.16);
+}
+
+.ssp-caps-node--rel .ssp-caps-node-dot {
+  background: #7fb0ff;
+}
+
+/* =========================================================
+   NODE POSITIONS
+========================================================= */
+
+.ssp-caps-pos-0 {
+  left: 50%;
+  top: 8%;
+}
+
+.ssp-caps-pos-1 {
+  left: 72.92%;
+  top: 18%;
+}
+
+.ssp-caps-pos-2 {
+  left: 87.09%;
+  top: 36%;
+}
+
+.ssp-caps-pos-3 {
+  left: 87.09%;
+  top: 64%;
+}
+
+.ssp-caps-pos-4 {
+  left: 72.92%;
+  top: 82%;
+}
+
+.ssp-caps-pos-5 {
+  left: 50%;
+  top: 92%;
+}
+
+.ssp-caps-pos-6 {
+  left: 27.08%;
+  top: 82%;
+}
+
+.ssp-caps-pos-7 {
+  left: 12.91%;
+  top: 64%;
+}
+
+.ssp-caps-pos-8 {
+  left: 12.91%;
+  top: 36%;
+}
+
+.ssp-caps-pos-9 {
+  left: 27.08%;
+  top: 18%;
+}
+
+/* =========================================================
+   INFORMATION PANEL
+========================================================= */
+
+.ssp-caps-info {
+  width: min(760px, 100%);
+
+  margin: 26px auto 0;
+
+  padding: 20px 24px;
+
+  border: 1px solid var(--ssp-line-2);
+
+  border-radius: 12px;
+
+  background: rgba(11, 19, 41, 0.7);
+
+  min-height: 104px;
+
+  display: grid;
+  align-content: center;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ssp-caps-info-content {
+  display: grid;
+  gap: 7px;
+
+  animation: sspCapsInfoIn 0.45s ease both;
+}
+
+@keyframes sspCapsInfoIn {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ssp-caps-info-name {
+  font:
+    700 19px var(--ssp-font-display);
+
+  color: #3fd8f0;
+}
+
+.ssp-caps-info-desc {
+  color: var(--ssp-ink);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+}
+
+.ssp-caps-info-rel {
+  color: var(--ssp-muted);
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   MOBILE LIST
+========================================================= */
+
+.ssp-caps-list {
+  display: none;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 900px) {
+  .ssp-caps-map {
+    width: min(940px, 100%);
+    aspect-ratio: 100 / 60;
+  }
+
+  .ssp-caps-node {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+
+  .ssp-caps-core {
+    width: 150px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 899px) {
+
+  .ssp-caps-map,
+  .ssp-caps-info {
+    display: none;
+  }
+
+  .ssp-caps-list {
+    display: block;
+
+    margin-top: 40px;
+
+    position: relative;
+  }
+
+  /* -------------------------------------------------------
+     MOBILE CORE
+  ------------------------------------------------------- */
+
+  .ssp-caps-list-core {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    border: 1px solid rgba(127, 176, 255, 0.42);
+
+    border-radius: 10px;
+
+    background: #0b1a3d;
+
+    font:
+      700 14px var(--ssp-font-mono);
+
+    letter-spacing: 0.14em;
+
+    width: fit-content;
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 8px;
+
+    color: var(--ssp-ink);
+  }
+
+  .ssp-caps-list-logo {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ssp-caps-list-logo img {
+    width: 82%;
+    height: 82%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+  }
+
+  /* -------------------------------------------------------
+     MOBILE CONNECTOR
+  ------------------------------------------------------- */
+
+  .ssp-caps-list ol {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .ssp-caps-list ol::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    top: 0;
+    bottom: 24px;
+
+    width: 2px;
+
+    background:
+      linear-gradient(
+        var(--ssp-line-2),
+        rgba(63, 216, 240, 0.45)
+      );
+  }
+
+  /* -------------------------------------------------------
+     MOBILE ITEM
+  ------------------------------------------------------- */
+
+  .ssp-caps-list li {
+    position: relative;
+
+    padding:
+      14px
+      0
+      14px
+      38px;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .ssp-caps-list li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 1px;
+    top: 20px;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: var(--ssp-bg);
+
+    border: 2px solid #29466f;
+
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .ssp-caps-list li::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    top: 27px;
+
+    width: 12px;
+    height: 2px;
+
+    background: rgba(63, 216, 240, 0.35);
+  }
+
+  .ssp-caps-list li.ssp-caps-mobile-active::before {
+    border-color: #3fd8f0;
+
+    box-shadow:
+      0 0 10px rgba(63, 216, 240, 0.6);
+  }
+
+  .ssp-caps-list h3 {
+    margin-bottom: 4px;
+
+    font-size: 18px;
+
+    color: var(--ssp-ink);
+  }
+
+  .ssp-caps-list p {
+    color: var(--ssp-ink-2);
+
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .ssp-caps-list {
+    margin-top: 32px;
+  }
+
+  .ssp-caps-list-core {
+    padding: 10px 14px;
+
+    font-size: 13px;
+  }
+
+  .ssp-caps-list-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ssp-caps-list h3 {
+    font-size: 17px;
+  }
+
+  .ssp-caps-list p {
+    font-size: 14.5px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ssp-caps-ring--dashed,
+  .ssp-caps-line,
+  .ssp-caps-core::before,
+  .ssp-caps-core::after {
+    animation: none;
+  }
+
+  .ssp-caps-node,
+  .ssp-caps-info,
+  .ssp-caps-info-content {
+    transition: none;
+  }
+}

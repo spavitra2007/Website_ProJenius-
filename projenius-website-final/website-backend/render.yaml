@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: blog-admin-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_API_TOKEN
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: PUBLIC_SITE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
+      - key: NEWSLETTER_BATCH_SIZE
+        value: 25
+      - key: NEWSLETTER_BATCH_DELAY_MS
+        value: 1200
+      - key: BLOG_SCHEDULE_CHECK_MS
+        value: 60000
+      - key: API_JSON_LIMIT
+        value: 12mb

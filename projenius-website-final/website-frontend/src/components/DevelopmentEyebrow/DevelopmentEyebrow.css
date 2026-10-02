@@ -1,0 +1,20 @@
+.pjdeveyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--pjdev-font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pjdev-accent);
+}
+.pjdeveyebrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pjdev-grad);
+  box-shadow: 0 0 0 4px rgba(29, 92, 255, 0.14);
+}

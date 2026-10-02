@@ -1,0 +1,46 @@
+body.pjw-modal-scroll-lock { overflow: hidden; }
+
+.pjw-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(4, 11, 22, 0.72);
+  animation: pjw-modal-fade 0.2s ease;
+}
+.pjw-modal__close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(10, 26, 48, 0.8);
+  color: #fff;
+  cursor: pointer;
+}
+.pjw-modal__close:hover { background: #000; }
+.pjw-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  border-radius: 16px;
+  background: var(--pjw-surface);
+  color: var(--pjw-text);
+  animation: pjw-modal-pop 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes pjw-modal-fade { from { opacity: 0; } }
+@keyframes pjw-modal-pop { from { opacity: 0; transform: translateY(12px) scale(0.98); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pjw-modal, .pjw-modal__panel { animation: none; }
+}

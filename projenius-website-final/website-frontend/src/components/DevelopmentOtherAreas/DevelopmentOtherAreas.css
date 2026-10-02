@@ -1,0 +1,458 @@
+/* =====================================================================
+   DEVELOPMENT OTHER AREAS
+   Local styling only — does not affect other sections.
+===================================================================== */
+
+.pjdev-areas {
+  --areas-bg: #050B1E;
+  --areas-card: #0E152B;
+
+  --areas-title: #EAF0FF;
+  --areas-text: #91A7C8;
+  --areas-link: #35D9EE;
+
+  --areas-border: #19233D;
+  --areas-border-hover: #34527E;
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    48px
+    0
+    56px;
+
+  border-top:
+    1px solid
+    var(--areas-border);
+
+  background:
+    var(--areas-bg);
+
+  color:
+    var(--areas-title);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
+
+.pjdev-areas::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        65,
+        92,
+        135,
+        0.035
+      ) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        65,
+        92,
+        135,
+        0.035
+      ) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+
+  opacity: 0.75;
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-areas__wrap {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 18px;
+
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 80px
+      )
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.pjdev-areas__card {
+  position: relative;
+
+  display: block;
+
+  min-width: 0;
+
+  padding:
+    22px
+    24px
+    23px;
+
+  border:
+    1px solid
+    var(--areas-border);
+
+  border-radius:
+    20px;
+
+  background:
+    rgba(
+      5,
+      11,
+      30,
+      0.32
+    );
+
+  color:
+    var(--areas-title);
+
+  text-decoration:
+    none;
+
+  overflow:
+    hidden;
+
+  transition:
+    transform
+      0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color
+      0.3s ease,
+    background
+      0.3s ease,
+    box-shadow
+      0.35s ease;
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.pjdev-areas__card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--areas-border-hover);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        14,
+        21,
+        43,
+        0.9
+      ),
+      rgba(
+        8,
+        15,
+        34,
+        0.9
+      )
+    );
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+/* =========================================================
+   CARD TOP ACCENT
+========================================================= */
+
+.pjdev-areas__card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+
+  bottom: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1D5CFF,
+      #35D9EE
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left center;
+
+  transition:
+    transform
+      0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.pjdev-areas__card:hover::after {
+  transform:
+    scaleX(1);
+}
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.pjdev-areas__name {
+  display: block;
+
+  color:
+    var(--areas-title);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    1.1rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    -0.015em;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.pjdev-areas__text {
+  display: block;
+
+  max-width:
+    62ch;
+
+  margin-top:
+    7px;
+
+  color:
+    var(--areas-text);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.92rem;
+
+  line-height:
+    1.55;
+}
+
+/* =========================================================
+   MORE LINK
+========================================================= */
+
+.pjdev-areas__more {
+  display: block;
+
+  margin-top:
+    12px;
+
+  color:
+    var(--areas-link);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.88rem;
+
+  font-weight:
+    700;
+
+  font-style:
+    normal;
+
+  line-height:
+    1.35;
+
+  transition:
+    color
+      0.25s ease,
+    transform
+      0.25s ease;
+}
+
+.pjdev-areas__card:hover
+  .pjdev-areas__more {
+  color:
+    #6BE5F5;
+
+  transform:
+    translateX(2px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .pjdev-areas__wrap {
+    width:
+      calc(
+        100% - 48px
+      );
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-areas {
+    padding:
+      38px
+      0
+      46px;
+  }
+
+  .pjdev-areas__wrap {
+    grid-template-columns:
+      1fr;
+
+    width:
+      calc(
+        100% - 28px
+      );
+
+    gap:
+      14px;
+  }
+
+  .pjdev-areas__card {
+    padding:
+      20px
+      20px
+      21px;
+
+    border-radius:
+      17px;
+  }
+
+  .pjdev-areas__text {
+    font-size:
+      0.9rem;
+  }
+
+  .pjdev-areas__more {
+    font-size:
+      0.86rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .pjdev-areas__wrap {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .pjdev-areas__name {
+    font-size:
+      1rem;
+  }
+
+  .pjdev-areas__text {
+    font-size:
+      0.86rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-areas__card,
+  .pjdev-areas__more,
+  .pjdev-areas__card::after {
+    transition:
+      none;
+  }
+}

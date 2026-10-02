@@ -1,0 +1,723 @@
+/* =========================================================
+   GETTING STARTED
+========================================================= */
+
+.gettingStarted {
+  position: relative;
+
+  width: 100%;
+  min-height: 640px;
+
+  overflow: hidden;
+
+  background: #050d1d;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.gettingStarted__grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.42;
+
+  background-image:
+    linear-gradient(
+      rgba(64, 96, 139, 0.075) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(64, 96, 139, 0.075) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.gettingStarted__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1190px,
+    calc(100% - 90px)
+  );
+
+  min-height: 640px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(500px, 1.1fr);
+
+  column-gap: 80px;
+
+  align-items: start;
+
+  padding: 48px 0 70px;
+}
+
+/* =========================================================
+   LEFT INTRO
+========================================================= */
+
+.gettingStarted__intro {
+  padding-top: 8px;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.gettingStarted__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+
+  color: #6faaff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.6px;
+
+  text-transform: uppercase;
+}
+
+.gettingStarted__eyebrow-line {
+  width: 27px;
+  height: 1px;
+
+  background: #6aa8ff;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.gettingStarted__heading {
+  margin: 0;
+
+  color: #eef4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 58px;
+
+  font-weight: 800;
+
+  line-height: 1.08;
+
+  letter-spacing: -2.6px;
+}
+
+/* =========================================================
+   LEAD
+========================================================= */
+
+.gettingStarted__lead {
+  max-width: 470px;
+
+  margin: 29px 0 0;
+
+  color: #eef4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 31px;
+
+  font-weight: 600;
+
+  line-height: 1.27;
+
+  letter-spacing: -0.9px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.gettingStarted__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  min-height: 50px;
+
+  margin-top: 32px;
+
+  padding: 0 24px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #65a8ff,
+      #2dd2e8
+    );
+
+  color: #041322;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 24px
+    rgba(
+      35,
+      180,
+      223,
+      0.15
+    );
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gettingStarted__cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      35,
+      180,
+      223,
+      0.24
+    );
+}
+
+.gettingStarted__cta-arrow {
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.gettingStarted__cta:hover
+  .gettingStarted__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.gettingStarted__timeline {
+  position: relative;
+
+  min-height: 520px;
+
+  padding-left: 40px;
+}
+
+/* =========================================================
+   VERTICAL LINE
+========================================================= */
+
+.gettingStarted__timeline-line {
+  position: absolute;
+
+  top: 20px;
+
+  left: 40px;
+
+  width: 2px;
+
+  height: 442px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #55a5ff 0%,
+      #38d9ec 100%
+    );
+
+  transform-origin: top center;
+
+  transform: scaleY(0);
+
+  opacity: 0;
+
+  transition:
+    transform 1.05s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity 0.35s ease;
+}
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.gettingStarted__step {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 82px minmax(0, 1fr);
+
+  min-height: 98px;
+
+  opacity: 0;
+
+  transform: translateX(18px);
+}
+
+/* =========================================================
+   NODE
+========================================================= */
+
+.gettingStarted__node {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  margin-left: -18px;
+
+  border:
+    1.5px solid
+    #45d0eb;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #68b1ff,
+      #2bcfe4
+    );
+
+  box-shadow:
+    0 0 0 7px
+    rgba(
+      72,
+      142,
+      255,
+      0.11
+    ),
+    0 0 18px
+    rgba(
+      52,
+      199,
+      231,
+      0.2
+    );
+
+  transform: scale(0.7);
+
+  opacity: 0;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.gettingStarted__node-number {
+  color: #061421;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   STEP CONTENT
+========================================================= */
+
+.gettingStarted__step-content {
+  padding-top: 1px;
+}
+
+/* =========================================================
+   STEP TITLE
+========================================================= */
+
+.gettingStarted__step-title {
+  margin: 0;
+
+  color: #eef4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 27px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+}
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.gettingStarted__step-description {
+  max-width: 535px;
+
+  margin: 8px 0 0;
+
+  color: #a2b4d1;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   VISIBLE ANIMATION
+========================================================= */
+
+.gettingStarted--visible
+  .gettingStarted__intro {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.gettingStarted--visible
+  .gettingStarted__timeline-line {
+  opacity: 1;
+
+  transform: scaleY(1);
+}
+
+.gettingStarted--visible
+  .gettingStarted__step {
+  opacity: 1;
+
+  transform: translateX(0);
+
+  transition:
+    opacity 0.55s var(--step-delay)
+      ease,
+    transform 0.55s var(--step-delay)
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.gettingStarted--visible
+  .gettingStarted__node {
+  opacity: 1;
+
+  transform: scale(1);
+
+  transition:
+    opacity 0.42s
+      calc(var(--step-delay) + 80ms)
+      ease,
+    transform 0.5s
+      calc(var(--step-delay) + 80ms)
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+/* =========================================================
+   STEP HOVER
+========================================================= */
+
+.gettingStarted__step:hover
+  .gettingStarted__node {
+  box-shadow:
+    0 0 0 8px
+    rgba(
+      72,
+      142,
+      255,
+      0.15
+    ),
+    0 0 24px
+    rgba(
+      52,
+      199,
+      231,
+      0.28
+    );
+
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .gettingStarted__container {
+    width: min(
+      920px,
+      calc(100% - 44px)
+    );
+
+    grid-template-columns:
+      minmax(0, 0.88fr)
+      minmax(430px, 1.12fr);
+
+    column-gap: 45px;
+  }
+
+  .gettingStarted__heading {
+    font-size: 51px;
+  }
+
+  .gettingStarted__lead {
+    font-size: 27px;
+  }
+
+  .gettingStarted__step-title {
+    font-size: 24px;
+  }
+
+  .gettingStarted__step-description {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 780px) {
+  .gettingStarted {
+    min-height: auto;
+  }
+
+  .gettingStarted__container {
+    width: calc(100% - 28px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 50px;
+
+    min-height: auto;
+
+    padding:
+      30px
+      0
+      65px;
+  }
+
+  .gettingStarted__intro {
+    padding-top: 0;
+  }
+
+  .gettingStarted__eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .gettingStarted__heading {
+    font-size: 42px;
+
+    line-height: 1.03;
+
+    letter-spacing: -1.8px;
+  }
+
+  .gettingStarted__lead {
+    max-width: 100%;
+
+    margin-top: 22px;
+
+    font-size: 23px;
+
+    line-height: 1.28;
+  }
+
+  .gettingStarted__timeline {
+    min-height: auto;
+
+    padding-left: 42px;
+  }
+
+  .gettingStarted__timeline-line {
+    top: 18px;
+
+    left: 42px;
+
+    height: calc(100% - 54px);
+  }
+
+  .gettingStarted__step {
+    grid-template-columns:
+      72px
+      minmax(0, 1fr);
+
+    min-height: 100px;
+  }
+
+  .gettingStarted__step-title {
+    font-size: 21px;
+  }
+
+  .gettingStarted__step-description {
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .gettingStarted__container {
+    width: calc(100% - 20px);
+  }
+
+  .gettingStarted__heading {
+    font-size: 36px;
+  }
+
+  .gettingStarted__lead {
+    font-size: 20px;
+  }
+
+  .gettingStarted__cta {
+    min-height: 47px;
+
+    padding: 0 20px;
+
+    font-size: 14px;
+  }
+
+  .gettingStarted__timeline {
+    padding-left: 35px;
+  }
+
+  .gettingStarted__timeline-line {
+    left: 35px;
+  }
+
+  .gettingStarted__step {
+    grid-template-columns:
+      60px
+      minmax(0, 1fr);
+
+    min-height: 95px;
+  }
+
+  .gettingStarted__node {
+    width: 32px;
+    height: 32px;
+
+    margin-left: -16px;
+  }
+
+  .gettingStarted__node-number {
+    font-size: 10px;
+  }
+
+  .gettingStarted__step-title {
+    font-size: 18px;
+
+    letter-spacing: -0.4px;
+  }
+
+  .gettingStarted__step-description {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gettingStarted *,
+  .gettingStarted::before,
+  .gettingStarted::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

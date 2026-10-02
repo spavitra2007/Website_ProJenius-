@@ -1,0 +1,1253 @@
+/* =========================================================
+   ABOUT PROJENIUS
+========================================================= */
+
+.about-projenius-section {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(0, 174, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 174, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    #010711;
+
+  background-size: 78px 78px;
+  color: #ffffff;
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.about-projenius-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: 8%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 174, 255, 0.08) 0%,
+    rgba(0, 174, 255, 0.035) 32%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-projenius-container {
+  position: relative;
+
+  width: min(1400px, 92%);
+  min-height: 760px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(480px, 0.9fr)
+    minmax(600px, 1.1fr);
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.about-projenius-content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 650px;
+  padding: 40px 0;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.about-projenius-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 30px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+
+  color: #00aaf2;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-projenius-title {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Segoe UI Black", "Segoe UI", sans-serif;
+  font-size: clamp(58px, 5.4vw, 88px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.about-projenius-title-white {
+  color: #f4f7fb;
+}
+
+.about-projenius-title-blue {
+  color: #08aef5;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-projenius-description {
+  max-width: 590px;
+
+  margin: 36px 0 0;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  color: #aebbc9;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.about-projenius-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.about-projenius-primary-btn,
+.about-projenius-secondary-btn {
+  min-height: 54px;
+
+  padding: 0 27px;
+
+  border-radius: 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.about-projenius-primary-btn {
+  background: #08aef5;
+  color: #001214;
+  border: 1px solid #08aef5;
+}
+
+.about-projenius-primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 174, 245, 0.08);
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.about-projenius-secondary-btn {
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #edf4fa;
+
+  border: 1px solid rgba(76, 151, 195, 0.28);
+}
+
+.about-projenius-secondary-btn:hover {
+  transform: translateY(-3px);
+
+  background: rgba(0, 174, 245, 0.08);
+
+  border-color: rgba(0, 174, 245, 0.5);
+
+  box-shadow:
+    0 10px 30px rgba(0, 174, 245, 0.08);
+}
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.about-projenius-visual {
+  position: relative;
+
+  width: 100%;
+  height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   ORBIT
+========================================================= */
+
+.about-projenius-orbit {
+  position: relative;
+
+  width: min(620px, 100%);
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.about-projenius-ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.about-projenius-ring-outer {
+  width: 84%;
+  height: 84%;
+
+  border: 1px solid rgba(55, 115, 150, 0.16);
+}
+
+.about-projenius-ring-middle {
+  width: 60%;
+  height: 60%;
+
+  border: 1px solid rgba(0, 174, 245, 0.18);
+
+  box-shadow:
+    0 0 35px rgba(0, 174, 245, 0.04);
+}
+
+.about-projenius-ring-inner {
+  width: 46%;
+  height: 46%;
+
+  border: 1px solid rgba(0, 174, 245, 0.22);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 174, 245, 0.06),
+      transparent 70%
+    );
+}
+
+/* =========================================================
+   CENTER GLOW
+========================================================= */
+
+.about-projenius-center-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 174, 245, 0.14) 0%,
+    rgba(0, 174, 245, 0.05) 35%,
+    transparent 72%
+  );
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.about-projenius-center {
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  border: 1px solid rgba(0, 174, 245, 0.38);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(7, 30, 48, 0.9),
+      rgba(2, 12, 22, 0.88)
+    );
+
+  box-shadow:
+    0 0 30px rgba(0, 174, 245, 0.12),
+    inset 0 0 30px rgba(0, 174, 245, 0.05);
+}
+
+/* =========================================================
+   LOGO CIRCLE
+========================================================= */
+
+.about-projenius-logo-circle {
+  width: 112px;
+  height: 112px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 2px solid #08aef5;
+
+  box-shadow:
+    0 0 22px rgba(0, 174, 245, 0.18);
+}
+
+.about-projenius-logo {
+  width: 82%;
+  height: 82%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: scale(0.92);
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================================
+   ORBIT LABELS
+========================================================= */
+
+.about-projenius-orbit-label {
+  position: absolute;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  border-radius: 17px;
+
+  border: 1px solid rgba(38, 109, 148, 0.32);
+
+  background: rgba(2, 12, 22, 0.76);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  color: #9dafbd;
+
+  white-space: nowrap;
+
+  box-shadow:
+    inset 0 0 15px rgba(0, 174, 245, 0.015);
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-projenius-orbit-label:hover {
+  color: #dff7ff;
+
+  border-color: rgba(0, 174, 245, 0.6);
+
+  box-shadow:
+    0 0 20px rgba(0, 174, 245, 0.08);
+}
+
+/* =========================================================
+   DESKTOP ORBIT POSITIONS
+========================================================= */
+
+.about-projenius-orbit-top,
+.about-projenius-orbit-top-right,
+.about-projenius-orbit-right-top,
+.about-projenius-orbit-right,
+.about-projenius-orbit-right-bottom,
+.about-projenius-orbit-bottom,
+.about-projenius-orbit-bottom-left,
+.about-projenius-orbit-left {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 5;
+
+  transform-origin: center;
+}
+
+/* 12 O'CLOCK */
+
+.about-projenius-orbit-top {
+  transform:
+    translate(-50%, -50%)
+    translate(0, -250px);
+}
+
+/* 1:30 */
+
+.about-projenius-orbit-top-right {
+  transform:
+    translate(-50%, -50%)
+    translate(177px, -177px);
+}
+
+/* 3 O'CLOCK */
+
+.about-projenius-orbit-right-top {
+  transform:
+    translate(-50%, -50%)
+    translate(250px, 0);
+}
+
+/* 4:30 */
+
+.about-projenius-orbit-right {
+  transform:
+    translate(-50%, -50%)
+    translate(177px, 177px);
+}
+
+/* 6 O'CLOCK */
+
+.about-projenius-orbit-right-bottom {
+  transform:
+    translate(-50%, -50%)
+    translate(0, 250px);
+}
+
+/* 7:30 */
+
+.about-projenius-orbit-bottom {
+  transform:
+    translate(-50%, -50%)
+    translate(-177px, 177px);
+}
+
+/* 9 O'CLOCK */
+
+.about-projenius-orbit-bottom-left {
+  transform:
+    translate(-50%, -50%)
+    translate(-250px, 0);
+}
+
+/* 10:30 */
+
+.about-projenius-orbit-left {
+  transform:
+    translate(-50%, -50%)
+    translate(-177px, -177px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .about-projenius-section {
+    min-height: auto;
+  }
+
+  .about-projenius-container {
+    width: min(92%, 900px);
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 70px 0;
+  }
+
+  .about-projenius-content {
+    max-width: 700px;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .about-projenius-title {
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.05;
+  }
+
+  .about-projenius-description {
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .about-projenius-actions {
+    justify-content: center;
+  }
+
+  .about-projenius-visual {
+    height: 520px;
+  }
+
+  .about-projenius-orbit {
+    width: 460px;
+    height: 460px;
+  }
+
+  /* Tablet distance */
+  .about-projenius-orbit-top {
+    transform:
+      translate(-50%, -50%)
+      translate(0, -185px);
+  }
+
+  .about-projenius-orbit-top-right {
+    transform:
+      translate(-50%, -50%)
+      translate(131px, -131px);
+  }
+
+  .about-projenius-orbit-right-top {
+    transform:
+      translate(-50%, -50%)
+      translate(185px, 0);
+  }
+
+  .about-projenius-orbit-right {
+    transform:
+      translate(-50%, -50%)
+      translate(131px, 131px);
+  }
+
+  .about-projenius-orbit-right-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(0, 185px);
+  }
+
+  .about-projenius-orbit-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(-131px, 131px);
+  }
+
+  .about-projenius-orbit-bottom-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-185px, 0);
+  }
+
+  .about-projenius-orbit-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-131px, -131px);
+  }
+
+  .about-projenius-center {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-projenius-logo-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .about-projenius-logo {
+    width: 66px;
+    height: 66px;
+  }
+
+  .about-projenius-center-glow {
+    width: 380px;
+    height: 380px;
+  }
+
+  .about-projenius-orbit-label {
+    min-width: 92px;
+    min-height: 40px;
+
+    padding: 0 12px;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    border-radius: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .about-projenius-section {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 40px 0 45px;
+
+    overflow: hidden;
+  }
+
+  .about-projenius-container {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 16px;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+  }
+
+  /* =======================================================
+     CONTENT
+  ======================================================= */
+
+  .about-projenius-content {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .about-projenius-eyebrow {
+    margin-bottom: 14px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .about-projenius-title {
+    width: 100%;
+
+    margin: 0 auto;
+
+    font-size: clamp(29px, 9vw, 38px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+  }
+
+  .about-projenius-title-white,
+  .about-projenius-title-blue {
+    display: block;
+  }
+
+  .about-projenius-description {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin: 16px auto 0;
+
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* =======================================================
+     BUTTONS
+  ======================================================= */
+
+  .about-projenius-actions {
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    gap: 8px;
+  }
+
+  .about-projenius-primary-btn,
+  .about-projenius-secondary-btn {
+    width: auto;
+
+    min-height: 42px;
+
+    padding: 0 13px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    gap: 7px;
+  }
+
+  .about-projenius-primary-btn svg,
+  .about-projenius-secondary-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* =======================================================
+     ORBIT VISUAL
+  ======================================================= */
+
+  .about-projenius-visual {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+  }
+
+  /*
+     IMPORTANT:
+     Mobile orbit is smaller than desktop.
+  */
+
+  .about-projenius-orbit {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    min-width: 300px;
+    min-height: 300px;
+
+    max-width: 300px;
+    max-height: 300px;
+
+    margin: 0 auto;
+
+    flex-shrink: 0;
+  }
+
+  /* =======================================================
+     MOBILE RINGS
+  ======================================================= */
+
+  .about-projenius-ring-outer {
+    width: 88%;
+    height: 88%;
+  }
+
+  .about-projenius-ring-middle {
+    width: 62%;
+    height: 62%;
+  }
+
+  .about-projenius-ring-inner {
+    width: 45%;
+    height: 45%;
+  }
+
+  /* =======================================================
+     CENTER GLOW
+  ======================================================= */
+
+  .about-projenius-center-glow {
+    width: 230px;
+    height: 230px;
+
+    filter: blur(4px);
+  }
+
+  /* =======================================================
+     CENTER
+  ======================================================= */
+
+  .about-projenius-center {
+    width: 92px;
+    height: 92px;
+  }
+
+  .about-projenius-logo-circle {
+    width: 64px;
+    height: 64px;
+
+    border-width: 2px;
+  }
+
+  .about-projenius-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* =======================================================
+     MOBILE LABELS
+  ======================================================= */
+
+  .about-projenius-orbit-label {
+    min-width: 76px;
+
+    min-height: 34px;
+
+    padding: 0 8px;
+
+    border-radius: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.65px;
+
+    line-height: 1;
+
+    background: rgba(2, 12, 22, 0.9);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* =======================================================
+     MOBILE ORBIT POSITIONS
+
+     Orbit = 300px
+     Radius ≈ 118px
+
+     This keeps ALL labels inside the screen.
+  ======================================================= */
+
+  /* TOP */
+
+  .about-projenius-orbit-top {
+    transform:
+      translate(-50%, -50%)
+      translate(0, -132px);
+  }
+
+  /* TOP RIGHT */
+
+  .about-projenius-orbit-top-right {
+    transform:
+      translate(-50%, -50%)
+      translate(93px, -93px);
+  }
+
+  /* RIGHT TOP */
+
+  .about-projenius-orbit-right-top {
+    transform:
+      translate(-50%, -50%)
+      translate(132px, 0);
+  }
+
+  /* RIGHT */
+
+  .about-projenius-orbit-right {
+    transform:
+      translate(-50%, -50%)
+      translate(93px, 93px);
+  }
+
+  /* BOTTOM */
+
+  .about-projenius-orbit-right-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(0, 132px);
+  }
+
+  /* BOTTOM LEFT */
+
+  .about-projenius-orbit-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(-93px, 93px);
+  }
+
+  /* LEFT */
+
+  .about-projenius-orbit-bottom-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-132px, 0);
+  }
+
+  /* TOP LEFT */
+
+  .about-projenius-orbit-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-93px, -93px);
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-projenius-section {
+    padding: 32px 0 38px;
+  }
+
+  .about-projenius-container {
+    padding: 0 12px;
+
+    gap: 24px;
+  }
+
+  .about-projenius-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .about-projenius-title {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  .about-projenius-description {
+    max-width: 300px;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .about-projenius-actions {
+    gap: 7px;
+  }
+
+  .about-projenius-primary-btn,
+  .about-projenius-secondary-btn {
+    min-height: 40px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+
+  .about-projenius-visual {
+    min-height: 280px;
+  }
+
+  .about-projenius-orbit {
+    width: 270px;
+    height: 270px;
+
+    min-width: 270px;
+    min-height: 270px;
+
+    max-width: 270px;
+    max-height: 270px;
+  }
+
+  .about-projenius-center {
+    width: 82px;
+    height: 82px;
+  }
+
+  .about-projenius-logo-circle {
+    width: 58px;
+    height: 58px;
+  }
+
+  .about-projenius-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-projenius-center-glow {
+    width: 210px;
+    height: 210px;
+  }
+
+  .about-projenius-orbit-label {
+    min-width: 68px;
+    min-height: 31px;
+
+    padding: 0 6px;
+
+    font-size: 6.5px;
+    letter-spacing: 0.5px;
+
+    border-radius: 10px;
+  }
+
+  /* 270px orbit */
+
+  .about-projenius-orbit-top {
+    transform:
+      translate(-50%, -50%)
+      translate(0, -118px);
+  }
+
+  .about-projenius-orbit-top-right {
+    transform:
+      translate(-50%, -50%)
+      translate(83px, -83px);
+  }
+
+  .about-projenius-orbit-right-top {
+    transform:
+      translate(-50%, -50%)
+      translate(118px, 0);
+  }
+
+  .about-projenius-orbit-right {
+    transform:
+      translate(-50%, -50%)
+      translate(83px, 83px);
+  }
+
+  .about-projenius-orbit-right-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(0, 118px);
+  }
+
+  .about-projenius-orbit-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(-83px, 83px);
+  }
+
+  .about-projenius-orbit-bottom-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-118px, 0);
+  }
+
+  .about-projenius-orbit-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-83px, -83px);
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .about-projenius-section {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .about-projenius-container {
+    padding: 0 10px;
+  }
+
+  .about-projenius-title {
+    font-size: 27px;
+  }
+
+  .about-projenius-description {
+    font-size: 11.5px;
+  }
+
+  .about-projenius-primary-btn,
+  .about-projenius-secondary-btn {
+    min-height: 38px;
+
+    padding: 0 9px;
+
+    font-size: 9px;
+  }
+
+  .about-projenius-orbit {
+    width: 245px;
+    height: 245px;
+
+    min-width: 245px;
+    min-height: 245px;
+
+    max-width: 245px;
+    max-height: 245px;
+  }
+
+  .about-projenius-visual {
+    min-height: 255px;
+  }
+
+  .about-projenius-center {
+    width: 74px;
+    height: 74px;
+  }
+
+  .about-projenius-logo-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .about-projenius-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .about-projenius-orbit-label {
+    min-width: 62px;
+    min-height: 28px;
+
+    font-size: 5.8px;
+    letter-spacing: 0.4px;
+  }
+
+  /* 245px orbit */
+
+  .about-projenius-orbit-top {
+    transform:
+      translate(-50%, -50%)
+      translate(0, -108px);
+  }
+
+  .about-projenius-orbit-top-right {
+    transform:
+      translate(-50%, -50%)
+      translate(76px, -76px);
+  }
+
+  .about-projenius-orbit-right-top {
+    transform:
+      translate(-50%, -50%)
+      translate(108px, 0);
+  }
+
+  .about-projenius-orbit-right {
+    transform:
+      translate(-50%, -50%)
+      translate(76px, 76px);
+  }
+
+  .about-projenius-orbit-right-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(0, 108px);
+  }
+
+  .about-projenius-orbit-bottom {
+    transform:
+      translate(-50%, -50%)
+      translate(-76px, 76px);
+  }
+
+  .about-projenius-orbit-bottom-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-108px, 0);
+  }
+
+  .about-projenius-orbit-left {
+    transform:
+      translate(-50%, -50%)
+      translate(-76px, -76px);
+  }
+}

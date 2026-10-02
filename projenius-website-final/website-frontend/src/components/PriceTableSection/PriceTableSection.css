@@ -1,0 +1,742 @@
+/* =========================================================
+   PRICE TABLE SECTION
+   Main Accent: #35CEFF
+   Main Navy:   #06142B
+========================================================= */
+
+.pricing-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 70px 0;
+  overflow: hidden;
+
+  font-family: "Poppins", "Inter", "Segoe UI", Arial, sans-serif;
+
+  box-sizing: border-box;
+}
+
+.pricing-section *,
+.pricing-section *::before,
+.pricing-section *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN 3-COLUMN LAYOUT
+========================================================= */
+
+.pricing-container {
+  width: min(1348px, calc(100% - 48px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.86fr 1fr 1fr;
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT IMAGE CARD
+========================================================= */
+
+.pricing-image-card {
+  position: relative;
+
+  width: 100%;
+  height: 668px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #06142B;
+
+  border: 1px solid rgba(53, 206, 255, 0.35);
+
+  isolation: isolate;
+}
+
+.pricing-main-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter: saturate(0.72);
+
+  transform: scale(1.01);
+
+  transition: transform 0.7s ease;
+}
+
+.pricing-image-card:hover .pricing-main-image {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.pricing-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 20, 43, 0.28) 0%,
+      rgba(6, 20, 43, 0.42) 45%,
+      rgba(6, 20, 43, 0.88) 100%
+    );
+}
+
+
+/* =========================================================
+   IMAGE CONTENT
+========================================================= */
+
+.pricing-image-content {
+  position: absolute;
+
+  left: 42px;
+  top: 58px;
+
+  z-index: 2;
+
+  color: #ffffff;
+}
+
+.pricing-image-small {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.2px;
+}
+
+.pricing-image-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(36px, 3vw, 51px);
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   IMAGE ARROW
+========================================================= */
+
+.pricing-image-arrow {
+  position: absolute;
+
+  left: 42px;
+  bottom: 255px;
+
+  z-index: 3;
+
+  width: 72px;
+  height: 72px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  border: 1px solid #35CEFF;
+
+  background: rgba(6, 20, 43, 0.15);
+
+  color: #35CEFF;
+
+  font-family: inherit;
+
+  font-size: 32px;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pricing-image-arrow:hover {
+  background: #35CEFF;
+
+  color: #06142B;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   IMAGE DOTS
+========================================================= */
+
+.pricing-image-dots {
+  position: absolute;
+
+  right: 22px;
+  bottom: 20px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.pricing-image-dots span {
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.pricing-image-dots span.active {
+  width: 22px;
+
+  border-radius: 20px;
+
+  background: #35CEFF;
+}
+
+
+/* =========================================================
+   PRICING CARDS
+========================================================= */
+
+.pricing-cards {
+  display: contents;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CARD
+========================================================= */
+
+.pricing-card {
+  position: relative;
+
+  width: 100%;
+  height: 668px;
+
+  min-width: 0;
+
+  padding: 30px 32px 30px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(53, 206, 255, 0.42);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(53, 206, 255, 0.035),
+      transparent 45%
+    ),
+    #06142B;
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 12px 35px rgba(6, 20, 43, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #35CEFF;
+
+  box-shadow:
+    0 20px 45px rgba(53, 206, 255, 0.16);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.pricing-card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 23px;
+}
+
+
+/* =========================================================
+   ROUND ICON
+========================================================= */
+
+.pricing-icon {
+  width: 54px;
+  height: 54px;
+
+  min-width: 54px;
+
+  border-radius: 50%;
+
+  background: #35CEFF;
+
+  color: #06142B;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 29px;
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+.pricing-icon span {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.pricing-card-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.pricing-description {
+  margin: 0 0 27px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 21px;
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.pricing-check {
+  width: 20px;
+  height: 20px;
+
+  min-width: 20px;
+
+  border-radius: 50%;
+
+  border: 2px solid #35CEFF;
+
+  color: #35CEFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PRICE ROW
+========================================================= */
+
+.pricing-price-row {
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.pricing-price {
+  color: #ffffff;
+
+  font-size: 47px;
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   SAVE TEXT
+========================================================= */
+
+.pricing-save {
+  color: #35CEFF;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.pricing-button {
+  width: 100%;
+  height: 58px;
+
+  margin-top: 27px;
+
+  padding: 0 25px;
+
+  border: none;
+  border-radius: 40px;
+
+  background: #35CEFF;
+
+  color: #06142B;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pricing-button:hover {
+  background: #35CEFF;
+
+  color: #06142B;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(53, 206, 255, 0.30);
+}
+
+.pricing-button-arrow {
+  font-size: 24px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.pricing-image-card,
+.pricing-card {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* LEFT CARD */
+.pricing-visible .pricing-image-card {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.1s;
+}
+
+
+/* MIDDLE CARD */
+.pricing-visible .pricing-card-1 {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.2s;
+}
+
+
+/* RIGHT CARD */
+.pricing-visible .pricing-card-2 {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition-delay: 0.35s;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .pricing-container {
+    width: min(100% - 32px, 900px);
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .pricing-image-card {
+    grid-column: 1 / -1;
+
+    height: 430px;
+  }
+
+  .pricing-card {
+    height: 650px;
+  }
+
+  .pricing-image-content {
+    top: 50px;
+    left: 40px;
+  }
+
+  .pricing-image-arrow {
+    bottom: 45px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .pricing-section {
+    padding: 45px 0;
+  }
+
+  .pricing-container {
+    width: calc(100% - 28px);
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .pricing-image-card {
+    grid-column: auto;
+
+    height: 470px;
+  }
+
+  .pricing-card {
+    height: auto;
+
+    min-height: 600px;
+
+    padding: 27px 24px;
+  }
+
+  .pricing-image-content {
+    left: 28px;
+    top: 40px;
+  }
+
+  .pricing-image-content h2 {
+    font-size: 39px;
+
+    letter-spacing: -1px;
+  }
+
+  .pricing-image-small {
+    font-size: 14px;
+  }
+
+  .pricing-image-arrow {
+    left: 28px;
+    bottom: 35px;
+
+    width: 62px;
+    height: 62px;
+  }
+
+  .pricing-card-header h3 {
+    font-size: 23px;
+  }
+
+  .pricing-price {
+    font-size: 40px;
+  }
+
+  .pricing-save {
+    font-size: 15px;
+  }
+
+  .pricing-feature {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .pricing-container {
+    width: calc(100% - 20px);
+  }
+
+  .pricing-image-card {
+    height: 430px;
+  }
+
+  .pricing-image-content {
+    left: 24px;
+    top: 35px;
+  }
+
+  .pricing-image-content h2 {
+    font-size: 34px;
+  }
+
+  .pricing-card {
+    min-height: 570px;
+
+    padding: 24px 20px;
+  }
+
+  .pricing-card-header {
+    gap: 12px;
+  }
+
+  .pricing-icon {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    font-size: 25px;
+  }
+
+  .pricing-card-header h3 {
+    font-size: 21px;
+  }
+
+  .pricing-price {
+    font-size: 36px;
+  }
+
+  .pricing-button {
+    height: 54px;
+  }
+}

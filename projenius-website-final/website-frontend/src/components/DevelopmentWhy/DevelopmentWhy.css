@@ -1,0 +1,1045 @@
+/* =====================================================================
+   DEVELOPMENT WHY
+   Scoped styles - will not intentionally modify other sections
+===================================================================== */
+
+.pjdev-why {
+  /* =========================================================
+     REFERENCE PALETTE
+  ========================================================= */
+
+  --why-bg: #091633;
+  --why-bg-grid: rgba(78, 108, 160, 0.035);
+
+  --why-white: #eef3ff;
+  --why-text: #eaf0ff;
+  --why-muted: #91a8cc;
+
+  --why-blue: #1d5cff;
+  --why-blue-dark: #123fcf;
+  --why-blue-light: #6795ff;
+
+  --why-cyan: #39d4ee;
+  --why-cyan-dark: #0fa9d0;
+
+  --why-card-dark: #0a1633;
+  --why-card-mid: #101e42;
+
+  --why-border: #243b65;
+  --why-border-strong: #38588d;
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(
+      78px,
+      9vw,
+      130px
+    )
+    0;
+
+  overflow: hidden;
+
+  background:
+    var(--why-bg);
+
+  color:
+    var(--why-text);
+
+  isolation: isolate;
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-why::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--why-bg-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--why-bg-grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    58px 58px;
+}
+
+/* =========================================================
+   SOFT GLOW
+========================================================= */
+
+.pjdev-why::after {
+  content: "";
+
+  position: absolute;
+
+  right: -220px;
+  top: 15%;
+
+  width: 600px;
+  height: 600px;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        29,
+        92,
+        255,
+        0.07
+      ) 0%,
+      rgba(
+        57,
+        212,
+        238,
+        0.025
+      ) 35%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-why__wrap {
+  position: relative;
+
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 80px
+      )
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pjdev-why
+  .pjdevhead__title {
+  color:
+    var(--why-white);
+}
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.pjdev-why__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    18px;
+
+  margin-top:
+    64px;
+
+  align-items:
+    start;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.pjdev-why__card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+
+  min-width:
+    0;
+
+  min-height:
+    340px;
+
+  padding:
+    30px
+    26px
+    32px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius:
+    28px;
+
+  opacity:
+    0;
+
+  transform:
+    translateY(26px);
+
+  transition:
+    opacity
+      0.75s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    transform
+      0.45s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color
+      0.3s ease,
+    box-shadow
+      0.35s ease,
+    background
+      0.35s ease;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.pjdev-why__grid--in
+  .pjdev-why__card {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   REVEAL DELAYS
+========================================================= */
+
+.pjdev-why__card--1 {
+  transition-delay:
+    0s;
+}
+
+.pjdev-why__card--2 {
+  transition-delay:
+    0.08s;
+}
+
+.pjdev-why__card--3 {
+  transition-delay:
+    0.16s;
+}
+
+.pjdev-why__card--4 {
+  transition-delay:
+    0.24s;
+}
+
+/* =========================================================
+   STAGGERED CARD POSITION
+========================================================= */
+
+.pjdev-why__card--offset {
+  margin-top:
+    44px;
+}
+
+/* =========================================================
+   CARD 01
+========================================================= */
+
+.pjdev-why__card--1 {
+  background:
+    linear-gradient(
+      180deg,
+      #0b1735 0%,
+      #091633 100%
+    );
+
+  border-color:
+    rgba(
+      39,
+      62,
+      103,
+      0.65
+    );
+
+  color:
+    var(--why-text);
+}
+
+/* =========================================================
+   CARD 02 - BLUE
+========================================================= */
+
+.pjdev-why__card--2 {
+  background:
+    linear-gradient(
+      155deg,
+      #2864ff 0%,
+      #123fd1 100%
+    );
+
+  border-color:
+    rgba(
+      103,
+      149,
+      255,
+      0.45
+    );
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   CARD 03
+========================================================= */
+
+.pjdev-why__card--3 {
+  background:
+    linear-gradient(
+      180deg,
+      #0f1d40 0%,
+      #0c1837 100%
+    );
+
+  border-color:
+    var(--why-border-strong);
+
+  color:
+    var(--why-text);
+}
+
+/* =========================================================
+   CARD 04 - CYAN / BLUE
+========================================================= */
+
+.pjdev-why__card--4 {
+  background:
+    linear-gradient(
+      165deg,
+      #123a58 0%,
+      #0b1e3f 68%,
+      #0a1834 100%
+    );
+
+  border-color:
+    rgba(
+      57,
+      212,
+      238,
+      0.45
+    );
+
+  color:
+    var(--why-text);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.pjdev-why__grid--in
+  .pjdev-why__card:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 26px 55px
+    rgba(
+      0,
+      0,
+      0,
+      0.24
+    );
+}
+
+/* Dark cards */
+
+.pjdev-why__card--1:hover,
+.pjdev-why__card--3:hover {
+  border-color:
+    rgba(
+      103,
+      149,
+      255,
+      0.58
+    );
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d1b3d 0%,
+      #0a1734 100%
+    );
+}
+
+/* Blue card */
+
+.pjdev-why__card--2:hover {
+  border-color:
+    rgba(
+      180,
+      225,
+      255,
+      0.65
+    );
+
+  background:
+    linear-gradient(
+      155deg,
+      #3270ff 0%,
+      #1748dc 100%
+    );
+
+  box-shadow:
+    0 28px 60px
+    rgba(
+      18,
+      63,
+      209,
+      0.35
+    );
+}
+
+/* Cyan card */
+
+.pjdev-why__card--4:hover {
+  border-color:
+    rgba(
+      57,
+      212,
+      238,
+      0.75
+    );
+
+  background:
+    linear-gradient(
+      165deg,
+      #154768 0%,
+      #0c2447 68%,
+      #0a1835 100%
+    );
+
+  box-shadow:
+    0 28px 60px
+    rgba(
+      21,
+      123,
+      170,
+      0.23
+    );
+}
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.pjdev-why__deco {
+  position:
+    absolute;
+
+  right:
+    -30px;
+
+  top:
+    -30px;
+
+  width:
+    150px;
+
+  height:
+    150px;
+
+  pointer-events:
+    none;
+
+  opacity:
+    0.3;
+
+  transition:
+    transform
+      0.6s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity
+      0.35s ease;
+}
+
+.pjdev-why__deco--target {
+  color:
+    var(--why-cyan);
+}
+
+.pjdev-why__deco--route {
+  color:
+    #ffffff;
+}
+
+/* Move decorative graphic on hover */
+
+.pjdev-why__card:hover
+  .pjdev-why__deco {
+  transform:
+    translate(
+      -7px,
+      7px
+    )
+    rotate(
+      3deg
+    );
+
+  opacity:
+    0.42;
+}
+
+/* =========================================================
+   ICON WRAPPER
+========================================================= */
+
+.pjdev-why__icon-wrap {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  margin-bottom:
+    58px;
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.12
+    );
+
+  transition:
+    transform
+      0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    background
+      0.3s ease;
+}
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.pjdev-why__icon,
+.pjdev-why__card
+  .pjdevico {
+  width:
+    28px;
+
+  height:
+    28px;
+
+  color:
+    var(--why-blue-light);
+
+  transition:
+    transform
+      0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    color
+      0.3s ease;
+}
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.pjdev-why__card--1
+  .pjdev-why__icon-wrap {
+  background:
+    rgba(
+      61,
+      217,
+      238,
+      0.08
+    );
+}
+
+.pjdev-why__card--1
+  .pjdev-why__icon {
+  color:
+    var(--why-cyan);
+}
+
+.pjdev-why__card--2
+  .pjdev-why__icon-wrap {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+}
+
+.pjdev-why__card--2
+  .pjdev-why__icon {
+  color:
+    #ffffff;
+}
+
+.pjdev-why__card--3
+  .pjdev-why__icon {
+  color:
+    var(--why-blue-light);
+}
+
+.pjdev-why__card--4
+  .pjdev-why__icon {
+  color:
+    var(--why-blue-light);
+}
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.pjdev-why__card:hover
+  .pjdev-why__icon-wrap {
+  transform:
+    translateY(-3px);
+
+  background:
+    var(--why-blue);
+}
+
+.pjdev-why__card--1:hover
+  .pjdev-why__icon-wrap {
+  background:
+    var(--why-cyan);
+}
+
+.pjdev-why__card:hover
+  .pjdev-why__icon {
+  transform:
+    scale(1.1);
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.pjdev-why__content {
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.pjdev-why__num {
+  display:
+    block;
+
+  margin-bottom:
+    7px;
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.05em;
+
+  color:
+    var(--why-cyan);
+}
+
+/* Blue card number */
+
+.pjdev-why__card--2
+  .pjdev-why__num {
+  color:
+    #b8f5ff;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.pjdev-why__title {
+  margin:
+    0;
+
+  color:
+    currentColor;
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1.25rem,
+      1.9vw,
+      1.5rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.08;
+
+  letter-spacing:
+    -0.025em;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.pjdev-why__text {
+  max-width:
+    28ch;
+
+  margin-top:
+    13px;
+
+  color:
+    var(--why-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.96rem;
+
+  line-height:
+    1.55;
+}
+
+/* Blue card text */
+
+.pjdev-why__card--2
+  .pjdev-why__text {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.84
+    );
+}
+
+/* =========================================================
+   CARD SHINE
+========================================================= */
+
+.pjdev-why__card::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    -120%;
+
+  top:
+    -30%;
+
+  width:
+    75%;
+
+  height:
+    160%;
+
+  transform:
+    rotate(
+      18deg
+    );
+
+  pointer-events:
+    none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.07
+      ),
+      transparent
+    );
+
+  transition:
+    left
+      0.75s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.pjdev-why__card:hover::before {
+  left:
+    135%;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .pjdev-why__wrap {
+    width:
+      calc(
+        100% - 48px
+      );
+  }
+
+  .pjdev-why__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .pjdev-why__card--offset {
+    margin-top:
+      34px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-why {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+  .pjdev-why__wrap {
+    width:
+      calc(
+        100% - 28px
+      );
+  }
+
+  .pjdev-why__grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      16px;
+
+    margin-top:
+      42px;
+  }
+
+  .pjdev-why__card,
+  .pjdev-why__card--offset {
+    min-height:
+      300px;
+
+    margin-top:
+      0;
+
+    padding:
+      26px
+      23px
+      30px;
+
+    border-radius:
+      23px;
+  }
+
+  .pjdev-why__icon-wrap {
+    margin-bottom:
+      42px;
+  }
+
+  .pjdev-why__text {
+    max-width:
+      34ch;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .pjdev-why__wrap {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .pjdev-why__card {
+    min-height:
+      280px;
+  }
+
+  .pjdev-why__title {
+    font-size:
+      1.2rem;
+  }
+
+  .pjdev-why__text {
+    font-size:
+      0.9rem;
+  }
+
+  .pjdev-why__deco {
+    width:
+      125px;
+
+    height:
+      125px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-why__card {
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    transition:
+      none;
+  }
+
+  .pjdev-why__deco,
+  .pjdev-why__icon-wrap,
+  .pjdev-why__icon,
+  .pjdev-why__card::before {
+    transition:
+      none;
+  }
+}

@@ -1,0 +1,66 @@
+/* ContactEnquiryCard */
+.pjct-card { position: relative; display: block; cursor: pointer; }
+.pjct-card__input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+
+.pjct-card__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  min-height: 186px;
+  padding: 22px;
+  border: 1.5px solid var(--pjct-line);
+  border-radius: var(--pjct-radius);
+  background: var(--pjct-surface);
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+.pjct-card:hover .pjct-card__box { transform: translateY(-3px); border-color: var(--pjct-primary); box-shadow: var(--pjct-shadow); }
+
+.pjct-card__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--pjct-primary-soft);
+  color: var(--pjct-primary);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+.pjct-card__title { display: block; font-family: var(--pjct-font-display); font-weight: 700; font-size: 1.2rem; line-height: 1.15; letter-spacing: -0.01em; }
+.pjct-card__desc { display: block; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--pjct-muted); }
+
+/* selected state: border + tint + filled icon + check badge (not colour alone) */
+.pjct-card__check {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--pjct-primary);
+  color: var(--pjct-primary-ink);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.pjct-card__input:checked + .pjct-card__box {
+  border-color: var(--pjct-primary);
+  background: var(--pjct-primary-soft);
+  box-shadow: 0 0 0 1.5px var(--pjct-primary), var(--pjct-shadow);
+}
+.pjct-card__input:checked + .pjct-card__box .pjct-card__icon { background: var(--pjct-primary); color: var(--pjct-primary-ink); }
+.pjct-card__input:checked + .pjct-card__box .pjct-card__check { opacity: 1; transform: none; }
+.pjct-card__input:focus-visible + .pjct-card__box { outline: 3px solid var(--pjct-focus); outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .pjct-card__box { flex-direction: row; align-items: center; gap: 14px; min-height: 0; padding: 16px 52px 16px 16px; }
+  .pjct-card__desc { margin-top: 3px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjct-card__box, .pjct-card__icon, .pjct-card__check { transition: none; }
+  .pjct-card:hover .pjct-card__box { transform: none; }
+}

@@ -1,0 +1,605 @@
+/* =========================================================
+   GUIDANCE PROCESS SECTION
+========================================================= */
+
+.guidance-process-section {
+  width: 100%;
+  padding: 70px 30px 90px;
+  background: #f7f9fc;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.guidance-process-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.guidance-process-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.guidance-process-label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #55c8e8;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.guidance-process-heading h2 {
+  margin: 0;
+
+  color: #17191d;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(38px, 4vw, 55px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+
+  white-space: nowrap;
+}
+
+/* BLUE TEXT */
+
+.guidance-process-heading h2 span {
+  color: #35ceff;
+}
+
+/* =========================================================
+   PROCESS AREA
+========================================================= */
+
+.guidance-process-area {
+  width: 100%;
+  height: 610px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+/* =========================================================
+   MAIN CIRCLE
+========================================================= */
+
+.guidance-process-circle {
+  position: relative;
+
+  width: 600px;
+  height: 600px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   RING
+========================================================= */
+
+.guidance-process-ring {
+  position: absolute;
+
+  width: 440px;
+  height: 440px;
+
+  left: 80px;
+  top: 80px;
+
+  border: 3px solid #67908e;
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+
+  z-index: 1;
+
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+}
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.guidance-process-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 330px;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  z-index: 3;
+}
+
+.guidance-center-line {
+  width: 40px;
+  height: 4px;
+
+  margin: 0 auto 18px;
+
+  display: block;
+
+  border-radius: 10px;
+
+  background: #91a5b8;
+}
+
+.guidance-process-center h3 {
+  margin: 0 0 13px;
+
+  color: #17191d;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+.guidance-process-center p {
+  margin: 0;
+
+  color: #7e8997;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   STEP BASE
+========================================================= */
+
+.guidance-step {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  z-index: 10;
+
+  opacity: 0;
+
+  animation:
+    guidanceStepIn
+    0.55s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  animation-delay: var(--step-delay);
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   NODE
+========================================================= */
+
+.guidance-step-node {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 4px solid #ffffff;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 14px rgba(30, 50, 70, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.guidance-step-node span {
+  margin-top: 1px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+.guidance-step-blue .guidance-step-node {
+  background: #078dcc;
+}
+
+.guidance-step-orange .guidance-step-node {
+  background: #eb8500;
+}
+
+.guidance-step-teal .guidance-step-node {
+  background: #128d88;
+}
+
+/* =========================================================
+   STEP TITLE
+========================================================= */
+
+.guidance-step-title {
+  position: absolute;
+
+  color: #46546a;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.guidance-step-top {
+  top: -2px;
+  left: 250px;
+}
+
+.guidance-step-top .guidance-step-node {
+  left: 19px;
+  top: 0;
+}
+
+.guidance-step-top .guidance-step-title {
+  top: -30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+/* =========================================================
+   TOP RIGHT
+========================================================= */
+
+.guidance-step-top-right {
+  top: 104px;
+  right: -1px;
+}
+
+.guidance-step-top-right .guidance-step-node {
+  right: 0;
+  top: 0;
+}
+
+.guidance-step-top-right .guidance-step-title {
+  right: 80px;
+  top: 25px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.guidance-step-right {
+  top: 250px;
+  right: -1px;
+}
+
+.guidance-step-right .guidance-step-node {
+  right: 0;
+  top: 19px;
+}
+
+.guidance-step-right .guidance-step-title {
+  right: 82px;
+  top: 38px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.guidance-step-bottom {
+  bottom: -1px;
+  left: 250px;
+}
+
+.guidance-step-bottom .guidance-step-node {
+  left: 19px;
+  bottom: 0;
+}
+
+.guidance-step-bottom .guidance-step-title {
+  left: 50%;
+  bottom: -31px;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+/* =========================================================
+   BOTTOM LEFT
+========================================================= */
+
+.guidance-step-bottom-left {
+  bottom: 104px;
+  left: -1px;
+}
+
+.guidance-step-bottom-left .guidance-step-node {
+  left: 0;
+  bottom: 0;
+}
+
+.guidance-step-bottom-left .guidance-step-title {
+  left: 82px;
+  bottom: 26px;
+
+  text-align: left;
+}
+
+/* =========================================================
+   TOP LEFT
+========================================================= */
+
+.guidance-step-top-left {
+  top: 104px;
+  left: -1px;
+}
+
+.guidance-step-top-left .guidance-step-node {
+  left: 0;
+  top: 0;
+}
+
+.guidance-step-top-left .guidance-step-title {
+  left: 82px;
+  top: 26px;
+
+  text-align: left;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.guidance-step:hover .guidance-step-node {
+  transform: scale(1.09);
+
+  box-shadow:
+    0 8px 20px rgba(30, 50, 70, 0.22),
+    0 0 0 3px rgba(53, 206, 255, 0.12);
+}
+
+.guidance-step:hover .guidance-step-title {
+  color: #129ed2;
+}
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.guidance-step-tooltip {
+  position: absolute;
+
+  width: 190px;
+
+  padding: 11px 13px;
+
+  border-radius: 9px;
+
+  background: #172033;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+  line-height: 1.45;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.16);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  pointer-events: none;
+}
+
+/* Top tooltip */
+
+.guidance-step-top .guidance-step-tooltip {
+  top: 75px;
+  left: -45px;
+
+  transform: translateY(5px);
+}
+
+/* Top-right */
+
+.guidance-step-top-right .guidance-step-tooltip {
+  top: 75px;
+  right: 0;
+
+  transform: translateY(5px);
+}
+
+/* Right */
+
+.guidance-step-right .guidance-step-tooltip {
+  top: 90px;
+  right: 0;
+
+  transform: translateY(5px);
+}
+
+/* Bottom */
+
+.guidance-step-bottom .guidance-step-tooltip {
+  bottom: 75px;
+  left: -45px;
+
+  transform: translateY(-5px);
+}
+
+/* Bottom-left */
+
+.guidance-step-bottom-left .guidance-step-tooltip {
+  bottom: 75px;
+  left: 0;
+
+  transform: translateY(-5px);
+}
+
+/* Top-left */
+
+.guidance-step-top-left .guidance-step-tooltip {
+  top: 75px;
+  left: 0;
+
+  transform: translateY(5px);
+}
+
+.guidance-step:hover .guidance-step-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   ENTRANCE ANIMATION
+========================================================= */
+
+@keyframes guidanceStepIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .guidance-process-heading h2 {
+    font-size: 45px;
+    white-space: normal;
+  }
+
+  .guidance-process-area {
+    transform: scale(0.9);
+    transform-origin: center top;
+
+    margin-bottom: -60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .guidance-process-section {
+    padding: 60px 20px 70px;
+  }
+
+  .guidance-process-heading h2 {
+    font-size: 36px;
+  }
+
+  .guidance-process-area {
+    height: 540px;
+
+    transform: scale(0.78);
+    transform-origin: center top;
+
+    margin-bottom: -120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guidance-process-heading {
+    margin-bottom: 15px;
+  }
+
+  .guidance-process-label {
+    font-size: 13px;
+  }
+
+  .guidance-process-heading h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .guidance-process-area {
+    height: 460px;
+
+    transform: scale(0.62);
+    transform-origin: center top;
+
+    margin-bottom: -220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guidance-step,
+  .guidance-step-node,
+  .guidance-step-title,
+  .guidance-step-tooltip {
+    animation: none !important;
+    transition: none !important;
+  }
+}

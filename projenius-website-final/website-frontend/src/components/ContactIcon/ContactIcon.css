@@ -1,0 +1,6 @@
+/* ContactIcon — shared inline SVG icon */
+.pjct-icon {
+  flex: none;
+  display: inline-block;
+  vertical-align: middle;
+}

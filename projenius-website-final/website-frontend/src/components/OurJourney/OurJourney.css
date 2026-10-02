@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+.our-journey-section,
+.our-journey-section *,
+.our-journey-section *::before,
+.our-journey-section *::after {
+  box-sizing: border-box;
+}
+
+.our-journey-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 48px 24px 100px;
+  background:
+    radial-gradient(circle at 50% 43%, rgba(18, 133, 205, 0.075), transparent 30%),
+    #050c1b;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.our-journey-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.our-journey-header {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+}
+
+.journey-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 27px;
+  padding: 5px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #1ea9eb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+  line-height: 1;
+}
+
+.our-journey-header h2 {
+  margin: 14px 0 8px;
+  color: #f7f9fc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: clamp(48px, 5.2vw, 60px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -2.7px;
+}
+
+.our-journey-header h2 span {
+  color: #1da9eb;
+}
+
+.our-journey-header p {
+  margin: 0 auto;
+  color: #7e899c;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.journey-timeline {
+  position: relative;
+  width: 100%;
+  margin: 65px auto 0;
+  padding: 0 0 28px;
+}
+
+/* CHANGED: top added so the grey line starts at the first node (245px / 2 = 122.5px) */
+.journey-axis {
+  position: absolute;
+  top: 122.5px;
+  bottom: 150.5px;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: #1b2638;
+  border-radius: 999px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.03);
+}
+
+/* CHANGED: top added so the blue line starts at the first node, max-height adjusted for both ends */
+.journey-axis-progress {
+  position: absolute;
+  top: 122.5px;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  max-height: calc(100% - 273px);
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #35ceff 0%,
+    #0ba6e9 52%,
+    #35ceff 100%
+  );
+  box-shadow:
+    0 0 7px rgba(53, 206, 255, 0.8),
+    0 0 19px rgba(53, 206, 255, 0.3);
+  transition: height 80ms linear;
+  z-index: 2;
+}
+
+.journey-items {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* =========================================================
+   CARD WRAPPER
+========================================================= */
+
+.journey-card-wrap {
+  position: relative;
+  width: 50%;
+  min-height: 245px;
+  display: flex;
+  align-items: center;
+}
+
+.journey-card-left {
+  align-self: flex-start;
+  justify-content: flex-end;
+  padding-right: 78px;
+}
+
+.journey-card-right {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 78px;
+}
+
+.journey-card {
+  position: relative;
+  width: 100%;
+  max-width: 432px;
+  min-height: 198px;
+  padding: 25px 28px 23px;
+  overflow: visible;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 15px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 32, 49, 0.96),
+      rgba(15, 23, 38, 0.96)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 16px 35px rgba(0, 0, 0, 0.13);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.journey-card-wrap:hover .journey-card,
+.journey-card-active .journey-card {
+  border-color: #11a9eb;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(22, 36, 55, 0.99),
+      rgba(12, 25, 42, 0.99)
+    );
+  box-shadow:
+    0 0 0 1px rgba(17, 169, 235, 0.08),
+    0 15px 38px rgba(0, 0, 0, 0.2),
+    0 0 24px rgba(0, 166, 235, 0.08);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.journey-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.journey-year {
+  color: #21afea;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.journey-card h3 {
+  margin: 18px 0 10px;
+  color: #f4f7fb;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.journey-card p {
+  margin: 0;
+  color: #858fa1;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.48;
+}
+
+/* =========================================================
+   CARD -> TIMELINE CONNECTOR
+========================================================= */
+
+.journey-card-connector {
+  position: absolute;
+  top: 50%;
+  width: 78px;
+  height: 1px;
+  transform: translateY(-50%);
+  background: #202d41;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+  z-index: 1;
+}
+
+.journey-card-left .journey-card-connector {
+  right: 0;
+}
+
+.journey-card-right .journey-card-connector {
+  left: 0;
+}
+
+.journey-card-wrap:hover .journey-card-connector,
+.journey-card-active .journey-card-connector {
+  background: #12a9ec;
+  box-shadow: 0 0 8px rgba(18, 169, 236, 0.65);
+}
+
+/* =========================================================
+   TIMELINE NODE
+========================================================= */
+
+.journey-node {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  border: 2px solid #109fdd;
+  border-radius: 50%;
+  background: #061426;
+  color: #16b1ef;
+  box-shadow:
+    0 0 0 5px rgba(5, 12, 27, 0.96),
+    0 0 13px rgba(18, 169, 236, 0.18);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  z-index: 4;
+}
+
+.journey-card-left .journey-node {
+  right: -25px;
+}
+
+.journey-card-right .journey-node {
+  left: -25px;
+}
+
+.journey-card-wrap:hover .journey-node,
+.journey-card-active .journey-node {
+  background: #0b2239;
+  border-color: #35ceff;
+  color: #35ceff;
+  box-shadow:
+    0 0 0 5px rgba(5, 12, 27, 0.96),
+    0 0 17px rgba(53, 206, 255, 0.5);
+  transform: translateY(-50%) scale(1.06);
+}
+
+/* =========================================================
+   HOVER LINE
+========================================================= */
+
+.journey-hover-line {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: #35ceff;
+  box-shadow: 0 0 7px rgba(53, 206, 255, 0.6);
+  opacity: 0;
+  transform: translateY(-50%);
+  transition:
+    width 180ms ease,
+    opacity 180ms ease;
+  pointer-events: none;
+}
+
+.journey-card-left .journey-hover-line {
+  right: -78px;
+}
+
+.journey-card-right .journey-hover-line {
+  left: -78px;
+}
+
+.journey-card-wrap:hover .journey-hover-line,
+.journey-card-active .journey-hover-line {
+  width: 78px;
+  opacity: 1;
+}
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .our-journey-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .journey-card-left {
+    padding-right: 55px;
+  }
+
+  .journey-card-right {
+    padding-left: 55px;
+  }
+
+  .journey-card-connector {
+    width: 55px;
+  }
+
+  .journey-card-left .journey-hover-line {
+    right: -55px;
+  }
+
+  .journey-card-right .journey-hover-line {
+    left: -55px;
+  }
+
+  .journey-card-wrap:hover .journey-hover-line,
+  .journey-card-active .journey-hover-line {
+    width: 55px;
+  }
+
+  .journey-card {
+    padding: 22px 23px;
+  }
+
+  .journey-card p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .our-journey-section {
+    padding: 40px 16px 75px;
+  }
+
+  .our-journey-header h2 {
+    font-size: 43px;
+    letter-spacing: -1.8px;
+  }
+
+  .our-journey-header p {
+    font-size: 14px;
+  }
+
+  .journey-desktop-break {
+    display: none;
+  }
+
+  .journey-timeline {
+    margin-top: 48px;
+  }
+
+  .journey-axis,
+  .journey-axis-progress {
+    left: 17px;
+    transform: none;
+  }
+
+  /* CHANGED: mobile start and stop points (220px / 2 = 110px top, 110px + 28px = 138px bottom) */
+  .journey-axis {
+    top: 110px;
+    bottom: 138px;
+  }
+
+  .journey-axis-progress {
+    top: 110px;
+    max-height: calc(100% - 248px);
+  }
+
+  .journey-card-wrap {
+    width: 100%;
+    min-height: 220px;
+    padding-left: 58px;
+    padding-right: 0;
+    align-self: auto;
+    justify-content: flex-start;
+  }
+
+  .journey-card {
+    max-width: none;
+    min-height: 178px;
+    padding: 20px 20px 19px;
+    border-radius: 13px;
+  }
+
+  .journey-card-top {
+    justify-content: flex-start;
+  }
+
+  .journey-year {
+    font-size: 23px;
+  }
+
+  .journey-card h3 {
+    margin-top: 12px;
+    font-size: 17px;
+  }
+
+  .journey-card p {
+    font-size: 13px;
+    line-height: 1.48;
+  }
+
+  .journey-card-connector {
+    left: 17px !important;
+    right: auto !important;
+    width: 41px;
+  }
+
+  .journey-card-left .journey-hover-line,
+  .journey-card-right .journey-hover-line {
+    left: -41px;
+    right: auto;
+  }
+
+  .journey-card-wrap:hover .journey-hover-line,
+  .journey-card-active .journey-hover-line {
+    width: 41px;
+  }
+
+  .journey-node {
+    left: -8px !important;
+    right: auto !important;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-axis-progress,
+  .journey-card,
+  .journey-card-connector,
+  .journey-node,
+  .journey-hover-line {
+    transition: none !important;
+  }
+}

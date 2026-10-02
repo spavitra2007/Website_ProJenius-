@@ -1,0 +1,1209 @@
+/* =========================================================
+   TECHNOLOGY PATHWAYS
+========================================================= */
+
+.technologyPathways {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #0a1122;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.technologyPathways__grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.32;
+
+  background-image:
+    linear-gradient(
+      rgba(75, 106, 150, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(75, 106, 150, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.technologyPathways__container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1248px,
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+
+  padding: 27px 0 70px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.technologyPathways__header {
+  max-width: 780px;
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation:
+    technologyPathwaysHeaderIn
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes technologyPathwaysHeaderIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.technologyPathways__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #6ea8ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.technologyPathways__eyebrow-line {
+  width: 27px;
+
+  height: 1px;
+
+  background: #69aaff;
+}
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.technologyPathways__heading {
+  margin: 0;
+
+  color: #edf3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 62px;
+
+  font-weight: 800;
+
+  line-height: 1.02;
+
+  letter-spacing: -2.7px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.technologyPathways__intro {
+  max-width: 735px;
+
+  margin: 27px 0 0;
+
+  color: #a7b8d3;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.72;
+}
+
+/* =========================================================
+   PATHWAY MAP
+========================================================= */
+
+.technologyPathways__map {
+  position: relative;
+
+  height: 430px;
+
+  margin-top: 57px;
+}
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.technologyPathways__svg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BASE BRANCHES
+========================================================= */
+
+.technologyPathways__branch {
+  fill: none;
+
+  stroke: #324662;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  opacity: 0.85;
+}
+
+/* =========================================================
+   ACTIVE BRANCH
+========================================================= */
+
+.technologyPathways__branch-active {
+  fill: none;
+
+  stroke: #36d7ef;
+
+  stroke-width: 2.6;
+
+  stroke-linecap: round;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(
+        54,
+        215,
+        239,
+        0.6
+      )
+    );
+
+  pathLength: 1;
+
+  stroke-dasharray: 1;
+
+  stroke-dashoffset: 1;
+
+  animation:
+    technologyPathwaysBranchDraw
+    0.65s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes technologyPathwaysBranchDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* =========================================================
+   MOVING DOT
+========================================================= */
+
+.technologyPathways__travel-dot {
+  fill: #ffffff;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(
+        255,
+        255,
+        255,
+        0.95
+      )
+    );
+}
+
+/* =========================================================
+   SOURCE CARD
+========================================================= */
+
+.technologyPathways__source {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 0;
+
+  top: 169px;
+
+  width: 205px;
+
+  height: 94px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  padding-left: 20px;
+
+  border:
+    1px solid
+    #314768;
+
+  border-radius: 11px;
+
+  background: #101a34;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  animation:
+    technologyPathwaysSourceIn
+    0.65s
+    0.15s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes technologyPathwaysSourceIn {
+  from {
+    opacity: 0;
+
+    transform: translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   SOURCE CONTENT
+========================================================= */
+
+.technologyPathways__source-content h3 {
+  margin: 0;
+
+  color: #e7eefb;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.technologyPathways__source-content p {
+  margin: 7px 0 0;
+
+  color: #788ca9;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   SOURCE NODE
+========================================================= */
+
+.technologyPathways__source-node {
+  width: 13px;
+
+  height: 13px;
+
+  flex: 0 0 auto;
+
+  margin-right: -7px;
+
+  border-radius: 50%;
+
+  background: #76a7ff;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      118,
+      167,
+      255,
+      0.12
+    ),
+    0 0 18px
+    rgba(
+      118,
+      167,
+      255,
+      0.5
+    );
+}
+
+/* =========================================================
+   CARDS CONTAINER
+========================================================= */
+
+.technologyPathways__cards {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 0;
+
+  right: 0;
+
+  width: calc(100% - 405px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   TECHNOLOGY CARD
+========================================================= */
+
+.technologyPathways__card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 74px;
+
+  box-sizing: border-box;
+
+  padding: 0 22px;
+
+  border:
+    1px solid
+    #283b5d;
+
+  border-radius: 10px;
+
+  background: #111c37;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.28s ease,
+    background-color 0.28s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+
+  opacity: 0;
+
+  transform: translateX(14px);
+
+  animation:
+    technologyPathwaysCardIn
+    0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+.technologyPathways__card:nth-child(1) {
+  animation-delay: 0.16s;
+}
+
+.technologyPathways__card:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.technologyPathways__card:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.technologyPathways__card:nth-child(4) {
+  animation-delay: 0.34s;
+}
+
+.technologyPathways__card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes technologyPathwaysCardIn {
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.technologyPathways__card:hover {
+  border-color: #405f8c;
+
+  background: #14203d;
+
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   CARD ACTIVE
+========================================================= */
+
+.technologyPathways__card--active {
+  border-color: #5d8ed0;
+
+  background: #131f3b;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(
+      93,
+      142,
+      208,
+      0.42
+    ),
+    0 0 20px
+    rgba(
+      76,
+      135,
+      211,
+      0.1
+    );
+}
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.technologyPathways__card-number {
+  flex: 0 0 34px;
+
+  color: #7489a9;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.technologyPathways__card-content {
+  min-width: 0;
+}
+
+.technologyPathways__card-content h3 {
+  margin: 0;
+
+  color: #edf3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.technologyPathways__card-content p {
+  margin: 4px 0 0;
+
+  color: #7e91ae;
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   CARD ARROW
+========================================================= */
+
+.technologyPathways__card-arrow {
+  margin-left: auto;
+
+  color: #7898c1;
+
+  font-size: 17px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.technologyPathways__card:hover
+  .technologyPathways__card-arrow,
+.technologyPathways__card--active
+  .technologyPathways__card-arrow {
+  color: #67b7ff;
+
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   JOURNEY PANEL
+========================================================= */
+
+.technologyPathways__journey {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 17px;
+
+  padding: 42px 43px 40px;
+
+  border:
+    1px solid
+    #263e61;
+
+  border-radius: 13px;
+
+  background: #111c37;
+
+  animation:
+    technologyPathwaysJourneyIn
+    0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes technologyPathwaysJourneyIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   JOURNEY PATTERN
+========================================================= */
+
+.technologyPathways__journey-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.4;
+
+  background-image:
+    radial-gradient(
+      rgba(
+        74,
+        121,
+        181,
+        0.27
+      ) 0.8px,
+      transparent 0.8px
+    );
+
+  background-size: 22px 22px;
+}
+
+/* =========================================================
+   JOURNEY HEADER
+========================================================= */
+
+.technologyPathways__journey-header {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 0.88fr)
+    minmax(350px, 1.12fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+.technologyPathways__journey-eyebrow {
+  color: #7b94b7;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.2px;
+}
+
+.technologyPathways__journey-heading h3 {
+  margin: 2px 0 0;
+
+  color: #edf4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.technologyPathways__journey-header > p {
+  margin: 0;
+
+  color: #8fa5c5;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   JOURNEY TRACK
+========================================================= */
+
+.technologyPathways__journey-track {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  margin-top: 35px;
+}
+
+/* =========================================================
+   JOURNEY LINE
+========================================================= */
+
+.technologyPathways__journey-line {
+  position: absolute;
+
+  top: 11px;
+
+  left: 9px;
+
+  right: 9px;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6fa5ff,
+      #3cd5ec,
+      #6fa5ff
+    );
+
+  transform-origin: left center;
+
+  animation:
+    technologyPathwaysJourneyLine
+    0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes technologyPathwaysJourneyLine {
+  from {
+    opacity: 0;
+
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================================
+   JOURNEY STEP
+========================================================= */
+
+.technologyPathways__journey-step {
+  position: relative;
+
+  min-width: 0;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  animation:
+    technologyPathwaysStepIn
+    0.4s
+    var(--journey-delay)
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes technologyPathwaysStepIn {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   JOURNEY DOT
+========================================================= */
+
+.technologyPathways__journey-dot {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #75a7ff;
+
+  box-shadow:
+    0 0 0 5px
+    #182949;
+}
+
+.technologyPathways__journey-dot span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #bed7ff;
+}
+
+/* =========================================================
+   JOURNEY NUMBER
+========================================================= */
+
+.technologyPathways__journey-number {
+  display: block;
+
+  margin-top: 17px;
+
+  color: #8295b4;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   JOURNEY TITLE
+========================================================= */
+
+.technologyPathways__journey-step h4 {
+  margin: 4px 0 0;
+
+  color: #edf3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .technologyPathways__container {
+    width: min(
+      920px,
+      calc(100% - 36px)
+    );
+  }
+
+  .technologyPathways__heading {
+    font-size: 54px;
+  }
+
+  .technologyPathways__map {
+    height: 410px;
+  }
+
+  .technologyPathways__source {
+    width: 175px;
+  }
+
+  .technologyPathways__cards {
+    width: calc(100% - 335px);
+  }
+
+  .technologyPathways__card {
+    min-height: 70px;
+
+    padding: 0 17px;
+  }
+
+  .technologyPathways__card-content h3 {
+    font-size: 16px;
+  }
+
+  .technologyPathways__card-content p {
+    font-size: 12px;
+  }
+
+  .technologyPathways__journey {
+    padding-left: 30px;
+
+    padding-right: 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .technologyPathways__container {
+    width: calc(100% - 24px);
+
+    padding: 25px 0 55px;
+  }
+
+  .technologyPathways__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .technologyPathways__heading {
+    font-size: 40px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .technologyPathways__intro {
+    margin-top: 20px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  /* =============================================
+     STACK PATHWAY
+  ============================================= */
+
+  .technologyPathways__map {
+    height: auto;
+
+    margin-top: 40px;
+
+    padding-top: 112px;
+  }
+
+  .technologyPathways__svg {
+    display: none;
+  }
+
+  .technologyPathways__source {
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 215px;
+
+    transform:
+      translateX(-50%);
+
+    animation: none;
+  }
+
+  .technologyPathways__cards {
+    position: relative;
+
+    top: auto;
+
+    right: auto;
+
+    width: 100%;
+
+    gap: 9px;
+  }
+
+  .technologyPathways__card {
+    min-height: 76px;
+  }
+
+  /* =============================================
+     JOURNEY
+  ============================================= */
+
+  .technologyPathways__journey {
+    margin-top: 28px;
+
+    padding: 30px 20px;
+  }
+
+  .technologyPathways__journey-header {
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+  }
+
+  .technologyPathways__journey-heading h3 {
+    font-size: 26px;
+  }
+
+  .technologyPathways__journey-header > p {
+    font-size: 14px;
+  }
+
+  .technologyPathways__journey-track {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 29px;
+
+    padding-left: 20px;
+  }
+
+  .technologyPathways__journey-line {
+    top: 10px;
+
+    left: 30px;
+
+    right: auto;
+
+    width: 2px;
+
+    height: calc(100% - 18px);
+
+    transform-origin: top center;
+  }
+
+  .technologyPathways__journey-dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .technologyPathways__journey-number {
+    position: absolute;
+
+    top: 0;
+    left: 34px;
+
+    margin: 0;
+  }
+
+  .technologyPathways__journey-step h4 {
+    margin:
+      26px
+      0
+      0
+      34px;
+
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .technologyPathways__container {
+    width: calc(100% - 18px);
+  }
+
+  .technologyPathways__heading {
+    font-size: 35px;
+  }
+
+  .technologyPathways__intro {
+    font-size: 14px;
+  }
+
+  .technologyPathways__source {
+    width: 195px;
+
+    height: 82px;
+  }
+
+  .technologyPathways__source-content h3 {
+    font-size: 18px;
+  }
+
+  .technologyPathways__source-content p {
+    font-size: 12px;
+  }
+
+  .technologyPathways__card {
+    min-height: 72px;
+
+    padding: 0 14px;
+  }
+
+  .technologyPathways__card-number {
+    flex-basis: 29px;
+
+    font-size: 10px;
+  }
+
+  .technologyPathways__card-content h3 {
+    font-size: 15px;
+  }
+
+  .technologyPathways__card-content p {
+    font-size: 11.5px;
+  }
+
+  .technologyPathways__journey {
+    padding:
+      26px
+      16px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .technologyPathways *,
+  .technologyPathways::before,
+  .technologyPathways::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

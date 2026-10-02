@@ -1,0 +1,1664 @@
+/* =====================================================================
+   DEVELOPMENT PATHWAYS
+   Fully scoped. Does not modify other sections.
+===================================================================== */
+
+.pjdev-pathways {
+  --pathways-bg: #08112a;
+  --pathways-card: #0a1633;
+  --pathways-card-soft: #0d1b3a;
+
+  --pathways-white: #eaf0ff;
+  --pathways-white-soft: #d7e2f4;
+
+  --pathways-muted: #91a7c9;
+  --pathways-muted-soft: #7489aa;
+
+  --pathways-blue: #1d5cff;
+  --pathways-blue-soft: #5f92ff;
+
+  --pathways-cyan: #12c9e0;
+  --pathways-border: #203963;
+  --pathways-border-soft: #192e53;
+  --pathways-border-active: #315ca2;
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(76px, 9vw, 125px)
+    0
+    clamp(80px, 10vw, 135px);
+
+  overflow-x: clip;
+
+  background:
+    var(--pathways-bg);
+
+  color:
+    var(--pathways-white);
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-pathways::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(74, 108, 157, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(74, 108, 157, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+
+  opacity:
+    0.55;
+}
+
+/* =========================================================
+   SOFT CYAN/BLUE LIGHT
+========================================================= */
+
+.pjdev-pathways::after {
+  content: "";
+
+  position: absolute;
+
+  top: -220px;
+
+  right: -200px;
+
+  width: 650px;
+
+  height: 650px;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        18,
+        201,
+        224,
+        0.075
+      ) 0%,
+      rgba(
+        29,
+        92,
+        255,
+        0.04
+      ) 36%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   WRAP
+========================================================= */
+
+.pjdev-pathways__wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 80px)
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   DEVELOPMENT SECTION HEAD OVERRIDE
+   Scoped only to Pathways.
+========================================================= */
+
+.pjdev-pathways .pjdevhead {
+  max-width:
+    790px;
+}
+
+.pjdev-pathways .pjdevhead__title {
+  margin:
+    0;
+
+  color:
+    var(--pathways-white);
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    sans-serif;
+
+  font-size:
+    clamp(
+      2.4rem,
+      4vw,
+      3.65rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.04;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.pjdev-pathways .pjdevhead__text {
+  max-width:
+    62ch;
+
+  margin-top:
+    19px;
+
+  color:
+    var(--pathways-muted);
+
+  font-family:
+    "Segoe UI",
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.25vw,
+      1.12rem
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    1.55;
+}
+
+/* =========================================================
+   PATHWAY GRID
+========================================================= */
+
+.pjdev-pathways__grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    1.25fr
+    1fr;
+
+  align-items:
+    start;
+
+  gap:
+    20px;
+
+  margin-top:
+    62px;
+}
+
+/* =========================================================
+   CARD BASE
+========================================================= */
+
+.pjdev-pathways__card {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  min-width:
+    0;
+
+  overflow:
+    hidden;
+
+  padding:
+    34px;
+
+  border:
+    1px solid
+    var(--pathways-border);
+
+  border-radius:
+    16px;
+
+  opacity:
+    0;
+
+  transform:
+    translateY(24px);
+
+  transition:
+    opacity 0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    transform 0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pjdev-pathways__card--in {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   NEW CARD
+========================================================= */
+
+.pjdev-pathways__card--new {
+  min-height:
+    570px;
+
+  background:
+    linear-gradient(
+      165deg,
+      #0d1c3e 0%,
+      #0a1633 100%
+    );
+}
+
+/* =========================================================
+   IMPROVE CARD
+========================================================= */
+
+.pjdev-pathways__card--improve {
+  min-height:
+    570px;
+
+  margin-top:
+    56px;
+
+  background:
+    linear-gradient(
+      165deg,
+      #0a1633 0%,
+      #08142e 100%
+    );
+
+  border-color:
+    #1c3158;
+
+  transition-delay:
+    0.1s;
+}
+
+.pjdev-pathways__card--improve:hover {
+  border-color:
+    #2e4f84;
+
+  box-shadow:
+    0 16px 38px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.pjdev-pathways__visual {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    300px;
+
+  flex-shrink:
+    0;
+
+  margin-bottom:
+    22px;
+}
+
+/* =========================================================
+   MOCK SCREEN
+========================================================= */
+
+.pjdev-pathways__mock {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    100%;
+}
+
+/* =========================================================
+   BLANK CANVAS
+========================================================= */
+
+.pjdev-pathways__blank {
+  position:
+    absolute;
+
+  inset:
+    18px;
+
+  z-index:
+    5;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1.5px dashed
+    rgba(
+      91,
+      145,
+      255,
+      0.35
+    );
+
+  border-radius:
+    14px;
+
+  color:
+    #649aff;
+
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.025
+    );
+}
+
+.pjdev-pathways__blank span {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+}
+
+.pjdev-pathways__blank i {
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    32px;
+
+  height:
+    32px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.12
+    );
+
+  color:
+    #5792ff;
+
+  font-size:
+    20px;
+
+  font-style:
+    normal;
+}
+
+/* =========================================================
+   BUILD ANIMATION
+   Fixed selector syntax.
+========================================================= */
+
+.pjdev-pathways__build:not(
+    .pjdev-pathways__build--play
+  )
+  .pjdevmock__nav,
+.pjdev-pathways__build:not(
+    .pjdev-pathways__build--play
+  )
+  .pjdevmock__hero > div,
+.pjdev-pathways__build:not(
+    .pjdev-pathways__build--play
+  )
+  .pjdevmock__tile {
+  opacity:
+    0;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__nav,
+.pjdev-pathways__build--play
+  .pjdevmock__hero > div,
+.pjdev-pathways__build--play
+  .pjdevmock__tile {
+  animation:
+    pjdevPathwaysBuildIn
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    backwards;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__nav {
+  animation-delay:
+    1.5s;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__hero > div:nth-child(1) {
+  animation-delay:
+    1.7s;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__hero > div:nth-child(2) {
+  animation-delay:
+    1.9s;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__tile:nth-child(1) {
+  animation-delay:
+    2.1s;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__tile:nth-child(2) {
+  animation-delay:
+    2.3s;
+}
+
+.pjdev-pathways__build--play
+  .pjdevmock__tile:nth-child(3) {
+  animation-delay:
+    2.5s;
+}
+
+.pjdev-pathways__build--play
+  .pjdev-pathways__blank {
+  animation:
+    pjdevPathwaysBlankOut
+    0.5s
+    1.1s
+    forwards;
+}
+
+@keyframes pjdevPathwaysBuildIn {
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateY(16px)
+      scale(0.97);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      none;
+  }
+}
+
+@keyframes pjdevPathwaysBlankOut {
+  to {
+    opacity:
+      0;
+
+    visibility:
+      hidden;
+  }
+}
+
+/* =========================================================
+   IMPROVE / SCAN
+========================================================= */
+
+.pjdev-pathways__scan:not(
+    .pjdev-pathways__scan--play
+  )
+  .pjdevmock__after {
+  clip-path:
+    inset(
+      0 100% 0 0
+    );
+}
+
+.pjdev-pathways__scan--play
+  .pjdevmock__after {
+  animation:
+    pjdevPathwaysReveal
+    2.6s
+    cubic-bezier(
+      0.6,
+      0,
+      0.3,
+      1
+    )
+    0.3s
+    backwards;
+}
+
+@keyframes pjdevPathwaysReveal {
+  from {
+    clip-path:
+      inset(
+        0 100% 0 0
+      );
+  }
+
+  to {
+    clip-path:
+      inset(
+        0 0 0 0
+      );
+  }
+}
+
+/* =========================================================
+   SCAN LINE
+========================================================= */
+
+.pjdev-pathways__scanline {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  left:
+    0;
+
+  z-index:
+    10;
+
+  width:
+    2px;
+
+  background:
+    var(--pathways-cyan);
+
+  box-shadow:
+    0 0 16px
+    4px
+    rgba(
+      61,
+      217,
+      238,
+      0.58
+    );
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+}
+
+.pjdev-pathways__scan--play
+  .pjdev-pathways__scanline {
+  animation:
+    pjdevPathwaysScan
+    2.6s
+    cubic-bezier(
+      0.6,
+      0,
+      0.3,
+      1
+    )
+    0.3s
+    backwards;
+}
+
+@keyframes pjdevPathwaysScan {
+  0% {
+    left:
+      0;
+
+    opacity:
+      1;
+  }
+
+  97% {
+    opacity:
+      1;
+  }
+
+  100% {
+    left:
+      100%;
+
+    opacity:
+      0;
+  }
+}
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.pjdev-pathways__kicker {
+  margin:
+    0 0 9px;
+
+  color:
+    var(--pathways-muted-soft);
+
+  font-size:
+    0.88rem;
+
+  line-height:
+    1.4;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.pjdev-pathways__card-title {
+  margin:
+    0;
+
+  color:
+    var(--pathways-white);
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    sans-serif;
+
+  font-size:
+    clamp(
+      1.65rem,
+      2.2vw,
+      2.15rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.06;
+
+  letter-spacing:
+    -0.035em;
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.pjdev-pathways__tags {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    8px;
+
+  margin:
+    20px
+    0
+    0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+.pjdev-pathways__tags li {
+  padding:
+    7px 12px;
+
+  border:
+    1px solid
+    #2b436a;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.015
+    );
+
+  color:
+    #aebed7;
+
+  font-size:
+    0.83rem;
+
+  line-height:
+    1.25;
+
+  white-space:
+    nowrap;
+}
+
+/* =========================================================
+   CTA WRAP
+========================================================= */
+
+.pjdev-pathways__cta-wrap {
+  margin-top:
+    auto;
+
+  padding-top:
+    28px;
+}
+
+/* =========================================================
+   BUTTONS
+   Scoped so this page doesn't change other buttons.
+========================================================= */
+
+.pjdev-pathways .pjdevbtn {
+  height:
+    54px;
+
+  padding:
+    0 25px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    0.93rem;
+
+  font-weight:
+    600;
+}
+
+.pjdev-pathways
+  .pjdevbtn--primary {
+  background:
+    #1d5cff;
+
+  color:
+    #ffffff;
+
+  border:
+    1px solid
+    rgba(
+      74,
+      143,
+      255,
+      0.5
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      29,
+      92,
+      255,
+      0.26
+    );
+}
+
+.pjdev-pathways
+  .pjdevbtn--primary:hover {
+  background:
+    #286cff;
+
+  transform:
+    translateY(-2px);
+}
+
+.pjdev-pathways
+  .pjdevbtn--light {
+  background:
+    #f7f9ff;
+
+  color:
+    #08112a;
+
+  border:
+    1px solid
+    #f7f9ff;
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+}
+
+.pjdev-pathways
+  .pjdevbtn--light:hover {
+  background:
+    #dfe8ff;
+
+  transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   IMPROVE STEPS
+========================================================= */
+
+.pjdev-pathways__steps {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    8px;
+
+  margin:
+    12px 0
+    0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+.pjdev-pathways__step {
+  padding:
+    6px 11px;
+
+  border:
+    1px solid
+    #2b4369;
+
+  border-radius:
+    999px;
+
+  color:
+    #7f95b7;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.2;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.pjdev-pathways__step--lit {
+  color:
+    #35d9ee;
+
+  border-color:
+    rgba(
+      53,
+      217,
+      238,
+      0.7
+    );
+
+  background:
+    rgba(
+      53,
+      217,
+      238,
+      0.035
+    );
+}
+
+.pjdev-pathways__step--complete {
+  color:
+    #061321;
+
+  border-color:
+    #35d9ee;
+
+  background:
+    #35d9ee;
+}
+
+/* =========================================================
+   MERGE
+========================================================= */
+
+.pjdev-pathways__merge {
+  position:
+    relative;
+
+  width:
+    min(
+      900px,
+      100%
+    );
+
+  margin:
+    50px auto
+    0;
+
+  text-align:
+    center;
+
+  opacity:
+    0;
+
+  transition:
+    opacity 0.7s ease;
+}
+
+.pjdev-pathways__merge--in {
+  opacity:
+    1;
+}
+
+/* =========================================================
+   MERGE LABELS
+========================================================= */
+
+.pjdev-pathways__merge-labels {
+  position:
+    relative;
+
+  height:
+    33px;
+
+  color:
+    var(--pathways-muted);
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size:
+    0.95rem;
+
+  font-weight:
+    600;
+}
+
+.pjdev-pathways__merge-labels span {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  transform:
+    translateX(-50%);
+
+  white-space:
+    nowrap;
+}
+
+.pjdev-pathways__merge-left {
+  left:
+    28%;
+}
+
+.pjdev-pathways__merge-right {
+  left:
+    78%;
+}
+
+.pjdev-pathways__merge-or {
+  left:
+    53%;
+
+  color:
+    #657b9d;
+
+  font-size:
+    0.83rem;
+
+  font-weight:
+    500;
+}
+
+/* =========================================================
+   MERGE SVG
+========================================================= */
+
+.pjdev-pathways__merge-svg {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    95px;
+
+  overflow:
+    visible;
+
+  clip-path:
+    inset(
+      0 0 100% 0
+    );
+
+  transition:
+    clip-path 1.15s
+      cubic-bezier(
+        0.6,
+        0,
+        0.2,
+        1
+      )
+      0.15s;
+}
+
+.pjdev-pathways__merge--in
+  .pjdev-pathways__merge-svg {
+  clip-path:
+    inset(
+      0 0 0 0
+    );
+}
+
+.pjdev-pathways__merge-svg path {
+  fill:
+    none;
+
+  stroke:
+    url(
+      #pjdevPathwaysGradient
+    );
+
+  stroke-width:
+    2.2;
+
+  stroke-linecap:
+    round;
+}
+
+/* =========================================================
+   MERGE PILL
+========================================================= */
+
+.pjdev-pathways__merge-pill {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  margin:
+    -2px
+    auto
+    0;
+
+  padding:
+    14px 25px;
+
+  border:
+    1px solid
+    rgba(
+      67,
+      100,
+      155,
+      0.4
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    #edf3ff;
+
+  color:
+    #08112a;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size:
+    0.92rem;
+
+  font-weight:
+    700;
+
+  box-shadow:
+    0 14px 32px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+.pjdev-pathways__merge-pill span:first-child {
+  width:
+    9px;
+
+  height:
+    9px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    #12c9e0;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      18,
+      201,
+      224,
+      0.2
+    );
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 980px) {
+  .pjdev-pathways__wrap {
+    width:
+      min(
+        920px,
+        calc(100% - 48px)
+      );
+  }
+
+  .pjdev-pathways__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .pjdev-pathways__card--improve {
+    margin-top:
+      0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-pathways {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+  .pjdev-pathways__wrap {
+    width:
+      calc(100% - 28px);
+  }
+
+  .pjdev-pathways .pjdevhead__title {
+    font-size:
+      2.4rem;
+  }
+
+  .pjdev-pathways .pjdevhead__text {
+    font-size:
+      0.95rem;
+  }
+
+  .pjdev-pathways__grid {
+    margin-top:
+      42px;
+  }
+
+  .pjdev-pathways__card {
+    min-height:
+      auto;
+
+    padding:
+      24px;
+  }
+
+  .pjdev-pathways__visual {
+    height:
+      255px;
+  }
+
+  .pjdev-pathways__merge {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      center;
+
+    margin-top:
+      40px;
+  }
+
+  .pjdev-pathways__merge-labels {
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    gap:
+      15px;
+
+    height:
+      auto;
+  }
+
+  .pjdev-pathways__merge-labels span {
+    position:
+      static;
+
+    transform:
+      none;
+  }
+
+  .pjdev-pathways__merge-svg {
+    height:
+      60px;
+  }
+
+  .pjdev-pathways__merge-pill {
+    margin-top:
+      0;
+
+    padding:
+      12px 18px;
+
+    font-size:
+      0.82rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .pjdev-pathways__wrap {
+    width:
+      calc(100% - 20px);
+  }
+
+  .pjdev-pathways .pjdevhead__title {
+    font-size:
+      2.05rem;
+  }
+
+  .pjdev-pathways__card {
+    padding:
+      20px;
+  }
+
+  .pjdev-pathways__visual {
+    height:
+      225px;
+  }
+
+  .pjdev-pathways__card-title {
+    font-size:
+      1.55rem;
+  }
+
+  .pjdev-pathways__tags li {
+    font-size:
+      0.76rem;
+  }
+
+  .pjdev-pathways__steps {
+    gap:
+      6px;
+  }
+
+  .pjdev-pathways__step {
+    font-size:
+      0.7rem;
+
+    padding:
+      5px 9px;
+  }
+
+  .pjdev-pathways .pjdevbtn {
+    height:
+      50px;
+
+    padding:
+      0 19px;
+
+    font-size:
+      0.85rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-pathways__card,
+  .pjdev-pathways__merge,
+  .pjdev-pathways__merge-svg {
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    transition:
+      none;
+  }
+
+  .pjdev-pathways__build--play
+    .pjdevmock__nav,
+  .pjdev-pathways__build--play
+    .pjdevmock__hero > div,
+  .pjdev-pathways__build--play
+    .pjdevmock__tile,
+  .pjdev-pathways__build--play
+    .pjdev-pathways__blank,
+  .pjdev-pathways__scan--play
+    .pjdevmock__after,
+  .pjdev-pathways__scan--play
+    .pjdev-pathways__scanline {
+    animation:
+      none;
+  }
+
+  .pjdev-pathways__scan
+    .pjdevmock__after {
+    clip-path:
+      none;
+  }
+
+  .pjdev-pathways__blank {
+    display:
+      none;
+  }
+
+  .pjdev-pathways__scanline {
+    display:
+      none;
+  }
+}
+
+/* =========================================================
+   WHITE BACKGROUND + BLUE / BLACK TEXT THEME
+   Keeps existing layout, spacing, animation and positioning.
+========================================================= */
+
+.pjdev-pathways {
+  --pathways-bg: #FFFFFF;
+  --pathways-card: #FFFFFF;
+  --pathways-card-soft: #F8FAFC;
+
+  --pathways-white: #111111;
+  --pathways-white-soft: #111111;
+
+  --pathways-muted: #4A5568;
+  --pathways-muted-soft: #5F6B7A;
+
+  --pathways-blue: #1599D6;
+  --pathways-blue-soft: #35CEFF;
+
+  --pathways-cyan: #1599D6;
+  --pathways-border: #D8E3EC;
+  --pathways-border-soft: #E5ECF2;
+  --pathways-border-active: #1599D6;
+
+  background: #FFFFFF !important;
+  color: #111111 !important;
+}
+
+/* Section heading */
+.pjdev-pathways .pjdevhead__title {
+  color: #1599D6 !important;
+}
+
+.pjdev-pathways .pjdevhead__text {
+  color: #111111 !important;
+}
+
+/* Cards */
+.pjdev-pathways__card--new,
+.pjdev-pathways__card--improve {
+  background: #FFFFFF !important;
+  border-color: #D8E3EC !important;
+  box-shadow:
+    0 14px 35px rgba(21, 153, 214, 0.10);
+}
+
+/* Existing hover */
+.pjdev-pathways__card--improve:hover,
+.pjdev-pathways__card--new:hover {
+  border-color: #1599D6 !important;
+  box-shadow:
+    0 18px 42px rgba(21, 153, 214, 0.16);
+}
+
+/* Card kicker */
+.pjdev-pathways__kicker {
+  color: #111111 !important;
+}
+
+/* Alternate card title colors */
+.pjdev-pathways__card:nth-child(1) .pjdev-pathways__card-title {
+  color: #1599D6 !important;
+}
+
+.pjdev-pathways__card:nth-child(2) .pjdev-pathways__card-title {
+  color: #111111 !important;
+}
+
+/* Tags */
+.pjdev-pathways__tags li {
+  color: #111111 !important;
+  border-color: #C9D8E4 !important;
+  background: #F8FAFC !important;
+}
+
+/* Tag hover/active emphasis */
+.pjdev-pathways__tags li:hover {
+  color: #1599D6 !important;
+  border-color: #1599D6 !important;
+  background: #FFFFFF !important;
+}
+
+/* Improvement steps */
+.pjdev-pathways__step {
+  color: #111111 !important;
+  border-color: #C9D8E4 !important;
+  background: #FFFFFF !important;
+}
+
+.pjdev-pathways__step--lit {
+  color: #1599D6 !important;
+  border-color: #1599D6 !important;
+  background: rgba(21, 153, 214, 0.06) !important;
+}
+
+.pjdev-pathways__step--complete {
+  color: #FFFFFF !important;
+  border-color: #1599D6 !important;
+  background: #1599D6 !important;
+}
+
+/* Blank visual */
+.pjdev-pathways__blank {
+  color: #1599D6 !important;
+  border-color: rgba(21, 153, 214, 0.35) !important;
+  background: rgba(21, 153, 214, 0.025) !important;
+}
+
+.pjdev-pathways__blank i {
+  color: #1599D6 !important;
+  background: rgba(21, 153, 214, 0.10) !important;
+}
+
+/* Buttons */
+.pjdev-pathways .pjdevbtn--primary {
+  background: #1599D6 !important;
+  color: #FFFFFF !important;
+  border-color: #1599D6 !important;
+  box-shadow: 0 10px 25px rgba(21, 153, 214, 0.22);
+}
+
+.pjdev-pathways .pjdevbtn--primary:hover {
+  background: #1599D6 !important;
+}
+
+.pjdev-pathways .pjdevbtn--light {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  border-color: #111111 !important;
+}
+
+.pjdev-pathways .pjdevbtn--light:hover {
+  background: #1599D6 !important;
+  color: #FFFFFF !important;
+}
+
+/* Merge area */
+.pjdev-pathways__merge-labels {
+  color: #111111 !important;
+}
+
+.pjdev-pathways__merge-or {
+  color: #687386 !important;
+}
+
+.pjdev-pathways__merge-pill {
+  background: #111111 !important;
+  color: #FFFFFF !important;
+  border-color: #1599D6 !important;
+}
+
+.pjdev-pathways__merge-pill span:first-child {
+  background: #1599D6 !important;
+  box-shadow: 0 0 0 5px rgba(21, 153, 214, 0.16);
+}
+
+/* Responsive keeps the same white/blue/black theme */
+@media (max-width: 980px) {
+  .pjdev-pathways {
+    background: #FFFFFF !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-pathways {
+    scroll-behavior: auto;
+  }
+}

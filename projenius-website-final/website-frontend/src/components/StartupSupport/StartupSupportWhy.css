@@ -1,0 +1,12 @@
+/* StartupSupportWhy.css */
+.ssp-why-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+.ssp-why-head{position:sticky;top:calc(var(--ssp-nav-h) + 40px)}
+.ssp-why-row{display:grid;grid-template-columns:clamp(64px,8vw,108px) minmax(0,1fr);gap:24px;padding:36px 0;border-top:1px solid var(--ssp-line-light-2);transition:padding .35s}
+.ssp-why-row:last-child{border-bottom:1px solid var(--ssp-line-light-2)}
+.ssp-why-row:hover{padding-left:12px}
+.ssp-why-num{font:800 clamp(44px,5vw,68px)/.9 var(--ssp-font-display);color:transparent;-webkit-text-stroke:1.5px var(--ssp-line-light-2);
+  letter-spacing:-.04em;transition:color .35s,-webkit-text-stroke-color .35s}
+.ssp-why-row:hover .ssp-why-num{color:var(--ssp-accent-light);-webkit-text-stroke-color:var(--ssp-accent-light)}
+.ssp-why-row h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:10px}
+.ssp-why-row p{color:var(--ssp-muted-light);max-width:50ch}
+@media (max-width:899px){.ssp-why-grid{grid-template-columns:1fr}.ssp-why-head{position:static}}

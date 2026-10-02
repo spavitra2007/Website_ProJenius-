@@ -1,0 +1,348 @@
+/* =========================================================
+   INTERNSHIP CTA
+   Professional White + Black + Blue Design
+========================================================= */
+
+.internship-cta-section {
+    width: 100%;
+    padding: 38px 0 42px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.internship-cta-container {
+    width: min(1175px, calc(100% - 48px));
+    margin: 0 auto;
+
+    background: #111827;
+
+    border-radius: 28px;
+
+    padding: 40px 46px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 18px 45px rgba(17, 24, 39, 0.12);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE BLUE LIGHT
+========================================================= */
+
+.internship-cta-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+    top: -150px;
+
+    background: rgba(21, 153, 214, 0.12);
+
+    border-radius: 50%;
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.internship-cta-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.internship-cta-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(30px, 3.2vw, 42px);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.2px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.internship-cta-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.internship-cta-apply,
+.internship-cta-contact {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 56px;
+
+    padding: 0 27px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.internship-cta-apply {
+    gap: 10px;
+
+    color: #ffffff;
+
+    background: #1599D6;
+
+    border: 1px solid #1599D6;
+
+    box-shadow:
+        0 8px 22px rgba(21, 153, 214, 0.25);
+}
+
+.internship-cta-apply:hover {
+    transform: translateY(-2px);
+
+    background: #1189c2;
+
+    border-color: #1189c2;
+
+    box-shadow:
+        0 12px 28px rgba(21, 153, 214, 0.32);
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.internship-cta-contact {
+    color: #ffffff;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.internship-cta-contact:hover {
+    transform: translateY(-2px);
+
+    border-color: #1599D6;
+
+    color: #ffffff;
+
+    background: rgba(21, 153, 214, 0.10);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.internship-cta-apply:active,
+.internship-cta-contact:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .internship-cta-section {
+        padding: 32px 0 36px;
+    }
+
+    .internship-cta-container {
+        width: min(720px, calc(100% - 36px));
+
+        padding: 34px 32px;
+
+        border-radius: 24px;
+    }
+
+    .internship-cta-content {
+        gap: 25px;
+    }
+
+    .internship-cta-content h2 {
+        font-size: 30px;
+    }
+
+    .internship-cta-actions {
+        gap: 10px;
+    }
+
+    .internship-cta-apply,
+    .internship-cta-contact {
+        min-height: 52px;
+
+        padding: 0 21px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+    .internship-cta-section {
+        padding: 28px 0 32px;
+    }
+
+    .internship-cta-container {
+        width: calc(100% - 28px);
+
+        padding: 30px 22px;
+
+        border-radius: 22px;
+    }
+
+    .internship-cta-content {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 24px;
+    }
+
+    .internship-cta-content h2 {
+        font-size: 28px;
+
+        line-height: 1.2;
+
+        letter-spacing: -0.7px;
+
+        text-align: center;
+    }
+
+    .internship-cta-actions {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .internship-cta-apply,
+    .internship-cta-contact {
+        flex: 1;
+
+        min-height: 50px;
+
+        padding: 0 16px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .internship-cta-container {
+        padding: 27px 17px;
+    }
+
+    .internship-cta-content h2 {
+        font-size: 25px;
+    }
+
+    .internship-cta-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .internship-cta-apply,
+    .internship-cta-contact {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .internship-cta-apply,
+    .internship-cta-contact {
+        transition: none;
+    }
+}

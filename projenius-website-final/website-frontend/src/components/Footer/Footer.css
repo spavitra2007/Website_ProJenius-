@@ -1,0 +1,953 @@
+/* =========================================================
+   PROJENIUS FOOTER
+========================================================= */
+
+.pro-footer {
+  position: relative;
+  width: 100%;
+
+  background: #090d13;
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+
+  border-top: 2px solid #2ea8ff;
+
+  box-sizing: border-box;
+}
+
+.pro-footer *,
+.pro-footer *::before,
+.pro-footer *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.footer-top {
+  width: 100%;
+
+  background: #090d13;
+}
+
+.footer-top-inner {
+  width: min(1250px, 90%);
+
+  min-height: 132px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   COMPANY TOP
+========================================================= */
+
+.footer-call {
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  min-width: 0;
+}
+
+.footer-call-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0px;
+}
+
+.footer-call-content h3 {
+  margin: 0;
+
+  color: #49b7f5;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 0 0 10px;
+}
+
+.footer-logo-image {
+  width: 42px;
+  height: 42px;
+
+  display: block;
+
+  flex: 0 0 42px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+.footer-logo-text {
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 31px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  color: #ffffff;
+
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+}
+
+.footer-logo-text span {
+  color: #159ce8;
+}
+
+.footer-call-content h3 {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  color: #49b7f5;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.65;
+
+  white-space: normal;
+}
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+.newsletter-title {
+  font-size: 20px;
+
+  color: #aeb5c0;
+
+  white-space: nowrap;
+}
+
+.newsletter-title strong {
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.footer-newsletter form {
+  height: 54px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 6px;
+}
+
+.footer-newsletter input {
+  width: 258px;
+
+  border: none;
+  outline: none;
+
+  padding: 0 20px;
+
+  background: #151a22;
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15px;
+}
+
+.footer-newsletter input::placeholder {
+  color: #7f8793;
+}
+
+.footer-newsletter button {
+  width: 125px;
+
+  border: none;
+  outline: none;
+
+  background: #38aaf2;
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+  background: #2195dc;
+}
+
+.footer-newsletter button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -4px;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+  width: min(1250px, 90%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   GRID
+   ORIGINAL ALIGNMENT PRESERVED
+========================================================= */
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    0.85fr
+    1.15fr
+    1fr;
+
+  gap: 70px;
+
+  padding: 55px 0 58px;
+}
+
+
+/* =========================================================
+   COMPANY
+========================================================= */
+
+.footer-company {
+  min-width: 0;
+}
+
+.footer-company > p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #9ca5b3;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   GOOGLE REVIEWS
+========================================================= */
+
+.footer-google-review {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 0 0 22px;
+
+  padding: 9px 38px 9px 10px;
+
+  gap: 10px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 8px;
+
+  background: #151a22;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer-google-review:hover {
+  transform: translateY(-2px);
+
+  background: #1a2029;
+
+  border-color:
+    rgba(46, 168, 255, 0.45);
+
+  box-shadow:
+    0 9px 24px
+    rgba(0, 0, 0, 0.18);
+}
+
+.footer-google-review:focus-visible {
+  outline: 2px solid #2ea8ff;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   GOOGLE ICON
+========================================================= */
+
+.google-review-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 34px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #4285f4;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   REVIEW CONTENT
+========================================================= */
+
+.google-review-content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 3px;
+}
+
+.google-review-title {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.google-review-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+
+  color: #9ca5b3;
+
+  font-size: 11px;
+}
+
+.google-review-meta strong {
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.google-stars {
+  color: #fbbc04;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  line-height: 1;
+}
+
+.google-review-count {
+  color: #8d96a4;
+}
+
+
+/* =========================================================
+   REVIEW ARROW
+========================================================= */
+
+.google-review-arrow {
+  position: absolute;
+
+  top: 50%;
+  right: 12px;
+
+  color: #2ea8ff;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.footer-google-review:hover
+.google-review-arrow {
+  transform:
+    translate(3px, -50%);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 27px;
+}
+
+.footer-socials a {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #151a22;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-5px);
+
+  background: #2ea8ff;
+
+  color: #ffffff;
+}
+
+.footer-socials a:focus-visible {
+  outline: 2px solid #2ea8ff;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   COLUMN HEADINGS
+========================================================= */
+
+.footer-heading {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.footer-heading-line {
+  width: 43px;
+  height: 3px;
+
+  margin-top: 9px;
+  margin-bottom: 27px;
+
+  background: #2ea8ff;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.footer-links {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: #9ca5b3;
+
+  text-decoration: none;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 16px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-links a span {
+  color: #2ea8ff;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 17px;
+
+  margin-bottom: 22px;
+}
+
+.footer-contact-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 40px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(46, 168, 255, 0.08);
+
+  color: #2ea8ff;
+
+  font-size: 16px;
+}
+
+.footer-contact-item p {
+  margin: 1px 0 0;
+
+  color: #9ca5b3;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+.footer-contact-item a {
+  margin-top: 8px;
+
+  color: #9ca5b3;
+
+  text-decoration: none;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15px;
+
+  overflow-wrap: anywhere;
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-contact-item a:hover {
+  color: #2ea8ff;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.footer-map {
+  position: relative;
+
+  width: 100%;
+  max-width: 270px;
+  height: 162px;
+
+  margin-bottom: 16px;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: #1a2029;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+
+  filter: saturate(0.9);
+}
+
+.map-label {
+  position: absolute;
+
+  top: 10px;
+  left: 10px;
+
+  padding: 8px 12px;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #2c8ee8;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.15);
+}
+
+.footer-location {
+  margin: 0 0 19px;
+
+  color: #9ca5b3;
+
+  font-size: 15px;
+}
+
+.direction-btn {
+  width: 177px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px solid #2ea8ff;
+
+  border-radius: 5px;
+
+  color: #2ea8ff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.direction-btn span {
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.direction-btn:hover {
+  background: #2ea8ff;
+
+  color: #ffffff;
+}
+
+.direction-btn:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.footer-bottom {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.10);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #8d96a4;
+
+  font-size: 15px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.footer-bottom-links a {
+  color: #9ca5b3;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #2ea8ff;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+  }
+
+  .footer-top-inner {
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .footer-top-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 35px 0;
+
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    width: 100%;
+  }
+
+  .footer-newsletter form {
+    width: 100%;
+  }
+
+  .footer-newsletter input {
+    flex: 1;
+
+    width: auto;
+
+    min-width: 0;
+  }
+
+  .footer-newsletter button {
+    width: 120px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 45px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 25px 0;
+
+    gap: 20px;
+  }
+
+  .footer-bottom-links {
+    gap: 20px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .footer-main,
+  .footer-top-inner {
+    width: 88%;
+  }
+
+  .footer-newsletter form {
+    height: 50px;
+  }
+
+  .footer-newsletter input {
+    font-size: 13px;
+  }
+
+  .footer-newsletter button {
+    width: 105px;
+
+    font-size: 13px;
+  }
+
+  .footer-logo-image {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .footer-logo-text {
+    font-size: 27px;
+  }
+
+  .footer-google-review {
+    width: auto;
+
+    max-width: 100%;
+  }
+
+  .footer-bottom-links {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+}

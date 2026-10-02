@@ -1,0 +1,1281 @@
+/* =========================================================
+   ECOSYSTEM SECTION
+========================================================= */
+
+.ecosystem-section {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding: 100px 20px 120px;
+  box-sizing: border-box;
+}
+
+.ecosystem-container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.ecosystem-heading {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 65px;
+}
+
+.ecosystem-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 18px;
+
+  border: 1px solid rgba(21, 155, 210, 0.55);
+  border-radius: 999px;
+
+  color: #159bd2;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+
+  background: rgba(21, 155, 210, 0.05);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.ecosystem-heading h2 {
+  margin: 0;
+
+  white-space: nowrap;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: clamp(38px, 4.3vw, 62px);
+  font-weight: 800;
+
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.ecosystem-heading-white {
+  color: #ffffff;
+}
+
+.ecosystem-heading-blue {
+  color: #159bd2;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.ecosystem-heading-description {
+  max-width: 850px;
+
+  margin: 25px auto 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.8;
+  letter-spacing: 0.1px;
+}
+
+/* =========================================================
+   NETWORK
+========================================================= */
+
+.ecosystem-network {
+  width: min(960px, 100%);
+
+  aspect-ratio: 1000 / 600;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  isolation: isolate;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SVG NETWORK
+========================================================= */
+
+.ecosystem-lines {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   NETWORK LINES
+========================================================= */
+
+.eco-network-line {
+  fill: none;
+
+  stroke: #159bd2;
+
+  stroke-width: 2.5;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 1 12;
+
+  opacity: 0.75;
+
+  filter:
+    drop-shadow(
+      0 0 4px rgba(21, 155, 210, 0.45)
+    );
+
+  vector-effect: non-scaling-stroke;
+}
+
+/* =========================================================
+   MOVING DOT
+========================================================= */
+
+.eco-moving-dot {
+  fill: #159bd2;
+
+  filter:
+    drop-shadow(0 0 5px #159bd2)
+    drop-shadow(
+      0 0 12px rgba(21, 155, 210, 0.85)
+    );
+}
+
+/* =========================================================
+   CENTER CORE
+========================================================= */
+
+.ecosystem-core {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 158px;
+  height: 158px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CORE GLOW
+========================================================= */
+
+.ecosystem-core-glow {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(21, 155, 210, 0.22) 0%,
+      rgba(21, 155, 210, 0.08) 42%,
+      rgba(21, 155, 210, 0) 72%
+    );
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(21, 155, 210, 0.35)
+    );
+}
+
+/* =========================================================
+   CORE RING
+========================================================= */
+
+.ecosystem-core-ring {
+  width: 150px;
+  height: 150px;
+
+  border: 2px solid #159bd2;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #159bd2;
+
+  box-shadow:
+    0 0 0 8px rgba(21, 155, 210, 0.08),
+    0 0 22px rgba(21, 155, 210, 0.28);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CORE CIRCLE
+========================================================= */
+
+.ecosystem-core-circle {
+  width: 135px;
+  height: 135px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  border: 2px solid #159bd2;
+
+  background: #000000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    inset 0 0 15px rgba(21, 155, 210, 0.16);
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.ecosystem-company-logo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  transform: scale(1.05);
+
+  transform-origin: center;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ECOSYSTEM NODE
+========================================================= */
+
+.eco-node {
+  --node-size: 84px;
+
+  position: absolute;
+
+  width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 10;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+/* =========================================================
+   NODE POSITIONS
+========================================================= */
+
+.eco-node-software {
+  left: 50%;
+  top: 6.7%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-iot {
+  left: 65.75%;
+  top: 18.73%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-product {
+  left: 74.13%;
+  top: 42.92%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-fabrication {
+  left: 71.22%;
+  top: 70.42%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-training {
+  left: 58.38%;
+  top: 88.33%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-startup {
+  left: 41.62%;
+  top: 88.33%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-patent {
+  left: 28.78%;
+  top: 70.42%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-academia {
+  left: 25.87%;
+  top: 42.92%;
+
+  transform: translate(-50%, -50%);
+}
+
+.eco-node-innovation {
+  left: 34.25%;
+  top: 18.73%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* =========================================================
+   NODE CARD
+========================================================= */
+
+.eco-node-card {
+  width: var(--node-size);
+  height: var(--node-size);
+
+  flex: 0 0 var(--node-size);
+
+  border-radius: 50%;
+
+  border: 1.5px solid rgba(21, 155, 210, 0.75);
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(21, 155, 210, 0.10),
+      rgba(0, 0, 0, 0.96) 68%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  color: #159bd2;
+
+  box-shadow:
+    0 0 12px rgba(21, 155, 210, 0.10),
+    inset 0 0 12px rgba(21, 155, 210, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  animation: ecoFloating 4s ease-in-out infinite;
+
+  will-change: transform;
+}
+
+/* =========================================================
+   FLOATING
+========================================================= */
+
+@keyframes ecoFloating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.eco-node-innovation .eco-node-card {
+  animation-delay: -0.3s;
+}
+
+.eco-node-software .eco-node-card {
+  animation-delay: -1s;
+}
+
+.eco-node-iot .eco-node-card {
+  animation-delay: -1.6s;
+}
+
+.eco-node-academia .eco-node-card {
+  animation-delay: -2.2s;
+}
+
+.eco-node-product .eco-node-card {
+  animation-delay: -2.8s;
+}
+
+.eco-node-patent .eco-node-card {
+  animation-delay: -1.3s;
+}
+
+.eco-node-fabrication .eco-node-card {
+  animation-delay: -2.5s;
+}
+
+.eco-node-startup .eco-node-card {
+  animation-delay: -3.1s;
+}
+
+.eco-node-training .eco-node-card {
+  animation-delay: -0.7s;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.eco-node-icon {
+  width: 30px;
+  height: 30px;
+
+  color: #159bd2;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(21, 155, 210, 0.35)
+    );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* =========================================================
+   NODE LABEL
+========================================================= */
+
+.eco-node-label {
+  display: block;
+
+  width: 170px;
+
+  margin-top: 14px;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  text-align: center;
+
+  white-space: normal;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.eco-node-description {
+  position: absolute;
+
+  width: 220px;
+
+  padding: 14px 16px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(21, 155, 210, 0.65);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 20, 24, 0.98),
+      rgba(0, 0, 0, 0.98)
+    );
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(21, 155, 210, 0.16);
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11.5px;
+
+  line-height: 1.6;
+
+  text-align: left;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 100;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   DESCRIPTION TITLE
+========================================================= */
+
+.eco-node-description strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #159bd2;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DESCRIPTION TEXT
+========================================================= */
+
+.eco-node-description p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   DESCRIPTION POSITIONS
+========================================================= */
+
+.eco-node-software .eco-node-description,
+.eco-node-iot .eco-node-description,
+.eco-node-innovation .eco-node-description {
+  top: calc(100% + 20px);
+  left: 50%;
+
+  transform: translate(-50%, -8px);
+}
+
+.eco-node-product .eco-node-description,
+.eco-node-fabrication .eco-node-description {
+  top: 50%;
+  left: calc(100% + 20px);
+
+  transform:
+    translateY(-50%)
+    translateX(-8px);
+}
+
+.eco-node-academia .eco-node-description,
+.eco-node-patent .eco-node-description {
+  top: 50%;
+  right: calc(100% + 20px);
+
+  transform:
+    translateY(-50%)
+    translateX(8px);
+}
+
+.eco-node-startup .eco-node-description,
+.eco-node-training .eco-node-description {
+  bottom: calc(100% + 20px);
+  left: 50%;
+
+  transform: translate(-50%, 8px);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.eco-node:hover .eco-node-card,
+.eco-node:focus-visible .eco-node-card {
+  animation-play-state: paused;
+
+  border-color: #159bd2;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(21, 155, 210, 0.22),
+      rgba(0, 0, 0, 0.96) 72%
+    );
+
+  box-shadow:
+    0 0 22px rgba(21, 155, 210, 0.35),
+    inset 0 0 18px rgba(21, 155, 210, 0.12);
+
+  transform: scale(1.08);
+}
+
+.eco-node:hover .eco-node-icon,
+.eco-node:focus-visible .eco-node-icon {
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(0 0 7px #159bd2);
+}
+
+.eco-node:hover .eco-node-description,
+.eco-node:focus-visible .eco-node-description {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================================
+   DESCRIPTION ANIMATION
+========================================================= */
+
+.eco-node-software:hover .eco-node-description,
+.eco-node-iot:hover .eco-node-description,
+.eco-node-innovation:hover .eco-node-description {
+  transform: translate(-50%, 0);
+}
+
+.eco-node-product:hover .eco-node-description,
+.eco-node-fabrication:hover .eco-node-description {
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+.eco-node-academia:hover .eco-node-description,
+.eco-node-patent:hover .eco-node-description {
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+.eco-node-startup:hover .eco-node-description,
+.eco-node-training:hover .eco-node-description {
+  transform: translate(-50%, 0);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .ecosystem-section {
+    padding: 80px 16px 100px;
+  }
+
+  .ecosystem-heading {
+    margin-bottom: 50px;
+  }
+
+  .ecosystem-heading h2 {
+    font-size: clamp(34px, 5.5vw, 48px);
+  }
+
+  .ecosystem-heading-description {
+    max-width: 700px;
+    font-size: 14px;
+  }
+
+  .ecosystem-network {
+    width: min(850px, 100%);
+  }
+
+  .eco-node {
+    --node-size: 76px;
+    width: 135px;
+  }
+
+  .eco-node-label {
+    width: 145px;
+    font-size: 12px;
+  }
+
+  .ecosystem-core {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ecosystem-core-ring {
+    width: 134px;
+    height: 134px;
+  }
+
+  .ecosystem-core-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .eco-node-description {
+    width: 200px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .ecosystem-section {
+    width: 100%;
+    padding: 48px 10px 58px;
+    overflow: hidden;
+  }
+
+  .ecosystem-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* -------------------------------------------------------
+     HEADING
+  ------------------------------------------------------- */
+
+  .ecosystem-heading {
+    margin-bottom: 22px;
+    padding: 0 8px;
+  }
+
+  .ecosystem-eyebrow {
+    padding: 6px 12px;
+
+    margin-bottom: 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .ecosystem-heading h2 {
+    width: 100%;
+
+    white-space: normal;
+
+    font-size: 27px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+  .ecosystem-heading-description {
+    max-width: 330px;
+
+    margin: 14px auto 0;
+
+    padding: 0;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  /* -------------------------------------------------------
+     MOBILE NETWORK
+     
+     Much shorter than the old 560px version.
+  ------------------------------------------------------- */
+
+  .ecosystem-network {
+    width: 100%;
+
+    height: 390px;
+
+    min-height: 390px;
+
+    max-height: 390px;
+
+    aspect-ratio: auto;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+  }
+
+  /* -------------------------------------------------------
+     SVG
+  ------------------------------------------------------- */
+
+  .ecosystem-lines {
+    width: 100%;
+    height: 100%;
+  }
+
+  .eco-network-line {
+    stroke-width: 1.5;
+
+    stroke-dasharray: 1 8;
+
+    opacity: 0.6;
+  }
+
+  .eco-moving-dot {
+    r: 3;
+  }
+
+  /* -------------------------------------------------------
+     CENTER
+  ------------------------------------------------------- */
+
+  .ecosystem-core {
+    width: 82px;
+    height: 82px;
+  }
+
+  .ecosystem-core-glow {
+    filter:
+      drop-shadow(
+        0 0 10px rgba(21, 155, 210, 0.28)
+      );
+  }
+
+  .ecosystem-core-ring {
+    width: 78px;
+    height: 78px;
+
+    border-width: 1.5px;
+
+    box-shadow:
+      0 0 0 4px rgba(21, 155, 210, 0.07),
+      0 0 12px rgba(21, 155, 210, 0.22);
+  }
+
+  .ecosystem-core-circle {
+    width: 64px;
+    height: 64px;
+
+    border-width: 1.5px;
+  }
+
+  .ecosystem-company-logo {
+    transform: scale(1.03);
+  }
+
+  /* -------------------------------------------------------
+     MOBILE NODE
+  ------------------------------------------------------- */
+
+  .eco-node {
+    --node-size: 48px;
+
+    width: 72px;
+
+    max-width: 72px;
+  }
+
+  .eco-node-card {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+
+    border-width: 1px;
+
+    box-shadow:
+      0 0 8px rgba(21, 155, 210, 0.08);
+  }
+
+  .eco-node-icon {
+    width: 18px;
+    height: 18px;
+
+    filter:
+      drop-shadow(
+        0 0 3px rgba(21, 155, 210, 0.3)
+      );
+  }
+
+  .eco-node-label {
+    width: 72px;
+
+    margin-top: 6px;
+
+    font-size: 8px;
+
+    line-height: 1.2;
+
+    letter-spacing: 0;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+  }
+
+  /* -------------------------------------------------------
+     MOBILE NODE POSITIONS
+     
+     Pulled inward so NOTHING gets cut off.
+  ------------------------------------------------------- */
+
+  .eco-node-software {
+    left: 50%;
+    top: 8%;
+  }
+
+  .eco-node-iot {
+    left: 67%;
+    top: 18%;
+  }
+
+  .eco-node-product {
+    left: 73%;
+    top: 42%;
+  }
+
+  .eco-node-fabrication {
+    left: 69%;
+    top: 68%;
+  }
+
+  .eco-node-training {
+    left: 58%;
+    top: 87%;
+  }
+
+  .eco-node-startup {
+    left: 42%;
+    top: 87%;
+  }
+
+  .eco-node-patent {
+    left: 31%;
+    top: 68%;
+  }
+
+  .eco-node-academia {
+    left: 27%;
+    top: 42%;
+  }
+
+  .eco-node-innovation {
+    left: 33%;
+    top: 18%;
+  }
+
+  /* -------------------------------------------------------
+     IMPORTANT:
+     DESCRIPTIONS ARE DISABLED ON MOBILE.
+     
+     Touch devices do not have reliable hover behavior.
+     This also prevents popup overflow.
+  ------------------------------------------------------- */
+
+  .eco-node-description {
+    display: none !important;
+  }
+
+  /* -------------------------------------------------------
+     DISABLE NODE HOVER SCALING ON MOBILE
+     
+     Prevents cards from jumping/resizing when tapped.
+  ------------------------------------------------------- */
+
+  .eco-node:hover .eco-node-card,
+  .eco-node:focus-visible .eco-node-card {
+    animation-play-state: running;
+
+    transform: none;
+
+    box-shadow:
+      0 0 8px rgba(21, 155, 210, 0.08);
+
+    background:
+      radial-gradient(
+        circle at 50% 35%,
+        rgba(21, 155, 210, 0.10),
+        rgba(0, 0, 0, 0.96) 68%
+      );
+  }
+
+  .eco-node:hover .eco-node-icon,
+  .eco-node:focus-visible .eco-node-icon {
+    transform: none;
+
+    filter:
+      drop-shadow(
+        0 0 3px rgba(21, 155, 210, 0.3)
+      );
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .ecosystem-section {
+    padding: 42px 8px 50px;
+  }
+
+  .ecosystem-heading {
+    margin-bottom: 18px;
+  }
+
+  .ecosystem-heading h2 {
+    font-size: 25px;
+  }
+
+  .ecosystem-heading-description {
+    max-width: 300px;
+
+    font-size: 10.5px;
+
+    line-height: 1.5;
+  }
+
+  .ecosystem-network {
+    height: 350px;
+
+    min-height: 350px;
+
+    max-height: 350px;
+  }
+
+  /* Smaller center */
+
+  .ecosystem-core {
+    width: 72px;
+    height: 72px;
+  }
+
+  .ecosystem-core-ring {
+    width: 68px;
+    height: 68px;
+  }
+
+  .ecosystem-core-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Smaller nodes */
+
+  .eco-node {
+    --node-size: 43px;
+
+    width: 66px;
+
+    max-width: 66px;
+  }
+
+  .eco-node-card {
+    width: 43px;
+    height: 43px;
+
+    flex-basis: 43px;
+  }
+
+  .eco-node-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .eco-node-label {
+    width: 66px;
+
+    margin-top: 5px;
+
+    font-size: 7.3px;
+
+    line-height: 1.15;
+  }
+
+  /* Pull nodes slightly further inward */
+
+  .eco-node-software {
+    left: 50%;
+    top: 8%;
+  }
+
+  .eco-node-iot {
+    left: 66%;
+    top: 18%;
+  }
+
+  .eco-node-product {
+    left: 71%;
+    top: 42%;
+  }
+
+  .eco-node-fabrication {
+    left: 68%;
+    top: 67%;
+  }
+
+  .eco-node-training {
+    left: 58%;
+    top: 86%;
+  }
+
+  .eco-node-startup {
+    left: 42%;
+    top: 86%;
+  }
+
+  .eco-node-patent {
+    left: 32%;
+    top: 67%;
+  }
+
+  .eco-node-academia {
+    left: 29%;
+    top: 42%;
+  }
+
+  .eco-node-innovation {
+    left: 34%;
+    top: 18%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .ecosystem-section {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .ecosystem-heading h2 {
+    font-size: 23px;
+  }
+
+  .ecosystem-heading-description {
+    max-width: 285px;
+    font-size: 10px;
+  }
+
+  .ecosystem-network {
+    height: 330px;
+    min-height: 330px;
+    max-height: 330px;
+  }
+
+  .ecosystem-core {
+    width: 66px;
+    height: 66px;
+  }
+
+  .ecosystem-core-ring {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ecosystem-core-circle {
+    width: 51px;
+    height: 51px;
+  }
+
+  .eco-node {
+    --node-size: 39px;
+
+    width: 60px;
+    max-width: 60px;
+  }
+
+  .eco-node-card {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .eco-node-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .eco-node-label {
+    width: 60px;
+    font-size: 6.7px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .eco-node-card {
+    animation: none;
+  }
+
+  .eco-node-description,
+  .eco-node-card,
+  .eco-node-icon {
+    transition: none;
+  }
+}

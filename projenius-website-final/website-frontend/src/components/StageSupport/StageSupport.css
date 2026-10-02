@@ -1,0 +1,937 @@
+/* =========================================================
+   STAGE SUPPORT
+========================================================= */
+
+.stageSupport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 110px 0;
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(32, 81, 145, 0.08),
+      transparent 34%
+    ),
+    #050d1d;
+
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.stageSupport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  opacity: 0.2;
+
+  background-image:
+    linear-gradient(
+      rgba(55, 103, 163, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(55, 103, 163, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.stageSupport__container {
+  position: relative;
+  z-index: 1;
+
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.stageSupport__header {
+  max-width: 760px;
+  margin-bottom: 48px;
+
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.stageSupport--visible .stageSupport__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stageSupport__heading {
+  margin: 0;
+
+  color: #f7faff;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 800;
+
+  line-height: 1.04;
+  letter-spacing: -2.4px;
+}
+
+.stageSupport__intro {
+  max-width: 680px;
+  margin: 24px 0 0;
+
+  color: #8295b1;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.stageSupport__card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 48% 52%;
+
+  min-height: 590px;
+
+  overflow: hidden;
+
+  border: 1px solid #1c3152;
+  border-radius: 15px;
+
+  background: #071226;
+
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.8s ease 0.1s,
+    transform 0.8s ease 0.1s;
+}
+
+.stageSupport--visible .stageSupport__card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LEFT NAVIGATION
+========================================================= */
+
+.stageSupport__navigation {
+  position: relative;
+  z-index: 3;
+
+  border-right: 1px solid #1c3152;
+
+  background: rgba(5, 14, 30, 0.72);
+}
+
+/* =========================================================
+   STAGE ROW
+========================================================= */
+
+.stageSupport__stage {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 28px;
+
+  align-items: center;
+  gap: 18px;
+
+  min-height: 147px;
+
+  padding: 26px 34px;
+
+  border-bottom: 1px solid rgba(42, 68, 104, 0.42);
+
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.stageSupport__stage:last-child {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   ACTIVE BLUE EDGE
+========================================================= */
+
+.stageSupport__stage::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+
+  background: transparent;
+
+  transition:
+    background-color 0.25s ease,
+    width 0.25s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.stageSupport__stage:hover {
+  background: rgba(30, 58, 94, 0.25);
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.stageSupport__stage--active {
+  background: rgba(25, 50, 84, 0.4);
+}
+
+.stageSupport__stage--active::before {
+  background: #69a8ff;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.stageSupport__stage-number {
+  align-self: start;
+
+  padding-top: 2px;
+
+  color: #526984;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+
+  transition: color 0.25s ease;
+}
+
+.stageSupport__stage--active .stageSupport__stage-number {
+  color: #7199c6;
+}
+
+/* =========================================================
+   STAGE CONTENT
+========================================================= */
+
+.stageSupport__stage-content {
+  min-width: 0;
+}
+
+.stageSupport__stage-title {
+  margin: 0;
+
+  color: #edf3fb;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(15px, 1.35vw, 19px);
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.stageSupport__stage:hover .stageSupport__stage-title,
+.stageSupport__stage--active .stageSupport__stage-title {
+  color: #69a8ff;
+}
+
+.stageSupport__stage-quote {
+  margin: 8px 0 0;
+
+  color: #71859f;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.stageSupport__stage-arrow {
+  justify-self: end;
+
+  color: #506985;
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 22px;
+
+  line-height: 1;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.stageSupport__stage:hover .stageSupport__stage-arrow,
+.stageSupport__stage--active .stageSupport__stage-arrow {
+  color: #69a8ff;
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.stageSupport__details {
+  position: relative;
+
+  min-width: 0;
+  min-height: 590px;
+
+  overflow: hidden;
+
+  background: #071226;
+}
+
+/* =========================================================
+   DOT PATTERN
+========================================================= */
+
+.stageSupport__pattern {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.34;
+
+  background-image:
+    radial-gradient(
+      rgba(72, 116, 171, 0.3) 0.8px,
+      transparent 0.8px
+    );
+
+  background-size: 22px 22px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.78) 35%,
+      #000 100%
+    );
+}
+
+/* =========================================================
+   LARGE BACKGROUND NUMBER
+   ONLY NUMBER ON RIGHT SIDE
+========================================================= */
+
+.stageSupport__background-number {
+  position: absolute;
+
+  top: 25px;
+  left: 48px;
+
+  z-index: 0;
+
+  color: transparent;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(145px, 17vw, 225px);
+  font-weight: 700;
+
+  line-height: 0.9;
+
+  letter-spacing: -10px;
+
+  -webkit-text-stroke: 2px rgba(82, 122, 171, 0.32);
+
+  pointer-events: none;
+  user-select: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =========================================================
+   META / PROGRESS
+========================================================= */
+
+.stageSupport__meta {
+  position: relative;
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 16px;
+
+  padding: 112px 46px 0;
+}
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.stageSupport__progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.stageSupport__dot {
+  width: 8px;
+  height: 8px;
+
+  border: 1px solid #405873;
+  border-radius: 50%;
+
+  background: transparent;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.stageSupport__dot--active {
+  width: 10px;
+  height: 10px;
+
+  border-color: #69a8ff;
+  background: #69a8ff;
+
+  box-shadow: 0 0 0 3px rgba(105, 168, 255, 0.08);
+
+  transform: scale(1);
+}
+
+/* =========================================================
+   PROGRESS LABEL
+========================================================= */
+
+.stageSupport__progress-label {
+  color: #647d9c;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 1.4px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
+
+.stageSupport__detail-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 660px;
+
+  padding: 28px 48px 50px;
+
+  animation:
+    stageSupportContentIn 0.3s ease both;
+}
+
+@keyframes stageSupportContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   DETAIL TITLE
+========================================================= */
+
+.stageSupport__detail-title {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #f5f8fd;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -1.3px;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.stageSupport__description {
+  max-width: 600px;
+
+  margin: 20px 0 0;
+
+  color: #8295af;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15.5px;
+  font-weight: 400;
+
+  line-height: 1.72;
+}
+
+/* =========================================================
+   HELP SECTION
+========================================================= */
+
+.stageSupport__help {
+  margin-top: 32px;
+}
+
+.stageSupport__help-title {
+  margin: 0 0 14px;
+
+  color: #7188a5;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.stageSupport__tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.stageSupport__tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 35px;
+
+  padding: 6px 12px;
+
+  border: 1px solid #203b5e;
+  border-radius: 6px;
+
+  background: rgba(9, 24, 44, 0.55);
+
+  color: #8195af;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 12.5px;
+
+  line-height: 1.3;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.stageSupport__tag:hover {
+  border-color: #315985;
+
+  background: rgba(20, 43, 72, 0.5);
+
+  color: #a9c4e8;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.stageSupport__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 38px;
+
+  padding: 0 0 6px;
+
+  border: 0;
+  border-bottom: 1px solid rgba(105, 168, 255, 0.65);
+
+  background: transparent;
+
+  color: #6ea8ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.stageSupport__cta:hover {
+  border-color: #8bbcff;
+  color: #8bbcff;
+}
+
+.stageSupport__cta-arrow {
+  display: inline-block;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.stageSupport__cta:hover .stageSupport__cta-arrow {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .stageSupport {
+    padding: 90px 0;
+  }
+
+  .stageSupport__container {
+    width: min(920px, calc(100% - 36px));
+  }
+
+  .stageSupport__card {
+    grid-template-columns: 47% 53%;
+    min-height: 570px;
+  }
+
+  .stageSupport__details {
+    min-height: 570px;
+  }
+
+  .stageSupport__stage {
+    grid-template-columns: 38px minmax(0, 1fr) 22px;
+
+    gap: 12px;
+
+    padding: 23px 22px;
+  }
+
+  .stageSupport__stage-title {
+    font-size: 15px;
+  }
+
+  .stageSupport__stage-quote {
+    font-size: 13px;
+  }
+
+  .stageSupport__background-number {
+    left: 32px;
+
+    font-size: 175px;
+  }
+
+  .stageSupport__meta {
+    padding: 100px 30px 0;
+  }
+
+  .stageSupport__detail-content {
+    padding: 24px 34px 40px;
+  }
+
+  .stageSupport__detail-title {
+    font-size: 34px;
+  }
+
+  .stageSupport__description {
+    font-size: 14.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .stageSupport {
+    padding: 72px 0;
+  }
+
+  .stageSupport__container {
+    width: min(100% - 28px, 600px);
+  }
+
+  .stageSupport__heading {
+    font-size: clamp(36px, 10vw, 52px);
+    letter-spacing: -1.7px;
+  }
+
+  .stageSupport__intro {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .stageSupport__header {
+    margin-bottom: 32px;
+  }
+
+  /* STACK CARD */
+
+  .stageSupport__card {
+    display: block;
+    min-height: auto;
+  }
+
+  /* LEFT */
+
+  .stageSupport__navigation {
+    border-right: 0;
+    border-bottom: 1px solid #1c3152;
+  }
+
+  .stageSupport__stage {
+    min-height: 112px;
+
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      24px;
+
+    padding: 21px 18px;
+  }
+
+  .stageSupport__stage-title {
+    font-size: 15px;
+  }
+
+  .stageSupport__stage-quote {
+    max-width: 90%;
+    font-size: 13px;
+  }
+
+  /* RIGHT */
+
+  .stageSupport__details {
+    min-height: 570px;
+  }
+
+  .stageSupport__background-number {
+    top: 18px;
+    left: 18px;
+
+    font-size: 170px;
+
+    letter-spacing: -8px;
+  }
+
+  .stageSupport__meta {
+    padding: 92px 22px 0;
+  }
+
+  .stageSupport__detail-content {
+    padding: 22px 22px 38px;
+  }
+
+  .stageSupport__detail-title {
+    font-size: clamp(29px, 8vw, 40px);
+  }
+
+  .stageSupport__description {
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .stageSupport__help {
+    margin-top: 30px;
+  }
+
+  .stageSupport__cta {
+    margin-top: 32px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .stageSupport {
+    padding: 58px 0;
+  }
+
+  .stageSupport__container {
+    width: calc(100% - 22px);
+  }
+
+  .stageSupport__heading {
+    font-size: 34px;
+  }
+
+  .stageSupport__intro {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .stageSupport__stage {
+    min-height: 108px;
+
+    grid-template-columns:
+      32px
+      minmax(0, 1fr)
+      20px;
+
+    gap: 9px;
+
+    padding: 19px 14px;
+  }
+
+  .stageSupport__stage-number {
+    font-size: 11px;
+  }
+
+  .stageSupport__stage-title {
+    font-size: 14px;
+  }
+
+  .stageSupport__stage-quote {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .stageSupport__stage-arrow {
+    font-size: 19px;
+  }
+
+  .stageSupport__details {
+    min-height: 600px;
+  }
+
+  .stageSupport__background-number {
+    top: 15px;
+    left: 15px;
+
+    font-size: 145px;
+  }
+
+  .stageSupport__meta {
+    padding: 80px 17px 0;
+  }
+
+  .stageSupport__progress-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .stageSupport__detail-content {
+    padding: 20px 17px 32px;
+  }
+
+  .stageSupport__detail-title {
+    font-size: 28px;
+  }
+
+  .stageSupport__description {
+    font-size: 13.5px;
+  }
+
+  .stageSupport__tag {
+    min-height: 32px;
+
+    padding: 6px 10px;
+
+    font-size: 11.5px;
+  }
+
+  .stageSupport__help-title {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stageSupport *,
+  .stageSupport::before,
+  .stageSupport::after {
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+  }
+}

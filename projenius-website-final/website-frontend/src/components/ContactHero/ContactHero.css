@@ -1,0 +1,533 @@
+/* =========================================================
+   CONTACT HERO
+========================================================= */
+
+.pjct-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--pjct-hero-bg);
+  color: var(--pjct-hero-text);
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.pjct-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -40% 30%;
+  height: 90%;
+  background: radial-gradient(
+    closest-side,
+    rgba(54, 81, 255, 0.32),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.pjct-hero__inner {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: 32px;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+
+  padding: 64px 24px 72px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.pjct-hero__title {
+  margin: 0;
+
+  max-width: 12ch;
+
+  font-family: var(--pjct-font-display);
+
+  font-size: clamp(
+    2.5rem,
+    5.4vw,
+    4.4rem
+  );
+
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+}
+
+.pjct-hero__lead {
+  margin: 22px 0 0;
+
+  max-width: 34ch;
+
+  font-size: clamp(
+    1.1rem,
+    1.6vw,
+    1.3rem
+  );
+
+  line-height: 1.4;
+
+  color: #fff;
+}
+
+.pjct-hero__sub {
+  margin: 14px 0 0;
+
+  max-width: 52ch;
+
+  color: var(--pjct-hero-muted);
+
+  line-height: 1.65;
+}
+
+.pjct-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+/* =========================================================
+   ECOSYSTEM VISUAL
+========================================================= */
+
+.pjct-hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0;
+
+  width: 100%;
+}
+
+.pjct-hero__svg {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+
+  height: auto;
+
+  overflow: visible;
+}
+
+.pjct-hero__caption {
+  font-size: 15px;
+
+  color: var(--pjct-hero-muted);
+
+  text-align: center;
+}
+
+/* =========================================================
+   OUTER RING
+========================================================= */
+
+.pjct-hero__ring {
+  fill: none;
+
+  stroke: rgba(255, 255, 255, 0.1);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 2 8;
+}
+
+/* =========================================================
+   CONNECTION LINES
+========================================================= */
+
+.pjct-hero__link {
+  stroke: #6f86ff;
+
+  stroke-width: 1.5;
+
+  stroke-dasharray: 3 7;
+
+  opacity: 0.75;
+
+  animation:
+    pjct-hero-flow
+    2.6s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   CENTRAL CORE
+========================================================= */
+
+.pjct-hero__core {
+  overflow: visible;
+}
+
+/* Outer ring around logo */
+
+.pjct-hero__core-ring {
+  fill: none;
+
+  stroke: rgba(54, 81, 255, 0.45);
+
+  stroke-width: 1.5;
+}
+
+/* =========================================================
+   LOGO BACKGROUND
+========================================================= */
+
+.pjct-hero__logo-bg {
+  fill: #ffffff;
+
+  stroke: #3651ff;
+
+  stroke-width: 2;
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(54, 81, 255, 0.65)
+    );
+}
+
+/* =========================================================
+   ACTUAL LOGO
+========================================================= */
+
+.pjct-hero__logo {
+  display: block;
+
+  /*
+    Important:
+    The image occupies the exact same 108x108
+    area as the circular core.
+
+    clipPath makes sure nothing can escape
+    outside the circle.
+  */
+
+  overflow: hidden;
+
+  image-rendering: auto;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+/* =========================================================
+   LOGO BORDER
+========================================================= */
+
+.pjct-hero__logo-border {
+  fill: none;
+
+  stroke: #3651ff;
+
+  stroke-width: 2;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 0 5px rgba(54, 81, 255, 0.8)
+    );
+}
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+.pjct-hero__pulse {
+  fill: none;
+
+  stroke: var(--pjct-sun);
+
+  stroke-width: 1.5;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation:
+    pjct-hero-pulse
+    3.6s
+    ease-out
+    infinite;
+}
+
+.pjct-hero__pulse--late {
+  animation-delay: 1.8s;
+}
+
+/* =========================================================
+   NODES
+========================================================= */
+
+.pjct-hero__node {
+  cursor: pointer;
+
+  outline: none;
+
+  animation:
+    pjct-hero-node-in
+    0.7s
+    cubic-bezier(
+      0.2,
+      0.7,
+      0.2,
+      1
+    )
+    both;
+}
+
+.pjct-hero__float {
+  animation:
+    pjct-hero-bob
+    7s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   NODE PILL
+========================================================= */
+
+.pjct-hero__pill {
+  fill: rgba(255, 255, 255, 0.07);
+
+  stroke: rgba(255, 255, 255, 0.3);
+
+  stroke-width: 1.2;
+
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+}
+
+/* =========================================================
+   NODE LABEL
+========================================================= */
+
+.pjct-hero__label {
+  fill: #fff;
+
+  font-family: var(--pjct-font-body);
+
+  font-weight: 600;
+
+  font-size: 12.5px;
+
+  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   NODE DOT
+========================================================= */
+
+.pjct-hero__dot {
+  fill: #1fcba0;
+}
+
+/* =========================================================
+   NODE HOVER
+========================================================= */
+
+.pjct-hero__node:hover .pjct-hero__pill {
+  fill: rgba(74, 99, 255, 0.35);
+
+  stroke: #9db0ff;
+}
+
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.pjct-hero__node:focus-visible .pjct-hero__pill {
+  stroke: #fff;
+
+  stroke-width: 2.5;
+}
+
+/* =========================================================
+   STAGGERED NODE ENTRANCE
+========================================================= */
+
+.pjct-hero__node:nth-child(1) {
+  animation-delay: 150ms;
+}
+
+.pjct-hero__node:nth-child(2) {
+  animation-delay: 240ms;
+}
+
+.pjct-hero__node:nth-child(3) {
+  animation-delay: 330ms;
+}
+
+.pjct-hero__node:nth-child(4) {
+  animation-delay: 420ms;
+}
+
+.pjct-hero__node:nth-child(5) {
+  animation-delay: 510ms;
+}
+
+.pjct-hero__node:nth-child(6) {
+  animation-delay: 600ms;
+}
+
+/* =========================================================
+   NODE FLOAT STAGGER
+========================================================= */
+
+.pjct-hero__node:nth-child(2)
+  .pjct-hero__float {
+  animation-delay: -1.2s;
+}
+
+.pjct-hero__node:nth-child(3)
+  .pjct-hero__float {
+  animation-delay: -2.3s;
+}
+
+.pjct-hero__node:nth-child(4)
+  .pjct-hero__float {
+  animation-delay: -3.5s;
+}
+
+.pjct-hero__node:nth-child(5)
+  .pjct-hero__float {
+  animation-delay: -4.6s;
+}
+
+.pjct-hero__node:nth-child(6)
+  .pjct-hero__float {
+  animation-delay: -5.8s;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pjct-hero-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes pjct-hero-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes pjct-hero-node-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pjct-hero-bob {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .pjct-hero__inner {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding: 44px 24px 52px;
+
+    text-align: center;
+  }
+
+  .pjct-hero__title,
+  .pjct-hero__lead,
+  .pjct-hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pjct-hero__actions {
+    justify-content: center;
+  }
+
+  .pjct-hero__svg {
+    max-width: 380px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .pjct-hero__inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .pjct-hero__svg {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .pjct-hero__caption {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjct-hero__link,
+  .pjct-hero__pulse,
+  .pjct-hero__node,
+  .pjct-hero__float {
+    animation: none;
+  }
+
+  .pjct-hero__pill {
+    transition: none;
+  }
+}

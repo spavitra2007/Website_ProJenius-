@@ -1,0 +1,1087 @@
+/* =========================================================
+   STARTUP JOURNEY
+========================================================= */
+
+.startupJourney {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: #020817;
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.startupJourney__grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.5;
+
+  background-image:
+    linear-gradient(
+      rgba(74, 110, 151, 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(74, 110, 151, 0.09) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.startupJourney__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1240px, calc(100% - 32px));
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding: 18px 0 44px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.startupJourney__header {
+  max-width: 720px;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.startupJourney__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #70a0df;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.startupJourney__eyebrow-line {
+  display: block;
+
+  width: 27px;
+  height: 1px;
+
+  background: #70c8ff;
+}
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.startupJourney__heading {
+  margin: 0;
+
+  color: #eef4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(44px, 5.4vw, 66px);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -2.8px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.startupJourney__intro {
+  max-width: 700px;
+
+  margin: 28px 0 0;
+
+  color: #9aaac4;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.startupJourney__main {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.22fr) minmax(410px, 0.78fr);
+
+  min-height: 700px;
+
+  margin-top: 72px;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.startupJourney__content {
+  position: relative;
+  z-index: 3;
+
+  padding-top: 58px;
+}
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.startupJourney__counter {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  gap: 17px;
+
+  margin-bottom: 17px;
+}
+
+.startupJourney__counter-text {
+  flex: 0 0 auto;
+
+  color: #8494ae;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.startupJourney__progress {
+  position: relative;
+
+  width: 225px;
+  height: 2px;
+
+  overflow: hidden;
+
+  background: #2c3b57;
+}
+
+.startupJourney__progress::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 28px;
+  height: 2px;
+
+  background: #61c9ff;
+}
+
+.startupJourney__progress-fill {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8ab7ff,
+      #36dbeb,
+      #8e86f6
+    );
+
+  transition: width 0.55s cubic-bezier(
+    0.22,
+    1,
+    0.36,
+    1
+  );
+}
+
+/* =========================================================
+   STAGE CONTENT
+========================================================= */
+
+.startupJourney__stage-content {
+  animation:
+    startupJourneyContentIn 0.45s ease both;
+}
+
+@keyframes startupJourneyContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   STAGE HEADING
+========================================================= */
+
+.startupJourney__stage-heading {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 104px;
+}
+
+/* =========================================================
+   LARGE NUMBER
+========================================================= */
+
+.startupJourney__large-number {
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  color: transparent;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 116px;
+
+  font-weight: 700;
+
+  line-height: 0.84;
+
+  letter-spacing: -7px;
+
+  -webkit-text-stroke: 1.6px rgba(
+    76,
+    112,
+    167,
+    0.47
+  );
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+/* =========================================================
+   STAGE TITLE
+========================================================= */
+
+.startupJourney__stage-title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  padding-left: 124px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8ab7ff 0%,
+      #49d8ea 48%,
+      #8989f7 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(50px, 6vw, 67px);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -2.4px;
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.startupJourney__stage-subtitle {
+  margin: 12px 0 30px;
+
+  color: #aebbd2;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 23px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+/* =========================================================
+   ITEMS
+========================================================= */
+
+.startupJourney__items {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 26px;
+
+  max-width: 760px;
+}
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.startupJourney__item {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 53px;
+
+  border-top: 1px solid rgba(
+    68,
+    93,
+    125,
+    0.34
+  );
+
+  color: #d8dfeb;
+
+  font-size: 16px;
+
+  line-height: 1.35;
+}
+
+.startupJourney__item--right {
+  grid-column: 2;
+}
+
+/* =========================================================
+   ITEM DOT
+========================================================= */
+
+.startupJourney__item-dot {
+  flex: 0 0 auto;
+
+  width: 9px;
+  height: 9px;
+
+  margin-right: 15px;
+
+  border-radius: 50%;
+
+  background: #36d8ed;
+
+  box-shadow:
+    0 0 0 4px rgba(54, 216, 237, 0.09),
+    0 0 12px rgba(54, 216, 237, 0.42);
+}
+
+/* =========================================================
+   ITEM TEXT
+========================================================= */
+
+.startupJourney__item-text {
+  color: #d4dce9;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.startupJourney__controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 34px;
+}
+
+/* =========================================================
+   CONTROL BUTTON
+========================================================= */
+
+.startupJourney__control {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  padding: 0;
+
+  border: 1px solid #304363;
+
+  border-radius: 9px;
+
+  background: rgba(5, 15, 30, 0.38);
+
+  color: #edf4ff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.startupJourney__control svg {
+  width: 25px;
+  height: 25px;
+}
+
+.startupJourney__control:hover:not(:disabled) {
+  border-color: #44d9ef;
+
+  background: rgba(29, 66, 96, 0.22);
+
+  color: #59ddf3;
+
+  transform: translateY(-2px);
+}
+
+.startupJourney__control--disabled,
+.startupJourney__control:disabled {
+  border-color: rgba(48, 67, 99, 0.46);
+
+  color: #44536c;
+
+  cursor: not-allowed;
+
+  opacity: 0.65;
+}
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.startupJourney__visual {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.startupJourney__svg {
+  width: 100%;
+
+  max-width: 460px;
+
+  height: 690px;
+
+  overflow: visible;
+
+  margin-top: -8px;
+}
+
+/* =========================================================
+   BASE PATH
+========================================================= */
+
+.startupJourney__path-base {
+  fill: none;
+
+  stroke: #29405f;
+
+  stroke-width: 1.5;
+
+  stroke-dasharray: 2.5 6.5;
+
+  opacity: 0.68;
+}
+
+/* =========================================================
+   ACTIVE PATH
+========================================================= */
+
+.startupJourney__path-active {
+  fill: none;
+
+  stroke: #45cfff;
+
+  stroke-width: 2.6;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  opacity: 0;
+
+  filter:
+    drop-shadow(
+      0 0 4px rgba(69, 207, 255, 0.45)
+    );
+
+  pathLength: 1;
+
+  stroke-dasharray: 1;
+
+  stroke-dashoffset: 1;
+
+  transition:
+    opacity 0.35s ease,
+    stroke-dashoffset 0.75s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.startupJourney__path-active--visible {
+  opacity: 1;
+
+  stroke-dashoffset: 0;
+}
+
+/* =========================================================
+   CURRENT OUTGOING PATH
+========================================================= */
+
+.startupJourney__path-current {
+  fill: none;
+
+  stroke: #52d5f0;
+
+  stroke-width: 2.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  opacity: 0.9;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(65, 205, 241, 0.38)
+    );
+
+  pathLength: 1;
+
+  stroke-dasharray: 0.8 0.2;
+
+  animation:
+    startupJourneyCurrentPath 1.25s
+    ease-in-out infinite;
+}
+
+@keyframes startupJourneyCurrentPath {
+  0% {
+    stroke-dashoffset: 0.18;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -0.18;
+  }
+}
+
+/* =========================================================
+   TRAVEL DOT
+========================================================= */
+
+.startupJourney__travel-dot {
+  fill: #ffffff;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(255, 255, 255, 0.8)
+    );
+}
+
+/* =========================================================
+   NODE GROUP
+========================================================= */
+
+.startupJourney__node-group {
+  cursor: pointer;
+
+  outline: none;
+}
+
+/* =========================================================
+   NODE CIRCLE
+========================================================= */
+
+.startupJourney__node-circle {
+  fill: #020817;
+
+  stroke: #2f4569;
+
+  stroke-width: 1.5;
+
+  transition:
+    fill 0.35s ease,
+    stroke 0.35s ease,
+    transform 0.35s ease;
+}
+
+.startupJourney__node-group--completed
+  .startupJourney__node-circle {
+  stroke: #5b80ae;
+}
+
+/* =========================================================
+   ACTIVE CIRCLE
+========================================================= */
+
+.startupJourney__node-group--active
+  .startupJourney__node-circle {
+  fill: #42d7eb;
+
+  stroke: #42d7eb;
+
+  stroke-width: 1.5;
+
+  filter:
+    drop-shadow(
+      0 0 13px rgba(66, 215, 235, 0.58)
+    );
+}
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.startupJourney__node-glow {
+  fill: rgba(65, 201, 235, 0.11);
+
+  filter:
+    blur(5px);
+
+  animation:
+    startupJourneyGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes startupJourneyGlow {
+  0%,
+  100% {
+    opacity: 0.65;
+
+    r: 34;
+  }
+
+  50% {
+    opacity: 1;
+
+    r: 40;
+  }
+}
+
+/* =========================================================
+   NODE NUMBER
+========================================================= */
+
+.startupJourney__node-number {
+  fill: #6e819d;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  pointer-events: none;
+}
+
+.startupJourney__node-group--active
+  .startupJourney__node-number {
+  fill: #04101b;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   ACTIVE INNER DETAIL
+========================================================= */
+
+.startupJourney__node-inner {
+  fill: #ffffff;
+
+  opacity: 0.92;
+
+  transform-origin: center;
+
+  animation:
+    startupJourneyInnerPulse 1.5s
+    ease-in-out infinite;
+}
+
+@keyframes startupJourneyInnerPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   NODE LABEL
+========================================================= */
+
+.startupJourney__node-label {
+  fill: #8391a9;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  pointer-events: none;
+}
+
+.startupJourney__node-group--active
+  .startupJourney__node-label {
+  fill: #f4f7ff;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.startupJourney__node-group:focus-visible
+  .startupJourney__node-circle {
+  stroke: #71dfff;
+
+  stroke-width: 2;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .startupJourney__container {
+    width: min(940px, calc(100% - 28px));
+  }
+
+  .startupJourney__main {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(360px, 0.9fr);
+  }
+
+  .startupJourney__heading {
+    font-size: 54px;
+  }
+
+  .startupJourney__stage-title {
+    font-size: 53px;
+  }
+
+  .startupJourney__items {
+    column-gap: 18px;
+  }
+
+  .startupJourney__item-text {
+    font-size: 14px;
+  }
+
+  .startupJourney__svg {
+    max-width: 390px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .startupJourney {
+    min-height: auto;
+  }
+
+  .startupJourney__container {
+    width: min(100% - 24px, 600px);
+
+    padding-bottom: 60px;
+  }
+
+  .startupJourney__header {
+    max-width: 100%;
+  }
+
+  .startupJourney__heading {
+    font-size: clamp(39px, 11vw, 54px);
+
+    letter-spacing: -1.8px;
+  }
+
+  .startupJourney__intro {
+    margin-top: 20px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .startupJourney__main {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    margin-top: 45px;
+  }
+
+  .startupJourney__content {
+    padding-top: 0;
+  }
+
+  .startupJourney__counter {
+    margin-bottom: 22px;
+  }
+
+  .startupJourney__progress {
+    width: 160px;
+  }
+
+  .startupJourney__stage-heading {
+    min-height: 90px;
+  }
+
+  .startupJourney__large-number {
+    font-size: 92px;
+
+    letter-spacing: -5px;
+
+    bottom: 0;
+  }
+
+  .startupJourney__stage-title {
+    padding-left: 94px;
+
+    font-size: clamp(39px, 11vw, 56px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .startupJourney__stage-subtitle {
+    margin-top: 15px;
+
+    font-size: 19px;
+  }
+
+  .startupJourney__items {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+
+    max-width: none;
+  }
+
+  .startupJourney__item--right {
+    grid-column: auto;
+  }
+
+  .startupJourney__item {
+    min-height: 49px;
+  }
+
+  .startupJourney__item-text {
+    font-size: 14px;
+  }
+
+  .startupJourney__controls {
+    margin-top: 28px;
+  }
+
+  .startupJourney__control {
+    width: 54px;
+    height: 54px;
+  }
+
+  .startupJourney__visual {
+    min-height: 700px;
+
+    margin-top: 35px;
+  }
+
+  .startupJourney__svg {
+    width: 100%;
+
+    max-width: 420px;
+
+    height: 700px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+  .startupJourney__container {
+    width: calc(100% - 18px);
+  }
+
+  .startupJourney__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .startupJourney__heading {
+    font-size: 36px;
+  }
+
+  .startupJourney__intro {
+    font-size: 14px;
+  }
+
+  .startupJourney__counter-text {
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .startupJourney__progress {
+    width: 125px;
+  }
+
+  .startupJourney__large-number {
+    font-size: 80px;
+  }
+
+  .startupJourney__stage-title {
+    padding-left: 80px;
+
+    font-size: 38px;
+  }
+
+  .startupJourney__stage-subtitle {
+    font-size: 17px;
+  }
+
+  .startupJourney__item-text {
+    font-size: 13px;
+  }
+
+  .startupJourney__visual {
+    min-height: 650px;
+  }
+
+  .startupJourney__svg {
+    height: 650px;
+  }
+
+  .startupJourney__node-label {
+    font-size: 9px;
+
+    letter-spacing: 1.6px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .startupJourney *,
+  .startupJourney::before,
+  .startupJourney::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}

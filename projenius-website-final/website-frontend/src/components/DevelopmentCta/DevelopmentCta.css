@@ -1,0 +1,785 @@
+/* =====================================================================
+   DEVELOPMENT CTA
+   Local colors only — does not modify other Development sections.
+===================================================================== */
+
+.pjdev-cta {
+
+  /* =========================================================
+     REFERENCE COLORS
+  ========================================================= */
+
+  --cta-bg: #050B1E;
+
+  --cta-text: #EAF0FF;
+
+  --cta-muted: #91A7C8;
+
+  --cta-muted-soft: #7389AA;
+
+  --cta-blue: #1D5CFF;
+
+  --cta-blue-light: #6E97FF;
+
+  --cta-cyan: #3DD9EE;
+
+  --cta-border: #243A63;
+
+  --cta-border-light:
+    rgba(
+      75,
+      106,
+      157,
+      0.55
+    );
+
+  --cta-grid:
+    rgba(
+      81,
+      108,
+      158,
+      0.045
+    );
+
+  /* =========================================================
+     LOCAL SHARED VARIABLES
+     Only inherited by children of this section.
+  ========================================================= */
+
+  --pjdev-bg: #050B1E;
+  --pjdev-dbg: #050B1E;
+  --pjdev-dbg2: #0B1533;
+  --pjdev-surface: #0B1533;
+  --pjdev-card: #0B1533;
+
+  --pjdev-ink: #EAF0FF;
+  --pjdev-muted: #91A7C8;
+
+  --pjdev-blue: #1D5CFF;
+  --pjdev-dcyan: #3DD9EE;
+
+  --pjdev-line: #243A63;
+  --pjdev-line-strong: #38588D;
+
+  --pjdev-grad:
+    linear-gradient(
+      90deg,
+      #6E97FF 0%,
+      #1D5CFF 52%,
+      #3DD9EE 100%
+    );
+
+  --pjdev-grad-d:
+    linear-gradient(
+      90deg,
+      #6E97FF 0%,
+      #1D5CFF 52%,
+      #3DD9EE 100%
+    );
+
+  /* =========================================================
+     SECTION
+  ========================================================= */
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 640px;
+
+  padding:
+    clamp(
+      92px,
+      11vw,
+      150px
+    )
+    0
+    clamp(
+      76px,
+      9vw,
+      120px
+    );
+
+  overflow: hidden;
+
+  background:
+    var(--cta-bg);
+
+  color:
+    var(--cta-text);
+
+  text-align:
+    center;
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+
+  isolation:
+    isolate;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-cta::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--cta-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--cta-grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    64px 64px;
+
+  opacity:
+    0.9;
+
+  mask-image:
+    radial-gradient(
+      ellipse
+      70%
+      65%
+      at 50% 42%,
+      black 0%,
+      rgba(0, 0, 0, 0.85) 40%,
+      transparent 82%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse
+      70%
+      65%
+      at 50% 42%,
+      black 0%,
+      rgba(0, 0, 0, 0.85) 40%,
+      transparent 82%
+    );
+}
+
+/* =========================================================
+   BLUE GLOW
+========================================================= */
+
+.pjdev-cta::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: -10%;
+
+  width:
+    min(
+      1000px,
+      90vw
+    );
+
+  height:
+    650px;
+
+  z-index:
+    -2;
+
+  transform:
+    translateX(-50%);
+
+  pointer-events:
+    none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(
+        29,
+        92,
+        255,
+        0.16
+      ) 0%,
+      rgba(
+        29,
+        92,
+        255,
+        0.07
+      ) 30%,
+      rgba(
+        61,
+        217,
+        238,
+        0.025
+      ) 48%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-cta__wrap {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 80px
+      )
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.pjdev-cta__title {
+  max-width:
+    16ch;
+
+  margin:
+    0 auto;
+
+  color:
+    var(--cta-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      2.7rem,
+      5.5vw,
+      5rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -0.045em;
+
+  text-wrap:
+    balance;
+}
+
+/* =========================================================
+   LEAD
+========================================================= */
+
+.pjdev-cta__lead {
+  max-width:
+    58ch;
+
+  margin:
+    25px auto 0;
+
+  color:
+    var(--cta-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1rem,
+      1.25vw,
+      1.16rem
+    );
+
+  line-height:
+    1.65;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.pjdev-cta__actions {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  margin-top:
+    36px;
+}
+
+/* =========================================================
+   FORCE CTA BUTTON COLORS
+
+   This prevents shared DevelopmentButton styling from making
+   the CTA look different from the reference.
+========================================================= */
+
+.pjdev-cta
+  .pjdevbtn--primary {
+  background:
+    var(--cta-blue);
+
+  color:
+    #ffffff;
+
+  border:
+    1px solid
+    var(--cta-blue);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      29,
+      92,
+      255,
+      0.3
+    );
+}
+
+.pjdev-cta
+  .pjdevbtn--primary:hover {
+  background:
+    #174FE8;
+
+  border-color:
+    #174FE8;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 18px 34px
+    rgba(
+      29,
+      92,
+      255,
+      0.36
+    );
+}
+
+.pjdev-cta
+  .pjdevbtn--ghost {
+  border:
+    1px solid
+    var(--cta-border-light);
+
+  background:
+    rgba(
+      8,
+      17,
+      42,
+      0.5
+    );
+
+  color:
+    var(--cta-text);
+}
+
+.pjdev-cta
+  .pjdevbtn--ghost:hover {
+  border-color:
+    var(--cta-blue-light);
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.06
+    );
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   JOURNEY FLOW
+========================================================= */
+
+.pjdev-cta__flow {
+  position:
+    relative;
+
+  margin:
+    clamp(
+      62px,
+      7vw,
+      94px
+    )
+    auto 0;
+
+  width:
+    100%;
+
+  overflow:
+    visible;
+}
+
+/* =========================================================
+   LOCAL JOURNEY COLORS
+
+   These selectors support common journey wrappers while
+   remaining inside .pjdev-cta only.
+========================================================= */
+
+.pjdev-cta__flow
+  * {
+  --pjdev-bg:
+    var(--cta-bg);
+
+  --pjdev-surface:
+    #0B1533;
+
+  --pjdev-card:
+    #0B1533;
+
+  --pjdev-ink:
+    var(--cta-text);
+
+  --pjdev-muted:
+    var(--cta-muted);
+
+  --pjdev-blue:
+    var(--cta-blue-light);
+
+  --pjdev-dcyan:
+    var(--cta-cyan);
+
+  --pjdev-line:
+    var(--cta-border);
+
+  --pjdev-line-strong:
+    #38588D;
+}
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.pjdev-cta__final {
+  margin:
+    56px auto 0;
+
+  color:
+    var(--cta-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1.25rem,
+      2.4vw,
+      1.9rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.35;
+
+  letter-spacing:
+    -0.025em;
+
+  text-wrap:
+    balance;
+}
+
+/* =========================================================
+   ACCENT LINE
+========================================================= */
+
+.pjdev-cta__final-accent {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6E97FF 0%,
+      #35B8F0 55%,
+      #3DD9EE 100%
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color:
+    transparent;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.pjdev-cta__rv {
+  opacity:
+    0;
+
+  transform:
+    translateY(
+      20px
+    );
+
+  transition:
+    opacity
+      0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    transform
+      0.8s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.pjdev-cta__rv--d1 {
+  transition-delay:
+    0.1s;
+}
+
+.pjdev-cta__rv--d2 {
+  transition-delay:
+    0.2s;
+}
+
+.pjdev-cta--in
+  .pjdev-cta__rv {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .pjdev-cta {
+    min-height:
+      580px;
+
+    padding:
+      82px
+      0
+      90px;
+  }
+
+  .pjdev-cta__wrap {
+    width:
+      calc(
+        100% - 48px
+      );
+  }
+
+  .pjdev-cta__flow {
+    margin-top:
+      60px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-cta {
+    min-height:
+      auto;
+
+    padding:
+      72px
+      0
+      82px;
+  }
+
+  .pjdev-cta__wrap {
+    width:
+      calc(
+        100% - 28px
+      );
+  }
+
+  .pjdev-cta__title {
+    max-width:
+      12ch;
+
+    font-size:
+      2.45rem;
+
+    line-height:
+      1.04;
+  }
+
+  .pjdev-cta__lead {
+    max-width:
+      38ch;
+
+    margin-top:
+      20px;
+
+    font-size:
+      0.94rem;
+
+    line-height:
+      1.58;
+  }
+
+  .pjdev-cta__actions {
+    width:
+      100%;
+
+    margin-top:
+      30px;
+  }
+
+  .pjdev-cta__actions
+    .pjdevbtn {
+    min-width:
+      190px;
+
+    justify-content:
+      center;
+  }
+
+  .pjdev-cta__flow {
+    margin-top:
+      54px;
+
+    overflow-x:
+      auto;
+
+    overflow-y:
+      hidden;
+
+    padding-bottom:
+      8px;
+
+    scrollbar-width:
+      thin;
+  }
+
+  .pjdev-cta__final {
+    margin-top:
+      42px;
+
+    font-size:
+      1.2rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .pjdev-cta__wrap {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .pjdev-cta__title {
+    font-size:
+      2.15rem;
+  }
+
+  .pjdev-cta__actions {
+    flex-direction:
+      column;
+  }
+
+  .pjdev-cta__actions
+    .pjdevbtn {
+    width:
+      100%;
+  }
+
+  .pjdev-cta__final {
+    font-size:
+      1.08rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-cta__rv {
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    transition:
+      none;
+  }
+}

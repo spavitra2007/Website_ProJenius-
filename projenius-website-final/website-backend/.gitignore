@@ -1,0 +1,9 @@
+node_modules/
+<<<<<<< HEAD
+.env
+=======
+.env
+.env.local
+.vercel/
+uploads/
+>>>>>>> 97cd77108a2f179402d8803b43d55c4864bf07d3

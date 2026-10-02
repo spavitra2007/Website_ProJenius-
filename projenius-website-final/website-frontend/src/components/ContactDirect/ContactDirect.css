@@ -1,0 +1,40 @@
+/* ContactDirect */
+.pjct-direct { padding: 64px 0 24px; scroll-margin-top: 12px; }
+.pjct-direct__inner { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.pjct-direct__head { max-width: 640px; margin-bottom: 28px; }
+.pjct-direct__title { margin: 0; font-family: var(--pjct-font-display); font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; }
+.pjct-direct__support { margin: 10px 0 0; font-size: 1.08rem; color: var(--pjct-muted); }
+
+.pjct-direct__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+.pjct-direct__card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px;
+  border: 1px solid var(--pjct-line);
+  border-radius: var(--pjct-radius);
+  background: var(--pjct-surface);
+  color: var(--pjct-text);
+  text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+a.pjct-direct__card:hover { border-color: var(--pjct-primary); transform: translateY(-3px); box-shadow: var(--pjct-shadow); }
+.pjct-direct__icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 12px; background: var(--pjct-primary-soft); color: var(--pjct-primary); }
+.pjct-direct__card-title { margin: 0; font-family: var(--pjct-font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+.pjct-direct__sub { font-size: 14.5px; color: var(--pjct-muted); }
+.pjct-direct__value { margin-top: 8px; font-weight: 600; word-break: break-word; }
+.pjct-direct__card--empty { border-style: dashed; border-color: var(--pjct-line-strong); background: transparent; }
+.pjct-direct__card--empty .pjct-direct__value { font-weight: 500; font-size: 14.5px; color: var(--pjct-muted); }
+
+/* one gentle reveal when the section scrolls into view */
+.pjct-direct__head, .pjct-direct__grid { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.pjct-direct--visible .pjct-direct__head, .pjct-direct--visible .pjct-direct__grid { opacity: 1; transform: none; }
+
+@media (max-width: 1100px) { .pjct-direct__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .pjct-direct__inner { padding: 0 16px; } }
+@media (max-width: 560px) { .pjct-direct__grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .pjct-direct__head, .pjct-direct__grid { opacity: 1; transform: none; transition: none; }
+  .pjct-direct__card { transition: none; }
+}

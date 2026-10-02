@@ -1,0 +1,954 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+/* =========================================================
+   DEV HERO
+   Unique class names intentionally used so HeroSection.css
+   cannot override this section.
+   ========================================================= */
+
+.devhero,
+.devhero * {
+    box-sizing: border-box;
+}
+
+.devhero {
+    --dev-bg: #071326;
+    --dev-bg-dark: #06101f;
+    --dev-white: #ffffff;
+    --dev-text: rgba(255, 255, 255, 0.72);
+    --dev-blue: #1769ff;
+    --dev-cyan: #35ceff;
+
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7, 16, 31, 0.96),
+            rgba(10, 22, 42, 0.92)
+        ),
+        linear-gradient(
+            180deg,
+            #08162c 0%,
+            #071326 55%,
+            #061224 100%
+        );
+
+    color: var(--dev-white);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background grid */
+.devhero__background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 78% 38%,
+            rgba(53, 206, 255, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 18% 65%,
+            rgba(53, 206, 255, 0.05),
+            transparent 28%
+        ),
+        linear-gradient(
+            rgba(53, 206, 255, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(53, 206, 255, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        auto,
+        auto,
+        56px 56px,
+        56px 56px;
+
+    opacity: 0.95;
+}
+
+/* =========================================================
+   MAIN AREA
+   Safe top space keeps content below the fixed navbar.
+   ========================================================= */
+
+.devhero__inner {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:
+        clamp(118px, 13vh, 142px)
+        24px
+        78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.devhero__content {
+    position: relative;
+
+    width: min(1260px, 100%);
+    max-width: 1260px;
+    height: 100%;
+    min-height: 0;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 740px)
+        minmax(390px, 440px);
+
+    align-items: center;
+    justify-content: center;
+
+    column-gap: clamp(35px, 4vw, 70px);
+}
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.devhero__copy {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 740px;
+    min-width: 0;
+    margin: 0;
+
+    transform: translateY(-2px);
+}
+
+.devhero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+    margin: 0 0 19px;
+
+    color: #b7c1d3;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.25px;
+}
+
+.devhero__eyebrow-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+
+    background: var(--dev-cyan);
+
+    box-shadow:
+        0 0 0 4px rgba(53, 206, 255, 0.08),
+        0 0 14px rgba(53, 206, 255, 0.55);
+}
+
+.devhero__title {
+    width: 100%;
+    max-width: 740px;
+    margin: 0;
+
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(48px, 4.45vw, 66px);
+    font-weight: 800;
+    line-height: 1.045;
+    letter-spacing: -2.7px;
+}
+
+.devhero__title-line {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.devhero__title-line--cyan {
+    color: #35CEFF;
+    background: none;
+    -webkit-text-fill-color: #35CEFF;
+}
+
+.devhero__description {
+    width: 100%;
+    max-width: 660px;
+    margin: 22px 0 0;
+
+    color: var(--dev-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.devhero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.devhero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-height: 48px;
+    padding: 12px 24px;
+
+    border: 0;
+    border-radius: 30px;
+
+    background: var(--dev-cyan);
+    color: #061018;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    box-shadow: 0 8px 22px rgba(53, 206, 255, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.devhero__button:hover {
+    background: #63dbff;
+    color: #061018;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(53, 206, 255, 0.30);
+}
+
+.devhero__button--secondary {
+    background: #343A40;
+    color: #E8EDF3;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.devhero__button--secondary:hover {
+    background: #3F464D;
+    color: #F6F8FB;
+
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================================
+   RIGHT — ZIG-ZAG JOURNEY
+   ========================================================= */
+
+.devhero__journey {
+    position: relative;
+    z-index: 5;
+
+    width: min(440px, 100%);
+    height: min(470px, 56vh);
+
+    min-height: 380px;
+    max-height: 470px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+}
+
+.devhero--visible .devhero__journey {
+    animation:
+        devheroJourneyIn 0.95s
+        cubic-bezier(.22, 1, .36, 1)
+        0.30s forwards;
+}
+
+.devhero__svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+    transform: scale(1.10);
+    transform-origin: center;
+}
+
+.devhero__path {
+    fill: none;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    opacity: 0;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(23, 105, 255, 0.42)
+        );
+}
+
+.devhero--visible .devhero__path {
+    animation:
+        devheroPathDraw
+        1.45s
+        cubic-bezier(.22, 1, .36, 1)
+        0.55s
+        forwards;
+}
+
+.devhero__loop {
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    opacity: 0;
+
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(53, 206, 255, 0.22)
+        );
+}
+
+.devhero--visible .devhero__loop {
+    animation:
+        devheroLoopDraw
+        1.25s
+        ease-out
+        0.95s
+        forwards;
+}
+
+.devhero__loop-arrow {
+    fill: #35CEFF;
+    opacity: 0;
+}
+
+.devhero--visible .devhero__loop-arrow {
+    animation: devheroArrowIn 0.55s ease 1.85s forwards;
+}
+
+.devhero__tie {
+     fill: none;
+    stroke: rgba(57, 138, 213, 0.72);
+    stroke-width: 1.25;
+    stroke-dasharray: 4 6;
+    opacity: 0;
+}
+
+.devhero--visible .devhero__tie {
+    animation:
+        devheroTie
+        0.85s
+        ease
+        var(--dev-tie-delay)
+        forwards;
+}
+
+.devhero__node {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.devhero--visible .devhero__node {
+    animation:
+        devheroNodeIn
+        0.78s
+        cubic-bezier(.22, 1, .36, 1)
+        var(--dev-node-delay)
+        forwards;
+}
+
+.devhero__ring {
+    fill: #071326;
+    stroke-width: 2.7;
+}
+
+.devhero__label {
+    fill: #c6d0df;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+}
+
+.devhero__label--first {
+    fill: #f2f6fc;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.devhero__pulse {
+    fill: none;
+    stroke: rgba(35, 139, 255, 0.28);
+    stroke-width: 1.8;
+
+    transform-origin: 270px 60px;
+}
+
+.devhero--visible .devhero__pulse {
+    animation:
+        devheroPulse
+        2.4s
+        ease-out
+        2.45s
+        infinite;
+}
+
+.devhero--visible .devhero__pulse--second {
+    animation-delay: 3.65s;
+}
+
+.devhero__packet {
+    fill: #35ceff;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(53, 206, 255, 0.9)
+        );
+}
+
+.devhero__sat {
+    opacity: 0;
+}
+
+.devhero--visible .devhero__sat {
+    animation:
+        devheroSatellite
+        0.80s
+        cubic-bezier(.22, 1, .36, 1)
+        var(--dev-sat-delay)
+        forwards;
+}
+
+.devhero__sat-float {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.devhero--visible .devhero__sat-float {
+    animation:
+        devheroChipFloat
+        var(--dev-float-duration)
+        ease-in-out
+        var(--dev-float-delay)
+        infinite;
+}
+
+.devhero__chip {
+    fill: rgba(10, 28, 54, 0.88);
+    stroke: rgba(53, 206, 255, 0.48);
+    stroke-width: 1.2;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.16));
+}
+
+.devhero__chip-text {
+    fill: #c7d2e2;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   BOTTOM ZIG-ZAG
+   ========================================================= */
+
+.devhero__bottom-zigzag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 77px;
+
+    z-index: 20;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.devhero__bottom-zigzag-cyan,
+.devhero__bottom-zigzag-white {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+}
+
+.devhero__bottom-zigzag-cyan {
+    top: 0;
+
+    background: #35ceff;
+
+    clip-path: polygon(
+        0 12%,
+        8% 55%,
+        17% 0%,
+        100% 68%,
+        100% 100%,
+        0 100%
+    );
+}
+
+.devhero__bottom-zigzag-white {
+    height: 77px;
+
+    background: #ffffff;
+
+    clip-path: polygon(
+        0 13%,
+        8% 57%,
+        17% 9%,
+        100% 76%,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* =========================================================
+   ENTRANCE ANIMATION
+   ========================================================= */
+
+.devhero__copy > * {
+    opacity: 0;
+}
+
+.devhero--visible .devhero__copy > * {
+    animation:
+        devheroItemIn
+        0.75s
+        cubic-bezier(.22, 1, .36, 1)
+        forwards;
+}
+
+.devhero--visible .devhero__eyebrow {
+    animation-delay: 0.10s;
+}
+
+.devhero--visible .devhero__title {
+    animation-delay: 0.34s;
+}
+
+.devhero--visible .devhero__description {
+    animation-delay: 0.66s;
+}
+
+.devhero--visible .devhero__actions {
+    animation-delay: 0.94s;
+}
+
+@keyframes devheroItemIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes devheroJourneyIn {
+    from {
+        opacity: 0;
+        transform: translate3d(25px, 0, 0) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes devheroTie {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes devheroPathDraw {
+    from {
+        opacity: 0;
+        stroke-dashoffset: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes devheroLoopDraw {
+    from {
+        opacity: 0;
+        stroke-dashoffset: 1;
+    }
+
+    to {
+        opacity: 0.84;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes devheroArrowIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+
+    to {
+        opacity: 0.85;
+        transform: scale(1);
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+}
+
+@keyframes devheroNodeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.78);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes devheroPulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.8);
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+
+@keyframes devheroSatellite {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes devheroChipFloat {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, -5px, 0);
+    }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .devhero__inner {
+        padding:
+            112px
+            20px
+            70px;
+    }
+
+    .devhero__content {
+        width: min(1080px, 100%);
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            350px;
+
+        column-gap: 22px;
+    }
+
+    .devhero__title {
+        font-size: 54px;
+        line-height: 1.04;
+        letter-spacing: -2.2px;
+    }
+
+    .devhero__description {
+        max-width: 590px;
+        font-size: 15px;
+    }
+
+    .devhero__journey {
+        width: 350px;
+        height: 405px;
+        min-height: 0;
+    }
+
+    .devhero__svg {
+        transform: scale(1.06);
+    }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+    .devhero {
+        height: 100svh;
+        min-height: 100svh;
+        max-height: 100svh;
+    }
+
+    .devhero__inner {
+        padding:
+            110px
+            24px
+            70px;
+    }
+
+    .devhero__content {
+        width: min(780px, 100%);
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .devhero__copy {
+        width: 100%;
+        max-width: 740px;
+        text-align: center;
+        transform: translateY(-4px);
+    }
+
+    .devhero__eyebrow {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .devhero__title {
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: clamp(40px, 7vw, 58px);
+        line-height: 1.06;
+        letter-spacing: -1.5px;
+    }
+
+    .devhero__title-line {
+        white-space: normal;
+    }
+
+    .devhero__description {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 15px;
+        line-height: 1.58;
+    }
+
+    .devhero__actions {
+        justify-content: center;
+    }
+
+    .devhero__journey {
+        display: none;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+    .devhero__inner {
+        padding:
+            100px
+            18px
+            60px;
+    }
+
+    .devhero__eyebrow {
+        margin-bottom: 15px;
+        font-size: 11px;
+        letter-spacing: 0.9px;
+    }
+
+    .devhero__title {
+        font-size: clamp(32px, 9vw, 46px);
+        line-height: 1.06;
+        letter-spacing: -1px;
+    }
+
+    .devhero__description {
+        margin-top: 18px;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .devhero__actions {
+        margin-top: 19px;
+        gap: 9px;
+    }
+
+    .devhero__button {
+        min-height: 45px;
+        padding: 10px 19px;
+        font-size: 14px;
+    }
+
+    .devhero__bottom-zigzag {
+        height: 65px;
+    }
+
+    .devhero__bottom-zigzag-cyan {
+        clip-path: polygon(
+            0 12%,
+            12% 52%,
+            23% 5%,
+            100% 72%,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    .devhero__bottom-zigzag-white {
+        height: 58px;
+
+        clip-path: polygon(
+            0 13%,
+            12% 55%,
+            23% 13%,
+            100% 79%,
+            100% 100%,
+            0 100%
+        );
+    }
+}
+
+/* =========================================================
+   VERY SHORT DESKTOP SCREENS
+   ========================================================= */
+
+@media (max-height: 680px) and (min-width: 992px) {
+    .devhero__inner {
+        padding-top: 105px;
+        padding-bottom: 70px;
+    }
+
+    .devhero__title {
+        font-size: 48px;
+        line-height: 1.02;
+    }
+
+    .devhero__description {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .devhero__actions {
+        margin-top: 15px;
+    }
+
+    .devhero__journey {
+        height: 390px;
+        min-height: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .devhero *,
+    .devhero::before,
+    .devhero::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .devhero__copy > *,
+    .devhero__journey,
+    .devhero__path,
+    .devhero__loop,
+    .devhero__loop-arrow,
+    .devhero__tie,
+    .devhero__node,
+    .devhero__sat {
+        opacity: 1;
+        transform: none;
+        stroke-dashoffset: 0;
+    }
+}

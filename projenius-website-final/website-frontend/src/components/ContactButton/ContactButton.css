@@ -1,0 +1,64 @@
+/* ContactButton */
+.pjct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+.pjct-btn:active { transform: translateY(1px); }
+.pjct-btn:disabled { cursor: not-allowed; opacity: 0.85; }
+
+.pjct-btn--md { min-height: 48px; padding: 0 24px; }
+.pjct-btn--lg { min-height: 54px; padding: 0 30px; }
+
+.pjct-btn--primary { background: var(--pjct-primary); color: var(--pjct-primary-ink); }
+.pjct-btn--primary:hover:not(:disabled) { box-shadow: 0 8px 22px -8px var(--pjct-primary); }
+
+.pjct-btn--secondary { background: transparent; border-color: var(--pjct-line-strong); color: var(--pjct-text); }
+.pjct-btn--secondary:hover:not(:disabled) { border-color: var(--pjct-primary); color: var(--pjct-primary); }
+
+.pjct-btn--link {
+  min-height: 0;
+  padding: 6px 2px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: var(--pjct-primary);
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pjct-btn--link:active { transform: none; }
+
+/* on the dark hero */
+.pjct-btn--on-dark.pjct-btn--primary { background: #4a63ff; color: #fff; }
+.pjct-btn--on-dark.pjct-btn--secondary { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
+.pjct-btn--on-dark.pjct-btn--secondary:hover:not(:disabled) { border-color: #fff; color: #fff; background: rgba(255, 255, 255, 0.08); }
+.pjct-btn--on-dark:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+.pjct-btn__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  animation: pjct-btn-spin 0.7s linear infinite;
+}
+@keyframes pjct-btn-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 640px) {
+  .pjct-btn--fluid { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjct-btn { transition: none; }
+  .pjct-btn__spinner { animation-duration: 1.6s; }
+}

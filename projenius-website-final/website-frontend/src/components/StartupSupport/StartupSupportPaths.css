@@ -1,0 +1,1203 @@
+/* =========================================================
+   STARTUP SUPPORT PATHS
+========================================================= */
+
+.ssp-paths-wrap {
+  margin-top: 56px;
+}
+
+/* =========================================================
+   MAIN STAGE
+========================================================= */
+
+.ssp-paths-stage {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 250px)
+    minmax(0, 1fr);
+
+  column-gap:
+    clamp(70px, 8vw, 140px);
+
+  align-items: center;
+
+  min-height: 430px;
+
+  padding:
+    12px 0;
+}
+
+/* =========================================================
+   YOUR IDEA
+========================================================= */
+
+.ssp-paths-idea {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  min-width: 0;
+
+  padding:
+    22px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  border:
+    1px solid
+    var(--ssp-line-light-2);
+
+  border-radius: 12px;
+
+  background:
+    var(--ssp-surface-light);
+
+  box-shadow:
+    var(--ssp-shadow-light);
+}
+
+.ssp-paths-idea::before {
+  content: "";
+
+  position: absolute;
+
+  right: -7px;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    var(--ssp-accent-light);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(29, 91, 219, 0.14);
+
+  z-index: 6;
+}
+
+.ssp-paths-idea strong {
+  font:
+    700 20px/1
+    var(--ssp-font-display);
+
+  letter-spacing: -0.01em;
+}
+
+.ssp-paths-idea small {
+  color:
+    var(--ssp-muted-light);
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   CONNECTOR SVG
+========================================================= */
+
+.ssp-paths-lines {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.ssp-paths-line {
+  fill: none;
+
+  stroke:
+    var(--ssp-line-light-2);
+
+  stroke-width: 1.35;
+
+  stroke-dasharray:
+    2 7;
+
+  stroke-linecap: round;
+
+  opacity: 0.55;
+
+  transition:
+    stroke 0.35s ease,
+    stroke-width 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.ssp-paths-line--on {
+  stroke:
+    #3fd8f0;
+
+  stroke-width: 2.5;
+
+  stroke-dasharray:
+    1 2;
+
+  opacity: 1;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(46, 211, 240, 0.45)
+    );
+}
+
+/* =========================================================
+   OPTIONS WRAPPER
+========================================================= */
+
+.ssp-paths-opts {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   OPTION ROW
+========================================================= */
+
+.ssp-paths-opt {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    48px
+    minmax(0, 1fr)
+    26px;
+
+  align-items: center;
+
+  column-gap: 16px;
+
+  width: 100%;
+
+  min-height: 76px;
+
+  padding:
+    10px 18px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color:
+    var(--ssp-ink-light);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.ssp-paths-opt-n {
+  color:
+    var(--ssp-muted-light);
+
+  font:
+    500 12px
+    var(--ssp-font-mono);
+
+  line-height: 1;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ssp-paths-opt-content {
+  min-width: 0;
+}
+
+.ssp-paths-opt-k {
+  display: block;
+
+  color:
+    var(--ssp-ink-light);
+
+  font:
+    700 18px/1.2
+    var(--ssp-font-display);
+
+  letter-spacing:
+    -0.01em;
+}
+
+.ssp-paths-opt-s {
+  display: block;
+
+  margin-top: 4px;
+
+  color:
+    var(--ssp-muted-light);
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.ssp-paths-opt-arrow {
+  color:
+    var(--ssp-muted-light);
+
+  font-size: 17px;
+
+  text-align: right;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.ssp-paths-opt:hover {
+  background:
+    rgba(11, 26, 61, 0.28);
+
+  border-color:
+    rgba(29, 91, 219, 0.25);
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.ssp-paths-opt--active {
+  background:
+    rgba(7, 19, 42, 0.92);
+
+  border-color:
+    rgba(29, 91, 219, 0.42);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(29, 91, 219, 0.12);
+}
+
+.ssp-paths-opt--active
+  .ssp-paths-opt-n {
+  color:
+    var(--ssp-accent-light);
+}
+
+.ssp-paths-opt--active
+  .ssp-paths-opt-k {
+  color:
+    var(--ssp-ink-light);
+}
+
+.ssp-paths-opt--active
+  .ssp-paths-opt-arrow {
+  color:
+    var(--ssp-accent-light);
+
+  transform:
+    translateX(3px);
+}
+
+/* =========================================================
+   EXAMPLE JOURNEY
+========================================================= */
+
+.ssp-paths-route {
+  margin-top: 34px;
+
+  padding:
+    clamp(
+      24px,
+      3.5vw,
+      44px
+    );
+
+  border:
+    1px solid
+    var(--ssp-line-light);
+
+  border-radius: 14px;
+
+  background:
+    var(--ssp-surface-light);
+
+  box-shadow:
+    var(--ssp-shadow-light);
+
+  background-image:
+    radial-gradient(
+      var(--ssp-line-light) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    22px 22px;
+}
+
+.ssp-paths-route-head {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: baseline;
+
+  justify-content: space-between;
+
+  gap: 10px 30px;
+}
+
+.ssp-paths-route-head h3 {
+  font-size:
+    clamp(
+      22px,
+      2.4vw,
+      30px
+    );
+}
+
+.ssp-paths-route-head p {
+  max-width: 52ch;
+
+  color:
+    var(--ssp-muted-light);
+
+  font-size: 15.5px;
+}
+
+.ssp-paths-route-list {
+  display: flex;
+
+  margin-top: 34px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.ssp-paths-route-item {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  padding-right: 10px;
+}
+
+.ssp-paths-route-node {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  border:
+    2px solid
+    var(--ssp-node-off-light);
+
+  border-radius: 50%;
+
+  background:
+    var(--ssp-surface-light);
+}
+
+.ssp-paths-route-item::before,
+.ssp-paths-route-connector {
+  position: absolute;
+
+  top: 8px;
+
+  left: 24px;
+  right: 4px;
+
+  height: 2px;
+}
+
+.ssp-paths-route-item::before {
+  content: "";
+
+  background:
+    var(--ssp-line-light-2);
+}
+
+.ssp-paths-route-connector {
+  background:
+    linear-gradient(
+      90deg,
+      var(--ssp-accent-light),
+      var(--ssp-accent-2-light)
+    );
+
+  transform-origin:
+    left center;
+
+  transform:
+    scaleX(0);
+}
+
+.ssp-paths-route-connector--on {
+  transform:
+    scaleX(1);
+}
+
+.ssp-paths-route-item--last::before,
+.ssp-paths-route-item--last
+  .ssp-paths-route-connector {
+  display: none;
+}
+
+.ssp-paths-route-num {
+  display: block;
+
+  margin:
+    16px 0 4px;
+
+  color:
+    var(--ssp-muted-light);
+
+  font:
+    500 12.5px
+    var(--ssp-font-mono);
+}
+
+.ssp-paths-route-text {
+  display: block;
+
+  color:
+    var(--ssp-ink-light);
+
+  font:
+    600 16px/1.25
+    var(--ssp-font-display);
+
+  opacity: 0;
+}
+
+.ssp-paths-route-text--on {
+  opacity: 1;
+}
+
+.ssp-paths-route-node--on {
+  background:
+    var(--ssp-accent-light);
+
+  border-color:
+    var(--ssp-accent-light);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(29, 91, 219, 0.14);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .ssp-paths-stage {
+    grid-template-columns:
+      210px
+      minmax(0, 1fr);
+
+    column-gap:
+      55px;
+
+    min-height: 400px;
+  }
+
+  .ssp-paths-opt {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      24px;
+
+    min-height: 70px;
+
+    padding:
+      9px 14px;
+  }
+
+  .ssp-paths-opt-k {
+    font-size: 17px;
+  }
+
+  .ssp-paths-opt-s {
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /*
+    Same visual language as the reference:
+    idea centered above the options,
+    clean single-column path list.
+  */
+
+  .ssp-paths-wrap {
+    margin-top: 38px;
+  }
+
+  .ssp-paths-stage {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    min-height: 0;
+
+    padding: 0;
+
+    width: 100%;
+  }
+
+  /* -------------------------------------------------------
+     IDEA
+  ------------------------------------------------------- */
+
+  .ssp-paths-idea {
+    width:
+      min(
+        100%,
+        300px
+      );
+
+    margin:
+      0 auto 22px;
+
+    padding:
+      18px 20px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .ssp-paths-idea::before {
+    display: none;
+  }
+
+  /* -------------------------------------------------------
+     MOBILE LINES
+     
+     Lines stay behind the content.
+  ------------------------------------------------------- */
+
+  .ssp-paths-lines {
+    inset: 0;
+
+    z-index: 1;
+  }
+
+  .ssp-paths-line {
+    opacity: 0;
+  }
+
+  .ssp-paths-line--on {
+    opacity: 1;
+
+    stroke-width: 2.2;
+
+    filter:
+      drop-shadow(
+        0 0 5px
+        rgba(46, 211, 240, 0.4)
+      );
+  }
+
+  /* -------------------------------------------------------
+     MOBILE OPTIONS
+  ------------------------------------------------------- */
+
+  .ssp-paths-opts {
+    z-index: 5;
+
+    width: 100%;
+
+    gap: 2px;
+  }
+
+  .ssp-paths-opt {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      22px;
+
+    min-height: 72px;
+
+    padding:
+      9px 12px;
+
+    border-radius: 10px;
+  }
+
+  .ssp-paths-opt-k {
+    font-size: 16px;
+  }
+
+  .ssp-paths-opt-s {
+    margin-top: 3px;
+
+    font-size: 13px;
+  }
+
+  .ssp-paths-opt-arrow {
+    font-size: 15px;
+  }
+
+  /* -------------------------------------------------------
+     ACTIVE ROW
+  ------------------------------------------------------- */
+
+  .ssp-paths-opt--active {
+    border-color:
+      rgba(29, 91, 219, 0.42);
+
+    background:
+      rgba(7, 19, 42, 0.94);
+  }
+
+  /* -------------------------------------------------------
+     ROUTE
+  ------------------------------------------------------- */
+
+  .ssp-paths-route {
+    margin-top: 28px;
+
+    padding:
+      20px 16px;
+
+    background-image: none;
+  }
+
+  .ssp-paths-route-head {
+    display: block;
+  }
+
+  .ssp-paths-route-head h3 {
+    margin-top: 4px;
+
+    font-size: 22px;
+  }
+
+  .ssp-paths-route-head p {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .ssp-paths-route-list {
+    flex-direction: column;
+
+    gap: 0;
+
+    margin-top: 24px;
+  }
+
+  .ssp-paths-route-item {
+    flex: none;
+
+    min-height: 55px;
+
+    padding:
+      0 0 22px 34px;
+  }
+
+  .ssp-paths-route-node {
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  .ssp-paths-route-item::before,
+  .ssp-paths-route-connector {
+    top: 16px;
+    bottom: 0;
+
+    left: 6px;
+    right: auto;
+
+    width: 2px;
+    height: auto;
+  }
+
+  .ssp-paths-route-item--last::before,
+  .ssp-paths-route-item--last
+    .ssp-paths-route-connector {
+    display: none;
+  }
+
+  .ssp-paths-route-connector {
+    transform:
+      scaleY(0);
+
+    transform-origin:
+      top center;
+  }
+
+  .ssp-paths-route-connector--on {
+    transform:
+      scaleY(1);
+  }
+
+  .ssp-paths-route-num {
+    margin: 0 0 3px;
+
+    font-size: 11px;
+  }
+
+  .ssp-paths-route-text {
+    font-size: 14.5px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ssp-paths-idea {
+    width: 100%;
+
+    max-width: 280px;
+
+    padding:
+      17px 18px;
+  }
+
+  .ssp-paths-idea strong {
+    font-size: 18px;
+  }
+
+  .ssp-paths-idea small {
+    font-size: 12.5px;
+  }
+
+  .ssp-paths-opt {
+    grid-template-columns:
+      32px
+      minmax(0, 1fr)
+      20px;
+
+    min-height: 70px;
+
+    padding:
+      8px 10px;
+  }
+
+  .ssp-paths-opt-n {
+    font-size: 11px;
+  }
+
+  .ssp-paths-opt-k {
+    font-size: 15.5px;
+  }
+
+  .ssp-paths-opt-s {
+    font-size: 12.5px;
+  }
+
+  .ssp-paths-opt-arrow {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .ssp-paths-opt {
+    grid-template-columns:
+      28px
+      minmax(0, 1fr)
+      18px;
+  }
+
+  .ssp-paths-opt-k {
+    font-size: 15px;
+  }
+
+  .ssp-paths-opt-s {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ssp-paths-line,
+  .ssp-paths-opt,
+  .ssp-paths-route-node,
+  .ssp-paths-route-connector {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   NO CONNECTING LINES
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .ssp-paths-wrap {
+    margin-top: 38px;
+  }
+
+  .ssp-paths-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+    min-height: 0;
+
+    padding: 0;
+    gap: 0;
+  }
+
+  /* =======================================================
+     YOUR IDEA
+  ======================================================= */
+
+  .ssp-paths-idea {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 300px);
+    min-width: 0;
+
+    margin: 0 auto 24px;
+
+    padding: 18px 20px;
+
+    align-items: center;
+    text-align: center;
+
+    border-radius: 12px;
+  }
+
+  .ssp-paths-idea::before {
+    display: none;
+  }
+
+  .ssp-paths-idea strong {
+    font-size: 19px;
+  }
+
+  .ssp-paths-idea small {
+    font-size: 13px;
+  }
+
+  /* =======================================================
+     REMOVE ALL MOBILE LINES
+  ======================================================= */
+
+  .ssp-paths-lines {
+    display: none !important;
+  }
+
+  /* =======================================================
+     PATH OPTIONS
+  ======================================================= */
+
+  .ssp-paths-opts {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 0;
+  }
+
+  .ssp-paths-opt {
+    display: grid;
+
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      22px;
+
+    align-items: center;
+
+    width: 100%;
+    min-height: 72px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    transform: none !important;
+  }
+
+  .ssp-paths-opt:hover {
+    transform: none !important;
+  }
+
+  .ssp-paths-opt--active {
+    border-color:
+      var(--ssp-accent-light);
+
+    background:
+      rgba(7, 19, 42, 0.92);
+
+    box-shadow:
+      0 0 0 3px
+      rgba(29, 91, 219, 0.12);
+  }
+
+  /* =======================================================
+     NUMBER
+  ======================================================= */
+
+  .ssp-paths-opt-n {
+    font-size: 12px;
+  }
+
+  /* =======================================================
+     TITLE
+  ======================================================= */
+
+  .ssp-paths-opt-k {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  /* =======================================================
+     DESCRIPTION
+  ======================================================= */
+
+  .ssp-paths-opt-s {
+    margin-top: 4px;
+
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* =======================================================
+     ARROW
+  ======================================================= */
+
+  .ssp-paths-opt-arrow {
+    display: block;
+
+    font-size: 15px;
+  }
+
+  /* =======================================================
+     ROUTE
+  ======================================================= */
+
+  .ssp-paths-route {
+    margin-top: 28px;
+
+    padding: 20px 16px;
+
+    background-image: none;
+  }
+
+  .ssp-paths-route-head {
+    display: block;
+  }
+
+  .ssp-paths-route-head h3 {
+    margin-top: 4px;
+    font-size: 22px;
+  }
+
+  .ssp-paths-route-head p {
+    margin-top: 8px;
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ssp-paths-route-list {
+    flex-direction: column;
+    gap: 0;
+
+    margin-top: 24px;
+  }
+
+  .ssp-paths-route-item {
+    flex: none;
+
+    min-height: 55px;
+
+    padding: 0 0 22px 34px;
+  }
+
+  .ssp-paths-route-item--last {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+
+  .ssp-paths-route-node {
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  .ssp-paths-route-item::before,
+  .ssp-paths-route-connector {
+    top: 16px;
+    bottom: 0;
+
+    left: 6px;
+    right: auto;
+
+    width: 2px;
+    height: auto;
+  }
+
+  .ssp-paths-route-item--last::before,
+  .ssp-paths-route-item--last
+    .ssp-paths-route-connector {
+    display: none;
+  }
+
+  .ssp-paths-route-connector {
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+
+  .ssp-paths-route-connector--on {
+    transform: scaleY(1);
+  }
+
+  .ssp-paths-route-num {
+    margin: 0 0 3px;
+    font-size: 11px;
+  }
+
+  .ssp-paths-route-text {
+    font-size: 14.5px;
+    line-height: 1.35;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ssp-paths-idea {
+    width: min(100%, 280px);
+    margin-bottom: 20px;
+    padding: 17px 18px;
+  }
+
+  .ssp-paths-idea strong {
+    font-size: 18px;
+  }
+
+  .ssp-paths-idea small {
+    font-size: 12.5px;
+  }
+
+  .ssp-paths-opts {
+    gap: 2px;
+  }
+
+  .ssp-paths-opt {
+    grid-template-columns:
+      32px
+      minmax(0, 1fr)
+      20px;
+
+    min-height: 68px;
+    padding: 8px 10px;
+  }
+
+  .ssp-paths-opt-k {
+    font-size: 15.5px;
+  }
+
+  .ssp-paths-opt-s {
+    font-size: 12.5px;
+  }
+}

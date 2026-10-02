@@ -1,0 +1,88 @@
+.pjw-videocard--featured {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--pjw-line);
+  border-radius: 18px;
+  background: var(--pjw-surface);
+}
+.pjw-videocard__thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: var(--pjw-deep);
+  cursor: pointer;
+}
+.pjw-videocard__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  border-radius: 50%;
+  background: #fff;
+  color: #0A1A30;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s;
+}
+.pjw-videocard__play svg { margin-left: 3px; }
+.pjw-videocard__play--small { width: 38px; height: 38px; }
+.pjw-videocard__thumb:hover .pjw-videocard__play,
+.pjw-videocard--mini:hover .pjw-videocard__play { transform: scale(1.08); }
+
+.pjw-videocard__body { padding: clamp(20px, 3vw, 32px); }
+.pjw-videocard__type { display: block; font-size: 0.9rem; font-weight: 600; color: var(--pjw-blue-text); }
+.pjw-videocard__quote {
+  margin: 8px 0 18px;
+  font: 600 clamp(1.15rem, 2vw, 1.55rem)/1.35 var(--pjw-font-display);
+  letter-spacing: -0.01em;
+}
+.pjw-videocard__who { font-size: 0.98rem; }
+.pjw-videocard__who span { display: block; font-size: 0.92rem; color: var(--pjw-muted); }
+
+.pjw-videocard--mini {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--pjw-line);
+  border-radius: 14px;
+  background: var(--pjw-surface);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.pjw-videocard--mini:hover { border-color: var(--pjw-blue); transform: translateY(-2px); }
+.pjw-videocard__mini-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--pjw-deep);
+}
+.pjw-videocard__snippet {
+  display: -webkit-box;
+  margin: 2px 0 4px;
+  overflow: hidden;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--pjw-text);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pjw-videocard__name { display: block; font-size: 0.85rem; color: var(--pjw-muted); }
+
+@media (max-width: 640px) {
+  .pjw-videocard--mini { grid-template-columns: 104px minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjw-videocard__play, .pjw-videocard--mini { transition: none; }
+}

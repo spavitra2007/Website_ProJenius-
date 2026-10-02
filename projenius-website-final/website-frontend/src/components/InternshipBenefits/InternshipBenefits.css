@@ -1,0 +1,382 @@
+/* =========================================================
+   INTERNSHIP BENEFITS SECTION
+========================================================= */
+
+.internship-benefits-section {
+  width: 100%;
+  padding: 90px 5%;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.internship-benefits-container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+/* =========================================================
+   MAIN CARDS
+========================================================= */
+
+.internship-benefits-card {
+  position: relative;
+
+  min-height: 640px;
+  padding: 48px 48px 42px;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(245, 248, 255, 0.7),
+      transparent 55%
+    ),
+    #ffffff;
+
+  border: 1px solid #edf0f5;
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 45px rgba(17, 24, 39, 0.045),
+    0 3px 12px rgba(17, 24, 39, 0.025);
+
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.internship-benefits-visible .internship-benefits-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.internship-learning-card {
+  transition-delay: 0.05s;
+}
+
+.internship-career-card {
+  transition-delay: 0.15s;
+}
+
+.internship-benefits-card:hover {
+  box-shadow:
+    0 22px 55px rgba(17, 24, 39, 0.08),
+    0 5px 15px rgba(17, 24, 39, 0.04);
+
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   TOP ACCENT LINE
+========================================================= */
+
+.internship-benefits-top-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  border-radius: 30px 30px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    #9b6cff 0%,
+    #a879ff 45%,
+    #55c7df 100%
+  );
+}
+
+.internship-career-card .internship-benefits-top-line {
+  background: linear-gradient(
+    90deg,
+    #3189ff 0%,
+    #48b8ff 50%,
+    #55cddd 100%
+  );
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.internship-benefits-label {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 34px;
+  padding: 0 16px;
+
+  border-radius: 20px;
+
+  background: #f1ebff;
+  color: #8b5cf6;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+
+  margin-bottom: 18px;
+}
+
+.internship-career-card .internship-benefits-label {
+  background: #e9f3ff;
+  color: #2581e8;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.internship-benefits-card h2 {
+  margin: 0 0 38px;
+
+  color: #111827;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(27px, 2.4vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.internship-benefits-card h2 span {
+  color: #111827;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.internship-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+/* =========================================================
+   INDIVIDUAL ITEM ANIMATION
+========================================================= */
+
+.internship-benefit-animation {
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.55s ease var(--item-delay),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--item-delay);
+}
+
+.internship-benefits-visible .internship-benefit-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.internship-benefit-item {
+  min-height: 102px;
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid #edf1f6;
+  border-radius: 17px;
+
+  box-shadow: 0 5px 18px rgba(31, 41, 55, 0.035);
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+
+.internship-benefit-item:hover {
+  transform: translateY(-4px);
+  border-color: #dce5f1;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 25px rgba(31, 41, 55, 0.07);
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.internship-benefit-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+}
+
+.internship-benefit-icon svg {
+  transition: transform 0.25s ease;
+}
+
+.internship-benefit-item:hover .internship-benefit-icon svg {
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.internship-benefit-icon.blue {
+  background: #eaf3ff;
+  color: #45a9ff;
+}
+
+.internship-benefit-icon.purple {
+  background: #f2ebff;
+  color: #a56cff;
+}
+
+.internship-benefit-icon.green {
+  background: #e6f8f2;
+  color: #40c7ad;
+}
+
+.internship-benefit-icon.orange {
+  background: #fff4df;
+  color: #f3aa45;
+}
+
+.internship-benefit-icon.pink {
+  background: #ffeaf5;
+  color: #e866b7;
+}
+
+.internship-benefit-icon.peach {
+  background: #fff0e7;
+  color: #ff9969;
+}
+
+.internship-benefit-icon.light-blue {
+  background: #e7f1ff;
+  color: #42a9e8;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.internship-benefit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  color: #425066;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.internship-benefit-text span {
+  display: block;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .internship-benefits-container {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .internship-benefits-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .internship-benefits-section {
+    padding: 65px 18px;
+  }
+
+  .internship-benefits-card {
+    padding: 38px 22px 28px;
+    border-radius: 24px;
+  }
+
+  .internship-benefits-card h2 {
+    font-size: 27px;
+    margin-bottom: 28px;
+  }
+
+  .internship-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .internship-benefit-item {
+    min-height: 82px;
+  }
+
+  .internship-benefit-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .internship-benefits-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .internship-benefit-item {
+    padding: 13px;
+    gap: 12px;
+  }
+
+  .internship-benefit-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .internship-benefits-card,
+  .internship-benefit-animation,
+  .internship-benefit-item,
+  .internship-benefit-icon svg {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+}

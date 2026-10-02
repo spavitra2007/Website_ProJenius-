@@ -1,0 +1,1003 @@
+/* =========================================================
+   STARTING POINT
+========================================================= */
+
+.startingPoint {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #0d1529;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   OUTER GRID
+========================================================= */
+
+.startingPoint__background {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.13;
+
+  background-image:
+    linear-gradient(
+      rgba(78, 109, 154, 0.22) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(78, 109, 154, 0.22) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.startingPoint__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1315px, calc(100% - 104px));
+
+  margin: 0 auto;
+
+  padding: 17px 0 65px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.startingPoint__header {
+  animation:
+    startingPointHeaderIn
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes startingPointHeaderIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.startingPoint__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #75a9ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.startingPoint__eyebrow-line {
+  width: 27px;
+  height: 1px;
+
+  background: #71adff;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.startingPoint__heading {
+  margin: 0;
+
+  color: #eef3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 58px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2.3px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.startingPoint__intro {
+  margin: 25px 0 0;
+
+  color: #a8b9d4;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.startingPoint__layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(590px, 1.02fr);
+
+  margin-top: 58px;
+
+  animation:
+    startingPointLayoutIn
+    0.7s
+    0.12s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes startingPointLayoutIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LEFT OPTIONS
+========================================================= */
+
+.startingPoint__options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding-right: 27px;
+}
+
+/* =========================================================
+   OPTION
+========================================================= */
+
+.startingPoint__option {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    48px
+    minmax(0, 1fr)
+    24px;
+
+  align-items: center;
+
+  width: 100%;
+  min-height: 73px;
+
+  padding: 0 23px;
+
+  border:
+    1px solid
+    #263957;
+
+  border-radius: 10px;
+
+  background: #111c37;
+
+  color: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.startingPoint__option:hover {
+  border-color: #365889;
+
+  background: #13203e;
+
+  transform: translateX(2px);
+}
+
+.startingPoint__option--active {
+  border-color: #70a4f4;
+
+  background: #111d3a;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(112, 164, 244, 0.55);
+}
+
+.startingPoint__option:focus-visible {
+  border-color: #69c9ff;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(75, 188, 255, 0.15);
+}
+
+/* =========================================================
+   OPTION NUMBER
+========================================================= */
+
+.startingPoint__option-number {
+  color: #7791ba;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+}
+
+/* =========================================================
+   OPTION TEXT
+========================================================= */
+
+.startingPoint__option-text {
+  padding-right: 14px;
+
+  color: #edf2fb;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   RADIO OUTER
+========================================================= */
+
+.startingPoint__radio {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+
+  border:
+    1px solid
+    #2b4770;
+
+  border-radius: 50%;
+}
+
+/* =========================================================
+   RADIO INNER
+========================================================= */
+
+.startingPoint__radio span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  opacity: 0;
+
+  transform: scale(0.5);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.startingPoint__option--active .startingPoint__radio {
+  border-color: #71b2ff;
+}
+
+.startingPoint__option--active
+  .startingPoint__radio
+  span {
+  background: #73b0ff;
+
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+/* =========================================================
+   RIGHT DETAILS
+========================================================= */
+
+.startingPoint__details {
+  position: relative;
+
+  min-height: 480px;
+
+  overflow: hidden;
+
+  border-left:
+    1px solid
+    #2a3c5a;
+
+  background: #050a17;
+
+  animation:
+    startingPointDetailsIn
+    0.42s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes startingPointDetailsIn {
+  from {
+    opacity: 0.4;
+
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.startingPoint__details-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.72;
+
+  background-image:
+    linear-gradient(
+      rgba(69, 96, 137, 0.17) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(69, 96, 137, 0.17) 1px,
+      transparent 1px
+    );
+
+  background-size: 37px 37px;
+}
+
+/* =========================================================
+   RIGHT TOP LIGHT
+========================================================= */
+
+.startingPoint__details::after {
+  content: "";
+
+  position: absolute;
+
+  top: -110px;
+  right: -85px;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(48, 213, 225, 0.13),
+      transparent 67%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.startingPoint__meta {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 45px 42px 0;
+}
+
+/* =========================================================
+   META LABEL
+========================================================= */
+
+.startingPoint__meta-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #7c9dc5;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.3px;
+}
+
+.startingPoint__meta-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #42d8e9;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(66, 216, 233, 0.08),
+    0 0 13px
+    rgba(66, 216, 233, 0.55);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.startingPoint__progress {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+.startingPoint__progress-segment {
+  height: 4px;
+
+  border-radius: 4px;
+
+  background: #374763;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.startingPoint__progress-segment--active {
+  background:
+    linear-gradient(
+      90deg,
+      #79a6ff,
+      #30d5df
+    );
+}
+
+/* =========================================================
+   DETAILS CONTENT
+========================================================= */
+
+.startingPoint__details-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    29px
+    42px
+    48px;
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.startingPoint__needs-label {
+  margin-bottom: 15px;
+
+  color: #34d0e5;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+/* =========================================================
+   NEEDS
+========================================================= */
+
+.startingPoint__needs {
+  width: 100%;
+}
+
+/* =========================================================
+   NEED ITEM
+========================================================= */
+
+.startingPoint__need {
+  display: grid;
+
+  grid-template-columns:
+    44px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  min-height: 53px;
+
+  border-top:
+    1px solid
+    rgba(65, 88, 122, 0.36);
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  animation:
+    startingPointNeedIn
+    0.42s
+    var(--need-delay)
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+.startingPoint__need:last-child {
+  border-bottom:
+    1px solid
+    rgba(65, 88, 122, 0.36);
+}
+
+@keyframes startingPointNeedIn {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   NEED NUMBER
+========================================================= */
+
+.startingPoint__need-number {
+  color: #7188ad;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   NEED TEXT
+========================================================= */
+
+.startingPoint__need-text {
+  color: #e2e8f4;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.startingPoint__description {
+  max-width: 510px;
+
+  margin: 26px 0 0;
+
+  color: #9bb0cc;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.startingPoint__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 28px;
+
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #64a5ff,
+      #28cfe2
+    );
+
+  color: #051322;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 22px
+    rgba(28, 170, 218, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.startingPoint__cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 27px
+    rgba(28, 170, 218, 0.23);
+}
+
+.startingPoint__cta span:last-child {
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.startingPoint__cta:hover span:last-child {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .startingPoint__container {
+    width: min(
+      920px,
+      calc(100% - 40px)
+    );
+  }
+
+  .startingPoint__heading {
+    font-size: 52px;
+  }
+
+  .startingPoint__layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(480px, 1fr);
+  }
+
+  .startingPoint__options {
+    padding-right: 20px;
+  }
+
+  .startingPoint__option-text {
+    font-size: 17px;
+  }
+
+  .startingPoint__need-text {
+    font-size: 17px;
+  }
+
+  .startingPoint__details-content,
+  .startingPoint__meta {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .startingPoint {
+    min-height: auto;
+  }
+
+  .startingPoint__container {
+    width: min(
+      600px,
+      calc(100% - 28px)
+    );
+
+    padding: 24px 0 55px;
+  }
+
+  .startingPoint__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .startingPoint__heading {
+    font-size: clamp(
+      36px,
+      9vw,
+      50px
+    );
+
+    letter-spacing: -1.7px;
+  }
+
+  .startingPoint__intro {
+    margin-top: 19px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  /* =============================================
+     STACK
+  ============================================= */
+
+  .startingPoint__layout {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 36px;
+  }
+
+  .startingPoint__options {
+    padding-right: 0;
+  }
+
+  .startingPoint__option {
+    min-height: 70px;
+
+    padding: 0 17px;
+  }
+
+  .startingPoint__option-text {
+    font-size: 16px;
+  }
+
+  /* =============================================
+     DETAILS
+  ============================================= */
+
+  .startingPoint__details {
+    min-height: auto;
+
+    border-left: 0;
+
+    border-top:
+      1px solid
+      #2a3c5a;
+  }
+
+  .startingPoint__meta {
+    padding:
+      30px
+      20px
+      0;
+  }
+
+  .startingPoint__details-content {
+    padding:
+      26px
+      20px
+      35px;
+  }
+
+  .startingPoint__need-text {
+    font-size: 16px;
+  }
+
+  .startingPoint__description {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .startingPoint__container {
+    width: calc(100% - 20px);
+  }
+
+  .startingPoint__heading {
+    font-size: 34px;
+  }
+
+  .startingPoint__intro {
+    font-size: 14px;
+  }
+
+  .startingPoint__option {
+    grid-template-columns:
+      35px
+      minmax(0, 1fr)
+      20px;
+
+    min-height: 66px;
+
+    padding: 0 14px;
+  }
+
+  .startingPoint__option-number {
+    font-size: 10px;
+  }
+
+  .startingPoint__option-text {
+    font-size: 15px;
+  }
+
+  .startingPoint__radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .startingPoint__meta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .startingPoint__details-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .startingPoint__need {
+    grid-template-columns:
+      35px
+      minmax(0, 1fr);
+
+    min-height: 50px;
+  }
+
+  .startingPoint__need-text {
+    font-size: 15px;
+  }
+
+  .startingPoint__description {
+    font-size: 13.5px;
+  }
+
+  .startingPoint__cta {
+    width: auto;
+
+    min-height: 46px;
+
+    padding: 0 19px;
+
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .startingPoint *,
+  .startingPoint::before,
+  .startingPoint::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

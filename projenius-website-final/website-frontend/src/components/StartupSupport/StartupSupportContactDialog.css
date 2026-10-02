@@ -1,0 +1,20 @@
+/* StartupSupportContactDialog.css */
+.ssp-dialog{margin:auto;width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);overflow:auto;
+  border:1px solid var(--ssp-line-2);border-radius:14px;background:var(--ssp-surface);color:var(--ssp-ink);padding:0;
+  box-shadow:0 40px 100px -20px rgba(0,0,0,.6)}
+.ssp-dialog::backdrop{background:rgba(3,7,18,.7);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ssp-dialog-inner{padding:clamp(24px,4vw,38px);position:relative}
+.ssp-dialog-close{position:absolute;right:14px;top:14px;width:40px;height:40px;border-radius:8px;display:grid;place-items:center;color:var(--ssp-muted)}
+.ssp-dialog-close:hover{background:var(--ssp-surface-2);color:var(--ssp-ink)}
+.ssp-dialog-inner h2{font-size:clamp(24px,3vw,32px);margin-bottom:10px;padding-right:36px}
+.ssp-dialog-intro{color:var(--ssp-ink-2);font-size:16px;margin-bottom:22px}
+.ssp-dialog-field{display:grid;gap:7px;margin-bottom:16px}
+.ssp-dialog-field label{font:600 14px var(--ssp-font-body);color:var(--ssp-ink-2)}
+.ssp-dialog-field input,.ssp-dialog-field select,.ssp-dialog-field textarea{
+  width:100%;font:inherit;font-size:16px;color:var(--ssp-ink);background:var(--ssp-bg);
+  border:1px solid var(--ssp-line-2);border-radius:8px;padding:13px 14px;transition:border-color .2s,box-shadow .2s}
+.ssp-dialog-field textarea{min-height:110px;resize:vertical}
+.ssp-dialog-field input:focus,.ssp-dialog-field select:focus,.ssp-dialog-field textarea:focus{outline:none;border-color:var(--ssp-accent);box-shadow:0 0 0 3px var(--ssp-glow)}
+.ssp-dialog-field--invalid input{border-color:#E4574C}
+.ssp-dialog-ok p{color:var(--ssp-ink-2);font-size:16px;margin-bottom:22px}
+.ssp-dialog-ok-note{display:block;margin-top:18px;padding:12px 14px;border:1px dashed var(--ssp-line-2);border-radius:8px;color:var(--ssp-muted);font-size:14px}

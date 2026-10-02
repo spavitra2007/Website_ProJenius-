@@ -1,0 +1,479 @@
+/* =========================================================
+   INTERNSHIP - TECHNOLOGIES COVERED
+   BLUE VERSION
+========================================================= */
+
+@import url(
+    "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap"
+);
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.internship-tech-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 92px 0;
+
+    background: #0b0b1a;
+
+    color: #ffffff;
+
+    font-family: "Outfit", sans-serif;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.internship-tech-container {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.internship-tech-heading {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 34px;
+}
+
+
+/* =========================================================
+   SUBHEADING / BADGE
+========================================================= */
+
+.internship-tech-subheading {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(21, 153, 214, 0.30);
+
+    border-radius: 999px;
+
+    background: rgba(21, 153, 214, 0.06);
+
+    color: #1599D6;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BADGE DOT
+========================================================= */
+
+.internship-tech-dot {
+    width: 9px;
+
+    height: 9px;
+
+    min-width: 9px;
+
+    border-radius: 50%;
+
+    background: #1599D6;
+
+    box-shadow:
+        0 0 0 4px rgba(21, 153, 214, 0.12);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.internship-tech-title {
+    margin: 20px 0 0;
+
+    color: #ffffff;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: clamp(
+        38px,
+        5vw,
+        58px
+    );
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.5px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BLUE TITLE PART
+========================================================= */
+
+.internship-tech-title span {
+    color: #1599D6;
+}
+
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.internship-tech-line {
+    display: block;
+
+    width: 120px;
+
+    height: 5px;
+
+    margin-top: 24px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1599D6 0%,
+            #1599D6 100%
+        );
+}
+
+
+/* =========================================================
+   CAROUSEL WRAPPER
+========================================================= */
+
+.internship-tech-carousel-wrapper {
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 10px 0;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0,
+            #000 128px,
+            #000 calc(100% - 128px),
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0,
+            #000 128px,
+            #000 calc(100% - 128px),
+            transparent 100%
+        );
+}
+
+
+/* =========================================================
+   CAROUSEL TRACK
+========================================================= */
+
+.internship-tech-carousel-track {
+    display: inline-flex;
+
+    flex-wrap: nowrap;
+
+    animation:
+        internship-tech-scroll
+        28s
+        linear
+        infinite;
+}
+
+
+/* Pause when mouse is over carousel */
+
+.internship-tech-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   TECHNOLOGY LIST
+========================================================= */
+
+.internship-tech-list {
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    gap: 0;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TECHNOLOGY CARD
+========================================================= */
+
+.internship-tech-card {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: max-content;
+
+    padding: 16px 28px;
+
+    margin: 0 16px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    color: #f3f4f6;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.internship-tech-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(21, 153, 214, 0.45);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.40),
+        0 0 20px rgba(21, 153, 214, 0.15);
+}
+
+
+/* =========================================================
+   TECHNOLOGY LOGO
+========================================================= */
+
+.internship-tech-logo {
+    width: 36px;
+
+    height: 36px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   INFINITE SCROLL
+========================================================= */
+
+@keyframes internship-tech-scroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .internship-tech-section {
+        padding: 75px 0;
+    }
+
+    .internship-tech-title {
+        font-size: 44px;
+    }
+
+    .internship-tech-carousel-wrapper {
+        mask-image:
+            linear-gradient(
+                to right,
+                transparent 0,
+                #000 70px,
+                #000 calc(100% - 70px),
+                transparent 100%
+            );
+
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                transparent 0,
+                #000 70px,
+                #000 calc(100% - 70px),
+                transparent 100%
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .internship-tech-section {
+        padding: 60px 0;
+    }
+
+    .internship-tech-container {
+        padding: 0 18px;
+    }
+
+    .internship-tech-heading {
+        margin-bottom: 25px;
+    }
+
+    .internship-tech-subheading {
+        padding: 8px 15px;
+
+        font-size: 12px;
+
+        letter-spacing: 1.2px;
+    }
+
+    .internship-tech-dot {
+        width: 7px;
+
+        height: 7px;
+
+        min-width: 7px;
+    }
+
+    .internship-tech-title {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+    .internship-tech-line {
+        width: 90px;
+
+        height: 4px;
+
+        margin-top: 18px;
+    }
+
+    .internship-tech-carousel-wrapper {
+        mask-image:
+            linear-gradient(
+                to right,
+                transparent 0,
+                #000 40px,
+                #000 calc(100% - 40px),
+                transparent 100%
+            );
+
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                transparent 0,
+                #000 40px,
+                #000 calc(100% - 40px),
+                transparent 100%
+            );
+    }
+
+    .internship-tech-card {
+        margin: 0 8px;
+
+        padding: 13px 18px;
+
+        gap: 10px;
+
+        border-radius: 14px;
+
+        font-size: 14px;
+    }
+
+    .internship-tech-logo {
+        width: 32px;
+
+        height: 32px;
+    }
+
+}

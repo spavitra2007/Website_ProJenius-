@@ -1,0 +1,20 @@
+{
+  "name": "projenius-admin-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ProJenius Admin Backend API",
+  "main": "server/index.mjs",
+  "scripts": {
+    "dev": "node server/index.mjs",
+    "start": "node server/index.mjs",
+    "api": "node server/index.mjs",
+    "seed:blogs": "node server/scripts/seedDefaultBlogs.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  }
+}

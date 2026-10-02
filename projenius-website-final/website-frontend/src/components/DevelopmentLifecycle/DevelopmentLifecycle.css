@@ -1,0 +1,1158 @@
+/* =====================================================================
+   DEVELOPMENT LIFECYCLE
+
+   REFERENCE PALETTE
+
+   Background        #050B1E
+   Heading           #EAF0FF
+   Primary blue      #1D5CFF
+   Cyan              #44CFF0
+   Secondary blue    #5C89FF
+   Muted text        #91A7C8
+   Dark card         #0B1533
+   Border            #243B65
+===================================================================== */
+
+.pjdev-lifecycle {
+
+  /* =========================================================
+     LOCAL COLORS
+     Prevents other Development sections from changing this.
+  ========================================================= */
+
+  --lifecycle-bg: #050B1E;
+
+  --lifecycle-white: #EAF0FF;
+
+  --lifecycle-muted: #91A7C8;
+
+  --lifecycle-muted-2: #6F85A8;
+
+  --lifecycle-blue: #1D5CFF;
+
+  --lifecycle-blue-light: #5C89FF;
+
+  --lifecycle-cyan: #44CFF0;
+
+  --lifecycle-card: #0B1533;
+
+  --lifecycle-border: #243B65;
+
+  --lifecycle-border-soft:
+    rgba(
+      61,
+      91,
+      137,
+      0.48
+    );
+
+  /* Shared local variables */
+  --pjdev-bg: #050B1E;
+  --pjdev-dbg: #050B1E;
+  --pjdev-dbg2: #0B1533;
+  --pjdev-card: #0B1533;
+  --pjdev-ink: #EAF0FF;
+  --pjdev-muted: #91A7C8;
+  --pjdev-blue: #1D5CFF;
+  --pjdev-dcyan: #44CFF0;
+  --pjdev-line: #243B65;
+  --pjdev-line-strong: #385A86;
+
+  /* =========================================================
+     SECTION
+  ========================================================= */
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(
+      80px,
+      10vw,
+      140px
+    )
+    0;
+
+  overflow-x: clip;
+
+  background:
+    var(--lifecycle-bg);
+
+  color:
+    var(--lifecycle-white);
+
+  text-align: center;
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-lifecycle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        76,
+        104,
+        151,
+        0.04
+      ) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        76,
+        104,
+        151,
+        0.04
+      ) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+
+  mask-image:
+    radial-gradient(
+      ellipse
+      at center,
+      black 35%,
+      transparent 82%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse
+      at center,
+      black 35%,
+      transparent 82%
+    );
+}
+
+/* =========================================================
+   SUBTLE BLUE/CYAN GLOW
+========================================================= */
+
+.pjdev-lifecycle::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 48%;
+
+  width: 650px;
+  height: 650px;
+
+  z-index: -2;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        29,
+        92,
+        255,
+        0.075
+      ) 0%,
+      rgba(
+        68,
+        207,
+        240,
+        0.025
+      ) 35%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-lifecycle__wrap {
+  position: relative;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 80px)
+    );
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   DEVELOPMENT SECTION HEADER
+========================================================= */
+
+.pjdev-lifecycle
+  .pjdevhead {
+  max-width:
+    820px;
+
+  margin:
+    0 auto;
+}
+
+.pjdev-lifecycle
+  .pjdevhead__title {
+  color:
+    var(--lifecycle-white);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      2.2rem,
+      4.4vw,
+      3.8rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.04;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.pjdev-lifecycle
+  .pjdevhead__text {
+  margin-top:
+    18px;
+
+  color:
+    var(--lifecycle-muted);
+
+  font-size:
+    clamp(
+      0.98rem,
+      1.2vw,
+      1.1rem
+    );
+
+  line-height:
+    1.6;
+}
+
+/* =========================================================
+   RING CONTAINER
+========================================================= */
+
+.pjdev-lifecycle__ring {
+  position:
+    relative;
+
+  width:
+    min(
+      100%,
+      740px
+    );
+
+  aspect-ratio:
+    1 / 1;
+
+  margin:
+    74px auto 0;
+}
+
+/* =========================================================
+   RETURN MESSAGE
+========================================================= */
+
+.pjdev-lifecycle__return {
+  position:
+    absolute;
+
+  top:
+    -38px;
+
+  left:
+    50%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    var(--lifecycle-cyan);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+.pjdev-lifecycle__return .pjdevico {
+  width:
+    16px;
+
+  height:
+    16px;
+
+  color:
+    var(--lifecycle-cyan);
+}
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.pjdev-lifecycle__svg {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  overflow:
+    visible;
+}
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.pjdev-lifecycle__track {
+  fill:
+    none;
+
+  stroke:
+    rgba(
+      70,
+      94,
+      137,
+      0.62
+    );
+
+  stroke-width:
+    0.42;
+
+  stroke-dasharray:
+    0.8 1.4;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.pjdev-lifecycle__prog {
+
+  fill:
+    none;
+
+  stroke-width:
+    0.95;
+
+  stroke-linecap:
+    round;
+
+  stroke-dasharray:
+    1;
+
+  stroke-dashoffset:
+    1;
+
+  filter:
+    drop-shadow(
+      0 0 2px
+      rgba(
+        68,
+        207,
+        240,
+        0.85
+      )
+    );
+
+  transition:
+    stroke-dashoffset
+    0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+/* =========================================================
+   PROGRESS POSITIONS
+========================================================= */
+
+.pjdev-lifecycle__prog--0 {
+  stroke-dashoffset:
+    0.9;
+}
+
+.pjdev-lifecycle__prog--1 {
+  stroke-dashoffset:
+    0.8;
+}
+
+.pjdev-lifecycle__prog--2 {
+  stroke-dashoffset:
+    0.7;
+}
+
+.pjdev-lifecycle__prog--3 {
+  stroke-dashoffset:
+    0.6;
+}
+
+.pjdev-lifecycle__prog--4 {
+  stroke-dashoffset:
+    0.5;
+}
+
+.pjdev-lifecycle__prog--5 {
+  stroke-dashoffset:
+    0.4;
+}
+
+.pjdev-lifecycle__prog--6 {
+  stroke-dashoffset:
+    0.3;
+}
+
+.pjdev-lifecycle__prog--7 {
+  stroke-dashoffset:
+    0.2;
+}
+
+.pjdev-lifecycle__prog--8 {
+  stroke-dashoffset:
+    0.1;
+}
+
+.pjdev-lifecycle__prog--9 {
+  stroke-dashoffset:
+    0;
+}
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.pjdev-lifecycle__centre {
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    50%;
+
+  z-index:
+    1;
+
+  width:
+    46%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  text-align:
+    center;
+}
+
+/* =========================================================
+   COUNT
+========================================================= */
+
+.pjdev-lifecycle__count {
+  color:
+    var(--lifecycle-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.86rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.06em;
+}
+
+/* =========================================================
+   ACTIVE NAME
+========================================================= */
+
+.pjdev-lifecycle__name {
+  margin-top:
+    7px;
+
+  color:
+    var(--lifecycle-white);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1.8rem,
+      4.4vw,
+      3.2rem
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.035em;
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--lifecycle-blue-light),
+      var(--lifecycle-cyan)
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color:
+    transparent;
+
+  animation:
+    pjdevLifecycleContentIn
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.pjdev-lifecycle__line {
+  min-height:
+    3.2em;
+
+  margin:
+    13px 0 0;
+
+  color:
+    var(--lifecycle-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      0.88rem,
+      1.4vw,
+      1.04rem
+    );
+
+  line-height:
+    1.5;
+
+  animation:
+    pjdevLifecycleContentIn
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+@keyframes pjdevLifecycleContentIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+/* =========================================================
+   NODES
+========================================================= */
+
+.pjdev-lifecycle__node {
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+/* =========================================================
+   NODE POSITIONS
+========================================================= */
+
+.pjdev-lifecycle__node--0 {
+  left: 50%;
+  top: 12%;
+}
+
+.pjdev-lifecycle__node--1 {
+  left: 72.34%;
+  top: 19.26%;
+}
+
+.pjdev-lifecycle__node--2 {
+  left: 86.14%;
+  top: 38.26%;
+}
+
+.pjdev-lifecycle__node--3 {
+  left: 86.14%;
+  top: 61.74%;
+}
+
+.pjdev-lifecycle__node--4 {
+  left: 72.34%;
+  top: 80.74%;
+}
+
+.pjdev-lifecycle__node--5 {
+  left: 50%;
+  top: 88%;
+}
+
+.pjdev-lifecycle__node--6 {
+  left: 27.66%;
+  top: 80.74%;
+}
+
+.pjdev-lifecycle__node--7 {
+  left: 13.86%;
+  top: 61.74%;
+}
+
+.pjdev-lifecycle__node--8 {
+  left: 13.86%;
+  top: 38.26%;
+}
+
+.pjdev-lifecycle__node--9 {
+  left: 27.66%;
+  top: 19.26%;
+}
+
+/* =========================================================
+   NODE BUTTON
+========================================================= */
+
+.pjdev-lifecycle__node button {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  padding:
+    9px 15px;
+
+  border:
+    1px solid
+    var(--lifecycle-border-strong, #385A86);
+
+  border-radius:
+    999px;
+
+  background:
+    var(--lifecycle-card);
+
+  color:
+    var(--lifecycle-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.02em;
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   NODE DOT
+========================================================= */
+
+.pjdev-lifecycle__node button::before {
+  content:
+    "";
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  flex:
+    0 0 auto;
+
+  border-radius:
+    50%;
+
+  background:
+    #3A527C;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.pjdev-lifecycle__node
+  button:hover {
+  border-color:
+    var(--lifecycle-cyan);
+
+  background:
+    #0D1D3B;
+
+  color:
+    var(--lifecycle-white);
+
+  transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   PAST
+========================================================= */
+
+.pjdev-lifecycle__node--past
+  button {
+  border-color:
+    rgba(
+      68,
+      207,
+      240,
+      0.42
+    );
+
+  color:
+    var(--lifecycle-white);
+}
+
+.pjdev-lifecycle__node--past
+  button::before {
+  background:
+    var(--lifecycle-cyan);
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      68,
+      207,
+      240,
+      0.45
+    );
+}
+
+/* =========================================================
+   CURRENT NODE
+========================================================= */
+
+.pjdev-lifecycle__node--cur
+  button {
+  transform:
+    scale(1.12);
+
+  border-color:
+    var(--lifecycle-blue-light);
+
+  background:
+    var(--lifecycle-blue);
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 14px 34px
+    rgba(
+      29,
+      92,
+      255,
+      0.38
+    );
+}
+
+.pjdev-lifecycle__node--cur
+  button::before {
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+}
+
+/* =========================================================
+   BOTTOM STATEMENT
+========================================================= */
+
+.pjdev-lifecycle__statement {
+  max-width:
+    34ch;
+
+  margin:
+    52px auto 0;
+
+  color:
+    var(--lifecycle-white);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1.15rem,
+      2.1vw,
+      1.65rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.35;
+
+  letter-spacing:
+    -0.02em;
+
+  text-wrap:
+    balance;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .pjdev-lifecycle__ring {
+    width:
+      min(
+        100%,
+        660px
+      );
+  }
+
+  .pjdev-lifecycle__node
+    button {
+    padding:
+      8px 13px;
+
+    font-size:
+      0.78rem;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .pjdev-lifecycle {
+    padding:
+      70px 0 80px;
+  }
+
+  .pjdev-lifecycle__wrap {
+    width:
+      calc(
+        100% - 28px
+      );
+  }
+
+  .pjdev-lifecycle__ring {
+    width:
+      100%;
+
+    max-width:
+      620px;
+
+    margin-top:
+      66px;
+  }
+
+  .pjdev-lifecycle__return {
+    top:
+      -32px;
+
+    font-size:
+      0.72rem;
+  }
+
+  .pjdev-lifecycle__centre {
+    width:
+      56%;
+  }
+
+  .pjdev-lifecycle__name {
+    font-size:
+      clamp(
+        1.4rem,
+        6vw,
+        2.2rem
+      );
+  }
+
+  .pjdev-lifecycle__line {
+    min-height:
+      4.5em;
+
+    font-size:
+      0.8rem;
+  }
+
+  .pjdev-lifecycle__node
+    button {
+    width:
+      27px;
+
+    height:
+      27px;
+
+    padding:
+      0;
+
+    gap:
+      0;
+
+    font-size:
+      0;
+  }
+
+  .pjdev-lifecycle__node
+    button::before {
+    width:
+      8px;
+
+    height:
+      8px;
+  }
+
+  .pjdev-lifecycle__node--cur
+    button {
+    width:
+      35px;
+
+    height:
+      35px;
+  }
+
+  .pjdev-lifecycle__statement {
+    margin-top:
+      40px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .pjdev-lifecycle__ring {
+    transform:
+      scale(
+        0.96
+      );
+
+    transform-origin:
+      center top;
+
+    margin-bottom:
+      -12px;
+  }
+
+  .pjdev-lifecycle__return {
+    max-width:
+      90%;
+
+    overflow:
+      hidden;
+
+    text-overflow:
+      ellipsis;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pjdev-lifecycle__prog,
+  .pjdev-lifecycle__node button {
+    transition:
+      none;
+  }
+
+  .pjdev-lifecycle__name,
+  .pjdev-lifecycle__line {
+    animation:
+      none;
+  }
+}

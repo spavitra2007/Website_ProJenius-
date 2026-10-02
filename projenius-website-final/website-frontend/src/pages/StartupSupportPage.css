@@ -1,0 +1,859 @@
+/* =========================================================
+   STARTUP SUPPORT PAGE
+   DARK BLUE / BLACK THEME
+========================================================= */
+
+.ssp-page {
+  /* =======================================================
+     BACKGROUND COLORS
+  ======================================================= */
+
+  --ssp-bg: #07111F;
+  --ssp-bg-2: #0A1628;
+
+  --ssp-surface: #0D192B;
+  --ssp-surface-2: #101D31;
+
+  /* =======================================================
+     SECTION BACKGROUNDS
+  ======================================================= */
+
+  --ssp-bg-light: #07111F;
+  --ssp-bg-light-2: #0A1628;
+
+  --ssp-surface-light: #0D192B;
+  --ssp-surface-light-2: #101D31;
+
+  /* =======================================================
+     TEXT COLORS
+  ======================================================= */
+
+  --ssp-ink: #F3F6FF;
+  --ssp-ink-2: #C5D0E4;
+  --ssp-muted: #8997AF;
+
+  /* Light-section text variables
+     are also changed for dark backgrounds */
+  --ssp-ink-light: #F3F6FF;
+  --ssp-ink-light-2: #C5D0E4;
+  --ssp-muted-light: #9AA8BE;
+
+  /* =======================================================
+     BORDERS / DIVIDERS
+  ======================================================= */
+
+  --ssp-line: rgba(150, 185, 235, 0.13);
+  --ssp-line-2: rgba(150, 185, 235, 0.25);
+
+  --ssp-line-light: rgba(190, 210, 240, 0.10);
+  --ssp-line-light-2: rgba(190, 210, 240, 0.22);
+
+  /* =======================================================
+     ACCENT COLORS
+  ======================================================= */
+
+  --ssp-accent: #7FB0FF;
+  --ssp-accent-2: #3FD8F0;
+  --ssp-violet: #A99EFF;
+
+  --ssp-accent-light: #6FA4FF;
+  --ssp-accent-2-light: #3FD8F0;
+
+  /* =======================================================
+     GLOW
+  ======================================================= */
+
+  --ssp-glow: rgba(63, 160, 255, 0.22);
+
+  /* =======================================================
+     JOURNEY / NODE COLORS
+  ======================================================= */
+
+  --ssp-node-off: #263752;
+  --ssp-node-off-light: #263752;
+
+  /* =======================================================
+     BUTTON
+  ======================================================= */
+
+  --ssp-btn-bg:
+    linear-gradient(
+      135deg,
+      #5C9BFF,
+      #2ED3F0
+    );
+
+  --ssp-btn-ink: #031020;
+
+  /* =======================================================
+     SHADOWS
+  ======================================================= */
+
+  --ssp-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 18px 40px -20px rgba(0, 0, 0, 0.80);
+
+  --ssp-shadow-light:
+    0 1px 2px rgba(0, 0, 0, 0.45),
+    0 18px 40px -20px rgba(0, 0, 0, 0.70);
+
+  /* =======================================================
+     FONTS
+  ======================================================= */
+
+  --ssp-font-display:
+    'Sora',
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  --ssp-font-body:
+    'Manrope',
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  --ssp-font-mono:
+    'JetBrains Mono',
+    ui-monospace,
+    'SFMono-Regular',
+    Menlo,
+    Consolas,
+    monospace;
+
+  /* =======================================================
+     NAVIGATION HEIGHT
+  ======================================================= */
+
+  --ssp-nav-h: 68px;
+
+  /* =======================================================
+     PAGE BASE
+  ======================================================= */
+
+  background: var(--ssp-bg);
+  color: var(--ssp-ink-light);
+
+  font-family: var(--ssp-font-body);
+  font-size: 17px;
+  line-height: 1.6;
+
+  overflow-x: clip;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100%;
+}
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+.ssp-page * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+.ssp-page h1,
+.ssp-page h2,
+.ssp-page h3,
+.ssp-page h4 {
+  font-family: var(--ssp-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--ssp-ink);
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+.ssp-page p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   BUTTON RESET
+========================================================= */
+
+.ssp-page button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LIST RESET
+========================================================= */
+
+.ssp-page ul,
+.ssp-page ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.ssp-page svg {
+  display: block;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.ssp-page :focus-visible {
+  outline: 2px solid var(--ssp-accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   SKIP LINK
+========================================================= */
+
+.ssp-skip-link {
+  position: fixed;
+
+  left: 12px;
+  top: -60px;
+
+  z-index: 10000;
+
+  background: #ffffff;
+  color: #000000;
+
+  padding: 10px 14px;
+
+  border-radius: 6px;
+
+  transition: top 0.2s ease;
+
+  text-decoration: none;
+}
+
+.ssp-skip-link:focus {
+  top: 12px;
+}
+
+
+/* =========================================================
+   CONTENT WRAPPER
+========================================================= */
+
+.ssp-wrap {
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   MOBILE WRAPPER
+========================================================= */
+
+@media (max-width: 520px) {
+  .ssp-wrap {
+    width: calc(100% - 40px);
+  }
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.ssp-section {
+  position: relative;
+
+  padding:
+    clamp(72px, 10vw, 128px)
+    0;
+
+  background: var(--ssp-bg);
+  color: var(--ssp-ink-light);
+}
+
+
+/* =========================================================
+   LIGHT SECTION
+========================================================= */
+
+.ssp-section--light {
+  background: var(--ssp-bg-light);
+  color: var(--ssp-ink-light);
+}
+
+
+/* =========================================================
+   TINT SECTION
+   Slightly lighter dark blue
+========================================================= */
+
+.ssp-section--tint {
+  background: var(--ssp-bg-light-2);
+  color: var(--ssp-ink-light);
+}
+
+
+/* =========================================================
+   DARK SECTION
+========================================================= */
+
+.ssp-section--dark {
+  background: var(--ssp-bg);
+  color: var(--ssp-ink);
+}
+
+
+/* =========================================================
+   SECTION DIVIDERS
+========================================================= */
+
+.ssp-section + .ssp-section {
+  border-top: 1px solid var(--ssp-line-light);
+}
+
+.ssp-section--dark + .ssp-section--dark {
+  border-top-color: rgba(150, 185, 235, 0.10);
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.ssp-gridbg {
+  position: relative;
+}
+
+.ssp-gridbg::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--ssp-line) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--ssp-line) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+
+  opacity: 0.5;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 80% 70% at 50% 35%,
+      #000 15%,
+      transparent 75%
+    );
+
+  mask-image:
+    radial-gradient(
+      ellipse 80% 70% at 50% 35%,
+      #000 15%,
+      transparent 75%
+    );
+}
+
+
+/* =========================================================
+   SOFT GRID
+========================================================= */
+
+.ssp-gridbg--soft::before {
+  opacity: 0.32;
+}
+
+
+/* =========================================================
+   GRID CONTENT
+========================================================= */
+
+.ssp-gridbg > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.ssp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  font:
+    500 13px/1
+    var(--ssp-font-mono);
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--ssp-accent-light);
+
+  margin: 0 0 22px;
+}
+
+.ssp-section--dark .ssp-eyebrow {
+  color: var(--ssp-accent);
+}
+
+
+/* =========================================================
+   EYEBROW LINE
+========================================================= */
+
+.ssp-eyebrow::before {
+  content: "";
+
+  width: 26px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.ssp-title {
+  font-size: clamp(32px, 4.5vw, 58px);
+
+  color: var(--ssp-ink);
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.ssp-lede {
+  font-size: clamp(17px, 1.5vw, 19.5px);
+
+  color: var(--ssp-muted-light);
+
+  max-width: 62ch;
+
+  margin-top: 22px;
+}
+
+.ssp-section--dark .ssp-lede {
+  color: var(--ssp-ink-2);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.ssp-section-head {
+  max-width: 840px;
+}
+
+
+/* =========================================================
+   MINI LABEL
+========================================================= */
+
+.ssp-mini-label {
+  font:
+    500 12.5px/1.2
+    var(--ssp-font-mono);
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: var(--ssp-muted-light);
+
+  margin: 0 0 12px;
+}
+
+.ssp-section--dark .ssp-mini-label {
+  color: var(--ssp-muted);
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.ssp-gradient-text {
+  background:
+    linear-gradient(
+      100deg,
+      #7FB0FF 0%,
+      #3FD8F0 55%,
+      #A99EFF 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.ssp-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7em;
+
+  font:
+    600 15.5px/1
+    var(--ssp-font-body);
+
+  padding: 16px 24px;
+
+  border-radius: 8px;
+
+  border: 1px solid transparent;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.3s,
+    border-color 0.25s,
+    background-color 0.25s;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.ssp-btn-arrow {
+  display: inline-block;
+
+  transition:
+    transform 0.3s
+    cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.ssp-btn:hover .ssp-btn-arrow {
+  transform: translateX(5px);
+}
+
+.ssp-btn--down:hover .ssp-btn-arrow {
+  transform: translateY(4px);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.ssp-btn--primary {
+  background: var(--ssp-btn-bg);
+
+  color: var(--ssp-btn-ink);
+
+  box-shadow:
+    0 10px 28px -12px
+    var(--ssp-glow);
+}
+
+.ssp-btn--primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 34px -12px
+    var(--ssp-glow);
+}
+
+
+/* =========================================================
+   GHOST BUTTON
+========================================================= */
+
+.ssp-btn--ghost {
+  border-color: var(--ssp-line-light-2);
+
+  color: var(--ssp-ink-light);
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.ssp-section--dark .ssp-btn--ghost {
+  border-color: var(--ssp-line-2);
+
+  color: var(--ssp-ink);
+}
+
+
+/* =========================================================
+   GHOST HOVER
+========================================================= */
+
+.ssp-btn--ghost:hover {
+  border-color: var(--ssp-accent-2-light);
+
+  background:
+    rgba(63, 216, 240, 0.08);
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.ssp-section--dark .ssp-btn--ghost:hover {
+  background: var(--ssp-glow);
+}
+
+
+/* =========================================================
+   SMALL BUTTON
+========================================================= */
+
+.ssp-btn--sm {
+  padding: 12px 18px;
+
+  font-size: 14.5px;
+}
+
+
+/* =========================================================
+   CTA ROW
+========================================================= */
+
+.ssp-cta-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   TEXT LINK
+========================================================= */
+
+.ssp-text-link {
+  display: inline-flex;
+
+  gap: 0.6em;
+
+  align-items: center;
+
+  font:
+    600 15px/1.2
+    var(--ssp-font-body);
+
+  color: var(--ssp-accent-light);
+
+  border-bottom: 1px solid currentColor;
+
+  padding-bottom: 3px;
+}
+
+.ssp-section--dark .ssp-text-link {
+  color: var(--ssp-accent);
+}
+
+.ssp-text-link:hover .ssp-btn-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CHIP LIST
+========================================================= */
+
+.ssp-chip-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   CHIP
+========================================================= */
+
+.ssp-chip {
+  font:
+    500 14px/1.2
+    var(--ssp-font-body);
+
+  padding: 9px 13px;
+
+  border:
+    1px solid
+    var(--ssp-line-light-2);
+
+  border-radius: 6px;
+
+  color: var(--ssp-muted-light);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    background-color 0.25s;
+}
+
+.ssp-section--dark .ssp-chip {
+  border-color: var(--ssp-line-2);
+
+  color: var(--ssp-ink-2);
+}
+
+
+/* =========================================================
+   CHIP HOVER
+========================================================= */
+
+.ssp-chip:hover {
+  border-color: var(--ssp-accent-2-light);
+
+  color: var(--ssp-ink-light);
+
+  background:
+    rgba(63, 216, 240, 0.05);
+}
+
+.ssp-section--dark .ssp-chip:hover {
+  border-color: var(--ssp-accent-2);
+
+  color: var(--ssp-ink);
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.ssp-reveal {
+  opacity: 0;
+
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.8s cubic-bezier(.2, .7, .2, 1),
+    transform 0.8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.ssp-reveal--in {
+  opacity: 1;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS BAR
+========================================================= */
+
+.ssp-progress-bar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  z-index: 70;
+
+  transform-origin: 0 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5C9BFF,
+      #2ED3F0,
+      #A99EFF
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   STICKY SAFETY
+   Keep the page from becoming an artificial scroll container.
+========================================================= */
+
+.ssp-page {
+  overflow-x: clip;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ssp-page *,
+  .ssp-page *::before,
+  .ssp-page *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .ssp-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+}

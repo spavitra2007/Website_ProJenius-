@@ -1,0 +1,679 @@
+/* =========================================================
+   CONTACT CTA SECTION
+========================================================= */
+
+.contact-cta-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 80px 0 75px;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.contact-cta-container {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.contact-cta-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 385px;
+
+    margin: 0 auto;
+
+    padding: 45px 60px 42px;
+
+    box-sizing: border-box;
+
+    background: #1179A8;
+
+    border-radius: 42px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 55px rgba(20, 125, 168, 0.18);
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.contact-cta-card.contact-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SUB LABEL
+========================================================= */
+
+.contact-cta-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    margin: 0 0 10px;
+
+    padding: 8px 16px;
+
+    border: 1px solid #35CEFF;
+    border-radius: 999px;
+
+    background: rgba(53, 206, 255, 0.08);
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-cta-label:hover {
+    background: rgba(53, 206, 255, 0.14);
+
+    border-color: #35CEFF;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(53, 206, 255, 0.18);
+}
+
+
+/* DOT */
+
+.contact-label-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #35CEFF;
+
+    box-shadow:
+        0 0 0 4px rgba(53, 206, 255, 0.12);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.contact-cta-title {
+    margin: 0;
+
+    max-width: 900px;
+
+    color: #FFFFFF;
+
+    font-size: clamp(30px, 3.2vw, 48px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+}
+
+
+/* DARK TITLE PART */
+
+.contact-cta-title span {
+    color: #071a35;
+}
+
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.contact-cta-line {
+    width: 76px;
+    height: 4px;
+
+    margin: 17px auto 15px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+.contact-cta-line span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: #35CEFF;
+
+    border-radius: 20px;
+
+    transform: translateX(-100%);
+
+    animation: contactLine 1.2s ease forwards;
+}
+
+
+@keyframes contactLine {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.contact-cta-description {
+    width: 100%;
+    max-width: 860px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    letter-spacing: -0.1px;
+}
+
+
+/* =========================================================
+   FEATURES ROW
+========================================================= */
+
+.contact-cta-features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 22px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.contact-cta-item {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 175px;
+
+    text-align: left;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+.contact-cta-item.contact-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.contact-feature-icon {
+    flex-shrink: 0;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #071a35;
+
+    color: #ffffff !important;
+
+    font-size: 16px;
+
+    /* IMPORTANT:
+       icon itself black
+    */
+}
+
+
+.contact-feature-icon i {
+    color: #ffffff !important;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.contact-feature-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.contact-feature-content strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+.contact-feature-content span {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FEATURE DIVIDER
+========================================================= */
+
+.contact-feature-divider {
+    width: 1px;
+    height: 30px;
+
+    margin: 0 25px;
+
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.contact-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 23px;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.contact-cta-btn {
+    height: 52px;
+
+    padding: 0 30px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+
+.contact-cta-btn.contact-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.contact-cta-primary {
+    min-width: 205px;
+
+    background: #FFD21F;
+
+    color: #101010;
+
+    box-shadow:
+        0 10px 25px rgba(53, 206, 255, 0.22);
+}
+
+
+.contact-cta-primary:hover {
+    transform: translateY(-3px);
+
+    background: #ffcc00;
+
+    box-shadow:
+        0 14px 30px rgba(53, 206, 255, 0.32);
+}
+
+
+/* PRIMARY ICON */
+
+.contact-cta-primary i {
+    color: #000000;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.contact-cta-secondary {
+    min-width: 220px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid rgba(53, 206, 255, 0.7);
+}
+
+
+.contact-cta-secondary:hover {
+    background: rgba(53, 206, 255, 0.12);
+
+    border-color: #35CEFF;
+
+    transform: translateY(-3px);
+}
+
+
+/* SECONDARY ICON */
+
+.contact-cta-secondary i {
+    color: #000000;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   REMOVE OLD FLOATING CARDS
+========================================================= */
+
+.contact-floating-card,
+.contact-floating-one,
+.contact-floating-two,
+.contact-floating-three {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .contact-cta-section {
+        padding: 65px 0;
+    }
+
+    .contact-cta-container {
+        padding: 0 25px;
+    }
+
+    .contact-cta-card {
+        max-width: 900px;
+
+        min-height: 370px;
+
+        padding: 42px 35px;
+    }
+
+    .contact-cta-title {
+        font-size: 38px;
+    }
+
+    .contact-cta-features {
+        gap: 0;
+    }
+
+    .contact-feature-divider {
+        margin: 0 15px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact-cta-section {
+        padding: 45px 0;
+    }
+
+    .contact-cta-container {
+        padding: 0 16px;
+    }
+
+    .contact-cta-card {
+        min-height: auto;
+
+        padding: 35px 20px;
+
+        border-radius: 28px;
+    }
+
+    .contact-cta-label {
+        padding: 7px 13px;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .contact-cta-title {
+        font-size: 29px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1px;
+    }
+
+    .contact-cta-line {
+        margin-top: 14px;
+        margin-bottom: 13px;
+    }
+
+    .contact-cta-description {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    /* FEATURES STACK */
+
+    .contact-cta-features {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        width: auto;
+
+        margin-top: 20px;
+
+        gap: 14px;
+    }
+
+
+    .contact-cta-item {
+        min-width: 220px;
+    }
+
+
+    .contact-feature-divider {
+        display: none;
+    }
+
+
+    /* BUTTONS STACK */
+
+    .contact-cta-actions {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 22px;
+    }
+
+
+    .contact-cta-btn {
+        width: 100%;
+
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .contact-cta-card {
+        padding: 30px 17px;
+
+        border-radius: 24px;
+    }
+
+    .contact-cta-title {
+        font-size: 25px;
+    }
+
+    .contact-cta-description {
+        font-size: 11px;
+    }
+
+    .contact-feature-content strong {
+        font-size: 12px;
+    }
+
+    .contact-feature-content span {
+        font-size: 9px;
+    }
+
+}

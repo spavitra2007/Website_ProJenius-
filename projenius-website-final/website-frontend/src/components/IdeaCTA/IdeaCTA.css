@@ -1,0 +1,709 @@
+/* =========================================================
+   IDEA CTA
+========================================================= */
+
+.ideaCTA {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 627px;
+
+  overflow: hidden;
+
+  background: #030a19;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   SOFT BACKGROUND LIGHT
+========================================================= */
+
+.ideaCTA::before {
+  content: "";
+
+  position: absolute;
+
+  left: 5%;
+
+  top: 10%;
+
+  width: 720px;
+
+  height: 520px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        28,
+        88,
+        162,
+        0.11
+      ) 0%,
+      rgba(
+        28,
+        88,
+        162,
+        0.035
+      ) 45%,
+      transparent 75%
+    );
+
+  filter: blur(25px);
+}
+
+/* =========================================================
+   NETWORK
+========================================================= */
+
+.ideaCTA__network {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.ideaCTA__network-svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   NETWORK GROUP
+   STATIC POSITION
+========================================================= */
+
+.ideaCTA__network-group {
+  opacity: 1;
+}
+
+/* =========================================================
+   NETWORK LINE
+   EACH LINE DRAWS ONCE
+========================================================= */
+
+.ideaCTA__network-line {
+  fill: none;
+
+  stroke:
+    rgba(
+      57,
+      120,
+      190,
+      0.22
+    );
+
+  stroke-width: 0.9;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  stroke-dasharray: 1;
+
+  stroke-dashoffset: 1;
+
+  opacity: 0;
+
+  animation:
+    ideaCTAJoinLine
+    0.72s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    var(--line-delay)
+    forwards;
+}
+
+@keyframes ideaCTAJoinLine {
+  0% {
+    stroke-dashoffset: 1;
+
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   NETWORK DOT
+   SMALL + ONE-TIME REVEAL
+========================================================= */
+
+.ideaCTA__network-dot {
+  fill:
+    rgba(
+      83,
+      154,
+      235,
+      0.82
+    );
+
+  opacity: 0;
+
+  transform-box: fill-box;
+
+  transform-origin: center;
+
+  animation:
+    ideaCTADotAppear
+    0.32s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    var(--dot-delay)
+    forwards;
+}
+
+@keyframes ideaCTADotAppear {
+  0% {
+    opacity: 0;
+
+    transform: scale(0);
+  }
+
+  55% {
+    opacity: 1;
+
+    transform: scale(1.35);
+  }
+
+  100% {
+    opacity: 0.85;
+
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   CYAN ACCENT NODES
+========================================================= */
+
+.ideaCTA__network-group:nth-child(1)
+  .ideaCTA__network-dot:nth-child(2),
+.ideaCTA__network-group:nth-child(2)
+  .ideaCTA__network-dot:nth-child(4),
+.ideaCTA__network-group:nth-child(4)
+  .ideaCTA__network-dot:nth-child(3) {
+  fill: #35d8ed;
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(
+        53,
+        216,
+        237,
+        0.7
+      )
+    );
+}
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.ideaCTA__container {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(
+    1536px,
+    100%
+  );
+
+  min-height: 627px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.ideaCTA__content {
+  position: absolute;
+
+  left: clamp(
+    40px,
+    17.2vw,
+    264px
+  );
+
+  top: 136px;
+
+  width: min(
+    760px,
+    calc(100% - 420px)
+  );
+
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  animation:
+    ideaCTAContentIn
+    0.8s
+    0.15s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes ideaCTAContentIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.ideaCTA__heading {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(
+    50px,
+    5.15vw,
+    78px
+  );
+
+  font-weight: 800;
+
+  line-height: 0.97;
+
+  letter-spacing: -3.6px;
+}
+
+/* =========================================================
+   WHITE HEADING
+========================================================= */
+
+.ideaCTA__heading-white {
+  display: block;
+
+  color: #edf3ff;
+}
+
+/* =========================================================
+   GRADIENT HEADING
+========================================================= */
+
+.ideaCTA__heading-gradient {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #70a4ff 0%,
+      #4fb9f5 48%,
+      #29d4e9 100%
+    );
+
+  background-size: 130% 100%;
+
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+
+  animation:
+    ideaCTAGradientShift
+    6s
+    ease-in-out
+    infinite alternate;
+}
+
+@keyframes ideaCTAGradientShift {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.ideaCTA__description {
+  max-width: 690px;
+
+  margin: 32px 0 0;
+
+  color: #a5b7d2;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.62;
+}
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.ideaCTA__actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 31px;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.ideaCTA__button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  min-height: 48px;
+
+  padding:
+    0
+    20px;
+
+  border-radius: 6px;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.ideaCTA__button--primary {
+  min-width: 162px;
+
+  border:
+    1px solid
+    rgba(
+      99,
+      181,
+      255,
+      0.5
+    );
+
+  background:
+    linear-gradient(
+      135deg,
+      #63a8ff,
+      #31d2e7
+    );
+
+  color: #061321;
+
+  box-shadow:
+    0 8px 22px
+    rgba(
+      35,
+      183,
+      223,
+      0.14
+    );
+}
+
+.ideaCTA__button--primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      35,
+      183,
+      223,
+      0.24
+    );
+}
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.ideaCTA__button--secondary {
+  min-width: 150px;
+
+  border:
+    1px solid
+    #2e4668;
+
+  background:
+    rgba(
+      8,
+      17,
+      34,
+      0.72
+    );
+
+  color: #dce6f5;
+}
+
+.ideaCTA__button--secondary:hover {
+  transform: translateY(-3px);
+
+  border-color: #5579aa;
+
+  background:
+    rgba(
+      17,
+      34,
+      61,
+      0.9
+    );
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.ideaCTA__button-arrow {
+  font-size: 16px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.ideaCTA__button:hover
+  .ideaCTA__button-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .ideaCTA {
+    min-height: 600px;
+  }
+
+  .ideaCTA__container {
+    min-height: 600px;
+  }
+
+  .ideaCTA__content {
+    left: 10%;
+
+    top: 125px;
+
+    width: 72%;
+  }
+
+  .ideaCTA__heading {
+    font-size: 64px;
+  }
+
+  .ideaCTA__description {
+    max-width: 610px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .ideaCTA {
+    min-height: 650px;
+  }
+
+  .ideaCTA__container {
+    min-height: 650px;
+  }
+
+  .ideaCTA__content {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: auto;
+
+    padding:
+      120px
+      24px
+      60px;
+  }
+
+  .ideaCTA__heading {
+    font-size: clamp(
+      42px,
+      10vw,
+      58px
+    );
+
+    line-height: 0.99;
+
+    letter-spacing: -2.2px;
+  }
+
+  .ideaCTA__description {
+    max-width: 600px;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .ideaCTA__actions {
+    flex-wrap: wrap;
+
+    margin-top: 26px;
+  }
+
+  .ideaCTA__button {
+    min-height: 46px;
+
+    font-size: 12px;
+  }
+
+  .ideaCTA__network {
+    opacity: 0.62;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .ideaCTA {
+    min-height: 600px;
+  }
+
+  .ideaCTA__container {
+    min-height: 600px;
+  }
+
+  .ideaCTA__content {
+    padding:
+      105px
+      18px
+      50px;
+  }
+
+  .ideaCTA__heading {
+    font-size: 39px;
+
+    letter-spacing: -1.7px;
+  }
+
+  .ideaCTA__description {
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+  .ideaCTA__actions {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .ideaCTA__button {
+    min-height: 44px;
+  }
+
+  .ideaCTA__network {
+    opacity: 0.45;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ideaCTA *,
+  .ideaCTA::before,
+  .ideaCTA::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

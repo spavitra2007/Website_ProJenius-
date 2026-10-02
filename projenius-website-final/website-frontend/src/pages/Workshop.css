@@ -1,0 +1,191 @@
+/* =========================================================
+   Workshop.css
+   Only BACKGROUND + TEXT colors changed.
+   Layout, spacing, sizing, borders and other styles remain
+   untouched.
+========================================================= */
+
+.pjw-page,
+.pjw-modal {
+
+  /* =======================================================
+     BACKGROUND COLORS
+  ======================================================= */
+
+  --pjw-bg: #071126;
+  --pjw-surface: #0D1A38;
+  --pjw-surface-2: #13244A;
+
+  /* =======================================================
+     TEXT COLORS
+  ======================================================= */
+
+  --pjw-text: #F1F5FF;
+  --pjw-muted: #9DB0D2;
+
+  /* =======================================================
+     EXISTING COLORS — UNCHANGED
+  ======================================================= */
+
+  --pjw-line: #24385F;
+  --pjw-line-soft: #1A2B4D;
+
+  --pjw-blue: #2B4DFF;
+  --pjw-blue-text: #6E97FF;
+  --pjw-blue-soft: #172B63;
+
+  --pjw-btn: #2B4DFF;
+  --pjw-btn-hover: #1F3ED6;
+
+  --pjw-amber: #FFB400;
+
+  /* Deep sections */
+  --pjw-deep: #061024;
+  --pjw-deep-2: #0A1935;
+
+  --pjw-on-deep: #F1F5FF;
+  --pjw-on-deep-muted: #9DB0D2;
+
+  --pjw-deep-line: #213A68;
+
+  /* Shadow */
+  --pjw-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.02),
+    0 18px 40px -22px rgba(0, 0, 0, 0.55);
+
+  /* Fonts */
+  --pjw-font-display:
+    "Bricolage Grotesque",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  --pjw-font-body:
+    "Instrument Sans",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  --pjw-maxw: 1200px;
+
+  --pjw-pad: clamp(20px, 5vw, 48px);
+
+  /* =======================================================
+     BASE TEXT
+  ======================================================= */
+
+  font-family: var(--pjw-font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+
+  color: var(--pjw-text);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+.pjw-page {
+  background: var(--pjw-bg);
+  color: var(--pjw-text);
+
+  overflow-x: clip;
+}
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+.pjw-page *,
+.pjw-page *::before,
+.pjw-page *::after,
+.pjw-modal *,
+.pjw-modal *::before,
+.pjw-modal *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DEFAULT RESET
+========================================================= */
+
+.pjw-page
+:where(
+  h1,
+  h2,
+  h3,
+  p,
+  ol,
+  ul,
+  dl,
+  dd,
+  figure,
+  blockquote
+),
+.pjw-modal
+:where(
+  h1,
+  h2,
+  h3,
+  p,
+  ol,
+  ul,
+  dl,
+  dd,
+  figure,
+  blockquote
+) {
+  margin: 0;
+}
+
+
+/* =========================================================
+   LIST RESET
+========================================================= */
+
+.pjw-page :where(ol, ul),
+.pjw-modal :where(ol, ul) {
+  padding: 0;
+  list-style: none;
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
+
+.pjw-page :where(button),
+.pjw-modal :where(button) {
+  font: inherit;
+  color: inherit;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY FOCUS
+========================================================= */
+
+.pjw-page :focus-visible,
+.pjw-modal :focus-visible {
+  outline: 3px solid var(--pjw-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   DARK SECTION FOCUS
+========================================================= */
+
+.pjw-page .pjw-on-deep :focus-visible,
+.pjw-modal :focus-visible {
+  outline-color: var(--pjw-amber);
+}

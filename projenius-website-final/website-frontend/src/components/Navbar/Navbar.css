@@ -1,0 +1,1084 @@
+/* =========================================================
+   NAVBAR FONT
+========================================================= */
+
+.navbar,
+.navbar a,
+.navbar button,
+.navbar span,
+.glass-header,
+.glass-header a,
+.glass-header button,
+.glass-header span {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
+  /* Floating navbar spacing */
+  padding: 32px 0 0;
+
+  z-index: 1000;
+
+  /*
+    Keep pointer-events on the navbar itself,
+    not the full header area.
+  */
+  pointer-events: none;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN NAVBAR
+========================================================= */
+
+.glass-navbar-inner {
+  position: relative;
+
+  width: min(1280px, calc(100% - 80px));
+
+  min-height: 72px;
+
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  background: rgba(8, 17, 32, 0.96);
+
+  border: 1px solid rgba(255, 255, 255, 0.04);
+
+  border-bottom: 5px solid #35CEFF;
+
+  /*
+    Floating pill shape
+  */
+  border-radius: 999px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-sizing: border-box;
+
+  pointer-events: all;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.glass-logo {
+  display: inline-flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 0;
+
+  gap: 7px;
+
+  height: 54px;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   LOGO CIRCLE
+========================================================= */
+
+.glass-logo-mark {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+  min-height: 44px;
+
+  flex: 0 0 44px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 0 0 2px rgba(53, 206, 255, 0.12);
+
+  line-height: 0;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.glass-logo-mark .logo-icon-crop {
+  display: block;
+
+  width: 90% !important;
+  height: 90% !important;
+
+  max-width: 90% !important;
+  max-height: 90% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 50% !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  box-sizing: border-box;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
+   LOGO - PRO
+========================================================= */
+
+.logo-pro {
+  color: #ffffff !important;
+
+  font-family:
+    "Segoe UI Black",
+    "Segoe UI",
+    sans-serif !important;
+
+  font-size: 34px !important;
+  font-weight: 900 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: -1.2px;
+
+  display: inline-block;
+}
+
+
+/* =========================================================
+   LOGO - JENIUS
+========================================================= */
+
+.logo-jenius {
+  color: #35CEFF !important;
+
+  font-family:
+    "Segoe UI Black",
+    "Segoe UI",
+    sans-serif !important;
+
+  font-size: 34px !important;
+  font-weight: 900 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: -1.2px;
+
+  display: inline-block;
+
+  margin-left: -4px;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.glass-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   NAV ITEM
+========================================================= */
+
+.glass-nav-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 72px;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.glass-nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 10px 9px;
+
+  margin: 0;
+
+  min-height: 42px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #BBBBBB !important;
+
+  font-family:
+    "Poppins",
+    sans-serif !important;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none !important;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV HOVER
+========================================================= */
+
+.glass-nav-link:hover {
+  color: #ffffff !important;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   NAV ACTIVE
+========================================================= */
+
+.glass-nav-item.active .glass-nav-link {
+  color: #ffffff !important;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
+
+.glass-nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 8px;
+
+  width: 68%;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: #35CEFF;
+
+  transform:
+    translateX(-50%)
+    scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   NAV UNDERLINE ACTIVE / HOVER
+========================================================= */
+
+.glass-nav-link:hover::after,
+.glass-nav-item.active .glass-nav-link::after {
+  transform:
+    translateX(-50%)
+    scaleX(1);
+}
+
+
+/* =========================================================
+   SERVICES DROPDOWN
+========================================================= */
+
+.glass-dropdown {
+  position: absolute;
+
+  top: calc(100% - 5px);
+  left: 50%;
+
+  width: 276px;
+  min-width: 276px;
+
+  padding: 8px;
+
+  background: #081120;
+
+  border: 1px solid rgba(59, 130, 246, 0.30);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28);
+
+  transform: translateX(-50%);
+
+  pointer-events: all;
+
+  z-index: 2000;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM
+========================================================= */
+
+.glass-dropdown-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 0 18px;
+
+  margin: 3px 0;
+
+  border-radius: 11px;
+
+  background: transparent !important;
+
+  color: #BBBBBB !important;
+
+  font-family:
+    "Poppins",
+    sans-serif !important;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  text-decoration: none !important;
+
+  box-sizing: border-box;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   DROPDOWN HOVER
+========================================================= */
+
+.glass-dropdown-item:hover {
+  background: transparent !important;
+
+  color: #ffffff !important;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   DROPDOWN ACTIVE
+========================================================= */
+
+.glass-dropdown-item.active {
+  background: transparent !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DROPDOWN UNDERLINE
+========================================================= */
+
+.glass-dropdown-item::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  bottom: 6px;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: #35CEFF;
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.glass-dropdown-item:hover::after,
+.glass-dropdown-item.active::after {
+  width: 68px;
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.glass-hamburger {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  margin: 0;
+  padding: 0;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE DRAWER
+========================================================= */
+
+.glass-mobile-drawer {
+  position: fixed;
+
+  top: 76px;
+
+  left: 12px;
+  right: 12px;
+
+  width: auto;
+
+  max-height:
+    calc(100dvh - 88px);
+
+  overflow-y: auto;
+
+  padding: 14px;
+
+  background: #081120;
+
+  border:
+    1px solid
+    rgba(59, 130, 246, 0.30);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.4);
+
+  pointer-events: all;
+
+  z-index: 999;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.glass-mobile-drawer nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  width: 100%;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE LINK
+========================================================= */
+
+.glass-mobile-link {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 0 12px;
+
+  background: transparent !important;
+
+  border: 0;
+
+  color: #BBBBBB !important;
+
+  font-family:
+    "Poppins",
+    sans-serif !important;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  text-decoration: none !important;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   MOBILE HOVER / ACTIVE
+========================================================= */
+
+.glass-mobile-link:hover,
+.glass-mobile-link.active {
+  background: transparent !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MOBILE UNDERLINE
+========================================================= */
+
+.glass-mobile-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  bottom: 4px;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: #35CEFF;
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.glass-mobile-link:hover::after,
+.glass-mobile-link.active::after {
+  width: 60px;
+}
+
+
+/* =========================================================
+   MOBILE SERVICES TOGGLE
+========================================================= */
+
+.glass-mobile-toggle {
+  justify-content: space-between;
+
+  color: #BBBBBB !important;
+}
+
+
+.glass-mobile-toggle.open {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MOBILE SUBMENU
+========================================================= */
+
+.glass-mobile-sub {
+  overflow: hidden;
+
+  padding-left: 0;
+}
+
+
+/* =========================================================
+   MOBILE SUB LINKS
+========================================================= */
+
+.glass-mobile-link.sub {
+  min-height: 48px;
+
+  padding-left: 28px;
+
+  color: #BBBBBB !important;
+
+  font-family:
+    "Poppins",
+    sans-serif !important;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE SUB HOVER / ACTIVE
+========================================================= */
+
+.glass-mobile-link.sub:hover,
+.glass-mobile-link.sub.active {
+  color: #ffffff !important;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   MOBILE SUB UNDERLINE
+========================================================= */
+
+.glass-mobile-link.sub::after {
+  left: 28px;
+}
+
+
+.glass-mobile-link.sub:hover::after,
+.glass-mobile-link.sub.active::after {
+  width: 60px;
+}
+
+
+/* =========================================================
+   HEADER SHOW
+========================================================= */
+
+.header-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   HEADER HIDE
+========================================================= */
+
+.header-hidden {
+  opacity: 0 !important;
+
+  pointer-events: none !important;
+
+  transform:
+    translateY(-14px) !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+  .glass-header {
+    padding-top: 24px;
+  }
+
+  .glass-navbar-inner {
+    width: calc(100% - 40px);
+
+    min-height: 58px;
+
+    padding: 0 28px;
+
+    gap: 18px;
+
+    border-radius: 999px;
+  }
+
+  .glass-nav-item {
+    min-height: 58px;
+  }
+
+  .glass-logo-mark {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+    min-height: 45px;
+
+    flex-basis: 45px;
+  }
+
+  .logo-pro,
+  .logo-jenius {
+    font-size: 30px !important;
+  }
+
+  .glass-nav-links {
+    gap: 3px;
+  }
+
+  .glass-nav-link {
+    font-size: 15px;
+
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .glass-dropdown-item {
+    font-size: 15px;
+
+    font-weight: 700;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 980px) {
+
+  .glass-header {
+    padding-top: 18px;
+  }
+
+  .glass-navbar-inner {
+    min-height: 58px;
+
+    width: calc(100% - 24px);
+
+    padding: 0 16px;
+
+    border-radius: 999px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0;
+  }
+
+  .glass-nav-links {
+    display: none;
+  }
+
+  .glass-logo {
+    margin: 0;
+    padding: 0;
+
+    flex: 0 0 auto;
+
+    display: inline-flex;
+
+    align-items: center;
+  }
+
+  .glass-logo-mark {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .logo-pro,
+  .logo-jenius {
+    font-size: 28px !important;
+  }
+
+  .glass-hamburger {
+    display: flex;
+
+    margin-left: auto;
+    margin-right: 0;
+
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  .glass-dropdown {
+    display: none;
+  }
+
+  .glass-mobile-link {
+    font-size: 17px;
+  }
+
+  .glass-mobile-link.sub {
+    font-size: 16px;
+  }
+
+  /*
+    Mobile drawer starts below
+    the floating pill.
+  */
+
+  .glass-mobile-drawer {
+    top: 76px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .glass-header {
+    padding-top: 14px;
+  }
+
+  .glass-navbar-inner {
+    min-height: 54px;
+
+    width: calc(100% - 16px);
+
+    padding: 0 12px;
+
+    border-bottom-width: 4px;
+
+    border-radius: 999px;
+  }
+
+  .glass-logo {
+    margin: 0;
+    padding: 0;
+  }
+
+  .glass-logo-mark {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+    min-height: 36px;
+
+    flex-basis: 36px;
+
+    border-width: 1.5px;
+  }
+
+  .logo-pro,
+  .logo-jenius {
+    font-size: 24px !important;
+
+    letter-spacing: -0.8px;
+  }
+
+  .glass-hamburger {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .glass-mobile-drawer {
+    top: 70px;
+
+    left: 8px;
+    right: 8px;
+
+    max-height:
+      calc(100dvh - 80px);
+  }
+
+  .glass-mobile-link {
+    min-height: 50px;
+
+    font-size: 16px;
+  }
+
+  .glass-mobile-link.sub {
+    min-height: 46px;
+
+    font-size: 15px;
+
+    padding-left: 24px;
+  }
+
+  .glass-mobile-link.sub::after {
+    left: 24px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .glass-header {
+    padding-top: 12px;
+  }
+
+  .glass-navbar-inner {
+    min-height: 50px;
+
+    padding: 0 10px;
+
+    border-radius: 999px;
+  }
+
+  .glass-logo-mark {
+    width: 33px;
+    height: 33px;
+
+    min-width: 33px;
+    min-height: 33px;
+
+    flex-basis: 33px;
+  }
+
+  .logo-pro,
+  .logo-jenius {
+    font-size: 22px !important;
+
+    letter-spacing: -0.7px;
+  }
+
+  .glass-hamburger {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .glass-mobile-drawer {
+    top: 64px;
+
+    left: 6px;
+    right: 6px;
+
+    max-height:
+      calc(100dvh - 72px);
+  }
+}
+
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.nav-open {
+  overflow: hidden;
+}

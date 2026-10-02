@@ -1,0 +1,976 @@
+/* =========================================================
+   WORKING PROCESS
+========================================================= */
+
+.workingProcess {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #071022;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.workingProcess__grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.34;
+
+  background-image:
+    linear-gradient(
+      rgba(75, 105, 148, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(75, 105, 148, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.workingProcess__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(
+    1360px,
+    calc(100% - 58px)
+  );
+
+  margin: 0 auto;
+
+  padding: 12px 0 70px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.workingProcess__header {
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation:
+    workingProcessHeaderIn
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes workingProcessHeaderIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.workingProcess__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 23px;
+
+  color: #69a5ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.workingProcess__eyebrow-line {
+  width: 26px;
+  height: 1px;
+
+  background: #6baaff;
+}
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.workingProcess__heading {
+  margin: 0;
+
+  color: #edf3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 62px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -2.8px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.workingProcess__intro {
+  max-width: 745px;
+
+  margin: 31px 0 0;
+
+  color: #a9bbd7;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.workingProcess__timeline {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  margin-top: 62px;
+
+  padding: 0 34px;
+}
+
+/* =========================================================
+   TIMELINE BASE LINE
+========================================================= */
+
+.workingProcess__timeline-line {
+  position: absolute;
+
+  top: 29px;
+
+  left: 34px;
+  right: 34px;
+
+  height: 2px;
+
+  background: #2c3e5d;
+
+  z-index: 0;
+}
+
+/* =========================================================
+   TIMELINE PROGRESS
+========================================================= */
+
+.workingProcess__timeline-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 2px;
+
+  max-width: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6fa7ff,
+      #40d6eb
+    );
+
+  box-shadow:
+    0 0 8px
+    rgba(67, 211, 239, 0.32);
+
+  transition:
+    width 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.workingProcess__step {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  text-align: center;
+}
+
+/* =========================================================
+   NODE
+========================================================= */
+
+.workingProcess__node {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border:
+    1.5px solid
+    #2f4568;
+
+  border-radius: 50%;
+
+  background: #081124;
+
+  transition:
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* =========================================================
+   ACTIVE OUTER GLOW
+========================================================= */
+
+.workingProcess__step--active
+  .workingProcess__node::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(77, 143, 255, 0.12);
+
+  z-index: -1;
+
+  animation:
+    workingProcessGlow
+    1.6s
+    ease-in-out
+    infinite;
+}
+
+@keyframes workingProcessGlow {
+  0%,
+  100% {
+    transform: scale(0.92);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.06);
+
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   ACTIVE NODE
+========================================================= */
+
+.workingProcess__step--active
+  .workingProcess__node {
+  width: 64px;
+  height: 64px;
+
+  margin-top: -4px;
+
+  border-color: #62aaff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #78aaff,
+      #2fd3ec
+    );
+
+  box-shadow:
+    0 0 0 7px
+    rgba(88, 150, 255, 0.12),
+    0 0 25px
+    rgba(60, 204, 238, 0.25);
+
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   COMPLETED NODE
+========================================================= */
+
+.workingProcess__step--completed
+  .workingProcess__node {
+  border-color: #69a6fa;
+
+  background: #091327;
+}
+
+/* =========================================================
+   NODE NUMBER
+========================================================= */
+
+.workingProcess__node-number {
+  color: #8a9bb7;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease;
+}
+
+.workingProcess__step--active
+  .workingProcess__node-number {
+  color: #071325;
+
+  font-weight: 700;
+}
+
+.workingProcess__step--completed
+  .workingProcess__node-number {
+  color: #75a7ec;
+}
+
+/* =========================================================
+   STEP NAME
+========================================================= */
+
+.workingProcess__step-name {
+  margin-top: 17px;
+
+  color: #788ba9;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.1px;
+
+  line-height: 1.3;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.workingProcess__step--active
+  .workingProcess__step-name {
+  color: #edf4ff;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.workingProcess__step-description {
+  max-width: 155px;
+
+  margin-top: 13px;
+
+  color: #8292ad;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  transition:
+    color 0.3s ease;
+}
+
+.workingProcess__step--active
+  .workingProcess__step-description {
+  color: #d4deef;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.workingProcess__step:focus-visible {
+  outline: none;
+}
+
+.workingProcess__step:focus-visible
+  .workingProcess__node {
+  box-shadow:
+    0 0 0 3px
+    rgba(96, 178, 255, 0.22);
+}
+
+/* =========================================================
+   DETAILS CARD
+========================================================= */
+
+.workingProcess__details {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    245px
+    minmax(0, 1.1fr)
+    minmax(300px, 0.9fr);
+
+  align-items: center;
+
+  min-height: 220px;
+
+  margin-top: 50px;
+
+  padding: 34px 46px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    #293e63;
+
+  border-radius: 13px;
+
+  background: #111c38;
+
+  opacity: 0;
+
+  transform:
+    translateY(12px)
+    scale(0.995);
+
+  animation:
+    workingProcessDetailsIn
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes workingProcessDetailsIn {
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* =========================================================
+   BLUE LEFT EDGE
+========================================================= */
+
+.workingProcess__details-accent {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #72abff,
+      #2fd4ec
+    );
+}
+
+/* =========================================================
+   DETAILS NUMBER
+========================================================= */
+
+.workingProcess__details-number {
+  position: absolute;
+
+  left: 47px;
+  top: 37px;
+
+  color: transparent;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 104px;
+
+  font-weight: 700;
+
+  line-height: 0.85;
+
+  letter-spacing: -7px;
+
+  -webkit-text-stroke:
+    1.6px
+    rgba(70, 110, 166, 0.48);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   DETAILS STAGE LABEL
+========================================================= */
+
+.workingProcess__details-stage {
+  position: relative;
+
+  z-index: 2;
+
+  align-self: end;
+
+  margin-left: 3px;
+
+  color: #6da4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.7px;
+}
+
+/* =========================================================
+   DETAILS MAIN
+========================================================= */
+
+.workingProcess__details-main {
+  position: relative;
+  z-index: 2;
+
+  padding-left: 10px;
+}
+
+.workingProcess__details-title {
+  margin: 0;
+
+  color: #eef4ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 31px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+.workingProcess__details-body {
+  max-width: 480px;
+
+  margin: 13px 0 0;
+
+  color: #a4b4ce;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.workingProcess__capabilities {
+  position: relative;
+
+  z-index: 2;
+
+  align-self: start;
+
+  padding-left: 24px;
+}
+
+.workingProcess__capabilities-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #7c8eac;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.1px;
+}
+
+.workingProcess__capability-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.workingProcess__capability {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 34px;
+
+  padding: 6px 12px;
+
+  border:
+    1px solid
+    #294263;
+
+  border-radius: 5px;
+
+  background:
+    rgba(6, 17, 35, 0.22);
+
+  color: #94a5c0;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .workingProcess__container {
+    width: min(
+      940px,
+      calc(100% - 34px)
+    );
+  }
+
+  .workingProcess__heading {
+    font-size: 54px;
+  }
+
+  .workingProcess__timeline {
+    padding: 0 15px;
+  }
+
+  .workingProcess__timeline-line {
+    left: 15px;
+    right: 15px;
+  }
+
+  .workingProcess__step-description {
+    max-width: 130px;
+
+    font-size: 13px;
+  }
+
+  .workingProcess__details {
+    grid-template-columns:
+      190px
+      minmax(0, 1fr)
+      minmax(250px, 0.8fr);
+
+    padding: 30px;
+  }
+
+  .workingProcess__details-number {
+    left: 27px;
+  }
+
+  .workingProcess__details-title {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 780px) {
+  .workingProcess {
+    min-height: auto;
+  }
+
+  .workingProcess__container {
+    width: calc(100% - 24px);
+
+    padding-bottom: 50px;
+  }
+
+  .workingProcess__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .workingProcess__heading {
+    font-size: 39px;
+
+    letter-spacing: -1.7px;
+  }
+
+  .workingProcess__intro {
+    margin-top: 20px;
+
+    font-size: 15px;
+  }
+
+  /* ===============================================
+     TIMELINE
+  =============================================== */
+
+  .workingProcess__timeline {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    row-gap: 34px;
+
+    margin-top: 48px;
+
+    padding: 0;
+  }
+
+  .workingProcess__timeline-line {
+    display: none;
+  }
+
+  .workingProcess__node {
+    width: 50px;
+    height: 50px;
+  }
+
+  .workingProcess__step--active
+    .workingProcess__node {
+    width: 58px;
+    height: 58px;
+  }
+
+  .workingProcess__step-name {
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .workingProcess__step-description {
+    max-width: 120px;
+
+    font-size: 12px;
+  }
+
+  /* ===============================================
+     DETAILS
+  =============================================== */
+
+  .workingProcess__details {
+    display: block;
+
+    min-height: 320px;
+
+    margin-top: 42px;
+
+    padding: 30px 24px 35px;
+  }
+
+  .workingProcess__details-number {
+    left: 20px;
+    top: 26px;
+
+    font-size: 88px;
+  }
+
+  .workingProcess__details-stage {
+    margin-top: 85px;
+    margin-left: 0;
+  }
+
+  .workingProcess__details-main {
+    padding-left: 0;
+
+    margin-top: 18px;
+  }
+
+  .workingProcess__details-title {
+    font-size: 27px;
+  }
+
+  .workingProcess__details-body {
+    font-size: 14px;
+  }
+
+  .workingProcess__capabilities {
+    padding-left: 0;
+
+    margin-top: 28px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .workingProcess__container {
+    width: calc(100% - 18px);
+  }
+
+  .workingProcess__heading {
+    font-size: 34px;
+  }
+
+  .workingProcess__intro {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .workingProcess__timeline {
+    column-gap: 5px;
+  }
+
+  .workingProcess__node {
+    width: 45px;
+    height: 45px;
+  }
+
+  .workingProcess__step--active
+    .workingProcess__node {
+    width: 53px;
+    height: 53px;
+  }
+
+  .workingProcess__step-name {
+    margin-top: 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .workingProcess__step-description {
+    max-width: 95px;
+
+    font-size: 11px;
+  }
+
+  .workingProcess__details {
+    min-height: 300px;
+
+    padding:
+      26px
+      18px
+      30px;
+  }
+
+  .workingProcess__details-number {
+    left: 17px;
+
+    font-size: 78px;
+  }
+
+  .workingProcess__details-stage {
+    margin-top: 72px;
+
+    font-size: 10px;
+  }
+
+  .workingProcess__details-title {
+    font-size: 24px;
+  }
+
+  .workingProcess__details-body {
+    font-size: 13px;
+  }
+
+  .workingProcess__capability {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .workingProcess *,
+  .workingProcess::before,
+  .workingProcess::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

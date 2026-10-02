@@ -1,0 +1,426 @@
+/* =====================================================================
+   DevelopmentHero.css  (all classes start with pjdev-hero__)
+   ===================================================================== */
+
+/* =========================================================
+   PROJENIUS DEVELOPMENT HERO COLORS
+========================================================= */
+
+.pjdev-hero {
+  --pjdev-bg: #08112a;
+
+  --pjdev-bg-soft: #0b1733;
+
+  --pjdev-card: #0d1b38;
+
+  --pjdev-ink: #eaf0ff;
+
+  --pjdev-ink-soft: #d7e2f5;
+
+  --pjdev-muted: #91a7c7;
+
+  --pjdev-muted-soft: #7890b2;
+
+  --pjdev-blue: #1d5cff;
+
+  --pjdev-cyan: #12c9e0;
+
+  --pjdev-grad:
+    linear-gradient(
+      90deg,
+      #1d5cff 0%,
+      #268cff 48%,
+      #12c9e0 100%
+    );
+
+  --pjdev-line: rgba(
+    58,
+    92,
+    140,
+    0.18
+  );
+
+  --pjdev-line-strong: rgba(
+    55,
+    102,
+    165,
+    0.48
+  );
+}
+
+.pjdev-hero {
+  position: relative;
+
+  padding:
+    clamp(40px, 6vw, 84px)
+    0
+    0;
+
+  overflow-x: clip;
+
+  background:
+    #08112a;
+
+  color:
+    #eaf0ff;
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+}
+
+.pjdev-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        77,
+        112,
+        160,
+        0.075
+      ) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        77,
+        112,
+        160,
+        0.075
+      ) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+
+  opacity:
+    0.8;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 70% 70% at 75% 45%,
+      #000 0%,
+      transparent 78%
+    );
+
+  mask-image:
+    radial-gradient(
+      ellipse 70% 70% at 75% 45%,
+      #000 0%,
+      transparent 78%
+    );
+
+  pointer-events:
+    none;
+}
+
+.pjdev-hero::after {
+  content: "";
+
+  position: absolute;
+
+  right:
+    -150px;
+
+  top:
+    -80px;
+
+  width:
+    620px;
+
+  height:
+    620px;
+
+  pointer-events:
+    none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        18,
+        201,
+        224,
+        0.13
+      ) 0%,
+      rgba(
+        29,
+        92,
+        255,
+        0.07
+      ) 35%,
+      transparent 72%
+    );
+}
+
+.pjdev-hero__title {
+  color:
+    #eaf0ff;
+}
+
+.pjdev-hero__lead {
+  color:
+    #91a7c7;
+}
+
+.pjdev-hero__label {
+  fill:
+    #dbe5f6;
+}
+
+.pjdev-hero__label--first {
+  fill:
+    #edf3ff;
+}
+
+.pjdev-hero__chip-text {
+  fill:
+    #c9d6e9;
+}
+
+.pjdev-hero__strip-caption {
+  color:
+    #91a7c7;
+}
+
+.pjdev-hero__wrap { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+.pjdev-hero__grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.pjdev-hero__title {
+  margin-top: 26px;
+  font-size: clamp(2.4rem, 4.5vw, 4.4rem);
+  line-height: 1.02;
+  font-weight: 700;
+}
+
+.pjdev-hero__title-accent {
+  display: block;
+
+  margin-top:
+    0.12em;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1d5cff 0%,
+      #258dff 48%,
+      #12c9e0 100%
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color:
+    transparent;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+.pjdev-hero__lead {
+  margin-top: 28px;
+  max-width: 60ch;
+  font-size: clamp(1.02rem, 1.3vw, 1.2rem);
+  color: var(--pjdev-muted);
+}
+.pjdev-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.pjdev-hero__visual { position: relative; }
+
+/* ---- ecosystem svg ---- */
+.pjdev-hero__svg { width: 100%; height: auto; max-height: 82vh; overflow: visible; }
+.pjdev-hero__label {
+  font-family: var(--pjdev-font-display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  fill: var(--pjdev-ink);
+  font-variation-settings: "wdth" 90;
+}
+.pjdev-hero__label--first { font-size: 22px; font-weight: 700; }
+.pjdev-hero__ring {
+  fill:
+    #08112a;
+
+  stroke-width:
+    2.2;
+}
+.pjdev-hero__pulse {
+  fill:
+    none;
+
+  stroke:
+    #1d5cff;
+
+  stroke-width:
+    1.5;
+
+  transform-box:
+    fill-box;
+
+  transform-origin:
+    center;
+
+  animation:
+    pjdevHeroPulse
+    3.4s
+    ease-out
+    infinite;
+}
+
+.pjdev-hero__pulse--b {
+  stroke:
+    #12c9e0;
+
+  animation-delay:
+    1.7s;
+}
+.pjdev-hero__path {
+  fill:
+    none;
+
+  stroke-width:
+    2.6;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.pjdev-hero__loop {
+  fill:
+    none;
+
+  stroke-width:
+    1.6;
+
+  stroke-linecap:
+    round;
+
+  opacity:
+    0.62;
+}
+
+.pjdev-hero__loop-arrow { fill: #12C9E0; animation: pjdevHeroFade 0.6s 5s backwards; }
+.pjdev-hero__node { animation: pjdevHeroFade 0.7s ease-out backwards; }
+.pjdev-hero__node--1 { animation-delay: 0.3s; }
+.pjdev-hero__node--2 { animation-delay: 0.8s; }
+.pjdev-hero__node--3 { animation-delay: 1.3s; }
+.pjdev-hero__node--4 { animation-delay: 1.8s; }
+.pjdev-hero__node--5 { animation-delay: 2.3s; }
+.pjdev-hero__node--6 { animation-delay: 2.8s; }
+.pjdev-hero__node--7 { animation-delay: 3.3s; }
+.pjdev-hero__tie {
+  fill:
+    none;
+
+  stroke:
+    rgba(
+      61,
+      100,
+      158,
+      0.5
+    );
+
+  stroke-width:
+    1.2;
+
+  stroke-dasharray:
+    3 5;
+}
+.pjdev-hero__tie--1 { animation-delay: 3.4s; }
+.pjdev-hero__sat--1 { --pjdev-hero-d: 3.4s; --pjdev-hero-dx: 5px; --pjdev-hero-dy: -6px; }
+.pjdev-hero__tie--2 { animation-delay: 3.6s; }
+.pjdev-hero__sat--2 { --pjdev-hero-d: 3.6s; --pjdev-hero-dx: -5px; --pjdev-hero-dy: 5px; }
+.pjdev-hero__tie--3 { animation-delay: 3.8s; }
+.pjdev-hero__sat--3 { --pjdev-hero-d: 3.8s; --pjdev-hero-dx: 6px; --pjdev-hero-dy: 4px; }
+.pjdev-hero__tie--4 { animation-delay: 3.9s; }
+.pjdev-hero__sat--4 { --pjdev-hero-d: 3.9s; --pjdev-hero-dx: -4px; --pjdev-hero-dy: -6px; }
+.pjdev-hero__tie--5 { animation-delay: 4.0s; }
+.pjdev-hero__sat--5 { --pjdev-hero-d: 4.0s; --pjdev-hero-dx: 5px; --pjdev-hero-dy: 6px; }
+.pjdev-hero__tie--6 { animation-delay: 4.2s; }
+.pjdev-hero__sat--6 { --pjdev-hero-d: 4.2s; --pjdev-hero-dx: -6px; --pjdev-hero-dy: -4px; }
+.pjdev-hero__tie--7 { animation-delay: 4.3s; }
+.pjdev-hero__sat--7 { --pjdev-hero-d: 4.3s; --pjdev-hero-dx: 4px; --pjdev-hero-dy: -5px; }
+.pjdev-hero__sat {
+  animation:
+    pjdevHeroFade 0.9s ease-out var(--pjdev-hero-d) backwards,
+    pjdevHeroFloat 8s ease-in-out calc(var(--pjdev-hero-d) + 0.9s) infinite;
+}
+.pjdev-hero__chip {
+  fill:
+    #0d1b38;
+
+  stroke:
+    #29476f;
+
+  stroke-width:
+    1.2;
+}
+.pjdev-hero__chip-text { font-family: var(--pjdev-font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.01em; fill: var(--pjdev-ink); }
+.pjdev-hero__packet {
+  fill:
+    #12c9e0;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(
+        18,
+        201,
+        224,
+        0.95
+      )
+    );
+}
+@keyframes pjdevHeroDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes pjdevHeroFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pjdevHeroPulse { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(3.4); opacity: 0; } }
+@keyframes pjdevHeroFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(var(--pjdev-hero-dx), var(--pjdev-hero-dy)); }
+}
+
+/* ---- journey strip ---- */
+.pjdev-hero__strip {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(40px, 6vw, 72px);
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--pjdev-line);
+}
+.pjdev-hero__strip-caption { margin-bottom: 18px; font-size: 0.86rem; color: var(--pjdev-muted); }
+.pjdev-hero__strip-scroll { overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+
+@media (max-width: 980px) {
+  .pjdev-hero__grid { grid-template-columns: 1fr; }
+  .pjdev-hero__visual { width: 100%; max-width: 540px; margin-inline: auto; }
+}
+@media (max-width: 720px) {
+  .pjdev-hero__actions .pjdevbtn { flex: 1 1 auto; justify-content: center; }
+}
+@media (max-width: 420px) {
+  .pjdev-hero__title { font-size: 2.3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-hero__pulse, .pjdev-hero__packet { display: none; }
+  .pjdev-hero__path, .pjdev-hero__loop, .pjdev-hero__loop-arrow, .pjdev-hero__node, .pjdev-hero__tie, .pjdev-hero__sat { animation: none; }
+}

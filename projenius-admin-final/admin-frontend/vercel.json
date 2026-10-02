@@ -1,0 +1,19 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/admin/blogs",
+      "destination": "/api/admin/blogs"
+    },
+    {
+      "source": "/api/admin/courses",
+      "destination": "/api/admin/courses"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

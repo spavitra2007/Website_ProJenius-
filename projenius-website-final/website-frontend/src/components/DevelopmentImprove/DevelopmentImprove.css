@@ -1,0 +1,1232 @@
+/* =====================================================================
+   DEVELOPMENT IMPROVE
+   CORRECT SWIPE ALIGNMENT
+
+   Both mockups are separate 100% layers.
+   Only the AFTER layer is clipped.
+===================================================================== */
+
+.pjdev-improve {
+  /* =========================================================
+     LOCAL COLORS
+  ========================================================= */
+
+  --improve-bg: #0c1836;
+
+  --improve-existing: #e3e5ea;
+  --improve-new: #fcfdff;
+
+  --improve-white: #ffffff;
+  --improve-text: #eaf0ff;
+  --improve-muted: #91a7c8;
+
+  --improve-blue: #1d5cff;
+  --improve-cyan: #35d9ee;
+
+  --improve-border: #243b65;
+  --improve-border-strong: #38588d;
+
+  --improve-grid:
+    rgba(
+      79,
+      108,
+      158,
+      0.045
+    );
+
+  /* Shared local overrides */
+  --pjdev-bg: #0c1836;
+  --pjdev-surface: #0d1c3b;
+  --pjdev-card: #0f1d40;
+  --pjdev-ink: #eaf0ff;
+  --pjdev-muted: #91a7c8;
+  --pjdev-blue: #1d5cff;
+  --pjdev-dcyan: #35d9ee;
+  --pjdev-line: #243b65;
+  --pjdev-line-strong: #38588d;
+
+  /* =========================================================
+     SECTION
+  ========================================================= */
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 9vw, 135px)
+    0;
+
+  overflow-x: clip;
+
+  background:
+    var(--improve-bg);
+
+  color:
+    var(--improve-text);
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.pjdev-improve::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--improve-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--improve-grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+}
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.pjdev-improve::after {
+  content: "";
+
+  position: absolute;
+
+  left:
+    -240px;
+
+  top:
+    18%;
+
+  width:
+    650px;
+
+  height:
+    650px;
+
+  z-index:
+    -2;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        29,
+        92,
+        255,
+        0.08
+      ) 0%,
+      rgba(
+        29,
+        92,
+        255,
+        0.025
+      ) 38%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-improve__wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 80px)
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pjdev-improve
+  .pjdevhead {
+  max-width:
+    850px;
+}
+
+.pjdev-improve
+  .pjdevhead__title {
+  color:
+    var(--improve-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      2.35rem,
+      4.4vw,
+      4rem
+    );
+
+  line-height:
+    1.04;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.pjdev-improve
+  .pjdevhead__text {
+  max-width:
+    60ch;
+
+  margin-top:
+    20px;
+
+  color:
+    var(--improve-muted);
+
+  font-size:
+    clamp(
+      1rem,
+      1.3vw,
+      1.15rem
+    );
+
+  line-height:
+    1.6;
+}
+
+/* =========================================================
+   COMPARISON BLOCK
+========================================================= */
+
+.pjdev-improve__block {
+  width:
+    min(
+      1040px,
+      100%
+    );
+
+  margin:
+    58px auto 0;
+}
+
+/* =========================================================
+   COMPARISON CARD
+========================================================= */
+
+.pjdev-improve__compare {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    500px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      54,
+      82,
+      132,
+      0.75
+    );
+
+  border-radius:
+    28px;
+
+  background:
+    var(--improve-existing);
+
+  box-shadow:
+    0 34px 70px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+
+  user-select:
+    none;
+
+  -webkit-user-select:
+    none;
+}
+
+/* =========================================================
+   MOCK LAYER
+
+   BOTH LAYERS HAVE EXACTLY THE SAME POSITION,
+   WIDTH AND HEIGHT.
+========================================================= */
+
+.pjdev-improve__layer {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  overflow:
+    hidden;
+
+  pointer-events:
+    none;
+}
+
+/* BEFORE IS ALWAYS FULLY VISIBLE */
+
+.pjdev-improve__layer--before {
+  z-index:
+    1;
+
+  background:
+    var(--improve-existing);
+}
+
+/* =========================================================
+   AFTER LAYER
+
+   This is the ONLY element being clipped.
+========================================================= */
+
+.pjdev-improve__layer--after {
+  z-index:
+    2;
+
+  background:
+    var(--improve-new);
+
+  clip-path:
+    inset(
+      0
+      0
+      0
+      var(
+        --pjdev-improve-position
+      )
+    );
+
+  -webkit-clip-path:
+    inset(
+      0
+      0
+      0
+      var(
+        --pjdev-improve-position
+      )
+    );
+}
+
+/* =========================================================
+   DEVELOPMENT MOCK SCREEN
+========================================================= */
+
+.pjdev-improve__layer
+  > * {
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  min-width:
+    100%;
+
+  min-height:
+    100%;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+}
+
+/* =========================================================
+   FORCE INTERNAL MOCK SCREEN TO FIT
+========================================================= */
+
+.pjdev-improve__layer
+  .pjdevmock__screen {
+  position:
+    relative;
+
+  width:
+    100% !important;
+
+  height:
+    100% !important;
+
+  min-width:
+    100% !important;
+
+  min-height:
+    100% !important;
+
+  margin:
+    0 !important;
+
+  padding:
+    0 !important;
+
+  overflow:
+    hidden;
+}
+
+/* =========================================================
+   IMPORTANT
+
+   Do NOT reposition these internal elements.
+
+   Their original internal layout should remain untouched.
+========================================================= */
+
+.pjdev-improve__layer
+  .pjdevmock__before,
+.pjdev-improve__layer
+  .pjdevmock__after {
+  position:
+    relative;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.pjdev-improve__tag {
+  position:
+    absolute;
+
+  top:
+    14px;
+
+  z-index:
+    10;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  min-height:
+    31px;
+
+  padding:
+    7px 13px;
+
+  border-radius:
+    999px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.055em;
+
+  text-transform:
+    uppercase;
+
+  pointer-events:
+    none;
+}
+
+/* LEFT LABEL */
+
+.pjdev-improve__tag--left {
+  left:
+    14px;
+
+  background:
+    #3f485c;
+}
+
+/* RIGHT LABEL */
+
+.pjdev-improve__tag--right {
+  right:
+    14px;
+
+  background:
+    var(--improve-blue);
+}
+
+/* =========================================================
+   RANGE
+
+   The whole card is draggable.
+========================================================= */
+
+.pjdev-improve__range {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    30;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  opacity:
+    0;
+
+  cursor:
+    ew-resize;
+
+  touch-action:
+    pan-y;
+}
+
+/* =========================================================
+   HANDLE
+========================================================= */
+
+.pjdev-improve__handle {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    20;
+
+  pointer-events:
+    none;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.pjdev-improve__handle-line {
+  position:
+    absolute;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  left:
+    var(
+      --pjdev-improve-position
+    );
+
+  width:
+    2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+}
+
+/* =========================================================
+   HANDLE KNOB
+========================================================= */
+
+.pjdev-improve__handle-knob {
+  position:
+    absolute;
+
+  left:
+    var(
+      --pjdev-improve-position
+    );
+
+  top:
+    50%;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    56px;
+
+  height:
+    56px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border:
+    3px solid
+    #ffffff;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--improve-blue);
+
+  box-shadow:
+    0 8px 24px
+    rgba(
+      6,
+      20,
+      46,
+      0.42
+    );
+}
+
+/* =========================================================
+   CYAN OUTER RING
+========================================================= */
+
+.pjdev-improve__handle-knob::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    -6px;
+
+  border:
+    2px solid
+    var(--improve-cyan);
+
+  border-radius:
+    50%;
+}
+
+/* =========================================================
+   HANDLE ICON
+========================================================= */
+
+.pjdev-improve__handle-knob svg {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    24px;
+
+  height:
+    24px;
+
+  fill:
+    none;
+
+  stroke:
+    #ffffff;
+
+  stroke-width:
+    2.2;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.pjdev-improve__steps {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  margin:
+    38px 0 0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+.pjdev-improve__step {
+  position:
+    relative;
+
+  min-height:
+    82px;
+
+  padding:
+    34px 18px 0 0;
+
+  opacity:
+    0.46;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+.pjdev-improve__step::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    7px;
+
+  width:
+    100%;
+
+  height:
+    2px;
+
+  background:
+    var(
+      --improve-border-strong
+    );
+
+  transition:
+    background 0.35s ease;
+}
+
+.pjdev-improve__step::after {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    0;
+
+  width:
+    14px;
+
+  height:
+    14px;
+
+  border:
+    2px solid
+    var(
+      --improve-border-strong
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    var(--improve-bg);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pjdev-improve__step b {
+  display:
+    block;
+
+  color:
+    var(--improve-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    1.05rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+}
+
+.pjdev-improve__step span {
+  display:
+    block;
+
+  max-width:
+    24ch;
+
+  margin-top:
+    5px;
+
+  color:
+    var(--improve-muted);
+
+  font-size:
+    0.89rem;
+
+  line-height:
+    1.45;
+}
+
+/* =========================================================
+   STEP STATES
+========================================================= */
+
+.pjdev-improve__step--past {
+  opacity:
+    0.82;
+}
+
+.pjdev-improve__step--past::before {
+  background:
+    linear-gradient(
+      90deg,
+      var(--improve-blue),
+      var(--improve-cyan)
+    );
+}
+
+.pjdev-improve__step--past::after {
+  border-color:
+    var(--improve-blue);
+
+  background:
+    var(--improve-blue);
+}
+
+.pjdev-improve__step--on {
+  opacity:
+    1;
+}
+
+.pjdev-improve__step--on::before {
+  background:
+    linear-gradient(
+      90deg,
+      var(--improve-blue),
+      var(--improve-cyan)
+    );
+}
+
+.pjdev-improve__step--on::after {
+  border-color:
+    var(--improve-blue);
+
+  background:
+    var(--improve-blue);
+
+  box-shadow:
+    0 0 0 6px
+    rgba(
+      29,
+      92,
+      255,
+      0.15
+    );
+}
+
+/* =========================================================
+   AREAS
+========================================================= */
+
+.pjdev-improve__areas-title {
+  margin:
+    40px 0 0;
+
+  color:
+    var(--improve-white);
+
+  font-size:
+    0.96rem;
+
+  font-weight:
+    600;
+}
+
+.pjdev-improve__areas {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    9px;
+
+  margin:
+    14px 0 0;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+.pjdev-improve__areas li {
+  padding:
+    9px 15px;
+
+  border:
+    1px solid
+    var(--improve-border-strong);
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.015
+    );
+
+  color:
+    #b8c8df;
+
+  font-size:
+    0.88rem;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.pjdev-improve__areas li:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--improve-blue);
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.07
+    );
+
+  color:
+    #eaf0ff;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 980px) {
+  .pjdev-improve__wrap {
+    width:
+      min(
+        920px,
+        calc(100% - 48px)
+      );
+  }
+
+  .pjdev-improve__compare {
+    height:
+      430px;
+  }
+
+  .pjdev-improve__steps {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    row-gap:
+      10px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-improve {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+  .pjdev-improve__wrap {
+    width:
+      calc(100% - 28px);
+  }
+
+  .pjdev-improve__block {
+    margin-top:
+      42px;
+  }
+
+  .pjdev-improve
+    .pjdevhead__title {
+    font-size:
+      2.35rem;
+  }
+
+  .pjdev-improve
+    .pjdevhead__text {
+    font-size:
+      0.95rem;
+  }
+
+  .pjdev-improve__compare {
+    height:
+      320px;
+
+    border-radius:
+      20px;
+  }
+
+  .pjdev-improve__tag {
+    top:
+      10px;
+
+    padding:
+      6px 9px;
+
+    font-size:
+      0.62rem;
+  }
+
+  .pjdev-improve__handle-knob {
+    width:
+      48px;
+
+    height:
+      48px;
+  }
+
+  .pjdev-improve__steps {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      4px;
+
+    margin-top:
+      30px;
+  }
+
+  .pjdev-improve__step {
+    min-height:
+      76px;
+
+    padding:
+      0 0 18px 36px;
+  }
+
+  .pjdev-improve__step::before {
+    left:
+      6px;
+
+    top:
+      18px;
+
+    width:
+      2px;
+
+    height:
+      calc(
+        100% - 10px
+      );
+  }
+
+  .pjdev-improve__step::after {
+    left:
+      0;
+
+    top:
+      2px;
+  }
+
+  .pjdev-improve__step:last-child::before {
+    display:
+      none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .pjdev-improve__wrap {
+    width:
+      calc(100% - 20px);
+  }
+
+  .pjdev-improve
+    .pjdevhead__title {
+    font-size:
+      2.05rem;
+  }
+
+  .pjdev-improve__compare {
+    height:
+      260px;
+
+    border-radius:
+      17px;
+  }
+
+  .pjdev-improve__tag {
+    max-width:
+      42%;
+
+    overflow:
+      hidden;
+
+    text-overflow:
+      ellipsis;
+
+    white-space:
+      nowrap;
+  }
+
+  .pjdev-improve__handle-knob {
+    width:
+      44px;
+
+    height:
+      44px;
+  }
+
+  .pjdev-improve__areas li {
+    padding:
+      8px 11px;
+
+    font-size:
+      0.78rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-improve__step,
+  .pjdev-improve__step::before,
+  .pjdev-improve__step::after,
+  .pjdev-improve__areas li {
+    transition:
+      none;
+  }
+}

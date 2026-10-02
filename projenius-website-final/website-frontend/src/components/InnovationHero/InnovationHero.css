@@ -1,0 +1,182 @@
+.innovationHero {
+  position: relative;
+  min-height: 88vh;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.innovationHeroInner {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 90%);
+  margin: auto;
+  padding: 110px 0 90px;
+}
+
+.innovationHeroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #111;
+  margin-bottom: 28px;
+}
+
+.innovationHeroDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #35ceff;
+  box-shadow: 0 0 20px rgba(53, 206, 255, 0.7);
+}
+
+.innovationHero h1 {
+  max-width: 850px;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  color: #080808;
+  font-weight: 800;
+}
+
+.innovationHero h1 span {
+  color: #35ceff;
+}
+
+.innovationHero p {
+  max-width: 680px;
+  margin: 32px 0 38px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.innovationHeroActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.innovationPrimaryButton,
+.innovationSecondaryButton {
+  border: none;
+  cursor: pointer;
+  padding: 15px 22px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.innovationPrimaryButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #35ceff;
+  color: #000;
+}
+
+.innovationPrimaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(53, 206, 255, 0.3);
+}
+
+.innovationSecondaryButton {
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  color: #111;
+}
+
+.innovationSecondaryButton:hover {
+  border-color: #35ceff;
+}
+
+.innovationHeroPath {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+}
+
+.innovationPathNode {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 75px;
+}
+
+.innovationPathNode span {
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+}
+
+.innovationPathNode strong {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.innovationPathNode.active strong {
+  color: #35ceff;
+}
+
+.innovationPathLine {
+  height: 1px;
+  flex: 1;
+  background: #d8d8d8;
+  margin: 0 14px;
+}
+
+.innovationHeroGlow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.innovationHeroGlowOne {
+  width: 280px;
+  height: 280px;
+  right: 5%;
+  top: 15%;
+  background: rgba(53, 206, 255, 0.12);
+}
+
+.innovationHeroGlowTwo {
+  width: 180px;
+  height: 180px;
+  left: 5%;
+  bottom: 5%;
+  background: rgba(53, 206, 255, 0.08);
+}
+
+@media (max-width: 700px) {
+  .innovationHeroInner {
+    padding: 90px 0 60px;
+  }
+
+  .innovationHero h1 {
+    letter-spacing: -2px;
+  }
+
+  .innovationHero p {
+    font-size: 16px;
+  }
+
+  .innovationHeroPath {
+    margin-top: 55px;
+  }
+
+  .innovationPathLine {
+    margin: 0 7px;
+  }
+}

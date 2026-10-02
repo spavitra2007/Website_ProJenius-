@@ -1,0 +1,354 @@
+/* =========================================================
+   TARGET AUDIENCE SECTION
+========================================================= */
+
+.target-audience-section {
+  width: 100%;
+
+  padding: 75px 30px 80px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.target-audience-container {
+  width: 100%;
+
+  max-width: 1240px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.target-audience-heading {
+  text-align: center;
+
+  margin-bottom: 72px;
+}
+
+.target-audience-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #5bc9e7;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+}
+
+.target-audience-heading h2 {
+  margin: 0;
+
+  color: #17191d;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: clamp(
+    38px,
+    4vw,
+    54px
+  );
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+/* BLUE WORD */
+
+.target-audience-heading h2 span {
+  color: #35ceff;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.target-audience-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.target-audience-card {
+  position: relative;
+
+  min-height: 320px;
+
+  padding: 25px 25px 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px
+    rgba(25, 40, 60, 0.07);
+
+  opacity: 0;
+
+  transform:
+    translateY(22px);
+
+  animation:
+    targetAudienceReveal
+    0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  animation-delay:
+    var(--card-delay);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.target-audience-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color: #dce8f1;
+
+  box-shadow:
+    0 14px 30px
+    rgba(30, 55, 80, 0.10);
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.target-audience-icon {
+  width: 80px;
+  height: 80px;
+
+  margin-bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.28s ease;
+}
+
+.target-audience-card:hover
+.target-audience-icon {
+  transform:
+    translateY(-3px)
+    scale(1.04);
+}
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.target-audience-blue
+.target-audience-icon {
+  color: #3788ff;
+
+  background: #edf4ff;
+}
+
+.target-audience-green
+.target-audience-icon {
+  color: #0dbd8c;
+
+  background: #eafaf5;
+}
+
+.target-audience-orange
+.target-audience-icon {
+  color: #ff9c00;
+
+  background: #fff7e9;
+}
+
+.target-audience-purple
+.target-audience-icon {
+  color: #9461ff;
+
+  background: #f5efff;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.target-audience-card h3 {
+  margin: 0 0 18px;
+
+  color: #17191d;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.6px;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.target-audience-card p {
+  max-width: 245px;
+
+  margin: 0;
+
+  color: #7c8794;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+@keyframes targetAudienceReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .target-audience-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    max-width: 760px;
+
+    margin: 0 auto;
+  }
+
+  .target-audience-heading {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .target-audience-section {
+    padding:
+      60px 18px 65px;
+  }
+
+  .target-audience-heading {
+    margin-bottom: 40px;
+  }
+
+  .target-audience-label {
+    font-size: 14px;
+  }
+
+  .target-audience-heading h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .target-audience-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .target-audience-card {
+    min-height: 290px;
+
+    padding:
+      24px 22px 28px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .target-audience-card,
+  .target-audience-icon {
+    animation: none !important;
+
+    transition: none !important;
+
+    opacity: 1;
+
+    transform: none;
+  }
+}

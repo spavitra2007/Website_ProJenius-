@@ -1,0 +1,31 @@
+.pjw-voices__empty { margin-top: 36px; }
+.pjw-voices__filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 36px 0 28px; }
+.pjw-voices__chip {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--pjw-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--pjw-text);
+  font: 500 0.95rem var(--pjw-font-body);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.pjw-voices__chip:hover { border-color: var(--pjw-text); }
+.pjw-voices__chip[aria-pressed='true'] { border-color: var(--pjw-text); background: var(--pjw-text); color: var(--pjw-bg); }
+
+.pjw-voices__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 24px;
+  align-items: start;
+}
+.pjw-voices__layout--single { grid-template-columns: minmax(0, 1fr); }
+.pjw-voices__side { display: grid; gap: 14px; align-content: start; }
+
+@media (max-width: 980px) {
+  .pjw-voices__layout { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjw-voices__chip { transition: none; }
+}

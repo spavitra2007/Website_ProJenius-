@@ -1,0 +1,1352 @@
+/* =====================================================================
+   DEVELOPMENT CAPABILITIES
+   Exact dark palette based on the supplied reference.
+   All styles are scoped to .pjdev-cap
+===================================================================== */
+
+.pjdev-cap {
+  --cap-bg: #0c1836;
+  --cap-card: #0f1d40;
+  --cap-card-dark: #0b1735;
+
+  --cap-white: #eaf0ff;
+  --cap-white-soft: #dbe5f7;
+
+  --cap-muted: #91a9cf;
+  --cap-muted-soft: #7e96be;
+
+  --cap-blue: #1d5cff;
+  --cap-blue-soft: #6e9bff;
+
+  --cap-cyan: #12c9e0;
+
+  --cap-border: #1c3562;
+  --cap-border-soft: #263e6c;
+  --cap-border-hover: #355ca0;
+
+  --cap-grid: rgba(
+    78,
+    111,
+    163,
+    0.055
+  );
+
+  --cap-gradient:
+    linear-gradient(
+      135deg,
+      #1d5cff 0%,
+      #2b9ef4 55%,
+      #12c9e0 100%
+    );
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(76px, 9vw, 140px)
+    0;
+
+  overflow-x: clip;
+
+  background:
+    var(--cap-bg);
+
+  color:
+    var(--cap-white);
+
+  scroll-margin-top:
+    calc(
+      var(--pjdev-header-h, 0px) +
+      var(--pjdev-subnav-h, 0px) +
+      12px
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-cap::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--cap-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--cap-grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+
+  opacity:
+    0.55;
+}
+
+/* =========================================================
+   BLUE / CYAN AMBIENT LIGHT
+========================================================= */
+
+.pjdev-cap::after {
+  content: "";
+
+  position: absolute;
+
+  right:
+    -180px;
+
+  top:
+    34%;
+
+  width:
+    660px;
+
+  height:
+    660px;
+
+  z-index: -2;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        29,
+        92,
+        255,
+        0.10
+      ) 0%,
+      rgba(
+        18,
+        201,
+        224,
+        0.035
+      ) 36%,
+      transparent 70%
+    );
+}
+
+/* =========================================================
+   HIDDEN SVG DEFS NOT NEEDED
+========================================================= */
+
+.pjdev-cap__defs {
+  position:
+    absolute;
+
+  width:
+    0;
+
+  height:
+    0;
+
+  overflow:
+    hidden;
+
+  pointer-events:
+    none;
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-cap__wrap {
+  position:
+    relative;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 80px)
+    );
+
+  margin:
+    0 auto;
+
+  z-index:
+    2;
+}
+
+/* =========================================================
+   SECTION HEAD
+   Scoped override so global DevelopmentSectionHead styles
+   do not make this section look different.
+========================================================= */
+
+.pjdev-cap .pjdevhead {
+  max-width:
+    820px;
+}
+
+.pjdev-cap .pjdevhead__title {
+  margin:
+    0;
+
+  color:
+    var(--cap-white);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      2.4rem,
+      4.6vw,
+      3.9rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.04;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.pjdev-cap .pjdevhead__text {
+  max-width:
+    62ch;
+
+  margin-top:
+    20px;
+
+  color:
+    var(--cap-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1rem,
+      1.3vw,
+      1.16rem
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    1.58;
+}
+
+/* =========================================================
+   BENTO GRID
+========================================================= */
+
+.pjdev-cap__bento {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      12,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    18px;
+
+  margin-top:
+    64px;
+
+  align-items:
+    stretch;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.pjdev-cap__card {
+  position:
+    relative;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    space-between;
+
+  min-width:
+    0;
+
+  min-height:
+    380px;
+
+  padding:
+    30px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--cap-border);
+
+  border-radius:
+    18px;
+
+  background:
+    var(--cap-card);
+
+  color:
+    var(--cap-white);
+
+  opacity:
+    0;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity 0.75s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.3s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.pjdev-cap__card--in {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+.pjdev-cap__card--d1 {
+  transition-delay:
+    0.08s;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.pjdev-cap__card--in:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    var(--cap-border-hover);
+
+  box-shadow:
+    0 22px 50px
+    rgba(
+      3,
+      11,
+      29,
+      0.28
+    );
+}
+
+/* =========================================================
+   GRID POSITIONS
+========================================================= */
+
+.pjdev-cap__card--web {
+  grid-column:
+    span 7;
+}
+
+.pjdev-cap__card--mobile {
+  grid-column:
+    span 5;
+}
+
+.pjdev-cap__card--uiux {
+  grid-column:
+    span 5;
+}
+
+.pjdev-cap__card--ai {
+  grid-column:
+    span 7;
+}
+
+.pjdev-cap__card--auto {
+  grid-column:
+    span 4;
+}
+
+.pjdev-cap__card--saas {
+  grid-column:
+    span 8;
+
+  background:
+    linear-gradient(
+      150deg,
+      #102653 0%,
+      #0d1c40 45%,
+      #0b1733 100%
+    );
+
+  border-color:
+    rgba(
+      88,
+      123,
+      196,
+      0.34
+    );
+}
+
+/* =========================================================
+   SAAS GLOW
+========================================================= */
+
+.pjdev-cap__card--saas::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  right:
+    -8%;
+
+  top:
+    -30%;
+
+  width:
+    75%;
+
+  height:
+    125%;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      closest-side,
+      rgba(
+        29,
+        92,
+        255,
+        0.21
+      ),
+      transparent 72%
+    );
+
+  pointer-events:
+    none;
+}
+
+.pjdev-cap__card--saas > * {
+  position:
+    relative;
+
+  z-index:
+    2;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.pjdev-cap__body {
+  position:
+    relative;
+
+  z-index:
+    3;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.pjdev-cap__icon {
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  margin-bottom:
+    23px;
+
+  border:
+    1px solid
+    rgba(
+      29,
+      92,
+      255,
+      0.12
+    );
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      29,
+      92,
+      255,
+      0.10
+    );
+
+  color:
+    #6f9eff;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s ease;
+}
+
+.pjdev-cap__icon .pjdevico {
+  width:
+    24px;
+
+  height:
+    24px;
+
+  transition:
+    transform 0.4s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.pjdev-cap__card:hover
+  .pjdev-cap__icon {
+  background:
+    var(--cap-blue);
+
+  border-color:
+    var(--cap-blue);
+
+  color:
+    #ffffff;
+
+  transform:
+    translateY(-2px);
+}
+
+.pjdev-cap__card:hover
+  .pjdev-cap__icon
+  .pjdevico {
+  transform:
+    scale(1.08);
+}
+
+/* =========================================================
+   SAAS ICON
+========================================================= */
+
+.pjdev-cap__card--saas
+  .pjdev-cap__icon {
+  background:
+    rgba(
+      110,
+      151,
+      255,
+      0.13
+    );
+
+  color:
+    #92b2ff;
+}
+
+.pjdev-cap__card--saas:hover
+  .pjdev-cap__icon {
+  background:
+    #1d5cff;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.pjdev-cap__title {
+  margin:
+    0;
+
+  color:
+    var(--cap-white);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1.35rem,
+      2vw,
+      1.75rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.1;
+
+  letter-spacing:
+    -0.03em;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.pjdev-cap__desc {
+  max-width:
+    45ch;
+
+  margin:
+    11px 0 0;
+
+  color:
+    var(--cap-muted);
+
+  font-size:
+    0.97rem;
+
+  line-height:
+    1.6;
+}
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.pjdev-cap__vis {
+  position:
+    relative;
+
+  margin:
+    30px
+    -8px
+    -22px;
+
+  overflow:
+    visible;
+}
+
+.pjdev-cap__illustration {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    auto;
+
+  overflow:
+    visible;
+}
+
+/* =========================================================
+   EXPANDABLE MORE
+========================================================= */
+
+.pjdev-cap__more {
+  display:
+    grid;
+
+  grid-template-rows:
+    0fr;
+
+  opacity:
+    0;
+
+  transition:
+    grid-template-rows 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity 0.35s ease;
+}
+
+.pjdev-cap__card--open
+  .pjdev-cap__more {
+  grid-template-rows:
+    1fr;
+
+  opacity:
+    1;
+}
+
+.pjdev-cap__more-inner {
+  min-height:
+    0;
+
+  overflow:
+    hidden;
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.pjdev-cap__tags {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    8px;
+
+  margin:
+    0;
+
+  padding:
+    18px 0 0;
+
+  list-style:
+    none;
+}
+
+.pjdev-cap__tags li {
+  padding:
+    7px 12px;
+
+  border:
+    1px solid
+    var(--cap-border-soft);
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+  color:
+    #aebed8;
+
+  font-size:
+    0.83rem;
+
+  line-height:
+    1.25;
+}
+
+/* =========================================================
+   DISCUSS LINK
+========================================================= */
+
+.pjdev-cap__link {
+  display:
+    inline-block;
+
+  margin-top:
+    14px;
+
+  padding-bottom:
+    2px;
+
+  border-bottom:
+    1px solid
+    currentColor;
+
+  color:
+    var(--cap-blue-soft);
+
+  font-size:
+    0.88rem;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+}
+
+.pjdev-cap__card--saas
+  .pjdev-cap__link {
+  color:
+    #78deee;
+}
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.pjdev-cap__btn {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  width:
+    fit-content;
+
+  margin:
+    22px 0 0;
+
+  padding:
+    0;
+
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    var(--cap-blue-soft);
+
+  font-family:
+    inherit;
+
+  font-size:
+    0.95rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
+}
+
+.pjdev-cap__btn svg {
+  width:
+    16px;
+
+  height:
+    16px;
+
+  fill:
+    none;
+
+  stroke:
+    currentColor;
+
+  stroke-width:
+    2;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.pjdev-cap__btn:hover svg {
+  transform:
+    translateX(4px);
+}
+
+.pjdev-cap__btn[aria-expanded="true"] svg {
+  transform:
+    rotate(90deg);
+}
+
+.pjdev-cap__card--saas
+  .pjdev-cap__btn {
+  color:
+    #77dfef;
+}
+
+/* =========================================================
+   ILLUSTRATION COLORS
+========================================================= */
+
+.pjdev-cap__vf {
+  fill:
+    #0f1d40;
+
+  stroke:
+    #324d7b;
+
+  stroke-width:
+    1.2;
+}
+
+.pjdev-cap__vl {
+  stroke:
+    #2d4774;
+
+  stroke-width:
+    1.2;
+
+  fill:
+    none;
+}
+
+.pjdev-cap__vd {
+  fill:
+    #45618f;
+}
+
+.pjdev-cap__vb {
+  fill:
+    rgba(
+      75,
+      102,
+      154,
+      0.34
+    );
+}
+
+.pjdev-cap__va {
+  fill:
+    #1d5cff;
+}
+
+.pjdev-cap__vt {
+  fill:
+    none;
+
+  stroke:
+    #1d5cff;
+
+  stroke-width:
+    1.6;
+}
+
+.pjdev-cap__vn {
+  fill:
+    #0f1d40;
+
+  stroke:
+    #1d5cff;
+
+  stroke-width:
+    1.8;
+}
+
+.pjdev-cap__vnf {
+  fill:
+    #1d5cff;
+}
+
+.pjdev-cap__vdash {
+  fill:
+    none;
+
+  stroke:
+    #6e9bff;
+
+  stroke-width:
+    1.4;
+
+  stroke-dasharray:
+    4 4;
+}
+
+.pjdev-cap__vtx {
+  font-family:
+    "Segoe UI",
+    sans-serif;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  fill:
+    #8fa7cc;
+}
+
+/* =========================================================
+   ILLUSTRATION MOTION
+========================================================= */
+
+.pjdev-cap__up,
+.pjdev-cap__shift {
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+.pjdev-cap__card:hover
+  .pjdev-cap__up {
+  transform:
+    translateY(-5px);
+}
+
+.pjdev-cap__card:hover
+  .pjdev-cap__shift {
+  transform:
+    translateX(6px);
+}
+
+/* =========================================================
+   SAAS ILLUSTRATION
+========================================================= */
+
+.pjdev-cap__card--saas
+  .pjdev-cap__vf {
+  fill:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  stroke:
+    #314b76;
+}
+
+.pjdev-cap__card--saas
+  .pjdev-cap__vb {
+  fill:
+    rgba(
+      161,
+      187,
+      241,
+      0.15
+    );
+}
+
+.pjdev-cap__card--saas
+  .pjdev-cap__vt {
+  stroke:
+    #3dd9ee;
+}
+
+.pjdev-cap__card--saas
+  .pjdev-cap__va {
+  fill:
+    #1d5cff;
+}
+
+/* =========================================================
+   CARD-SPECIFIC HEIGHTS
+   Match reference proportions.
+========================================================= */
+
+.pjdev-cap__card--web,
+.pjdev-cap__card--mobile {
+  min-height:
+    455px;
+}
+
+.pjdev-cap__card--uiux,
+.pjdev-cap__card--ai {
+  min-height:
+    428px;
+}
+
+.pjdev-cap__card--auto,
+.pjdev-cap__card--saas {
+  min-height:
+    420px;
+}
+
+/* =========================================================
+   DESKTOP SAAS LAYOUT
+========================================================= */
+
+@media (min-width: 1101px) {
+  .pjdev-cap__card--saas {
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    gap:
+      35px;
+  }
+
+  .pjdev-cap__card--saas
+    .pjdev-cap__body {
+    flex:
+      0 0 39%;
+  }
+
+  .pjdev-cap__card--saas
+    .pjdev-cap__vis {
+    flex:
+      1;
+
+    align-self:
+      flex-end;
+
+    margin:
+      0 -28px
+      -15px
+      0;
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .pjdev-cap__wrap {
+    width:
+      min(
+        930px,
+        calc(100% - 48px)
+      );
+  }
+
+  .pjdev-cap__card--web,
+  .pjdev-cap__card--mobile,
+  .pjdev-cap__card--uiux,
+  .pjdev-cap__card--ai {
+    grid-column:
+      span 6;
+  }
+
+  .pjdev-cap__card--auto,
+  .pjdev-cap__card--saas {
+    grid-column:
+      span 12;
+  }
+
+  .pjdev-cap__card--saas {
+    min-height:
+      380px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+  .pjdev-cap {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+  .pjdev-cap__wrap {
+    width:
+      calc(100% - 28px);
+  }
+
+  .pjdev-cap .pjdevhead__title {
+    font-size:
+      2.35rem;
+  }
+
+  .pjdev-cap .pjdevhead__text {
+    font-size:
+      0.95rem;
+  }
+
+  .pjdev-cap__bento {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      16px;
+
+    margin-top:
+      44px;
+  }
+
+  .pjdev-cap__card,
+  .pjdev-cap__card--web,
+  .pjdev-cap__card--mobile,
+  .pjdev-cap__card--uiux,
+  .pjdev-cap__card--ai,
+  .pjdev-cap__card--auto,
+  .pjdev-cap__card--saas {
+    grid-column:
+      span 1;
+
+    min-height:
+      380px;
+
+    padding:
+      24px;
+  }
+
+  .pjdev-cap__vis {
+    margin:
+      25px
+      -4px
+      -18px;
+  }
+
+  .pjdev-cap__card--saas {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      18px;
+  }
+
+  .pjdev-cap__card--saas
+    .pjdev-cap__vis {
+    margin:
+      15px
+      -4px
+      -20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .pjdev-cap__wrap {
+    width:
+      calc(100% - 20px);
+  }
+
+  .pjdev-cap .pjdevhead__title {
+    font-size:
+      2.05rem;
+  }
+
+  .pjdev-cap__card {
+    padding:
+      21px;
+  }
+
+  .pjdev-cap__title {
+    font-size:
+      1.28rem;
+  }
+
+  .pjdev-cap__desc {
+    font-size:
+      0.9rem;
+  }
+
+  .pjdev-cap__tags li {
+    font-size:
+      0.76rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pjdev-cap__card {
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    transition:
+      none;
+  }
+
+  .pjdev-cap__more,
+  .pjdev-cap__up,
+  .pjdev-cap__shift,
+  .pjdev-cap__btn svg {
+    transition:
+      none;
+  }
+}

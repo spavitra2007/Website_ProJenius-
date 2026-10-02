@@ -1,0 +1,11 @@
+/* ContactError */
+.pjct-error {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1.5px solid var(--pjct-danger);
+  border-radius: var(--pjct-radius);
+  background: var(--pjct-danger-soft);
+}
+.pjct-error__title { margin: 0; font-family: var(--pjct-font-display); font-size: 1.25rem; font-weight: 700; line-height: 1.2; color: var(--pjct-danger); }
+.pjct-error__text { margin: 6px 0 0; }
+.pjct-error__detail { margin: 6px 0 14px; font-size: 14px; color: var(--pjct-muted); }

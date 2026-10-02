@@ -1,0 +1,870 @@
+/* =====================================================================
+   DEVELOPMENT SUPPORT
+===================================================================== */
+
+.pjdev-support {
+  --support-bg: #08112A;
+  --support-card: #0F1D40;
+  --support-card-dark: #0B1533;
+
+  --support-text: #EAF0FF;
+  --support-muted: #91A7C8;
+
+  --support-blue: #6E97FF;
+  --support-cyan: #3DD9EE;
+
+  --support-border: #243A63;
+  --support-border-strong: #38588D;
+
+  --support-grid:
+    rgba(75, 103, 150, 0.045);
+
+  /* Shared variables only inside this section */
+  --pjdev-bg: #08112A;
+  --pjdev-dbg: #08112A;
+  --pjdev-dbg2: #0F1D40;
+  --pjdev-card: #0F1D40;
+  --pjdev-surface: #0F1D40;
+
+  --pjdev-ink: #EAF0FF;
+  --pjdev-muted: #91A7C8;
+
+  --pjdev-blue: #6E97FF;
+  --pjdev-dcyan: #3DD9EE;
+
+  --pjdev-line: #243A63;
+  --pjdev-line-strong: #38588D;
+
+  --pjdev-grad:
+    linear-gradient(
+      90deg,
+      #6E97FF,
+      #3DD9EE
+    );
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 9vw, 135px)
+    0;
+
+  overflow: hidden;
+
+  background:
+    var(--support-bg);
+
+  color:
+    var(--support-text);
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.pjdev-support::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      var(--support-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--support-grid) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    56px 56px;
+}
+
+/* =========================================================
+   SOFT GLOW
+========================================================= */
+
+.pjdev-support::after {
+  content: "";
+
+  position: absolute;
+
+  right: -260px;
+  top: 5%;
+
+  width: 620px;
+  height: 620px;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        29,
+        92,
+        255,
+        0.07
+      ) 0%,
+      rgba(
+        61,
+        217,
+        238,
+        0.02
+      ) 35%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.pjdev-support__wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 80px)
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pjdev-support
+  .pjdevhead__title {
+  color:
+    var(--support-text);
+}
+
+.pjdev-support
+  .pjdevhead__text {
+  color:
+    var(--support-muted);
+}
+
+/* =========================================================
+   JOURNEY CARD
+========================================================= */
+
+.pjdev-support__journey {
+  position: relative;
+
+  margin-top: 56px;
+
+  padding:
+    34px
+    36px
+    30px;
+
+  border:
+    1px solid
+    var(--support-border);
+
+  border-radius:
+    24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #111F43 0%,
+      #0E1B3A 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   HORIZONTAL LINE
+========================================================= */
+
+.pjdev-support__journey-line {
+  position: absolute;
+
+  left: 36px;
+  right: 36px;
+
+  top: 43px;
+
+  height: 2px;
+
+  background:
+    var(--support-border-strong);
+
+  z-index: 1;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.pjdev-support__journey-progress {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--support-blue),
+      var(--support-cyan)
+    );
+
+  transition:
+    width
+    0.6s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      61,
+      217,
+      238,
+      0.35
+    );
+}
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.pjdev-support__track {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      6,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  align-items: start;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   TRACK ITEM
+========================================================= */
+
+.pjdev-support__track-item {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: none;
+
+  color:
+    var(--support-muted);
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   DOT
+========================================================= */
+
+.pjdev-support__track-dot {
+  position: relative;
+
+  display: block;
+
+  width: 15px;
+  height: 15px;
+
+  margin-bottom: 18px;
+
+  border:
+    2px solid
+    var(--support-border-strong);
+
+  border-radius: 50%;
+
+  background:
+    var(--support-bg);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* =========================================================
+   TRACK TITLE
+========================================================= */
+
+.pjdev-support__track-title {
+  display: block;
+
+  color:
+    var(--support-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      1rem,
+      1.45vw,
+      1.18rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    1.15;
+
+  transition:
+    color 0.3s ease;
+}
+
+/* =========================================================
+   DONE
+========================================================= */
+
+.pjdev-support__track-item--done
+  .pjdev-support__track-dot {
+  border-color:
+    var(--support-cyan);
+
+  background:
+    var(--support-cyan);
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      61,
+      217,
+      238,
+      0.25
+    );
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.pjdev-support__track-item--active
+  .pjdev-support__track-dot {
+  transform:
+    scale(1.12);
+
+  border-color:
+    var(--support-blue);
+
+  background:
+    var(--support-blue);
+
+  box-shadow:
+    0 0 0 6px
+    rgba(
+      110,
+      151,
+      255,
+      0.14
+    );
+}
+
+.pjdev-support__track-item--active
+  .pjdev-support__track-title {
+  color:
+    var(--support-blue);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.pjdev-support__track-item:hover
+  .pjdev-support__track-title {
+  color:
+    var(--support-white, #ffffff);
+}
+
+.pjdev-support__track-item:hover
+  .pjdev-support__track-dot {
+  border-color:
+    var(--support-cyan);
+}
+
+/* =========================================================
+   SUPPORT GRID
+========================================================= */
+
+.pjdev-support__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  margin-top:
+    44px;
+
+  border-top:
+    1px solid
+    var(--support-border);
+
+  border-left:
+    1px solid
+    var(--support-border);
+}
+
+/* =========================================================
+   SUPPORT CARD
+========================================================= */
+
+.pjdev-support__item {
+  position: relative;
+
+  min-height:
+    188px;
+
+  padding:
+    30px
+    26px
+    32px;
+
+  border-right:
+    1px solid
+    var(--support-border);
+
+  border-bottom:
+    1px solid
+    var(--support-border);
+
+  background:
+    transparent;
+
+  opacity: 0;
+
+  transform:
+    translateY(18px);
+
+  transition:
+    opacity
+      0.65s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      )
+      var(
+        --pjdev-support-delay
+      ),
+    transform
+      0.65s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      )
+      var(
+        --pjdev-support-delay
+      ),
+    background
+      0.3s ease;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.pjdev-support--in
+  .pjdev-support__item {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.pjdev-support__item:hover {
+  background:
+    rgba(
+      15,
+      29,
+      64,
+      0.85
+    );
+}
+
+/* =========================================================
+   BOTTOM ACCENT
+========================================================= */
+
+.pjdev-support__item::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 100%;
+
+  bottom: -1px;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--support-blue),
+      var(--support-cyan)
+    );
+
+  transition:
+    right
+    0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.pjdev-support__item:hover::after {
+  right: 0;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.pjdev-support__icon,
+.pjdev-support__item
+  .pjdevico {
+  width:
+    28px;
+
+  height:
+    28px;
+
+  margin-bottom:
+    26px;
+
+  color:
+    var(--support-blue);
+
+  transition:
+    transform
+    0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    color
+    0.3s ease;
+}
+
+.pjdev-support__item:hover
+  .pjdevico {
+  transform:
+    translateY(-4px);
+
+  color:
+    var(--support-cyan);
+}
+
+/* =========================================================
+   ITEM TITLE
+========================================================= */
+
+.pjdev-support__item-title {
+  margin: 0;
+
+  color:
+    var(--support-text);
+
+  font-family:
+    var(
+      --pjdev-font-display,
+      "Poppins",
+      sans-serif
+    );
+
+  font-size:
+    1.12rem;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  letter-spacing:
+    -0.02em;
+}
+
+/* =========================================================
+   ITEM TEXT
+========================================================= */
+
+.pjdev-support__item-text {
+  max-width:
+    30ch;
+
+  margin-top:
+    9px;
+
+  color:
+    var(--support-muted);
+
+  font-family:
+    var(
+      --pjdev-font-body,
+      "Segoe UI",
+      sans-serif
+    );
+
+  font-size:
+    0.93rem;
+
+  line-height:
+    1.55;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .pjdev-support__wrap {
+    width:
+      calc(
+        100% - 48px
+      );
+  }
+
+  .pjdev-support__journey {
+    padding:
+      30px
+      26px
+      28px;
+  }
+
+  .pjdev-support__journey-line {
+    left: 26px;
+    right: 26px;
+  }
+
+  .pjdev-support__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .pjdev-support {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+  .pjdev-support__wrap {
+    width:
+      calc(
+        100% - 28px
+      );
+  }
+
+  .pjdev-support__journey {
+    margin-top:
+      42px;
+
+    padding:
+      22px
+      16px
+      20px;
+
+    border-radius:
+      20px;
+
+    overflow-x:
+      auto;
+  }
+
+  .pjdev-support__track {
+    min-width:
+      650px;
+
+    gap:
+      18px;
+  }
+
+  .pjdev-support__journey-line {
+    left:
+      16px;
+
+    right:
+      16px;
+
+    top:
+      31px;
+  }
+
+  .pjdev-support__grid {
+    grid-template-columns:
+      1fr;
+
+    margin-top:
+      32px;
+  }
+
+  .pjdev-support__item {
+    min-height:
+      165px;
+
+    padding:
+      25px
+      22px
+      28px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .pjdev-support__wrap {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .pjdev-support__item-title {
+    font-size:
+      1.04rem;
+  }
+
+  .pjdev-support__item-text {
+    font-size:
+      0.88rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pjdev-support__item {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .pjdev-support__journey-progress {
+    transition: none;
+  }
+
+  .pjdev-support__track-item
+    .pjdev-support__track-dot,
+  .pjdev-support__track-item
+    .pjdev-support__track-title {
+    transition: none;
+  }
+
+  .pjdev-support__item::after,
+  .pjdev-support__item .pjdevico {
+    transition: none;
+  }
+}

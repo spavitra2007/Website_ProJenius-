@@ -1,0 +1,5 @@
+.pjw-cta { position: relative; overflow: hidden; background: var(--pjw-deep); color: var(--pjw-on-deep); }
+.pjw-cta__canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.pjw-cta__inner { position: relative; }
+.pjw-cta__h2 { max-width: 16ch; color: #fff; font-size: clamp(2.2rem, 5vw, 4rem); }
+.pjw-cta__lead { margin-bottom: 36px; color: var(--pjw-on-deep-muted); }

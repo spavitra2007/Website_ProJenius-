@@ -1,0 +1,54 @@
+/* StartupSupportHero.css */
+.ssp-hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;
+  padding:calc(var(--ssp-nav-h) + clamp(24px,5vw,64px)) 0 clamp(56px,7vw,96px);overflow:clip;position:relative}
+.ssp-hero-glow::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(640px circle at 78% 18%,rgba(70,140,255,.16),transparent 62%)}
+.ssp-hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(24px,4vw,72px);align-items:center;
+  width:min(1240px,100% - 48px);margin-inline:auto;position:relative;z-index:1}
+@media (max-width:520px){.ssp-hero-grid{width:calc(100% - 40px)}}
+.ssp-hero-heading{font-size:clamp(34px,4.7vw,70px);letter-spacing:-.035em;line-height:1.02;margin-bottom:26px}
+.ssp-hero-heading span{display:block}
+.ssp-hero-lede{font-size:clamp(17px,1.45vw,19.5px);margin-top:0;margin-bottom:36px;max-width:56ch;color:var(--ssp-ink-2)}
+.ssp-hero-viz{position:relative;justify-self:center;width:100%;max-width:560px}
+.ssp-hero-viz svg{width:100%;height:auto;overflow:visible}
+.ssp-hero-note{margin-top:34px;display:flex;gap:10px;align-items:center;font:500 13px/1.4 var(--ssp-font-mono);color:var(--ssp-muted)}
+.ssp-hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--ssp-accent-2);box-shadow:0 0 0 4px rgba(63,216,240,.18);animation:sspHeroBlink 2.4s ease-in-out infinite}
+@keyframes sspHeroBlink{50%{opacity:.35}}
+
+.ssp-hero-echo{fill:none;stroke:var(--ssp-line);stroke-width:1;stroke-dasharray:2 8}
+.ssp-hero-ring{fill:none;stroke:var(--ssp-line);stroke-width:1}
+.ssp-hero-ring--dashed{stroke-dasharray:3 6;animation:sspHeroSpin 60s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes sspHeroSpin{to{transform:rotate(360deg)}}
+.ssp-hero-tick{stroke:var(--ssp-line-2);stroke-width:1}
+.ssp-hero-caption{font:500 12px var(--ssp-font-mono);fill:var(--ssp-muted);letter-spacing:.12em}
+.ssp-hero-base-path{fill:none;stroke:var(--ssp-line-2);stroke-width:1.5;stroke-dasharray:2 7;stroke-linecap:round}
+.ssp-hero-progress-path{fill:none;stroke-width:2.6;stroke-linecap:round;filter:drop-shadow(0 0 7px rgba(46,211,240,.55))}
+.ssp-hero-lead-dot{fill:#fff;filter:drop-shadow(0 0 8px #3FD8F0)}
+
+.ssp-hero-node{cursor:pointer;outline:none}
+.ssp-hero-node-halo{opacity:0;transition:opacity .6s}
+.ssp-hero-node-ring{fill:var(--ssp-bg);stroke:var(--ssp-node-off);stroke-width:1.5;transition:stroke .5s,transform .35s cubic-bezier(.3,.8,.3,1);transform-box:fill-box;transform-origin:center}
+.ssp-hero-node-core{fill:var(--ssp-node-off);transition:fill .5s,transform .35s;transform-box:fill-box;transform-origin:center}
+.ssp-hero-node-label{font:600 16px var(--ssp-font-mono);letter-spacing:.14em;fill:var(--ssp-muted);transition:fill .5s}
+.ssp-hero-node-sub{font:500 13.5px var(--ssp-font-body);fill:var(--ssp-muted);opacity:.85;transition:fill .5s,opacity .5s}
+.ssp-hero-node--on .ssp-hero-node-halo{opacity:1}
+.ssp-hero-node--on .ssp-hero-node-ring{stroke:#3FD8F0}
+.ssp-hero-node--on .ssp-hero-node-core{fill:#3FD8F0}
+.ssp-hero-node--on .ssp-hero-node-label{fill:var(--ssp-ink)}
+.ssp-hero-node--on .ssp-hero-node-sub{fill:var(--ssp-ink-2)}
+.ssp-hero-node:hover .ssp-hero-node-ring,.ssp-hero-node:focus-visible .ssp-hero-node-ring{transform:scale(1.22)}
+.ssp-hero-node:hover .ssp-hero-node-core,.ssp-hero-node:focus-visible .ssp-hero-node-core{transform:scale(1.4)}
+.ssp-hero-node-pulse{fill:none;stroke:#3FD8F0;stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center}
+.ssp-hero-node--on .ssp-hero-node-pulse{animation:sspHeroPulse 3.2s ease-out infinite}
+.ssp-hero-node--on .ssp-hero-node-pulse--d1{animation-delay:.9s}
+.ssp-hero-node--on .ssp-hero-node-pulse--d2{animation-delay:1.8s}
+@keyframes sspHeroPulse{0%{opacity:.6;transform:scale(1)}80%,100%{opacity:0;transform:scale(2.3)}}
+
+@media (max-width:899px){
+  .ssp-hero{min-height:0}
+  .ssp-hero-grid{grid-template-columns:1fr;gap:48px}
+  .ssp-hero-heading{font-size:clamp(36px,9.6vw,64px)}
+  .ssp-hero-viz{max-width:460px}
+  .ssp-hero-node-label{font-size:22px}
+  .ssp-hero-node-sub{font-size:19px}
+}

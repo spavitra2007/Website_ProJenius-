@@ -1,0 +1,101 @@
+/* ContactSmartForm — split layout: helper panel (left) + form card (right) */
+.pjct-form {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 32px;
+  align-items: start;
+}
+
+/* ----- left panel ----- */
+.pjct-form__panel {
+  position: sticky;
+  top: 24px;
+  padding: 28px;
+  border-radius: var(--pjct-radius);
+  background: var(--pjct-surface-2);
+  animation: pjct-form-fade 0.3s ease both;
+}
+.pjct-form__panel-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--pjct-primary);
+  color: var(--pjct-primary-ink);
+}
+.pjct-form__panel-title { margin: 16px 0 0; font-family: var(--pjct-font-display); font-size: 1.5rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+.pjct-form__panel-text { margin: 8px 0 0; color: var(--pjct-muted); }
+.pjct-form__tips { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--pjct-line-strong); }
+.pjct-form__tips-summary { font-weight: 700; font-size: 15px; cursor: pointer; }
+.pjct-form__tips-list { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
+.pjct-form__tips-item { display: flex; gap: 10px; font-size: 15px; line-height: 1.4; }
+.pjct-form__tips-item .pjct-icon { margin-top: 2px; color: var(--pjct-ok); }
+.pjct-form__assure { margin: 18px 0 0; font-size: 14px; color: var(--pjct-muted); }
+
+/* ----- form card ----- */
+.pjct-form__card {
+  max-width: 760px;
+  padding: 28px;
+  border: 1px solid var(--pjct-line);
+  border-radius: 18px;
+  background: var(--pjct-surface);
+  box-shadow: var(--pjct-shadow);
+  scroll-margin-top: 16px;
+}
+.pjct-form__content { animation: pjct-form-fade 0.3s ease both; }
+.pjct-form__title { margin: 0; font-family: var(--pjct-font-display); font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; }
+.pjct-form__support { margin: 8px 0 0; color: var(--pjct-muted); font-size: 1.05rem; }
+.pjct-form__note {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-left: 3px solid var(--pjct-sun);
+  border-radius: 0 8px 8px 0;
+  background: var(--pjct-surface-2);
+  font-size: 14.5px;
+}
+
+/* ----- sections + grid ----- */
+.pjct-form__section { margin-top: 28px; animation: pjct-form-section 0.35s ease both; }
+.pjct-form__section:nth-child(2) { animation-delay: 70ms; }
+.pjct-form__section:nth-child(3) { animation-delay: 140ms; }
+.pjct-form__section-title {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--pjct-line);
+  font-family: var(--pjct-font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pjct-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+
+/* ----- submit area ----- */
+.pjct-form__submit-row { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--pjct-line); }
+.pjct-form__privacy { display: grid; gap: 4px; margin-bottom: 14px; font-size: 13.5px; color: var(--pjct-muted); }
+.pjct-form__summary {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--pjct-danger-soft);
+  color: var(--pjct-danger);
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+@keyframes pjct-form-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pjct-form-section { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 959px) {
+  .pjct-form { grid-template-columns: 1fr; gap: 16px; }
+  .pjct-form__panel { position: static; order: -1; padding: 18px 20px; }
+  .pjct-form__panel-icon, .pjct-form__panel-title, .pjct-form__panel-text { display: none; }
+  .pjct-form__tips { margin-top: 0; padding-top: 0; border-top: 0; }
+  .pjct-form__card { max-width: none; padding: 22px 18px; }
+}
+@media (max-width: 640px) {
+  .pjct-form__grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pjct-form__panel, .pjct-form__content, .pjct-form__section { animation: none; }
+}

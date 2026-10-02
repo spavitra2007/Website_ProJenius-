@@ -1,0 +1,96 @@
+/* =====================================================================
+   DevelopmentPage.css
+   Scoped tokens + light resets. Everything lives under .pjdev-page, so
+   nothing here can affect the rest of the website.
+   ===================================================================== */
+.pjdev-page {
+  /* ---- ADJUST THESE TWO to match your existing site header ---- */
+  --pjdev-header-h: 72px;   /* height of your sticky header (0px if it is not sticky) */
+  --pjdev-subnav-h: 46px;   /* height of this page's small section nav */
+
+  /* light theme */
+  --pjdev-bg: #F7F9FC;
+  --pjdev-bg-alt: #EBF0F8;
+  --pjdev-card: #FFFFFF;
+  --pjdev-ink: #0A1633;
+  --pjdev-muted: #4A5776;
+  --pjdev-line: #DAE2EF;
+  --pjdev-line-strong: #C3CFE4;
+  --pjdev-blue: #1D5CFF;
+  --pjdev-cyan: #12C9E0;
+  --pjdev-accent: #1D5CFF;
+  --pjdev-surface: #F7F9FC;
+
+  /* dark theme values (used by .pjdev-theme-dark sections) */
+  --pjdev-dbg: #050B1E;
+  --pjdev-dbg2: #0B1533;
+  --pjdev-dink: #EAF0FF;
+  --pjdev-dmuted: #9AA9CB;
+  --pjdev-dline: rgba(150, 180, 255, 0.16);
+  --pjdev-dline-strong: rgba(170, 195, 255, 0.34);
+  --pjdev-dcyan: #3DD9EE;
+  --pjdev-dblue: #6E97FF;
+
+  --pjdev-grad: linear-gradient(100deg, #1D5CFF 0%, #12C9E0 100%);
+  --pjdev-grad-d: linear-gradient(100deg, #6E97FF 0%, #3DD9EE 100%);
+  --pjdev-r-lg: 28px;
+  --pjdev-r-md: 20px;
+  --pjdev-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --pjdev-font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --pjdev-font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  position: relative;
+  background: var(--pjdev-bg);
+  color: var(--pjdev-ink);
+  font-family: var(--pjdev-font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.pjdev-page *,
+.pjdev-page *::before,
+.pjdev-page *::after {
+  box-sizing: border-box;
+}
+
+/* zero-specificity resets so component classes always win */
+:where(.pjdev-page) :where(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+:where(.pjdev-page) :where(ul, ol) { padding: 0; list-style: none; }
+:where(.pjdev-page) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:where(.pjdev-page) a { color: inherit; text-decoration: none; }
+:where(.pjdev-page) svg { display: block; }
+:where(.pjdev-page) :where(h1, h2, h3) {
+  font-family: var(--pjdev-font-display);
+  font-variation-settings: "wdth" 88;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.pjdev-page :focus-visible {
+  outline: 3px solid var(--pjdev-cyan);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* section themes, applied by each section component */
+.pjdev-theme-dark {
+  background: var(--pjdev-dbg);
+  color: var(--pjdev-dink);
+  --pjdev-ink: var(--pjdev-dink);
+  --pjdev-muted: var(--pjdev-dmuted);
+  --pjdev-line: var(--pjdev-dline);
+  --pjdev-line-strong: var(--pjdev-dline-strong);
+  --pjdev-card: rgba(255, 255, 255, 0.04);
+  --pjdev-blue: var(--pjdev-dblue);
+  --pjdev-accent: var(--pjdev-dcyan);
+  --pjdev-surface: var(--pjdev-dbg);
+}
+.pjdev-theme-alt {
+  background: var(--pjdev-bg-alt);
+  --pjdev-surface: var(--pjdev-bg-alt);
+}
+
+.pjdev-page__main { display: block; }

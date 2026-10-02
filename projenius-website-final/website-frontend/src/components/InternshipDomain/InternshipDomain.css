@@ -1,0 +1,959 @@
+/* =========================================================
+   INTERNSHIP DOMAIN
+   Professional White + Black + Blue Design
+========================================================= */
+
+.internship-domain-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 90px 0 110px;
+
+    background:
+        radial-gradient(
+            circle at 8% 25%,
+            rgba(21, 153, 214, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(120, 100, 255, 0.055),
+            transparent 30%
+        ),
+        #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.internship-domain-container {
+    position: relative;
+    z-index: 1;
+
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.internship-domain-header {
+    max-width: 900px;
+
+    margin: 0 auto 26px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.internship-domain-visible .internship-domain-header {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.internship-domain-label {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 1.1px;
+
+    color: #1599D6;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.internship-domain-header h2 {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(38px, 4vw, 56px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.internship-domain-header p {
+    max-width: 680px;
+
+    margin: 13px auto 0;
+
+    font-family: "Segoe UI", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color: #666666;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.internship-domain-filters {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 24px auto 34px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.65s ease 0.08s,
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+}
+
+.internship-domain-visible .internship-domain-filters {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+========================================================= */
+
+.internship-domain-filter {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border: 1px solid #dce6ed;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #151b27;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.internship-domain-filter:hover {
+    border-color: #1599D6;
+
+    color: #1599D6;
+
+    transform: translateY(-2px);
+}
+
+.internship-domain-filter.active {
+    border-color: #111827;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(17, 24, 39, 0.14);
+}
+
+.internship-domain-filter.active:hover {
+    color: #ffffff;
+
+    border-color: #111827;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.internship-domain-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        300px;
+
+    gap: 26px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.internship-domain-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-content: start;
+}
+
+
+/* =========================================================
+   DOMAIN CARD
+========================================================= */
+
+.internship-domain-card {
+    position: relative;
+
+    min-height: 238px;
+
+    padding: 25px 26px 23px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border: 1px solid #e3eaf0;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 8px 25px rgba(17, 24, 39, 0.035);
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation:
+        internshipDomainCardReveal
+        0.55s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        var(--domain-delay)
+        forwards;
+
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.internship-domain-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(21, 153, 214, 0.42);
+
+    box-shadow:
+        0 18px 35px rgba(21, 153, 214, 0.10);
+}
+
+
+/* =========================================================
+   SELECTED CARD
+========================================================= */
+
+.internship-domain-card.selected {
+    border-color: #35bfff;
+
+    box-shadow:
+        0 15px 35px rgba(21, 153, 214, 0.10);
+}
+
+.internship-domain-card.selected:hover {
+    border-color: #1599D6;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.internship-domain-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3f9fc,
+            #ffffff
+        );
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.internship-domain-card:hover
+.internship-domain-icon {
+    transform: translateY(-3px) scale(1.04);
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf8ff,
+            #ffffff
+        );
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.internship-domain-card h3 {
+    margin: 0;
+
+    min-height: 52px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.3px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   VIEW TRACK
+========================================================= */
+
+.internship-domain-view {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: auto;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    color: #27aef0;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+}
+
+.internship-domain-view span {
+    font-size: 17px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.internship-domain-view:hover {
+    color: #087fb8;
+
+    gap: 9px;
+}
+
+.internship-domain-view:hover span {
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SELECTED SIDEBAR
+========================================================= */
+
+.internship-domain-sidebar {
+    position: sticky;
+
+    top: 110px;
+
+    align-self: start;
+}
+
+
+/* =========================================================
+   SELECTED CARD
+========================================================= */
+
+.internship-domain-selected {
+    position: relative;
+
+    min-height: 480px;
+
+    padding: 38px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border-radius: 24px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 25px 55px rgba(17, 24, 39, 0.22);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR GLOW
+========================================================= */
+
+.internship-domain-selected::before {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(21, 153, 214, 0.16);
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SELECTED LABEL
+========================================================= */
+
+.internship-domain-selected-label {
+    position: relative;
+    z-index: 1;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    color: #2db8f5;
+}
+
+
+/* =========================================================
+   SELECTED ICON
+========================================================= */
+
+.internship-domain-selected-icon {
+    position: relative;
+    z-index: 1;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 28px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SELECTED TITLE
+========================================================= */
+
+.internship-domain-selected h3 {
+    position: relative;
+    z-index: 1;
+
+    margin: 25px 0 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.6px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SELECTED DESCRIPTION
+========================================================= */
+
+.internship-domain-selected p {
+    position: relative;
+    z-index: 1;
+
+    margin: 19px 0 0;
+
+    font-family: "Segoe UI", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    color: #b9c0ca;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.internship-domain-apply {
+    position: relative;
+    z-index: 1;
+
+    margin-top: auto;
+
+    min-height: 54px;
+
+    padding: 0 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.internship-domain-apply:hover {
+    transform: translateY(-2px);
+
+    background: #1599D6;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CARD REVEAL
+========================================================= */
+
+@keyframes internshipDomainCardReveal {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .internship-domain-container {
+        width: min(1000px, calc(100% - 40px));
+    }
+
+    .internship-domain-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            280px;
+
+        gap: 20px;
+    }
+
+    .internship-domain-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .internship-domain-card {
+        min-height: 220px;
+
+        padding: 22px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .internship-domain-section {
+        padding: 75px 0 90px;
+    }
+
+    .internship-domain-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-domain-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .internship-domain-sidebar {
+        position: relative;
+
+        top: auto;
+
+        width: 100%;
+    }
+
+    .internship-domain-selected {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    .internship-domain-selected-icon {
+        margin-top: 20px;
+    }
+
+    .internship-domain-selected h3 {
+        margin-top: 18px;
+    }
+
+    .internship-domain-apply {
+        margin-top: 25px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .internship-domain-section {
+        padding: 65px 0 75px;
+    }
+
+    .internship-domain-container {
+        width: calc(100% - 28px);
+    }
+
+    .internship-domain-label {
+        font-size: 12px;
+
+        letter-spacing: 0.9px;
+    }
+
+    .internship-domain-header h2 {
+        font-size: 34px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .internship-domain-header p {
+        font-size: 14px;
+    }
+
+    .internship-domain-filters {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding: 3px 2px 8px;
+
+        margin-bottom: 26px;
+
+        scrollbar-width: none;
+    }
+
+    .internship-domain-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .internship-domain-filter {
+        flex: 0 0 auto;
+
+        min-height: 43px;
+
+        padding: 0 17px;
+
+        font-size: 13px;
+    }
+
+    .internship-domain-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .internship-domain-card {
+        min-height: 205px;
+
+        padding: 19px;
+
+        border-radius: 17px;
+    }
+
+    .internship-domain-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 16px;
+
+        font-size: 28px;
+
+        border-radius: 13px;
+    }
+
+    .internship-domain-card h3 {
+        min-height: 48px;
+
+        font-size: 15px;
+    }
+
+    .internship-domain-view {
+        font-size: 13px;
+    }
+
+    .internship-domain-sidebar {
+        margin-top: 8px;
+    }
+
+    .internship-domain-selected {
+        min-height: 390px;
+
+        padding: 27px 24px;
+
+        border-radius: 20px;
+    }
+
+    .internship-domain-selected-label {
+        font-size: 14px;
+    }
+
+    .internship-domain-selected-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 35px;
+    }
+
+    .internship-domain-selected h3 {
+        font-size: 23px;
+    }
+
+    .internship-domain-selected p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .internship-domain-header h2 {
+        font-size: 30px;
+    }
+
+    .internship-domain-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-domain-card {
+        min-height: 185px;
+    }
+
+    .internship-domain-card h3 {
+        min-height: auto;
+
+        font-size: 17px;
+    }
+
+    .internship-domain-selected h3 {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .internship-domain-header,
+    .internship-domain-filters {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .internship-domain-card {
+        opacity: 1;
+
+        transform: none;
+
+        animation: none;
+    }
+
+    .internship-domain-card,
+    .internship-domain-filter,
+    .internship-domain-icon,
+    .internship-domain-view,
+    .internship-domain-apply {
+        transition: none;
+    }
+}

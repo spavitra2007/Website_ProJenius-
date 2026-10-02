@@ -1,0 +1,403 @@
+/* =========================================================
+   PROJENIUS - DEVELOPMENT SERVICES
+   BLUE ACCENT VERSION
+   Background remains unchanged
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+.development-services,
+.development-services *,
+.development-services *::before,
+.development-services *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+   BACKGROUND — UNCHANGED
+========================================================= */
+
+.development-services {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 55px 24px 65px;
+
+    background: #ffffff;
+
+    color: #0b1730;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.development-services-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.development-services-heading {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.development-services-heading h2 {
+    margin: 7px 0 0;
+
+    color: #080d16 !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 1.02;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   TITLE ACCENT — BLUE
+========================================================= */
+
+.development-services-heading h2 span {
+    color: #1599D6 !important;
+}
+
+
+/* =========================================================
+   TITLE LINE — BLUE
+========================================================= */
+
+.development-services-line {
+    display: block;
+
+    width: 78px;
+    height: 5px;
+
+    margin: 5px auto 4px;
+
+    border-radius: 999px;
+
+    background: #1599D6 !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.development-services-heading p {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 12px auto 0;
+
+    color: #64748b !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.development-services-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   BACKGROUND — UNCHANGED
+========================================================= */
+
+.development-service-card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 300px;
+
+    padding: 24px 20px 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    background: #f8fbff;
+
+    border: 1px solid rgba(53, 206, 255, 0.15);
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation:
+        developmentCardReveal
+        0.55s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+
+    animation-delay: calc(var(--card-index) * 0.08s);
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER — BLUE
+========================================================= */
+
+.development-service-card:hover {
+    transform: translateY(-5px);
+
+    background: #ffffff;
+
+    border-color: #1599D6 !important;
+
+    box-shadow:
+        0 15px 35px
+        rgba(21, 153, 214, 0.12);
+}
+
+
+/* =========================================================
+   ICON — BLUE
+========================================================= */
+
+.development-service-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+
+    background: #1599D6 !important;
+    color: #ffffff !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   ICON HOVER — BLUE
+========================================================= */
+
+.development-service-card:hover
+.development-service-icon {
+    transform:
+        scale(1.08)
+        rotate(-3deg);
+
+    background: #159FE3 !important;
+
+    box-shadow:
+        0 8px 20px
+        rgba(21, 153, 214, 0.25);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.development-service-card h3 {
+    margin: 0 0 12px;
+
+    color: #0b1730 !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.development-service-card p {
+    margin: 0;
+
+    color: #64748b !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    max-width: 300px;
+}
+
+
+/* =========================================================
+   BUTTON — BLUE
+========================================================= */
+
+.development-service-card button {
+    margin-top: auto;
+
+    padding: 11px 23px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1599D6 !important;
+    color: #ffffff !important;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER — BLUE
+========================================================= */
+
+.development-service-card button:hover {
+    transform: translateY(-2px);
+
+    background: #159FE3 !important;
+
+    box-shadow:
+        0 8px 20px
+        rgba(21, 153, 214, 0.22);
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+@keyframes developmentCardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .development-services-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .development-services {
+        padding: 45px 16px 55px;
+    }
+
+    .development-services-heading {
+        margin-bottom: 25px;
+    }
+
+    .development-services-heading h2 {
+        font-size: 36px;
+        letter-spacing: -1.2px;
+    }
+
+    .development-services-heading p {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .development-services-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .development-service-card {
+        min-height: 285px;
+        padding: 22px 18px;
+    }
+}

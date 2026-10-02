@@ -1,0 +1,1780 @@
+/* =========================================================
+   BOOK CALL SECTION
+========================================================= */
+
+.book-call-section {
+  width: 100%;
+  padding: 80px 5%;
+  box-sizing: border-box;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(225, 239, 255, 0.65),
+      transparent 35%
+    ),
+    #f4f7fb;
+  overflow: hidden;
+}
+
+.book-call-container {
+  width: 100%;
+  max-width: 1190px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(470px, 0.95fr);
+  gap: 65px;
+  align-items: flex-start;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.book-call-content {
+  max-width: 610px;
+  position: sticky;
+  top: 90px;
+}
+
+.book-call-content h1 {
+  margin: 0 0 24px;
+  color: #111827;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(38px, 4vw, 55px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.book-call-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #667085;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.book-call-trust svg {
+  color: #1677ff;
+}
+
+.book-call-description {
+  margin: 0 0 28px;
+  color: #697586;
+  font-family: "Poppins", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+}
+
+.book-call-content h3 {
+  margin: 0 0 18px;
+  color: #252b35;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.book-call-features {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.book-call-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #3f4857;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.book-call-feature svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  color: #1677ff;
+  fill: #1677ff;
+  stroke: #ffffff;
+}
+
+/* =========================================================
+   INFO PILLS
+========================================================= */
+
+.book-call-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.book-call-pill {
+  min-height: 43px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #475569;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.book-call-pill-wide {
+  padding-right: 17px;
+}
+
+.book-call-pill svg {
+  width: 17px;
+  height: 17px;
+  color: #159ee4;
+}
+
+/* =========================================================
+   BOOKING CARD
+========================================================= */
+
+.book-call-card {
+  width: 100%;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow:
+    0 22px 55px rgba(30, 41, 59, 0.12),
+    0 4px 15px rgba(30, 41, 59, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.book-call-card-header {
+  padding: 22px 28px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.book-call-card-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   STEP PROGRESS BAR
+========================================================= */
+
+.book-call-steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: #f8fafc;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.book-call-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.step-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.step-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.book-call-step-item.step-active .step-circle {
+  background: #159fdd;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(21, 159, 221, 0.2);
+}
+
+.book-call-step-item.step-active .step-label {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.book-call-step-item.step-completed .step-circle {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.book-call-step-item.step-completed .step-label {
+  color: #10b981;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #e2e8f0;
+  margin: 0 10px;
+  transition: background 0.3s ease;
+}
+
+.step-line.active {
+  background: #10b981;
+}
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.book-call-card-body {
+  padding: 34px 28px 25px;
+}
+
+/* CALENDAR ICON */
+.book-call-calendar-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #159fdd;
+  background: #edf8fd;
+  border-radius: 14px;
+}
+
+.book-call-card-body > h3 {
+  margin: 0 0 6px;
+  text-align: center;
+  color: #202733;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.book-call-subtitle {
+  margin: 0 auto 24px;
+  text-align: center;
+  color: #8b95a4;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+}
+
+/* =========================================================
+   AUTO-MOVE TIME NOTIFICATION
+========================================================= */
+
+.book-call-auto-banner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  animation: fadeInBanner 0.3s ease;
+}
+
+@keyframes fadeInBanner {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   DATE SELECTOR
+========================================================= */
+
+.book-call-dates {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.book-call-date {
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #edf2f7;
+  border-radius: 12px;
+  background: #fafbfc;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-call-date span {
+  margin-bottom: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.book-call-date strong {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.book-call-date:hover:not(.book-call-date-ended) {
+  background: #f0f7ff;
+  border-color: #badcf7;
+  color: #159fdd;
+}
+
+.book-call-date-active {
+  background: #159fdd !important;
+  border-color: #159fdd !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(21, 159, 221, 0.28);
+}
+
+.book-call-date-ended {
+  opacity: 0.65;
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.book-call-date-ended span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+/* =========================================================
+   SLOT MODE SWITCHER TABS
+========================================================= */
+
+.book-call-slot-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 4px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.slot-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slot-tab-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   MODE A: 4 FIXED TIME BUTTONS
+========================================================= */
+
+.book-call-fixed-wrapper {
+  margin-bottom: 16px;
+}
+
+.book-call-times {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.book-call-time {
+  position: relative;
+  min-height: 48px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #526174;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slot-btn-inner {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.slot-clock-icon {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.book-call-time:hover:not(:disabled) {
+  border-color: #159fdd;
+  color: #159fdd;
+  transform: translateY(-1px);
+}
+
+.book-call-time:hover:not(:disabled) .slot-clock-icon {
+  color: #159fdd;
+}
+
+.book-call-time-active {
+  border-color: #159fdd !important;
+  background: #159fdd !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(21, 159, 221, 0.25);
+}
+
+.book-call-time-active .slot-clock-icon {
+  color: #ffffff !important;
+}
+
+.book-call-time-disabled {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.slot-expired-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  background: #fee2e2;
+  color: #ef4444;
+  border-radius: 4px;
+}
+
+.slot-next-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 4px;
+}
+
+.book-call-switch-clock-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f0f7ff;
+  border: 1px dashed #7bc2ea;
+  border-radius: 9px;
+  color: #0b7bb4;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-call-switch-clock-link:hover {
+  background: #e2f1fd;
+  border-color: #159fdd;
+}
+
+/* =========================================================
+   MODE B: CONVENIENT TIMESLOT WITH INTERACTIVE CLOCK
+========================================================= */
+
+.book-call-clock-container {
+  padding: 18px;
+  margin-bottom: 18px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.clock-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.clock-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f172a;
+  font-size: 13.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.clock-title svg {
+  color: #159fdd;
+}
+
+.clock-hint {
+  font-size: 11px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.clock-interactive-box {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+/* ANALOG CLOCK SVG */
+.analog-clock-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.analog-clock-svg {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.06));
+}
+
+.clock-dial-bg {
+  fill: #ffffff;
+  stroke: #e2e8f0;
+  stroke-width: 2;
+}
+
+.clock-dial-ring {
+  fill: #f8fafc;
+  stroke: #cbd5e1;
+  stroke-width: 1;
+}
+
+.clock-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  fill: #475569;
+}
+
+.clock-hour-hand {
+  stroke: #0f172a;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.clock-minute-hand {
+  stroke: #159fdd;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.clock-pivot {
+  fill: #159fdd;
+}
+
+.digital-time-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.digital-time-badge svg {
+  color: #38bdf8;
+}
+
+/* CLOCK SELECTORS */
+.clock-selectors {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.time-select-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.time-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.time-field select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.time-field select:focus {
+  border-color: #159fdd;
+}
+
+.time-separator {
+  font-size: 20px;
+  font-weight: 800;
+  color: #64748b;
+  line-height: 38px;
+}
+
+.ampm-switch {
+  display: flex;
+  height: 38px;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ampm-btn {
+  padding: 0 10px;
+  border: none;
+  background: #ffffff;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ampm-btn.active {
+  background: #159fdd;
+  color: #ffffff;
+}
+
+.ampm-btn.ampm-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  background: #f1f5f9;
+}
+
+.convenient-dropdown-box {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: #f0f7ff;
+  border: 1px solid #bae0f7;
+  border-radius: 10px;
+}
+
+.convenient-dropdown-box label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0369a1;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.convenient-full-select {
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1.5px solid #7bc2ea;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+/* QUICK POPULAR CHIPS */
+.quick-chips-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quick-chips-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.quick-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quick-chip-btn {
+  padding: 4px 8px;
+  border: 1px solid #d8e1eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #475569;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quick-chip-btn:hover:not(:disabled) {
+  border-color: #159fdd;
+  color: #159fdd;
+}
+
+.quick-chip-btn.chip-active {
+  background: #159fdd;
+  border-color: #159fdd;
+  color: #ffffff;
+}
+
+.quick-chip-btn.chip-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.clock-warning-alert {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  color: #dc2626;
+  font-size: 11px;
+  font-family: "Poppins", sans-serif;
+}
+
+.apply-clock-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 38px;
+  background: #0f172a;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.apply-clock-btn:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+.apply-clock-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SELECTION MESSAGE & BADGE
+========================================================= */
+
+.book-call-selection-message {
+  margin: 4px 0 16px;
+  text-align: center;
+  color: #98a2b3;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+.book-call-selected {
+  min-height: 40px;
+  margin: 5px 0 16px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9px;
+  background: #eef9f5;
+  color: #166534;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+}
+
+.book-call-selected svg {
+  color: #27a879;
+}
+
+.selected-clock-icon {
+  margin-left: 4px;
+  color: #159fdd !important;
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.book-call-quote {
+  margin: 5px 0 20px;
+  padding: 14px 16px;
+  border-left: 4px solid #ffab18;
+  border-radius: 0 12px 12px 0;
+  background: #f8fafc;
+}
+
+.book-call-quote p {
+  margin: 0 0 4px;
+  color: #647184;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.book-call-quote strong {
+  color: #687588;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+}
+
+/* =========================================================
+   BOOK BUTTON & ACTIONS
+========================================================= */
+
+.book-call-button {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: #159fdd;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(21, 159, 221, 0.22);
+  transition: all 0.2s ease;
+}
+
+.book-call-button:not(:disabled):hover {
+  background: #078fc9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(21, 159, 221, 0.28);
+}
+
+.book-call-button:disabled {
+  background: #b8c3ce;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.book-call-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #475569;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-call-back-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.form-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* =========================================================
+   TERMS CHECKBOX
+========================================================= */
+
+.book-call-terms-box {
+  margin-top: 14px;
+}
+
+.book-call-terms-check {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.book-call-terms-check input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.book-call-custom-check {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.book-call-custom-check::after {
+  content: "";
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.15s ease;
+}
+
+.book-call-terms-check input:checked + .book-call-custom-check {
+  background: #159fdd;
+  border-color: #159fdd;
+}
+
+.book-call-terms-check input:checked + .book-call-custom-check::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.book-call-terms-text {
+  color: #8993a1;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.book-call-terms-text button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #159fdd;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.book-call-terms-text button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   STEP 2: DETAILS FORM
+========================================================= */
+
+.book-call-recap-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+}
+
+.recap-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #166534;
+  font-family: "Poppins", sans-serif;
+}
+
+.recap-change-btn {
+  border: none;
+  background: transparent;
+  color: #159fdd;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.form-head {
+  margin-bottom: 18px;
+}
+
+.form-head h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-head p {
+  margin: 0;
+  font-size: 12.5px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group label svg {
+  color: #159fdd;
+}
+
+.req {
+  color: #ef4444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #159fdd;
+  box-shadow: 0 0 0 3px rgba(21, 159, 221, 0.15);
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.error-text {
+  font-size: 11px;
+  color: #ef4444;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   STEP 3: PAYMENT WORKFLOW
+========================================================= */
+
+.payment-summary-card {
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-row strong {
+  font-size: 15px;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-sub {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-price {
+  text-align: right;
+}
+
+.original-price {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-family: "Poppins", sans-serif;
+}
+
+.final-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #159fdd;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-features-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.summary-features-pills span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #166534;
+  background: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-methods-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.payment-methods-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e293b;
+  font-family: "Poppins", sans-serif;
+}
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.payment-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pay-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pay-tab.active {
+  border-color: #159fdd;
+  background: #f0f7ff;
+  color: #159fdd;
+  box-shadow: 0 2px 8px rgba(21, 159, 221, 0.15);
+}
+
+.payment-method-box {
+  padding: 16px;
+  background: #fafbfc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* UPI & QR CODE */
+.qr-container {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.qr-caption {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.upi-input-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.upi-input-side label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.upi-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.upi-input-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.upi-verify-btn {
+  padding: 0 12px;
+  background: #159fdd;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.supported-upi-apps {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.supported-upi-apps strong {
+  color: #1e293b;
+  font-size: 10.5px;
+}
+
+/* CARD BOX */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* NET BANKING */
+.banks-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  font-family: "Poppins", sans-serif;
+}
+
+.banks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.bank-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  color: #334155;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bank-pill.active {
+  border-color: #159fdd;
+  background: #f0f7ff;
+  color: #159fdd;
+}
+
+.payment-security-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  color: #64748b;
+  font-size: 11.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-security-note svg {
+  color: #159fdd;
+  flex-shrink: 0;
+}
+
+.payment-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   STEP 4: CONFIRMED SUCCESS FLOW
+========================================================= */
+
+.book-call-success-flow {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.12);
+  animation: scaleSuccess 0.4s ease;
+}
+
+@keyframes scaleSuccess {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.book-call-success-flow h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+}
+
+.success-subtitle {
+  margin: 0 auto 18px;
+  max-width: 380px;
+  font-size: 13px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+.booking-ref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  color: #1d4ed8;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.confirmed-details-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.detail-item svg {
+  color: #159fdd;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.detail-item small {
+  display: block;
+  font-size: 10.5px;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.detail-item strong {
+  font-size: 12px;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+}
+
+.meet-link-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.meet-url-text small {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+}
+
+.meet-url-text code {
+  font-size: 12px;
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.copy-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  color: #334155;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-link-btn:hover {
+  background: #f8fafc;
+  border-color: #159fdd;
+  color: #159fdd;
+}
+
+.confirmed-action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.btn-calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 14px;
+  background: #159fdd;
+  border-radius: 9px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(21, 159, 221, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-calendar:hover {
+  background: #078fc9;
+  transform: translateY(-1px);
+}
+
+.btn-join-meet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border: 1.5px solid #d8e1eb;
+  border-radius: 9px;
+  color: #1e293b;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-join-meet:hover {
+  border-color: #159fdd;
+  color: #159fdd;
+  background: #f0f7ff;
+}
+
+.book-another-btn {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.book-another-btn:hover {
+  color: #0f172a;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1050px) {
+  .book-call-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 650px;
+  }
+
+  .book-call-content {
+    position: static;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .book-call-section {
+    padding: 50px 16px;
+  }
+
+  .book-call-content h1 {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+  }
+
+  .book-call-card-body {
+    padding: 24px 16px 20px;
+  }
+
+  .clock-interactive-box {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .qr-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .upi-input-side {
+    width: 100%;
+  }
+
+  .confirmed-details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmed-action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .book-call-dates {
+    gap: 4px;
+  }
+
+  .book-call-date {
+    min-height: 58px;
+  }
+
+  .book-call-date span {
+    font-size: 9.5px;
+  }
+
+  .book-call-date strong {
+    font-size: 13.5px;
+  }
+
+  .book-call-pills {
+    flex-direction: column;
+  }
+
+  .book-call-pill {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 420px) {
+  .book-call-content h1 {
+    font-size: 30px;
+  }
+
+  .book-call-times {
+    grid-template-columns: 1fr;
+  }
+
+  .banks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-call-date,
+  .book-call-time,
+  .book-call-button,
+  .clock-hour-hand,
+  .clock-minute-hand,
+  .book-call-custom-check {
+    transition: none;
+  }
+}

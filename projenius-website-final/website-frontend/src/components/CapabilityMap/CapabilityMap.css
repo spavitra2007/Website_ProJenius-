@@ -1,0 +1,1149 @@
+/* =========================================================
+   CAPABILITY MAP
+========================================================= */
+
+.capabilityMap {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #030a19;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.capabilityMap__grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.6;
+
+  background-image:
+    linear-gradient(
+      rgba(57, 92, 137, 0.085) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(57, 92, 137, 0.085) 1px,
+      transparent 1px
+    );
+
+  background-size: 56px 56px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.capabilityMap__container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1345px,
+    calc(100% - 90px)
+  );
+
+  margin: 0 auto;
+
+  padding: 22px 0 60px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.capabilityMap__header {
+  max-width: 700px;
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation:
+    capabilityMapHeaderIn
+    0.7s
+    ease
+    forwards;
+}
+
+@keyframes capabilityMapHeaderIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.capabilityMap__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: #73aaff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.7px;
+
+  text-transform: uppercase;
+}
+
+.capabilityMap__eyebrow-line {
+  width: 27px;
+  height: 1px;
+
+  background: #6baaff;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.capabilityMap__heading {
+  margin: 0;
+
+  color: #edf3ff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 59px;
+
+  font-weight: 800;
+
+  line-height: 1.03;
+
+  letter-spacing: -2.5px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.capabilityMap__intro {
+  max-width: 640px;
+
+  margin: 29px 0 0;
+
+  color: #9eafca;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.capabilityMap__canvas {
+  position: relative;
+
+  width: 100%;
+
+  height: 550px;
+
+  margin-top: 46px;
+}
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.capabilityMap__svg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BASE LINES
+========================================================= */
+
+.capabilityMap__line {
+  fill: none;
+
+  stroke: #23395b;
+
+  stroke-width: 0.16;
+
+  stroke-dasharray: 0.4 0.65;
+
+  opacity: 0.75;
+}
+
+/* =========================================================
+   ACTIVE LINE
+   DRAWS ONCE
+========================================================= */
+
+.capabilityMap__line-active {
+  fill: none;
+
+  stroke: #2edcf3;
+
+  stroke-width: 0.28;
+
+  stroke-linecap: round;
+
+  filter:
+    drop-shadow(
+      0 0 0.8px
+      rgba(
+        46,
+        220,
+        243,
+        0.9
+      )
+    );
+
+  pathLength: 1;
+
+  stroke-dasharray: 1;
+
+  stroke-dashoffset: 1;
+
+  animation:
+    capabilityMapLineDraw
+    0.32s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+@keyframes capabilityMapLineDraw {
+  from {
+    stroke-dashoffset: 1;
+
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SINGLE TRAVEL DOT
+========================================================= */
+
+.capabilityMap__travel-dot {
+  fill: #ffffff;
+
+  filter:
+    drop-shadow(
+      0 0 2px
+      rgba(
+        255,
+        255,
+        255,
+        0.95
+      )
+    );
+}
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.capabilityMap__center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 190px;
+  height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.capabilityMap__center-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   INNER RING
+========================================================= */
+
+.capabilityMap__center-ring--one {
+  width: 205px;
+  height: 205px;
+
+  border:
+    1px solid
+    rgba(
+      41,
+      117,
+      169,
+      0.2
+    );
+
+  animation:
+    capabilityMapRingPulse
+    4s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.capabilityMap__center-ring--two {
+  width: 260px;
+  height: 145px;
+
+  border:
+    1px solid
+    rgba(
+      43,
+      121,
+      166,
+      0.14
+    );
+
+  transform:
+    rotate(25deg);
+
+  animation:
+    capabilityMapOrbitOne
+    10s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.capabilityMap__center-ring--three {
+  width: 260px;
+  height: 145px;
+
+  border:
+    1px solid
+    rgba(
+      43,
+      121,
+      166,
+      0.12
+    );
+
+  transform:
+    rotate(-25deg);
+
+  animation:
+    capabilityMapOrbitTwo
+    12s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   RING ANIMATION
+========================================================= */
+
+@keyframes capabilityMapRingPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.02);
+  }
+}
+
+@keyframes capabilityMapOrbitOne {
+  from {
+    transform:
+      rotate(25deg)
+      scale(1);
+  }
+
+  to {
+    transform:
+      rotate(385deg)
+      scale(1);
+  }
+}
+
+@keyframes capabilityMapOrbitTwo {
+  from {
+    transform:
+      rotate(-25deg)
+      scale(1);
+  }
+
+  to {
+    transform:
+      rotate(-385deg)
+      scale(1);
+  }
+}
+
+/* =========================================================
+   CENTER CORE
+========================================================= */
+
+.capabilityMap__center-core {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 160px;
+  height: 160px;
+
+  padding: 7px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    #355986;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #12275a 0%,
+      #0c1a3b 55%,
+      #071126 100%
+    );
+
+  box-shadow:
+    0 0 0 6px
+    rgba(
+      44,
+      110,
+      174,
+      0.09
+    ),
+    0 0 28px
+    rgba(
+      43,
+      123,
+      190,
+      0.15
+    );
+
+  animation:
+    capabilityMapCorePulse
+    3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes capabilityMapCorePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.capabilityMap__logo {
+  display: block;
+
+  width: 128px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(
+        102,
+        198,
+        255,
+        0.14
+      )
+    );
+}
+
+/* =========================================================
+   NODE CONTAINER
+========================================================= */
+
+.capabilityMap__nodes {
+  position: absolute;
+
+  inset: 0;
+}
+
+/* =========================================================
+   CAPABILITY CARD
+========================================================= */
+
+.capabilityMap__node {
+  position: absolute;
+
+  z-index: 5;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    #2e456a;
+
+  border-radius: 7px;
+
+  background: #101b37;
+
+  color: #e1e9f8;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  outline: none;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.02
+    );
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================================================
+   CARD DOT
+========================================================= */
+
+.capabilityMap__node-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #263b61;
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.capabilityMap__node:hover {
+  border-color: #5578ac;
+
+  background: #14223f;
+
+  color: #f1f6ff;
+
+  transform:
+    translate(-50%, -50%)
+    translateY(-2px);
+}
+
+.capabilityMap__node:hover
+  .capabilityMap__node-dot {
+  background: #6eaaff;
+
+  box-shadow:
+    0 0 7px
+    rgba(
+      110,
+      170,
+      255,
+      0.55
+    );
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.capabilityMap__node--active {
+  border-color: #23d8ee;
+
+  background: #102742;
+
+  color: #eef8ff;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(
+      35,
+      216,
+      238,
+      0.32
+    ),
+    0 0 18px
+    rgba(
+      35,
+      216,
+      238,
+      0.16
+    );
+
+  transform:
+    translate(-50%, -50%);
+}
+
+/* =========================================================
+   ACTIVE DOT
+========================================================= */
+
+.capabilityMap__node--active
+  .capabilityMap__node-dot {
+  background: #38dff1;
+
+  box-shadow:
+    0 0 7px
+    rgba(
+      56,
+      223,
+      241,
+      0.8
+    );
+}
+
+/* =========================================================
+   ACTIVE OUTER GLOW
+========================================================= */
+
+.capabilityMap__node--active::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border:
+    1px solid
+    rgba(
+      47,
+      216,
+      239,
+      0.18
+    );
+
+  border-radius: 9px;
+
+  pointer-events: none;
+
+  animation:
+    capabilityMapNodeGlow
+    1.4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes capabilityMapNodeGlow {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   DESCRIPTION CARD
+========================================================= */
+
+/* =========================================================
+   DESCRIPTION CARD
+========================================================= */
+
+.capabilityMap__description-card {
+  position: relative;
+
+  width: min(
+    760px,
+    calc(100% - 300px)
+  );
+
+  margin: 45px auto 0;
+
+  padding: 24px 26px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    #273d60;
+
+  border-radius: 12px;
+
+  background: #080f21;
+
+  box-shadow:
+    0 12px 28px
+    rgba(0, 0, 0, 0.16);
+
+  animation:
+    capabilityMapDescriptionIn
+    0.38s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+@keyframes capabilityMapDescriptionIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   DESCRIPTION CONTENT
+========================================================= */
+
+.capabilityMap__description-content {
+  min-width: 0;
+}
+
+/* =========================================================
+   DESCRIPTION TITLE
+========================================================= */
+
+.capabilityMap__description-title {
+  margin: 0;
+
+  color: #29d7ed;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.capabilityMap__description-text {
+  margin: 11px 0 0;
+
+  color: #d8e0ee;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   COMBINED TEXT
+========================================================= */
+
+.capabilityMap__description-combined {
+  margin: 10px 0 0;
+
+  color: #7588a7;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .capabilityMap__container {
+    width: min(
+      940px,
+      calc(100% - 40px)
+    );
+  }
+
+  .capabilityMap__heading {
+    font-size: 53px;
+  }
+
+  .capabilityMap__canvas {
+    height: 510px;
+  }
+
+  .capabilityMap__node {
+    min-height: 37px;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+  }
+
+  .capabilityMap__center {
+    width: 170px;
+    height: 170px;
+  }
+
+  .capabilityMap__center-core {
+    width: 140px;
+    height: 140px;
+  }
+
+  .capabilityMap__logo {
+    width: 112px;
+  }
+
+  .capabilityMap__center-ring--one {
+    width: 185px;
+    height: 185px;
+  }
+
+  .capabilityMap__description-card {
+    width: min(
+      700px,
+      calc(100% - 220px)
+    );
+
+    margin-top: -45px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .capabilityMap {
+    min-height: auto;
+  }
+
+  .capabilityMap__container {
+    width: calc(100% - 26px);
+
+    padding:
+      25px
+      0
+      55px;
+  }
+
+  .capabilityMap__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .capabilityMap__heading {
+    font-size: 40px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .capabilityMap__intro {
+    margin-top: 21px;
+
+    font-size: 15px;
+  }
+
+  .capabilityMap__canvas {
+    height: 560px;
+
+    margin-top: 35px;
+  }
+
+  .capabilityMap__center {
+    width: 145px;
+    height: 145px;
+  }
+
+  .capabilityMap__center-core {
+    width: 120px;
+    height: 120px;
+
+    padding: 5px;
+  }
+
+  .capabilityMap__logo {
+    width: 92px;
+  }
+
+  .capabilityMap__center-ring--one {
+    width: 155px;
+    height: 155px;
+  }
+
+  .capabilityMap__center-ring--two,
+  .capabilityMap__center-ring--three {
+    width: 195px;
+    height: 112px;
+  }
+
+  .capabilityMap__node {
+    min-height: 34px;
+
+    padding: 0 9px;
+
+    gap: 7px;
+
+    font-size: 11px;
+  }
+
+  .capabilityMap__node-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* DESCRIPTION */
+
+  .capabilityMap__description-card {
+    width: 100%;
+
+    margin-top: 0;
+
+    padding:
+      21px
+      20px;
+  }
+
+  .capabilityMap__description-title {
+    font-size: 18px;
+  }
+
+  .capabilityMap__description-text {
+    font-size: 14px;
+  }
+
+  .capabilityMap__description-combined {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .capabilityMap__container {
+    width: calc(100% - 18px);
+  }
+
+  .capabilityMap__heading {
+    font-size: 35px;
+  }
+
+  .capabilityMap__intro {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .capabilityMap__canvas {
+    height: 515px;
+  }
+
+  .capabilityMap__center {
+    width: 125px;
+    height: 125px;
+  }
+
+  .capabilityMap__center-core {
+    width: 104px;
+    height: 104px;
+
+    padding: 4px;
+  }
+
+  .capabilityMap__logo {
+    width: 78px;
+  }
+
+  .capabilityMap__center-ring--one {
+    width: 140px;
+    height: 140px;
+  }
+
+  .capabilityMap__center-ring--two,
+  .capabilityMap__center-ring--three {
+    width: 165px;
+    height: 100px;
+  }
+
+  .capabilityMap__node {
+    min-height: 31px;
+
+    padding: 0 7px;
+
+    font-size: 9.5px;
+  }
+
+  .capabilityMap__node-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .capabilityMap__description-card {
+    padding:
+      18px
+      16px;
+  }
+
+  .capabilityMap__description-title {
+    font-size: 17px;
+  }
+
+  .capabilityMap__description-text {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .capabilityMap__description-combined {
+    font-size: 11.5px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .capabilityMap *,
+  .capabilityMap::before,
+  .capabilityMap::after {
+    animation: none !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

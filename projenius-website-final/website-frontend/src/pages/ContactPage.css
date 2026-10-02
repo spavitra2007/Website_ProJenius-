@@ -1,0 +1,90 @@
+/* ==========================================================================
+   ContactPage — design tokens for the whole /contact page.
+   Every class in the Contact folder starts with "pjct-" so nothing here can
+   touch your other pages. Edit the --pjct-* variables to match the brand.
+   ========================================================================== */
+.pjct-page {
+  --pjct-font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --pjct-font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --pjct-bg: #f4f6fb;
+  --pjct-surface: #ffffff;
+  --pjct-surface-2: #eceffa;
+  --pjct-text: #0b1030;
+  --pjct-muted: #525c7d;
+  --pjct-line: #dde2f0;
+  --pjct-line-strong: #aab3cf;
+  --pjct-primary: #3651ff;
+  --pjct-primary-ink: #ffffff;
+  --pjct-primary-soft: #e9edff;
+  --pjct-ok: #0b8f6d;
+  --pjct-ok-soft: #dbf6ec;
+  --pjct-danger: #c4263a;
+  --pjct-danger-soft: #fdebee;
+  --pjct-sun: #ffc247;
+  --pjct-focus: #3651ff;
+  --pjct-shadow: 0 1px 2px rgba(11, 16, 48, 0.06), 0 12px 32px -16px rgba(11, 16, 48, 0.22);
+
+  --pjct-hero-bg: #0a0f2c;
+  --pjct-hero-text: #f2f4ff;
+  --pjct-hero-muted: #aeb7dd;
+
+  --pjct-radius: 14px;
+  --pjct-radius-sm: 10px;
+
+  position: relative;
+  overflow-x: clip;
+  background: var(--pjct-bg);
+  color: var(--pjct-text);
+  font-family: var(--pjct-font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
+
+/* Dark mode follows the visitor's system setting */
+@media (prefers-color-scheme: dark) {
+  .pjct-page {
+    --pjct-bg: #080b1d;
+    --pjct-surface: #10152f;
+    --pjct-surface-2: #171d3d;
+    --pjct-text: #eef1ff;
+    --pjct-muted: #a2abcd;
+    --pjct-line: #252c52;
+    --pjct-line-strong: #4a5486;
+    --pjct-primary: #7389ff;
+    --pjct-primary-ink: #080b1d;
+    --pjct-primary-soft: #1a2252;
+    --pjct-ok: #3ddcb0;
+    --pjct-ok-soft: #0e2f2b;
+    --pjct-danger: #ff8391;
+    --pjct-danger-soft: #3a1620;
+    --pjct-focus: #9db0ff;
+    --pjct-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+    --pjct-hero-bg: #060919;
+    color-scheme: dark;
+  }
+}
+
+/* Zero-specificity resets, scoped to this page only (component classes always win) */
+:where(.pjct-page) *,
+:where(.pjct-page) *::before,
+:where(.pjct-page) *::after { box-sizing: border-box; }
+:where(.pjct-page) :where(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+:where(.pjct-page) :focus-visible { outline: 3px solid var(--pjct-focus); outline-offset: 2px; }
+:where(.pjct-page) svg { max-width: 100%; }
+:where(.pjct-page) [hidden] { display: none; }
+
+/* visually hidden live region for screen-reader announcements */
+.pjct-page__live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

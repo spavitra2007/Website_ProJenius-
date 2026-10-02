@@ -1,0 +1,986 @@
+/* =========================================================
+   PROJENIUS - PRODUCT SECTION
+========================================================= */
+
+.pj-section,
+.pj-section *,
+.pj-section *::before,
+.pj-section *::after {
+    box-sizing: border-box;
+}
+
+.pj-section {
+    width: 100%;
+    padding: 64px 4.5%;
+    background: #ffffff;
+    overflow: hidden;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.pj-container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.pj-heading,
+.pj-tabs {
+    opacity: 0;
+    transform: translateY(24px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.pj-tabs {
+    transition-delay: .1s;
+}
+
+.pj-visible .pj-heading,
+.pj-visible .pj-tabs {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.pj-heading {
+    max-width: 900px;
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.pj-badge {
+    display: inline-flex;
+
+    padding: 8px 16px;
+
+    border: 1px solid #bae6fd;
+    border-radius: 999px;
+
+    background: #f0f9ff;
+
+    color: #159fe3;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.pj-title {
+    margin: 16px 0 0;
+
+    color: #0f172a;
+
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+
+    letter-spacing: -.02em;
+}
+
+.pj-title-accent {
+    display: inline-block;
+
+    color: #159fe3;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.pj-out.pj-title-accent {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.pj-line {
+    width: 80px;
+    height: 4px;
+
+    margin: 16px auto 0;
+
+    border-radius: 999px;
+
+    background: #159fe3;
+}
+
+.pj-desc {
+    max-width: 680px;
+
+    margin: 16px auto 0;
+
+    color: #64748b;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   PRODUCT TABS
+========================================================= */
+
+.pj-tabs {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+.pj-tab {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 56px;
+
+    padding: 12px 16px;
+
+    /* EXACTLY 1PX BORDER */
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* =========================================================
+   TAB HOVER
+   Stronger border intensity
+   NO MOVEMENT
+========================================================= */
+
+.pj-tab:hover {
+    border-color: #159fe3;
+
+    background: #f8fafc;
+
+    color: #159fe3;
+
+    box-shadow:
+        0 0 0 1px rgba(21, 159, 227, .22),
+        0 10px 26px rgba(21, 159, 227, .22);
+}
+
+.pj-tab:focus-visible {
+    outline: 2px solid #159fe3;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   ACTIVE TAB
+========================================================= */
+
+.pj-tab-active,
+.pj-tab-active:hover {
+    border-color: #159fe3;
+
+    background: #159fe3;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 28px rgba(21, 159, 227, .35);
+}
+
+.pj-tab-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #e0f2fe;
+
+    color: #159fe3;
+}
+
+.pj-tab-active .pj-tab-icon {
+    background: rgba(255, 255, 255, .2);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.pj-card {
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 24px;
+
+    border: 1px solid #bae6fd;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(240, 249, 255, .8),
+            #ffffff 60%
+        );
+
+    box-shadow:
+        0 18px 45px rgba(6, 20, 45, .08);
+
+    transition:
+        border-color .4s ease,
+        box-shadow .4s ease,
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.pj-card:hover {
+    border-color: #159fe3;
+
+    box-shadow:
+        0 0 0 1px #159fe3,
+        0 0 32px rgba(21, 159, 227, .35),
+        0 24px 55px rgba(6, 20, 45, .14);
+}
+
+.pj-card.pj-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.pj-image {
+    position: relative;
+
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #f1f5f9;
+
+    box-shadow:
+        0 12px 30px rgba(6, 20, 45, .12);
+}
+
+.pj-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.pj-card:hover .pj-image img {
+    transform: scale(1.05);
+}
+
+.pj-shine {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, .28),
+            transparent
+        );
+
+    transform:
+        translateX(-100%)
+        skewX(-18deg);
+
+    transition: transform 1s ease;
+}
+
+.pj-card:hover .pj-shine {
+    transform:
+        translateX(100%)
+        skewX(-18deg);
+}
+
+
+/* =========================================================
+   PRODUCT TEXT AREA
+   IMPORTANT:
+   Only the title is centered.
+   Everything else stays LEFT aligned.
+========================================================= */
+
+.pj-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   PRODUCT TITLE
+   ONLY THIS IS CENTERED
+========================================================= */
+
+.pj-content-title {
+    width: 100%;
+
+    margin: 0 0 14px;
+
+    color: #0f172a;
+
+    font-size: 30px;
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    letter-spacing: -.02em;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PRODUCT DESCRIPTION
+   LEFT ALIGNED
+========================================================= */
+
+.pj-content-desc {
+    width: 100%;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.pj-features {
+    width: 100%;
+
+    margin-top: 20px;
+
+    text-align: left;
+}
+
+.pj-features h4 {
+    margin: 0 0 12px;
+
+    color: #0f172a;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.pj-feature-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.pj-feature {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border: 1px solid #e0f2fe;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all .2s ease;
+}
+
+.pj-feature::before {
+    content: "\2713";
+
+    margin-right: 6px;
+
+    color: #159fe3;
+
+    font-weight: 700;
+}
+
+.pj-feature:hover {
+    transform: translateY(-2px);
+
+    border-color: #159fe3;
+
+    color: #159fe3;
+
+    box-shadow:
+        0 6px 16px rgba(21, 159, 227, .15);
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.pj-btn {
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    margin-top: 24px;
+
+    padding: 12px 28px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #159fe3;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.pj-btn:hover {
+    transform: translateY(-2px);
+
+    background: #0d8ac9;
+
+    box-shadow:
+        0 12px 28px rgba(21, 159, 227, .35);
+}
+
+.pj-btn:focus-visible {
+    outline: 2px solid #159fe3;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.pj-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.pj-dot {
+    width: 8px;
+    height: 6px;
+
+    border-radius: 999px;
+
+    background: #cbd5e1;
+
+    transition: all .5s ease;
+}
+
+.pj-dot-active {
+    width: 32px;
+
+    background: #159fe3;
+}
+
+
+/* =========================================================
+   COMING SOON POPUP
+========================================================= */
+
+.pj-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(2, 6, 23, .7);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        Arial,
+        sans-serif;
+
+    animation: pjFade .25s ease both;
+}
+
+.pj-popup {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    padding: 40px 32px 32px;
+
+    border: 1px solid #bae6fd;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, .25);
+
+    animation:
+        pjPop .4s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.pj-popup-close {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.pj-popup-close:hover {
+    background: #159fe3;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+.pj-popup-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 16px;
+
+    border-radius: 16px;
+
+    background: #e0f2fe;
+
+    color: #159fe3;
+}
+
+.pj-popup-title {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.pj-popup-text {
+    margin: 8px 0 24px;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.pj-popup-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 10px 26px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #159fe3;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.pj-popup-btn:hover {
+    transform: translateY(-2px);
+
+    background: #0d8ac9;
+
+    box-shadow:
+        0 12px 28px rgba(21, 159, 227, .35);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pjFade {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes pjPop {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(24px)
+            scale(.95);
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pj-title {
+        font-size: 40px;
+    }
+
+    .pj-card {
+        gap: 28px;
+        padding: 20px;
+    }
+
+    .pj-image {
+        height: 340px;
+    }
+
+    .pj-content-title {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .pj-section {
+        padding: 48px 24px;
+    }
+
+    .pj-title {
+        font-size: 34px;
+    }
+
+    .pj-card {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+    .pj-image {
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+    }
+
+    .pj-content-title {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .pj-section {
+        padding: 36px 16px 44px;
+    }
+
+    .pj-heading {
+        margin-bottom: 28px;
+    }
+
+    .pj-badge {
+        font-size: 12px;
+        padding: 7px 14px;
+    }
+
+    .pj-title {
+        font-size: 28px;
+    }
+
+    .pj-title-accent {
+        display: block;
+    }
+
+    .pj-desc {
+        font-size: 14px;
+    }
+
+    .pj-tabs {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        margin-bottom: 18px;
+    }
+
+    .pj-tab {
+        min-height: 50px;
+
+        font-size: 13px;
+    }
+
+    .pj-card {
+        padding: 12px;
+
+        border-radius: 20px;
+
+        gap: 20px;
+    }
+
+    .pj-image {
+        aspect-ratio: 4 / 3;
+
+        border-radius: 14px;
+    }
+
+    .pj-content-title {
+        font-size: 23px;
+
+        line-height: 1.25;
+    }
+
+    .pj-content-desc {
+        font-size: 14px;
+
+        text-align: left;
+    }
+
+    .pj-features h4 {
+        text-align: left;
+    }
+
+    .pj-feature-list {
+        justify-content: flex-start;
+    }
+
+    .pj-btn {
+        width: auto;
+    }
+
+    .pj-popup {
+        padding: 36px 22px 26px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .pj-title {
+        font-size: 25px;
+    }
+
+    .pj-content-title {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .pj-card:hover {
+        border-color: #bae6fd;
+
+        box-shadow:
+            0 18px 45px rgba(6, 20, 45, .08);
+    }
+
+    .pj-card:hover .pj-image img {
+        transform: none;
+    }
+
+    .pj-shine {
+        display: none;
+    }
+
+    .pj-feature:hover,
+    .pj-btn:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pj-section *,
+    .pj-overlay,
+    .pj-popup {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .pj-heading,
+    .pj-tabs {
+        opacity: 1;
+        transform: none;
+    }
+}

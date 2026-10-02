@@ -1,0 +1,758 @@
+/* =========================================================
+   SUCCESS STORIES
+   White + Black + Recognition Blue
+========================================================= */
+
+.success-stories-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 78px 0 82px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family: "Poppins", "Segoe UI", sans-serif;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND
+========================================================= */
+
+.success-stories-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -170px;
+    left: -170px;
+
+    border-radius: 50%;
+
+    background: rgba(21, 153, 214, 0.055);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.success-stories-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    bottom: -190px;
+
+    border-radius: 50%;
+
+    background: rgba(21, 153, 214, 0.045);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.success-stories-container {
+    width: min(1120px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 48px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.success-stories-left {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.success-stories-heading {
+    margin: 0 0 30px;
+}
+
+
+.success-stories-label {
+    display: block;
+
+    margin: 0 0 12px;
+
+    color: #1599D6;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.success-stories-heading h2 {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(46px, 5vw, 64px);
+
+    font-weight: 800;
+
+    line-height: 1.03;
+
+    letter-spacing: -2.2px;
+}
+
+
+/* BLACK TEXT */
+
+.success-stories-heading .heading-black {
+    display: block;
+
+    color: #111111;
+}
+
+
+/* BLUE TEXT */
+
+.success-stories-heading .heading-blue {
+    display: block;
+
+    color: #1599D6;
+}
+
+
+/* =========================================================
+   LEFT HIGHLIGHTS
+========================================================= */
+
+.success-stories-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT CARD
+========================================================= */
+
+.success-highlight-card {
+    min-height: 104px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.045);
+
+    opacity: 0;
+
+    transform:
+        translateX(-24px)
+        rotate(-1deg);
+
+    will-change: transform, opacity;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Third card */
+
+.success-highlight-card:nth-child(3) {
+    grid-column: 1;
+}
+
+
+/* =========================================================
+   HIGHLIGHT REVEAL
+========================================================= */
+
+.success-stories-visible .success-highlight-card {
+    animation:
+        successHighlightReveal
+        0.55s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+
+    animation-delay: var(--success-delay);
+}
+
+
+/* =========================================================
+   HIGHLIGHT HOVER
+========================================================= */
+
+.success-highlight-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(21, 153, 214, 0.40);
+
+    box-shadow:
+        0 15px 32px rgba(21, 153, 214, 0.10);
+}
+
+
+/* =========================================================
+   HIGHLIGHT ICON
+========================================================= */
+
+.success-highlight-icon {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #1599D6;
+}
+
+
+.success-highlight-blue .success-highlight-icon {
+    background: #eaf6ff;
+}
+
+
+.success-highlight-orange .success-highlight-icon {
+    background: #fff3e5;
+
+    color: #f59e0b;
+}
+
+
+.success-highlight-purple .success-highlight-icon {
+    background: #f3edff;
+
+    color: #8b5cf6;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TEXT
+========================================================= */
+
+.success-highlight-content {
+    color: #344054;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   RIGHT STATISTICS
+========================================================= */
+
+.success-stories-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.success-stat-card {
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border: 1px solid #e3eaf1;
+
+    border-radius: 21px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.055);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(28px)
+        scale(0.98);
+
+    will-change: transform, opacity;
+
+    transition:
+        transform 0.32s ease,
+        border-color 0.32s ease,
+        box-shadow 0.32s ease;
+}
+
+
+/* =========================================================
+   BLUE TOP LINE
+========================================================= */
+
+.success-stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #1599D6;
+
+    opacity: 0.65;
+
+    transform: scaleX(0.35);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   STAT REVEAL
+========================================================= */
+
+.success-stories-visible .success-stat-card {
+    animation:
+        successStatReveal
+        0.6s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+
+    animation-delay: var(--success-delay);
+}
+
+
+/* =========================================================
+   STAT HOVER
+========================================================= */
+
+.success-stat-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(21, 153, 214, 0.40);
+
+    box-shadow:
+        0 18px 40px rgba(21, 153, 214, 0.10);
+}
+
+
+.success-stat-card:hover::before {
+    transform: scaleX(1);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.success-stat-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #1599D6;
+}
+
+
+.success-stat-blue .success-stat-icon {
+    background: #eaf3ff;
+}
+
+
+.success-stat-purple .success-stat-icon {
+    background: #f2edff;
+
+    color: #8b5cf6;
+}
+
+
+.success-stat-orange .success-stat-icon {
+    background: #fff1e5;
+
+    color: #f97316;
+}
+
+
+.success-stat-pink .success-stat-icon {
+    background: #fdebf5;
+
+    color: #ec4899;
+}
+
+
+/* =========================================================
+   STAT CONTENT
+========================================================= */
+
+.success-stat-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.success-stat-content strong {
+    display: block;
+
+    margin: 0;
+
+    color: #111111;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(40px, 4vw, 54px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.success-stat-content span {
+    color: #667085;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes successHighlightReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-24px)
+            rotate(-1deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+@keyframes successStatReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(28px)
+            scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .success-stories-section {
+        padding: 70px 0 75px;
+    }
+
+    .success-stories-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        width: min(760px, calc(100% - 40px));
+    }
+
+    .success-stories-heading {
+        text-align: center;
+    }
+
+    .success-stories-heading h2 {
+        align-items: center;
+    }
+
+    .success-stories-highlights {
+        max-width: 560px;
+
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .success-stories-section {
+        padding: 58px 0 65px;
+    }
+
+    .success-stories-container {
+        width: calc(100% - 30px);
+
+        gap: 30px;
+    }
+
+    .success-stories-label {
+        font-size: 14px;
+
+        margin-bottom: 9px;
+    }
+
+    .success-stories-heading h2 {
+        font-size: 40px;
+
+        letter-spacing: -1.4px;
+
+        line-height: 1.05;
+    }
+
+    .success-stories-highlights {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .success-highlight-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .success-highlight-card {
+        min-height: 82px;
+
+        padding: 14px;
+
+        border-radius: 14px;
+    }
+
+    .success-highlight-icon {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+    }
+
+    .success-highlight-content {
+        font-size: 14px;
+    }
+
+    .success-stories-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .success-stat-card {
+        min-height: 150px;
+
+        padding: 18px;
+
+        border-radius: 17px;
+    }
+
+    .success-stat-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .success-stat-content strong {
+        font-size: 34px;
+    }
+
+    .success-stat-content span {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .success-stories-heading h2 {
+        font-size: 35px;
+    }
+
+    .success-stories-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .success-stat-card {
+        min-height: 135px;
+    }
+
+    .success-stat-content strong {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .success-highlight-card,
+    .success-stat-card {
+        opacity: 1;
+
+        transform: none;
+
+        animation: none !important;
+
+        transition: none;
+    }
+}
