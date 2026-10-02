@@ -214,17 +214,8 @@ const BookCall = () => {
   });
   const [formErrors, setFormErrors] = useState({});
 
-  // Step 3 Payment State
-  const [paymentMethod, setPaymentMethod] = useState("upi");
-  const [upiId, setUpiId] = useState("");
-  const [cardData, setCardData] = useState({
-    number: "",
-    name: "",
-    expiry: "",
-    cvv: "",
-  });
-  const [selectedBank, setSelectedBank] = useState("HDFC Bank");
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  // Submission & Confirmation State
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingId, setBookingId] = useState("");
   const [copiedLink, setCopiedLink] = useState(false);
 
@@ -575,25 +566,21 @@ const BookCall = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleProceedToPayment = (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    setCurrentStep(3);
-    window.scrollTo({ top: 350, behavior: "smooth" });
-  };
-
   /* =======================================================
-     EXECUTE PAYMENT
+     SUBMIT BOOKING (DIRECT CONFIRMATION)
   ======================================================= */
 
-  const handleExecutePayment = () => {
-    setIsProcessingPayment(true);
+  const handleSubmitBooking = (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    setIsSubmitting(true);
     setTimeout(() => {
       const generatedId = `PJ-2026-${Math.floor(10000 + Math.random() * 90000)}`;
       setBookingId(generatedId);
-      setIsProcessingPayment(false);
-      setCurrentStep(4);
-    }, 1300);
+      setIsSubmitting(false);
+      setCurrentStep(3);
+      window.scrollTo({ top: 350, behavior: "smooth" });
+    }, 700);
   };
 
   const handleCopyMeetLink = () => {
@@ -753,10 +740,9 @@ const BookCall = () => {
           {/* HEADER */}
           <div className="book-call-card-header">
             <h2>
-              {currentStep === 1 && "Book a Call – ₹99"}
-              {currentStep === 2 && "Attendee Details – ₹99"}
-              {currentStep === 3 && "Secure Checkout – ₹99"}
-              {currentStep === 4 && "Booking Confirmed! 🎉"}
+              {currentStep === 1 && "Book a Call"}
+              {currentStep === 2 && "Attendee Details"}
+              {currentStep === 3 && "Booking Confirmed! 🎉"}
             </h2>
           </div>
 
@@ -770,7 +756,7 @@ const BookCall = () => {
                   ? "step-completed"
                   : ""
               }`}
-              onClick={() => currentStep > 1 && setCurrentStep(1)}
+              onClick={() => currentStep > 1 && currentStep < 3 && setCurrentStep(1)}
             >
               <div className="step-circle">
                 {currentStep > 1 ? <Check size={13} strokeWidth={3} /> : "1"}
@@ -788,29 +774,11 @@ const BookCall = () => {
                   ? "step-completed"
                   : ""
               }`}
-              onClick={() => currentStep > 2 && setCurrentStep(2)}
             >
               <div className="step-circle">
                 {currentStep > 2 ? <Check size={13} strokeWidth={3} /> : "2"}
               </div>
               <span className="step-label">Your Info</span>
-            </div>
-
-            <div className={`step-line ${currentStep >= 3 ? "active" : ""}`} />
-
-            <div
-              className={`book-call-step-item ${
-                currentStep === 3
-                  ? "step-active"
-                  : currentStep > 3
-                  ? "step-completed"
-                  : ""
-              }`}
-            >
-              <div className="step-circle">
-                {currentStep > 3 ? <Check size={13} strokeWidth={3} /> : "3"}
-              </div>
-              <span className="step-label">Payment</span>
             </div>
           </div>
 
@@ -1297,7 +1265,7 @@ const BookCall = () => {
                 STEP 2: ATTENDEE DETAILS
             ========================================================= */}
             {currentStep === 2 && (
-              <form onSubmit={handleProceedToPayment} className="book-call-form">
+              <form onSubmit={handleSubmitBooking} className="book-call-form">
                 {/* SLOT SUMMARY RECAP */}
                 <div className="book-call-recap-banner">
                   <div className="recap-info">
@@ -1419,276 +1387,36 @@ const BookCall = () => {
                   <button
                     type="button"
                     className="book-call-back-btn"
+                    disabled={isSubmitting}
                     onClick={() => setCurrentStep(1)}
                   >
                     <ArrowLeft size={16} /> Back
                   </button>
-                  <button type="submit" className="book-call-button flex-1">
-                    <span>Continue to Payment (₹99)</span>
-                    <ArrowRight size={18} />
+                  <button
+                    type="submit"
+                    className="book-call-button flex-1"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <RefreshCw size={18} className="payment-spin" />
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit</span>
+                        <ArrowRight size={18} />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
             )}
 
             {/* =========================================================
-                STEP 3: PAYMENT OPTIONS (THE WORKFLOW DIRECT TILL PAYMENT)
+                STEP 3: CONFIRMATION STATE (BOOKING CONFIRMED)
             ========================================================= */}
             {currentStep === 3 && (
-              <div className="book-call-payment-flow">
-                {/* SUMMARY CARD */}
-                <div className="payment-summary-card">
-                  <div className="summary-row">
-                    <div>
-                      <strong>1:1 Career Mentoring Session</strong>
-                      <p className="summary-sub">
-                        {formattedSelectedDate} • {selectedTime} (30 mins)
-                      </p>
-                      <p className="summary-sub">Attendee: {formData.name}</p>
-                    </div>
-                    <div className="summary-price">
-                      <span className="original-price">₹499</span>
-                      <strong className="final-price">₹99</strong>
-                    </div>
-                  </div>
-                  <div className="summary-features-pills">
-                    <span>✓ 100% Refundable</span>
-                    <span>✓ 1:1 Senior Mentor</span>
-                    <span>✓ Roadmap Included</span>
-                  </div>
-                </div>
-
-                {/* PAYMENT METHOD TABS */}
-                <div className="payment-methods-header">
-                  <h4>Choose Payment Option</h4>
-                  <span className="secure-badge">
-                    <ShieldCheck size={14} /> 256-bit SSL Secure
-                  </span>
-                </div>
-
-                <div className="payment-tabs">
-                  <button
-                    type="button"
-                    className={`pay-tab ${paymentMethod === "upi" ? "active" : ""}`}
-                    onClick={() => setPaymentMethod("upi")}
-                  >
-                    <QrCode size={16} />
-                    <span>UPI / QR</span>
-                  </button>
-                  <button
-                    type="button"
-                    className={`pay-tab ${paymentMethod === "card" ? "active" : ""}`}
-                    onClick={() => setPaymentMethod("card")}
-                  >
-                    <CreditCard size={16} />
-                    <span>Card</span>
-                  </button>
-                  <button
-                    type="button"
-                    className={`pay-tab ${
-                      paymentMethod === "netbanking" ? "active" : ""
-                    }`}
-                    onClick={() => setPaymentMethod("netbanking")}
-                  >
-                    <Building2 size={16} />
-                    <span>Net Banking</span>
-                  </button>
-                </div>
-
-                {/* METHOD 1: UPI & QR CODE */}
-                {paymentMethod === "upi" && (
-                  <div className="payment-method-box">
-                    <div className="qr-container">
-                      <div className="qr-box">
-                        <svg
-                          viewBox="0 0 160 160"
-                          width="135"
-                          height="135"
-                          className="qr-matrix-svg"
-                        >
-                          <rect width="160" height="160" fill="#ffffff" />
-                          {/* Corner Squares */}
-                          <rect x="15" y="15" width="40" height="40" fill="#0f172a" rx="4" />
-                          <rect x="23" y="23" width="24" height="24" fill="#ffffff" rx="2" />
-                          <rect x="29" y="29" width="12" height="12" fill="#159fdd" rx="1" />
-
-                          <rect x="105" y="15" width="40" height="40" fill="#0f172a" rx="4" />
-                          <rect x="113" y="23" width="24" height="24" fill="#ffffff" rx="2" />
-                          <rect x="119" y="29" width="12" height="12" fill="#159fdd" rx="1" />
-
-                          <rect x="15" y="105" width="40" height="40" fill="#0f172a" rx="4" />
-                          <rect x="23" y="113" width="24" height="24" fill="#ffffff" rx="2" />
-                          <rect x="29" y="119" width="12" height="12" fill="#159fdd" rx="1" />
-
-                          {/* Data points pattern */}
-                          <rect x="68" y="20" width="8" height="8" fill="#1e293b" />
-                          <rect x="80" y="28" width="8" height="8" fill="#159fdd" />
-                          <rect x="68" y="44" width="8" height="8" fill="#1e293b" />
-                          <rect x="20" y="68" width="8" height="8" fill="#1e293b" />
-                          <rect x="36" y="80" width="8" height="8" fill="#159fdd" />
-                          <rect x="68" y="68" width="24" height="24" fill="#0f172a" rx="3" />
-                          <text x="80" y="84" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle">₹99</text>
-                          <rect x="104" y="68" width="8" height="8" fill="#159fdd" />
-                          <rect x="120" y="80" width="8" height="8" fill="#1e293b" />
-                          <rect x="136" y="68" width="8" height="8" fill="#1e293b" />
-                          <rect x="68" y="104" width="8" height="8" fill="#159fdd" />
-                          <rect x="84" y="120" width="8" height="8" fill="#1e293b" />
-                          <rect x="104" y="104" width="8" height="8" fill="#1e293b" />
-                          <rect x="120" y="120" width="16" height="8" fill="#159fdd" />
-                          <rect x="104" y="136" width="8" height="8" fill="#1e293b" />
-                        </svg>
-                        <span className="qr-caption">Scan with any UPI App</span>
-                      </div>
-
-                      <div className="upi-input-side">
-                        <label>Or enter your UPI ID:</label>
-                        <div className="upi-input-row">
-                          <input
-                            type="text"
-                            placeholder="e.g. 9876543210@paytm"
-                            value={upiId}
-                            onChange={(e) => setUpiId(e.target.value)}
-                          />
-                          <button
-                            type="button"
-                            className="upi-verify-btn"
-                            onClick={() => {
-                              if (upiId) alert(`UPI ID ${upiId} verified! Click Pay ₹99.`);
-                            }}
-                          >
-                            Verify
-                          </button>
-                        </div>
-                        <div className="supported-upi-apps">
-                          <span>Supported:</span>
-                          <strong>GPay • PhonePe • Paytm • BHIM • CRED</strong>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* METHOD 2: DEBIT / CREDIT CARD */}
-                {paymentMethod === "card" && (
-                  <div className="payment-method-box card-input-box">
-                    <div className="form-group">
-                      <label>Card Number</label>
-                      <input
-                        type="text"
-                        placeholder="4532 •••• •••• 8921"
-                        maxLength="19"
-                        value={cardData.number}
-                        onChange={(e) =>
-                          setCardData({ ...cardData, number: e.target.value })
-                        }
-                      />
-                    </div>
-                    <div className="form-row-2">
-                      <div className="form-group">
-                        <label>Expiry (MM/YY)</label>
-                        <input
-                          type="text"
-                          placeholder="12/28"
-                          maxLength="5"
-                          value={cardData.expiry}
-                          onChange={(e) =>
-                            setCardData({ ...cardData, expiry: e.target.value })
-                          }
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label>CVV</label>
-                        <input
-                          type="password"
-                          placeholder="•••"
-                          maxLength="4"
-                          value={cardData.cvv}
-                          onChange={(e) =>
-                            setCardData({ ...cardData, cvv: e.target.value })
-                          }
-                        />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label>Cardholder Name</label>
-                      <input
-                        type="text"
-                        placeholder="Name on card"
-                        value={cardData.name}
-                        onChange={(e) =>
-                          setCardData({ ...cardData, name: e.target.value })
-                        }
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* METHOD 3: NET BANKING */}
-                {paymentMethod === "netbanking" && (
-                  <div className="payment-method-box">
-                    <label className="banks-label">Select Your Bank:</label>
-                    <div className="banks-grid">
-                      {["HDFC Bank", "State Bank of India", "ICICI Bank", "Axis Bank", "Kotak Mahindra", "Punjab National Bank"].map(
-                        (bank) => (
-                          <button
-                            type="button"
-                            key={bank}
-                            className={`bank-pill ${selectedBank === bank ? "active" : ""}`}
-                            onClick={() => setSelectedBank(bank)}
-                          >
-                            <Building2 size={13} />
-                            <span>{bank}</span>
-                          </button>
-                        )
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* SECURITY NOTE */}
-                <div className="payment-security-note">
-                  <Lock size={14} />
-                  <span>
-                    Your payment of <strong>₹99</strong> is encrypted with bank-grade security. 100% money back if not satisfied.
-                  </span>
-                </div>
-
-                {/* ACTION BUTTONS */}
-                <div className="form-action-row">
-                  <button
-                    type="button"
-                    className="book-call-back-btn"
-                    disabled={isProcessingPayment}
-                    onClick={() => setCurrentStep(2)}
-                  >
-                    <ArrowLeft size={16} /> Back
-                  </button>
-                  <button
-                    type="button"
-                    className="book-call-button flex-1"
-                    disabled={isProcessingPayment}
-                    onClick={handleExecutePayment}
-                  >
-                    {isProcessingPayment ? (
-                      <>
-                        <RefreshCw size={18} className="payment-spin" />
-                        <span>Securing Slot & Confirming...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Lock size={18} />
-                        <span>Pay ₹99 & Confirm Booking</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* =========================================================
-                STEP 4: CONFIRMATION STATE (BOOKING CONFIRMED)
-            ========================================================= */}
-            {currentStep === 4 && (
               <div className="book-call-success-flow">
                 <div className="success-icon-wrap">
                   <CheckCircle2 size={54} />
